@@ -65,7 +65,7 @@ BACTERIOLOGÍA">
 <link href="/css/jquery.fancybox.min.css" rel="stylesheet">
 <link href="/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
 <link href="/css/menu.css" rel="stylesheet">
-<link href="/css/style.css" rel="stylesheet">
+<link href="/css/style.css?q={{ time() }}" rel="stylesheet">
 <link href="/css/responsive.css" rel="stylesheet">
 </head>
 <body>
