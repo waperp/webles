@@ -15,8 +15,8 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="zimages/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <title>Medizco Medical Center - HTML Template | Home Page 01</title>
 
