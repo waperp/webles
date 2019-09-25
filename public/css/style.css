@@ -772,11 +772,11 @@ img{
 	top:0px;
 	height:100%;
 	width:10000%;
-	background-image: linear-gradient( to left,#1DB9A0 0%, #4d94c4 1%);
+background-color: #2baeaa;
 	-ms-transform: skewX(-25deg);
 	-webkit-transform: skewX(-25deg);
 	transform: skewX(-25deg);
-	border-right:2px solid #1db9a0;
+	border-right:2px solid #2baeaa;
 }
 
 .main-header .header-upper{
