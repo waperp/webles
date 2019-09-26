@@ -11,12 +11,12 @@
                 <div class="top-outer clearfix">
                     <!-- Top Left -->
                     <ul class="top-left">
-                        <li>
+                        {{-- <li>
                             <div class="image">
                                 <img src="images/resource/author-1.jpg" alt=""> 
                             </div>
                             <span>Miguel Angel</span>
-                        </li>
+                        </li> --}}
                         {{-- <li><span class="icon flaticon-clock-1"></span>Mon-Fri (8am - 6pm)</li>
                         <li><a href="mailto:info@example.com"><span
                                     class="icon flaticon-letter"></span>info@example.com</a></li> --}}
@@ -24,8 +24,11 @@
 
                     <!-- Top Right -->
                     <div class="top-right clearfix">
-
-                        <a style="float:left; line-height: 15px;" href="gallery.html"
+                           <div class="float-left text-white mr-2"> <div class="image">
+                                <img src="images/resource/author-1.jpg" alt=""> 
+                            </div>
+                            <span>Miguel Angel</span></div>
+                        <a style="float:left; line-height: 15px;" href="/login"
                             class="theme-btn btn-style-four">Login</a>
                         <!-- Cart Button -->
                         {{-- <div class="cart-btn">

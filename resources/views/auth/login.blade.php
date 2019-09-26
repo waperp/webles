@@ -102,7 +102,7 @@
 								
 								<div class="form-group">
 									<span class="icon flaticon-success"></span>
-									<input type="email" name="email" placeholder="Tu contraseña" required="">
+									<input type="password" name="email" placeholder="Tu contraseña" required="">
 								</div>
 {{-- 								
 								<div class="form-group">

@@ -8802,7 +8802,7 @@ background-color: #2baeaa;
 	position:relative;
 	display:block;
 	width:100%;
-	color:#a5a5a5;
+	color:#ffffff;
 	line-height:26px;
 	padding:0px 15px 8px 35px;
 	height:50px;
@@ -9664,7 +9664,7 @@ background-color: #2baeaa;
 	z-index:-1;
 }
 
-.top-left > li > .image {
+.top-right > div > .image {
 	position: relative;
     width: 25px;
     height: 25px;
@@ -9675,4 +9675,10 @@ background-color: #2baeaa;
 	border: 2px solid #ffffff;
 	margin-right: 5px;
     /* z-index: 555; */
+}
+.contact-page-section .form-column .inner-column {
+    position: relative;
+    padding: 55px 50px;
+    background-color: rgba(34,58,102,0.90);
+    background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
 }
