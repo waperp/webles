@@ -764,7 +764,11 @@ img{
 }
 
 /*=== Header Upper ===*/
-
+@media only screen and (max-width: 1023px) {
+    .main-header .xs-bold-menu {
+        position: absolute !important;
+    }
+}
 .main-header .header-upper .logo-outer:before{
 	position:absolute;
 	content:'';
