@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="page-wrapper">
-    <!-- Preloader -->
-    <div class="preloader"></div>
+
 
     <!-- header section -->
     <header class="elementskit-header main-header">
@@ -1920,7 +1918,6 @@
 
     </footer>
 
-</div>
 <!--End pagewrapper-->
 
 <!--Scroll to top-->

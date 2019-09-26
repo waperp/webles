@@ -8761,12 +8761,13 @@ background-color: #2baeaa;
 }
 
 .contact-page-section .title-box h3{
-	position:relative;
-	color:#ffffff;
-	font-size:36px;
-	font-weight:700;
-	line-height:1.3em;
-	margin-top:3px;
+    position: relative;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-top: 3px;
+    text-align: center;
 }
 
 /* Contact Form */
