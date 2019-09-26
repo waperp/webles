@@ -67,6 +67,8 @@ BACTERIOLOGÍA">
 <link href="/css/menu.css" rel="stylesheet">
 <link href="/css/style.css?q={{ time() }}" rel="stylesheet">
 <link href="/css/responsive.css?q={{ time() }}" rel="stylesheet">
+{{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
+
 </head>
 <body>
             @yield('content')
