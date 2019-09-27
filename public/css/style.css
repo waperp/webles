@@ -766,9 +766,8 @@ img{
 
 /*=== Header Upper ===*/
 @media only screen and (max-width: 1023px) {
-    .main-header .xs-bold-menu {
-        position: absolute !important;
-    }
+    
+
 }
 .main-header .header-upper .logo-outer:before{
 	position:absolute;
@@ -9664,6 +9663,7 @@ background-color: #2baeaa;
 	z-index:-1;
 }
 
+/* CUSTOM */
 .top-right > div > .image {
 	position: relative;
     width: 25px;
@@ -9682,3 +9682,11 @@ background-color: #2baeaa;
     background-color: rgba(34,58,102,0.90);
     background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
 }
+
+.is-invalid {
+	border-bottom-color: #dc3545 !important;
+}
+.is-invalid~.invalid-feedback{
+	display: block;
+}
+/* END CUSTOM */

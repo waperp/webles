@@ -357,7 +357,7 @@
 		border: transparent;
 		width: 90px;
 		display: flex;
-		position: static;
+		position: absolute;
 		right: 0;
 		margin-top:34px;
 		flex-direction: row;
@@ -1192,6 +1192,16 @@
 	
 	.main-header .search-box-outer .dropdown-menu{
 		width:240px;
+	}
+	.main-header .header-upper {
+		position: relative;
+		top: 0;
+		background-color: #2baeaa;
+		-webkit-transition: all 300ms ease;
+		-moz-transition: all 300ms ease;
+		-ms-transition: all 300ms ease;
+		-o-transition: all 300ms ease;
+		transition: all 300ms ease;
 	}
 	
 }

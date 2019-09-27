@@ -5,12 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Cache;
-use Laravel\Passport\HasApiTokens;
+// use Laravel\Passport\HasApiTokens;
 
 class secusr extends Authenticatable
 {
-    use HasApiTokens;
-    use FullTextSearch;
+    // use HasApiTokens;
     public $timestamps  = false;
     protected $primaryKey = 'secusricode';
     protected $table = 'secusr';
