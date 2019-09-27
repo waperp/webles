@@ -15,15 +15,13 @@ class secusr extends Authenticatable
     protected $table = 'secusr';
     protected $fillable = [
         'secconnuuid',
-        'secusrtlogu',
         'secusrtpass',
-        'secusrtname',
+        'secusrtmail',
         'secusrdregu',
         'secusrdvalu',
         'constascode',
         'contypscode',
         'secusrbenbl',
-        'secusrvimgu',
         'hurempicode',
     ];
     protected $searchable = [
@@ -42,7 +40,7 @@ class secusr extends Authenticatable
     
     public function username()
     {
-        return $this->secusrtlogu;
+        return $this->secusrtmail;
     }
     public function scopePlayerInfo($query)
     {

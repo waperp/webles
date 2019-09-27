@@ -95,10 +95,10 @@
                             <div class="form-group">
                                 <div class="col-12">
                                     <span class="icon flaticon-user-2"></span>
-                                    <input class="@error('secusrtlogu') is-invalid @enderror" name="secusrtlogu"
-                                        value="{{ old('secusrtlogu') }}" required autocomplete="username" autofocus type="text"
-                                        name="username" placeholder="Tu nombre de usuario" required="">
-                                    @error('secusrtlogu')
+                                    <input class="@error('secusrtmail') is-invalid @enderror" 
+                                        value="{{ old('secusrtlogu') }}" required autocomplete="email" autofocus type="text"
+                                        name="secusrtmail" placeholder="Tu correo electronico" required="">
+                                    @error('secusrtmail')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>

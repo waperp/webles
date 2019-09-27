@@ -91,6 +91,7 @@ trait AuthenticatesUsers
      */
     protected function credentials(Request $request)
     {
+       
         return $request->only($this->username(), 'password');
     }
 
@@ -144,7 +145,7 @@ trait AuthenticatesUsers
      */
     public function username()
     {
-        return 'secusrtlogu';
+        return 'secusrtmail';
     }
 
     /**

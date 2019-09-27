@@ -29,7 +29,7 @@
                         <div class="image">
                             <img src="/images/defaultm.jpg" alt="">
                         </div>
-                        <span>{{ Auth::user()->secusrtname }}</span>
+                        <span>{{ Auth::user()->secusrtmail }}</span>
                     </div>
                     <div class="float-left">
                         <form action="{{ route('logout') }}" method="POST">
