@@ -14,15 +14,17 @@ class secusr extends Authenticatable
     protected $primaryKey = 'secusricode';
     protected $table = 'secusr';
     protected $fillable = [
-        'secusrtmail',
         'secconnuuid',
-        'secusrtface',
+        'secusrtlogu',
         'secusrtpass',
+        'secusrtname',
         'secusrdregu',
         'secusrdvalu',
+        'constascode',
         'contypscode',
         'secusrbenbl',
-        'plainficode'
+        'secusrvimgu',
+        'hurempicode',
     ];
     protected $searchable = [
         'secusrtmail'
@@ -36,6 +38,11 @@ class secusr extends Authenticatable
     public function getAuthPassword()
     {
         return $this->secusrtpass;
+    }
+    
+    public function username()
+    {
+        return $this->secusrtlogu;
     }
     public function scopePlayerInfo($query)
     {

@@ -109,7 +109,7 @@
                                 <div class="col-12">
                                     <span class="icon flaticon-success"></span>
                                     <input class="@error('password') is-invalid @enderror" name="password" required
-                                        autocomplete="current-password" type="password" name="email"
+                                        autocomplete="current-password" type="password" 
                                         placeholder="Tu contraseña" required="">
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
