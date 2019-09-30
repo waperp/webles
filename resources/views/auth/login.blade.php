@@ -94,7 +94,7 @@
                             @csrf
                             <div class="form-group">
                                 <div class="col-12">
-                                    <span class="icon flaticon-user-2"></span>
+                                    <span class="fa fa-user-circle"></span>
                                     <input class="@error('secusrtmail') is-invalid @enderror" 
                                         value="{{ old('secusrtlogu') }}" required autocomplete="email" autofocus type="text"
                                         name="secusrtmail" placeholder="Tu correo electronico" required="">
@@ -107,7 +107,7 @@
 
                             <div class="form-group">
                                 <div class="col-12">
-                                    <span class="icon flaticon-success"></span>
+                                    <span class="fa fa-key"></span>
                                     <input class="@error('password') is-invalid @enderror" name="password" required
                                         autocomplete="current-password" type="password" placeholder="Tu contraseña" required="">
                                     @error('password')
@@ -130,6 +130,7 @@
 
                             <div class="form-group">
                                 <button class="theme-btn submit-btn" type="submit" name="submit-form">LOGIN</button>
+                                <a class="theme-btn submit-btn btn-danger text-center" href="/">VOLVER</a>
                             </div>
 
                         </form>

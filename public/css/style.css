@@ -9691,3 +9691,23 @@ background-color: #2baeaa;
 }
 
 /* END CUSTOM */
+.btn-danger {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-danger:hover {
+    background: none !important;
+	color: #dc3545 !important;
+	color: #fff !important;
+}
+
+.form-group .fa {
+    position: absolute;
+    left: 0px;
+    top: 12px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1em;
+}
