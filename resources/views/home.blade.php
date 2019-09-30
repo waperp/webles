@@ -27,7 +27,7 @@
                     @auth
                     <div class="float-left text-white mr-2">
                         <div class="image">
-                            <img src="/images/{{ Auth::user()->employee()->hurempvimgh   }}" alt="">
+                            <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
                         </div>
                         <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
                     </div>
