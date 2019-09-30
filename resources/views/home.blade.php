@@ -27,9 +27,9 @@
                     @auth
                     <div class="float-left text-white mr-2">
                         <div class="image">
-                            <img src="/images/defaultm.jpg" alt="">
+                            <img src="/images/{{ Auth::user()->employee()->hurempvimgh   }}" alt="">
                         </div>
-                        <span>{{ Auth::user()->secusrtmail }}</span>
+                        <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
                     </div>
                     <div class="float-left">
                         <form action="{{ route('logout') }}" method="POST">

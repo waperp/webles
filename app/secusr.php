@@ -42,11 +42,11 @@ class secusr extends Authenticatable
     {
         return $this->secusrtmail;
     }
-    public function scopePlayerInfo($query)
+    public function scopeEmployee($query)
     {
-        return $query->select('*')
-            ->join('plainf', 'plainf.plainficode', 'secusr.plainficode')
-            ->where('plainf.plainficode', $this->plainficode)->first();
+        return $query
+            ->join('huremp', 'secusr.hurempicode', 'huremp.hurempicode')
+            ->where('secusr.secusricode', $this->secusricode)->first();
     }
     public function scopeMembership($query)
     {

@@ -96,7 +96,7 @@
                                 <div class="col-12">
                                     <span class="fa fa-user-circle"></span>
                                     <input class="@error('secusrtmail') is-invalid @enderror" 
-                                        value="{{ old('secusrtlogu') }}" required autocomplete="email" autofocus type="text"
+                                        value="{{ old('secusrtlogu') }}" id="secusrtmail" required autocomplete="email" autofocus type="text"
                                         name="secusrtmail" placeholder="Tu correo electronico" required="">
                                     @error('secusrtmail')
                                     <div class="invalid-feedback">{{ $message }}</div>
