@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
     function elementskit_event_manager(_event, _selector, _fn){
         $(document).on(_event, _selector, _fn);
     }
-
+	
     elementskit_event_manager('click', '.elementskit-dropdown-has > a', function (e) {
 		e.preventDefault();
 

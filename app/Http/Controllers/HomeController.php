@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $items = confrm::tree();
+        $items = confrm::tree(1);
         // return $items;
         // return Hash::make('123');
         return view('home', compact('items'));

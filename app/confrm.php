@@ -25,5 +25,9 @@ class confrm extends Model
         return static::with(implode('.', array_fill(0, 4, 'children')))->where('confrmsfcod', '=', NULL)->orderBy('confrmyorde','asc')->get();
 
     }
+    public static function treeAdmin() {
 
+        return static::with(implode('.', array_fill(0, 4, 'children')))->where('confrmsfcod', '=', NULL)->orderBy('confrmyorde','asc')->get();
+
+    }
 }
