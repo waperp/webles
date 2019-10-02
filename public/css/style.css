@@ -9118,7 +9118,7 @@ background-color: #2baeaa;
 }
 
 .main-header .elementskit-navbar-nav > li{
-	margin-right:30px;
+	margin-right:25px;
 	padding:25px 0px;
 }
 
@@ -9183,7 +9183,7 @@ background-color: #2baeaa;
     position: relative;
     display: block;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 35px;
     font-weight: 500;
     opacity: 1;
@@ -9270,18 +9270,23 @@ background-color: #2baeaa;
 
 .main-header .elementskit-submenu-panel > li > a{
 	position:relative;
-	padding:12px 5px;
+	padding:10px 5px;
 	color:#222222;
 	display:block;
-	font-size:15px;
+	font-size:14px;
 	font-weight:500;
 	text-transform:capitalize;
 	background:none;
 	
 }
 
+@media (min-width: 992px){
+.elementskit-dropdown {
+    min-width: 200px;
+}
 
 
+}
 
 
 

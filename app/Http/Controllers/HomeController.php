@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\confrm;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $items = confrm::tree();
+        // return $items;
         // return Hash::make('123');
-        return view('home');
+        return view('home', compact('items'));
     }
 }

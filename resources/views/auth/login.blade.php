@@ -82,7 +82,7 @@
 
             <!-- Form Column -->
             <div class="form-column col-12	col-sm-12	col-md-6	col-lg-6	col-xl-6 mx-auto">
-                <div class="inner-column">
+                <div class="inner-column" style="border-radius:10%">
                     <div class="title-box">
                         {{-- <div class="title">INICIAR SESIÓN</div> --}}
                         <h3>INICIAR SESIÓN</h3>
