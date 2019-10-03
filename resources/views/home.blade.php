@@ -44,7 +44,6 @@
                     @endauth
                     @guest
                     <a style="float:left; line-height: 15px;" href="/login" class="theme-btn btn-style-four">Login</a>
-
                     @endguest
                     <!-- Cart Button -->
 
