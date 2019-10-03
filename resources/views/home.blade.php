@@ -26,20 +26,44 @@
                 <div class="top-right clearfix">
                     @auth
                     <div class="float-left text-white mr-2">
-                        <div class="image">
-                            <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
+                        <!-- start menu item list -->
+                        <div class="elementskit-menu-container elementskit-menu-offcanvas-elements">
+                            <ul class="elementskit-navbar-nav nav-alignment-dynamic">
+                                {{-- <li class="elementskit-dropdown-has li-image">
+                                    
+                                    <ul class="elementskit-dropdown elementskit-submenu-panel">
+                                        <li><a >Perfil</a></li>
+                                        <li><a >Perfil</a></li>
+                                        {{-- 
+                                    </ul>
+                                </li> --}}
+                                <li class="elementskit-dropdown-has li-image p-0"><div class="image">
+                                        <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
+                                    </div>
+                                    <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
+                                    <ul class="elementskit-dropdown elementskit-submenu-panel">
+                                        <li><a href="about.html">Perfil</a></li>
+                                        <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                Cerrar Sesión
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
                     </div>
-                    <div class="float-left">
+                    {{-- <div class="float-left">
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button style="line-height: 15px;" title="Cerrar Sesión"
-                                class="theme-btn btn-style-four p-1"><span title="Cerrar Sesión"
-                                    class="fa fa-sign-out "></span>
+                                class="theme-btn btn-style-four p-1">
                             </button>
                         </form>
-                    </div>
+                    </div> --}}
 
                     @endauth
                     @guest
@@ -101,11 +125,11 @@
                         <!-- start menu item list -->
                         <ul class="elementskit-navbar-nav nav-alignment-dynamic">
                             @auth
-                                @if (Auth::user()->contypscode == 0)
-                                @include('layouts.menu-client')
-                                @else
-                                @include('layouts.menu-admin')
-                                @endif
+                            @if (Auth::user()->contypscode == 0)
+                            @include('layouts.menu-client')
+                            @else
+                            @include('layouts.menu-admin')
+                            @endif
                             @endauth
                             @guest
                             @include('layouts.menu-client')
@@ -115,33 +139,11 @@
                             {{-- <li class="elementskit-dropdown-has">
                                 <a href="#">Home</a>
                                 <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                    <li class="active"><a href="index.html">Home page 01</a></li>
-                                    <li><a href="index-2.html">Home page 02</a></li>
-                                    <li><a href="index-3.html">Home page 03</a></li>
-                                    <li><a href="onepage-1.html">One Page 01</a></li>
-                                    <li><a href="onepage-2.html">One Page 02</a></li>
-                                    <li><a href="onepage-3.html">One Page 03</a></li>
+                                   
                                     <li class="elementskit-dropdown-has"><a href="#">Header Style</a>
                                         <ul class="elementskit-dropdown elementskit-submenu-panel">
                                             <li class="active"><a href="index.html">Header Style 01</a></li>
-                                            <li><a href="index-2.html">Header Style 02</a></li>
-                                            <li><a href="index-3.html">Header Style 03</a></li>
-                                            <li class="elementskit-dropdown-has"><a href="#">Home Pages</a>
-                                                <ul
-                                                    class="elementskit-dropdown elementskit-submenu-panel open-fromleft">
-                                                    <li class="active"><a href="index.html">Home page 01</a></li>
-                                                    <li><a href="index-2.html">Home page 02</a></li>
-                                                    <li><a href="index-3.html">Home page 03</a></li>
-                                                    <li class="elementskit-dropdown-has"><a href="#">Header
-                                                            Style</a>
-                                                        <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                                            <li><a href="index.html">Header Style 01</a></li>
-                                                            <li><a href="index-2.html">Header Style 02</a></li>
-                                                            <li><a href="index-3.html">Header Style 03</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                            
                                         </ul>
                                     </li>
                                 </ul>

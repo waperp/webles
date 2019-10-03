@@ -9430,7 +9430,7 @@ background-color: #2baeaa;
 	position:absolute;
 	right:0px;
 	top:17px;
-	z-index:1;
+	z-index:0;
 }
 
 .main-header .xs-menu-tools li{
@@ -9669,7 +9669,7 @@ background-color: #2baeaa;
 }
 
 /* CUSTOM */
-.top-right > div > .image {
+.li-image > .image {
 	position: relative;
     width: 25px;
     height: 25px;
