@@ -21,7 +21,7 @@
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <meta charset="UTF-8">
     <meta name="description"
-        content="LES , LABORATORIO ENDOGENETICA SANTA CRUZ, QUÍMICA SANGUINEA!, INMUNOLOGÍA Y SEROLOGÍA!, HORMONAS - PRUEBAS ESPECIALES!">
+        content="LES, LABORATORIO ENDOGENETICA SANTA CRUZ, QUÍMICA SANGUINEA!, INMUNOLOGÍA Y SEROLOGÍA!, HORMONAS - PRUEBAS ESPECIALES!">
     <meta name="keywords" content="LAB. DE ANÁLISIS CLÍNICOS
 QUÍMICA SANGUINEA
 * Glucosa, Hemoglobina Glucosilada(HBA1C)
@@ -85,6 +85,7 @@ BACTERIOLOGÍA">
         <!-- Preloader -->
         <div class="preloader"></div>
         @yield('content')
+        @include('layouts.modal-perfil')
     </div>
     <script src="/js/jquery.js"></script>
     <script src="/js/popper.min.js"></script>

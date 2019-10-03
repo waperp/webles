@@ -9716,3 +9716,14 @@ background-color: #2baeaa;
     font-size: 18px;
     line-height: 1em;
 }
+
+.modal-backdrop{z-index: 0;}
+.modal{background-color: rgba(0, 0, 0, 0.7);}
+
+
+
+.modal-title-background{
+	background-color: rgba(34,58,102,0.90);
+	background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
+	color:white;
+}

@@ -29,20 +29,12 @@
                         <!-- start menu item list -->
                         <div class="elementskit-menu-container elementskit-menu-offcanvas-elements">
                             <ul class="elementskit-navbar-nav nav-alignment-dynamic">
-                                {{-- <li class="elementskit-dropdown-has li-image">
-                                    
-                                    <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                        <li><a >Perfil</a></li>
-                                        <li><a >Perfil</a></li>
-                                        {{-- 
-                                    </ul>
-                                </li> --}}
                                 <li class="elementskit-dropdown-has li-image p-0"><div class="image">
                                         <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
                                     </div>
                                     <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
                                     <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                        <li><a href="about.html">Perfil</a></li>
+                                        <li><a  data-toggle="modal" data-target="#exampleModal">Perfil</a></li>
                                         <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                                 Cerrar Sesión
                                             </a>
