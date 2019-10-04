@@ -9727,3 +9727,49 @@ background-color: #2baeaa;
 	background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
 	color:white;
 }
+
+#edit-perfil-image-preview {
+    flex-basis: 50%;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #ecf0f1;
+}
+
+#edit-perfil-image-preview {
+    margin: auto auto;
+    width: 200px;
+    height: 200px;
+    max-width: 250px;
+    max-height: 250px;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #ecf0f1;
+}
+#edit-perfil-image-preview label {
+    position: absolute;
+    z-index: 5;
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: #bdc3c7;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-transform: uppercase;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#edit-perfil-image-preview input {
+    line-height: 150px;
+    font-size: 150px;
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+}

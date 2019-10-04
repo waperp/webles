@@ -85,7 +85,10 @@ BACTERIOLOGÍA">
         <!-- Preloader -->
         <div class="preloader"></div>
         @yield('content')
+        @auth
         @include('layouts.modal-perfil')
+            
+        @endauth
     </div>
     <script src="/js/jquery.js"></script>
     <script src="/js/popper.min.js"></script>
@@ -102,6 +105,10 @@ BACTERIOLOGÍA">
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/appear.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/jquery.uploadPreview.js">
+    </script>
+    <script src="/js/index.js"></script>
+    
 </body>
 
 </html>

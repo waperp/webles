@@ -19,3 +19,4 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::resource('secusr', 'secusrController');
