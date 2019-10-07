@@ -107,6 +107,7 @@ BACTERIOLOGÍA">
     <script src="/js/script.js"></script>
     <script src="/js/jquery.uploadPreview.js">
     </script>
+    <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/index.js"></script>
     
 </body>

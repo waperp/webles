@@ -80,7 +80,7 @@ class secusrController extends Controller
             $imageName = Str::random(30) . '.' . $request->file('hurempvimgh')->getClientOriginalExtension();
             $request->file('hurempvimgh')->move(base_path() . '/public/images/', $imageName);
         } else {
-            $imageName = "user.png";
+            $imageName = null;
         }
         // return $imageName;
         $secusr = secusr::join('huremp', 'huremp.hurempicode', 'secusr.hurempicode')
@@ -92,7 +92,10 @@ class secusrController extends Controller
 
        }
         $huremp->huremptfnam = $request->huremptfnam ;
-        $huremp->hurempvimgh = $imageName;
+        if($imageName != null){
+            $huremp->hurempvimgh = $imageName;
+
+        }
         $secusr->save();
         $huremp->save();
         return redirect('/');
