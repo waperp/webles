@@ -7,9 +7,9 @@
         input_field: ".image-input",
         preview_box: ".image-preview",
         label_field: ".image-label",
-        label_default: "Choose File",
-        label_selected: "Change File",
-        no_label: false,
+        label_default: "Elija una Foto",
+        label_selected: "Cambiar Foto",
+        no_label: true,
         success_callback : null,
       }, options);
 
@@ -34,7 +34,7 @@
                   $(settings.preview_box).css("background-size", "100%");
                   $(settings.preview_box).css("background-repeat", "no-repeat");
                   $(settings.preview_box).css("background-position", "50% 50%");
-                  $(settings.preview_box).css("padding", "30px");
+                  $(settings.preview_box).css("padding", "0");
                  ;
                 } else if (file.type.match('audio')) {
                   // Audio

@@ -9745,14 +9745,16 @@ background-color: #2baeaa;
     position: relative;
     overflow: hidden;
     background-color: #ffffff;
-    color: #ecf0f1;
+	color: #ecf0f1;
+	background: none ;
 }
 #edit-perfil-image-preview label {
     position: absolute;
     z-index: 5;
     opacity: 0.8;
     cursor: pointer;
-    background-color: #bdc3c7;
+	background-color: white;
+	color: black;
     width: 200px;
     height: 50px;
     font-size: 20px;
@@ -9772,4 +9774,32 @@ background-color: #2baeaa;
     position: absolute;
     opacity: 0;
     z-index: 10;
+}
+
+.modal-header .close {
+	color: white !important;
+    width: 33px;
+    height: 33px;
+    padding: 0;
+    line-height: 33px;
+    border-radius: 50%;
+    color: #fff;
+    opacity: 1;
+    margin: 0;
+    text-shadow: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(50%,-50%);
+    transform: translate(50%,-50%);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
+}
+.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+    opacity: .75;
+}
+
+.modal--login .modal-header .close:hover {
+    background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
 }

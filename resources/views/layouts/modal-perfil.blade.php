@@ -1,8 +1,8 @@
 <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header modal-title-background">
-                <h5 class="modal-title">Actualizar Perfil</h5>
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold">Actualizar Perfil</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="form-group ">
                                                 <span class="fa fa-key"></span>
-                                                <input required type="password" name="secusrtpass" placeholder="Nueva Contraseña">
+                                                <input  type="password" name="secusrtpass" placeholder="Nueva Contraseña">
                                             </div>
 {{-- 
                                             <div class="form-group ">
