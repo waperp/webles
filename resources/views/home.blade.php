@@ -1392,6 +1392,7 @@
                             <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> --}}
                         </ul>
                         <h3><a href="#">{{ $childrens->confrmttitl }}</a></h3>
+                        <span>{{ $childrens->confrmtdesc }}</span>
                     </div>
                 </div>
             </div>
