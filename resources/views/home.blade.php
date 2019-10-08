@@ -104,58 +104,101 @@
 </section>
 <!-- End Bnner Section -->
 
+
 <!-- Services Form Section -->
 <section class="services-form-section">
-    <div class="image-layer" style="background-image:url(images/background/1.png)"></div>
-    <div class="container ">
-
-        <!-- Services Form -->
-        <div class="services-form">
-
-            <!--Contact Form-->
-            <form method="post" action="contact.html">
-                <div class="row">
-
-                    <!--Form Group-->
-                    <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                        <div class="map-icon fas fa-map-marker-alt"></div>
-                        <div class="location-icon icon-target"></div>
-                        <select class="custom-select-box">
-                            <option>Select your area</option>
-                            <option>Area One</option>
-                            <option>Area Two</option>
-                            <option>Area Three</option>
-                            <option>Area Four</option>
-                        </select>
+        <div class="image-layer" style="background-image:url(images/background/1.png)"></div>
+        <div class="container ">
+    
+            <!-- Services Form -->
+            <div class="services-form">
+    
+                <!--Contact Form-->
+                <form method="post" action="contact.html">
+                    <div class="row">
+    
+                        <!--Form Group-->
+                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                            <div class="map-icon fas fa-map-marker-alt"></div>
+                            <div class="location-icon icon-target"></div>
+                            <select class="custom-select-box">
+                                <option>Select your area</option>
+                                <option>Area One</option>
+                                <option>Area Two</option>
+                                <option>Area Three</option>
+                                <option>Area Four</option>
+                            </select>
+                        </div>
+    
+                        <!--Form Group-->
+                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                            <select class="custom-select-box">
+                                <option>Select Service type</option>
+                                <option>Service One</option>
+                                <option>Service Two</option>
+                                <option>Service Three</option>
+                                <option>Service Four</option>
+                            </select>
+                        </div>
+    
+                        <!--Form Group-->
+                        <div class="form-group button-group col-lg-4 col-md-12 col-sm-12">
+                            <div class="left-curves"></div>
+                            <div class="right-curves"></div>
+                            <button class="theme-btn submit-btn" type="submit" name="submit-form">Get Your Service
+                                Now</button>
+                        </div>
+    
                     </div>
-
-                    <!--Form Group-->
-                    <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                        <select class="custom-select-box">
-                            <option>Select Service type</option>
-                            <option>Service One</option>
-                            <option>Service Two</option>
-                            <option>Service Three</option>
-                            <option>Service Four</option>
-                        </select>
-                    </div>
-
-                    <!--Form Group-->
-                    <div class="form-group button-group col-lg-4 col-md-12 col-sm-12">
-                        <div class="left-curves"></div>
-                        <div class="right-curves"></div>
-                        <button class="theme-btn submit-btn" type="submit" name="submit-form">Get Your Service
-                            Now</button>
-                    </div>
-
-                </div>
-            </form>
-
+                </form>
+    
+            </div>
+    
         </div>
+    </section>
+    <!-- End Services Form Section -->
+<!-- News Section -->
+@php
+    $valores = App\confrm::nivel(6);
+@endphp
+<section class="news-section" id="menu-{{ Str::slug($valores->confrmttitl) }}">
+    <div class="pattern-layer-one" style="background-image:url(images/background/pattern-6.png)"></div>
+    <div class="pattern-layer-two" style="background-image:url(images/background/pattern-7.png)"></div>
+    <div class="container">
+        <!-- Sec Title -->
+        <div class="section-title text-center">
+            <h2>VALORES</h2>
+            {{-- <div class="text">The hospital plays a statewide role in rehabilitation services, which includes the
+                Acquired</div> --}}
+        </div>
+        <div class="news-carousel owl-carousel owl-theme">
 
+            <!-- News Block -->
+           
+
+           @foreach (App\confrm::childrens(6) as $childrens)
+           <div class="news-block">
+                <div class="inner-box">
+                    <div class="image">
+                        <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
+                        <div class="post-date"><strong>{{ $childrens->confrmscode }}</strong>dec</div>
+                    </div>
+                    <div class="lower-content">
+                        <ul class="post-meta">
+                            {{-- <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
+                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> --}}
+                        </ul>
+                        <h3><a href="#">{{ $childrens->confrmttitl }}</a></h3>
+                        <span>{{ $childrens->confrmtdesc }}</span>
+                    </div>
+                </div>
+            </div>
+           @endforeach
+        </div>
     </div>
 </section>
-<!-- End Services Form Section -->
+<!-- End News Section -->
+
 
 <!-- Featured Section -->
 <section class="featured-section">
@@ -1360,47 +1403,7 @@
 </section>
 <!-- End Testimonial Section -->
 
-<!-- News Section -->
-@php
-    $valores = App\confrm::nivel(6);
-@endphp
-<section class="news-section" id="menu-{{ Str::slug($valores->confrmttitl) }}">
-    <div class="pattern-layer-one" style="background-image:url(images/background/pattern-6.png)"></div>
-    <div class="pattern-layer-two" style="background-image:url(images/background/pattern-7.png)"></div>
-    <div class="container">
-        <!-- Sec Title -->
-        <div class="section-title text-center">
-            <h2>VALORES</h2>
-            {{-- <div class="text">The hospital plays a statewide role in rehabilitation services, which includes the
-                Acquired</div> --}}
-        </div>
-        <div class="news-carousel owl-carousel owl-theme">
 
-            <!-- News Block -->
-           
-
-           @foreach (App\confrm::childrens(6) as $childrens)
-           <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        <div class="post-date"><strong>{{ $childrens->confrmscode }}</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            {{-- <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> --}}
-                        </ul>
-                        <h3><a href="#">{{ $childrens->confrmttitl }}</a></h3>
-                        <span>{{ $childrens->confrmtdesc }}</span>
-                    </div>
-                </div>
-            </div>
-           @endforeach
-        </div>
-    </div>
-</section>
-<!-- End News Section -->
 
 <!--Sponsors Section-->
 <section class="sponsors-section">
