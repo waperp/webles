@@ -1384,7 +1384,7 @@
                 <div class="inner-box">
                     <div class="image">
                         <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        {{-- <div class="post-date"><strong>25</strong>dec</div> --}}
+                        <div class="post-date"><strong>{{ $childrens->confrmscode }}</strong>dec</div>
                     </div>
                     <div class="lower-content">
                         <ul class="post-meta">
