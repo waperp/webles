@@ -30,4 +30,10 @@ class confrm extends Model
         return static::with(implode('.', array_fill(0, 4, 'children')))->where('confrmbenbl',1)->where('confrmsfcod', '=', NULL)->orderBy('confrmyorde','asc')->get();
 
     }
+    public static function nivel($confrmscode){
+        return static::where('confrmscode',$confrmscode)->first();
+    }
+    public static function childrens($confrmsfcod){
+        return static::where('confrmsfcod',$confrmsfcod)->get();
+    }
 }

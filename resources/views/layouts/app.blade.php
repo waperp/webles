@@ -84,10 +84,10 @@ BACTERIOLOGÍA">
     <div class="page-wrapper">
         <!-- Preloader -->
         <div class="preloader"></div>
+        @include('layouts.header')
         @yield('content')
         @auth
         @include('layouts.modal-perfil')
-            
         @endauth
     </div>
     <script src="/js/jquery.js"></script>

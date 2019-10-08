@@ -3,239 +3,7 @@
 @section('content')
 
 
-<!-- header section -->
-<header class="elementskit-header main-header">
 
-    <div class="header-top">
-        <div class="container ">
-            <div class="top-outer clearfix">
-                <!-- Top Left -->
-                <ul class="top-left">
-                    {{-- <li>
-                            <div class="image">
-                                <img src="images/resource/author-1.jpg" alt=""> 
-                            </div>
-                            <span>Miguel Angel</span>
-                        </li> --}}
-                    {{-- <li><span class="icon flaticon-clock-1"></span>Mon-Fri (8am - 6pm)</li>
-                        <li><a href="mailto:info@example.com"><span
-                                    class="icon flaticon-letter"></span>info@example.com</a></li> --}}
-                </ul>
-
-                <!-- Top Right -->
-                <div class="top-right clearfix">
-                    @auth
-                    <div class="float-left text-white mr-2">
-                        <!-- start menu item list -->
-                        <div class="elementskit-menu-container elementskit-menu-offcanvas-elements">
-                            <ul class="elementskit-navbar-nav nav-alignment-dynamic">
-                                <li class="elementskit-dropdown-has li-image p-0"><div class="image">
-                                        <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
-                                    </div>
-                                    <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
-                                    <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                        <li><a  data-toggle="modal" data-target="#exampleModal">Perfil</a></li>
-                                        <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                                Cerrar Sesión
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    {{-- <div class="float-left">
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button style="line-height: 15px;" title="Cerrar Sesión"
-                                class="theme-btn btn-style-four p-1">
-                            </button>
-                        </form>
-                    </div> --}}
-
-                    @endauth
-                    @guest
-                    <a style="float:left; line-height: 15px;" href="/login" class="theme-btn btn-style-four">Login</a>
-                    @endguest
-                    <!-- Cart Button -->
-
-
-                    <!-- Main Menu End-->
-                    <div class="nav-box">
-                        <div class="nav-btn nav-toggler navSidebar-button"><span class="icon flaticon-menu-3"></span>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- End Header Top -->
-
-    <!-- Header Upper -->
-    <div class="header-upper">
-        <!-- xs-container -->
-        <div class="container">
-            <div class="xs-navbar clearfix">
-
-                <div class="logo-outer">
-                    <div class="logo"><a href="/"><img src="images/logo.png" alt="" title=""></a></div>
-                </div>
-
-                <nav class="elementskit-navbar">
-
-                    <!-- ---------------------------------------
-                                        // god menu markup start
-                                    ---------------------------------------- -->
-
-                    <div class="xs-mobile-search">
-                        <a href="#modal-popup-2" class="xs-modal-popup"><i class="icon icon-search"></i></a>
-                    </div>
-
-                    <!-- start humberger (for offcanvas toggler) -->
-                    <button class=" elementskit-menu-toggler xs-bold-menu">
-
-                        <div class="xs-gradient-group">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <span>
-                            Menu
-                        </span>
-                    </button>
-                    <!-- end humberger -->
-
-                    <!-- start menu container -->
-                    <div class="elementskit-menu-container elementskit-menu-offcanvas-elements">
-
-                        <!-- start menu item list -->
-                        <ul class="elementskit-navbar-nav nav-alignment-dynamic">
-                            @auth
-                            @if (Auth::user()->contypscode == 0)
-                            @include('layouts.menu-client')
-                            @else
-                            @include('layouts.menu-admin')
-                            @endif
-                            @endauth
-                            @guest
-                            @include('layouts.menu-client')
-                            @endguest
-
-
-                            {{-- <li class="elementskit-dropdown-has">
-                                <a href="#">Home</a>
-                                <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                   
-                                    <li class="elementskit-dropdown-has"><a href="#">Header Style</a>
-                                        <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                            <li class="active"><a href="index.html">Header Style 01</a></li>
-                                            
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="elementskit-dropdown-has"><a href="#">About</a>
-                                <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="pricing.html">Pricing</a></li>
-                                    <li><a href="appointment.html">Appointment</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="department.html">Department</a></li>
-
-                            <li class="elementskit-dropdown-has"><a href="#">Doctor</a>
-                                <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                    <li><a href="doctor.html">doctor</a></li>
-                                    <li><a href="doctor-detail.html">doctor Detail</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="elementskit-dropdown-has"><a href="#">Services</a>
-                                <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="services-detail.html">Services Detail</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="contact.html">Contact</a></li>
-
-                            <li class="elementskit-megamenu-has elementskit-dropdown-has">
-                                <a href="#">Megamenu</a>
-                                <ul class="elementskit-dropdown elementskit-megamenu-panel">
-                                    <li>
-                                        <ul class="megamenu_lists">
-                                            <li><a href="index.html">Home page 01</a></li>
-                                            <li><a href="index-2.html">Home page 02</a></li>
-                                            <li><a href="index-3.html">Home page 03</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul class="megamenu_lists">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="appointment.html">Appointment</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul class="megamenu_lists">
-                                            <li><a href="department.html">Department</a></li>
-                                            <li><a href="doctor.html">doctor</a></li>
-                                            <li><a href="doctor-detail.html">doctor Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul class="megamenu_lists">
-                                            <li><a href="index.html">Home page 01</a></li>
-                                            <li><a href="index-2.html">Home page 02</a></li>
-                                            <li><a href="index-3.html">Home page 03</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li> --}}
-                        </ul> <!-- end menu item list -->
-
-
-                        <!-- start menu logo and close button (for mobile offcanvas menu) -->
-                        <div class="elementskit-nav-identity-panel">
-                            <h1 class="elementskit-site-title">
-                                <a href="#" class="elementskit-nav-logo">Megamenu</a>
-                            </h1>
-                            <button class="elementskit-menu-close elementskit-menu-toggler" type="button"><i
-                                    class="icon icon-cross"></i></button>
-                        </div>
-                        <!-- end menu logo and close button -->
-
-                    </div>
-                    <!-- end menu container -->
-
-                    <!-- start offcanvas overlay -->
-                    <div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler">
-                    </div>
-                    <!-- end offcanvas overlay -->
-                    <!-- ---------------------------------------
-                                        // god menu markup end
-                                    ---------------------------------------- -->
-
-                </nav>
-                <ul class="xs-menu-tools">
-                    <li>
-                        <a href="#modal-popup-2" class="navsearch-button xs-modal-popup"><i
-                                class="icon icon-search"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- .container END -->
-</header><!-- End header section -->
 
 <!-- Bnner Section -->
 <section class="banner-section">
@@ -1593,171 +1361,41 @@
 <!-- End Testimonial Section -->
 
 <!-- News Section -->
-<section class="news-section">
+@php
+    $valores = App\confrm::nivel(6);
+@endphp
+<section class="news-section" id="menu-{{ Str::slug($valores->confrmttitl) }}">
     <div class="pattern-layer-one" style="background-image:url(images/background/pattern-6.png)"></div>
     <div class="pattern-layer-two" style="background-image:url(images/background/pattern-7.png)"></div>
     <div class="container">
         <!-- Sec Title -->
         <div class="section-title text-center">
-            <h2>News & Blog</h2>
-            <div class="text">The hospital plays a statewide role in rehabilitation services, which includes the
-                Acquired</div>
+            <h2>VALORES</h2>
+            {{-- <div class="text">The hospital plays a statewide role in rehabilitation services, which includes the
+                Acquired</div> --}}
         </div>
         <div class="news-carousel owl-carousel owl-theme">
 
             <!-- News Block -->
-            <div class="news-block">
+           
+
+           @foreach (App\confrm::childrens(6) as $childrens)
+           <div class="news-block">
                 <div class="inner-box">
                     <div class="image">
                         <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        <div class="post-date"><strong>25</strong>dec</div>
+                        {{-- <div class="post-date"><strong>25</strong>dec</div> --}}
                     </div>
                     <div class="lower-content">
                         <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
+                            {{-- <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
+                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> --}}
                         </ul>
-                        <h3><a href="blog-detail.html">Hospital doctors examine patients so that...</a></h3>
+                        <h3><a href="#">{{ $childrens->confrmttitl }}</a></h3>
                     </div>
                 </div>
             </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt="" /></a>
-                        <div class="post-date"><strong>26</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">The website of the Royal Melbourne Hospital...</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt="" /></a>
-                        <div class="post-date"><strong>28</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">Result is a regal and trust worthy look that...</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        <div class="post-date"><strong>25</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">Hospital doctors examine patients so that...</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt="" /></a>
-                        <div class="post-date"><strong>26</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">The website of the Royal Melbourne Hospital...</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt="" /></a>
-                        <div class="post-date"><strong>28</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">Result is a regal and trust worthy look that...</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        <div class="post-date"><strong>25</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">Hospital doctors examine patients so that...</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt="" /></a>
-                        <div class="post-date"><strong>26</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">The website of the Royal Melbourne Hospital...</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt="" /></a>
-                        <div class="post-date"><strong>28</strong>dec</div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li>
-                        </ul>
-                        <h3><a href="blog-detail.html">Result is a regal and trust worthy look that...</a></h3>
-                    </div>
-                </div>
-            </div>
-
+           @endforeach
         </div>
     </div>
 </section>

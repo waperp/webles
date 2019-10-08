@@ -24,23 +24,29 @@ CREATE TABLE `confrm` (
   `confrmscode` smallint(6) NOT NULL,
   `secconnuuid` char(108) NOT NULL,
   `confrmttitl` varchar(100) NOT NULL,
+  `confrmtdesc` varchar(500) DEFAULT NULL,
   `confrmyorde` tinyint(1) NOT NULL,
-  `confrmvimgf` text DEFAULT NULL,
+  `confrmvbigi` text DEFAULT NULL,
+  `confrmvsmai` text DEFAULT NULL,
   `confrmbenbl` tinyint(1) NOT NULL,
   `confrmsfcod` smallint(6) DEFAULT NULL,
-  `confrmyleve` tinyint(1) NOT NULL,
   `confrmyadmf` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`confrmscode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `confrm` */
 
-insert  into `confrm`(`confrmscode`,`secconnuuid`,`confrmttitl`,`confrmyorde`,`confrmvimgf`,`confrmbenbl`,`confrmsfcod`,`confrmyleve`,`confrmyadmf`) values 
-(0,'5c02460f-ceal-4de9-aa5b-de811d5324c3','INICIO',0,NULL,1,NULL,1,0),
-(1,'4b01470f-b11a-4de9-aa5b-de900d5324c3','QUIENES SOMOS',1,NULL,1,NULL,1,0),
-(2,'3c01470f-b11a-4de9-aa5b-de811d5324c3','SERVICIOS',2,NULL,1,NULL,1,0),
-(3,'4a01830f-ac1a-4de9-aa5b-de811d5324c3','REDES SOCIALES',3,NULL,1,NULL,1,0),
-(4,'4a02460f-ac1a-4de9-aa5b-de811d5324c3','CONTACTOS',4,NULL,1,NULL,1,0);
+insert  into `confrm`(`confrmscode`,`secconnuuid`,`confrmttitl`,`confrmtdesc`,`confrmyorde`,`confrmvbigi`,`confrmvsmai`,`confrmbenbl`,`confrmsfcod`,`confrmyadmf`) values 
+(0,'5c02460f-ceal-4de9-aa5b-de811d5324c3','INICIO',NULL,0,NULL,NULL,1,NULL,0),
+(1,'4b01470f-b11a-4de9-aa5b-de900d5324c3','QUIENES SOMOS',NULL,1,NULL,NULL,1,NULL,0),
+(2,'3c01470f-b11a-4de9-aa5b-de811d5324c3','SERVICIOS',NULL,2,NULL,NULL,1,NULL,0),
+(3,'4a01830f-ac1a-4de9-aa5b-de811d5324c3','REDES SOCIALES',NULL,3,NULL,NULL,1,NULL,0),
+(4,'4a02460f-ac1a-4de9-aa5b-de811d5324c3','CONTACTOS',NULL,4,NULL,NULL,1,NULL,0),
+(5,'2b02460f-nn1a-4de9-aa5b-de811d5324c3','ADMINISTRACION',NULL,5,NULL,NULL,1,NULL,1),
+(6,'4f02460f-nn1a-4de9-aa5b-ff811d5324b4','Valores',NULL,0,NULL,NULL,1,1,0),
+(7,'3g02460f-ss1a-4de9-aa5b-de811d5324c3','Institución',NULL,1,NULL,NULL,1,1,0),
+(8,'3e05460f-ab1a-4de9-aa5b-de811d5324c3','Mision',NULL,0,NULL,NULL,1,6,0),
+(9,'2b03360f-ac1a-4de9-aa5b-de811d5324c3','Vision',NULL,1,NULL,NULL,1,6,0);
 
 /*Table structure for table `contyp` */
 
@@ -68,17 +74,19 @@ CREATE TABLE `huremp` (
   `secconnuuid` char(108) NOT NULL,
   `huremptfnam` varchar(75) NOT NULL,
   `hurempbgend` tinyint(1) NOT NULL,
+  `hurempddobh` date DEFAULT NULL,
   `hurempidocn` int(11) NOT NULL,
-  `hurempvimgh` text NOT NULL,
+  `hurempvimgh` text DEFAULT NULL,
   `huremptinco` text NOT NULL,
   `hurempbenbl` tinyint(1) NOT NULL,
   PRIMARY KEY (`hurempicode`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `huremp` */
 
-insert  into `huremp`(`hurempicode`,`secconnuuid`,`huremptfnam`,`hurempbgend`,`hurempidocn`,`hurempvimgh`,`huremptinco`,`hurempbenbl`) values 
-(1,'5a01830f-b11a-4de9-bb5b-de900d5324c3','Miguel Angel',1,8255180,'defaultm.jpg\r\n','de',1);
+insert  into `huremp`(`hurempicode`,`secconnuuid`,`huremptfnam`,`hurempbgend`,`hurempddobh`,`hurempidocn`,`hurempvimgh`,`huremptinco`,`hurempbenbl`) values 
+(1,'5a01830f-b11a-4de9-bb5b-de900d5324c3','Miguel Angel',1,'1992-02-14',8255180,'defaultm.jpg\r\n','0',1),
+(2,'2a03240f-b11a-4de9-bb5b-de754d5324c3','Dante Rojas Lizondo',1,'1980-10-21',5350253,'en4d270VuCZgj3xcknJkn076MExAJR.png','0',1);
 
 /*Table structure for table `secusr` */
 
@@ -102,7 +110,8 @@ CREATE TABLE `secusr` (
 /*Data for the table `secusr` */
 
 insert  into `secusr`(`secusricode`,`secconnuuid`,`secusrtmail`,`secusrtpass`,`secusrdregu`,`secusrdvalu`,`constascode`,`contypscode`,`secusrbenbl`,`hurempicode`,`remember_token`) values 
-(1,'5a01470f-b11a-4de9-aa5b-de900d5324c3','miguelhangelh@hotmail.com','$2y$10$CSGEI9oFD.Ypd5fHZeNSe.n9bYg23v9rueuucnFzHOQ1fvsN.4nQe','2018-06-03','2018-06-03',1,1,1,1,NULL);
+(1,'5a01470f-b11a-4de9-aa5b-de900d5324c3','miguelhangelh@hotmail.com','$2y$10$CSGEI9oFD.Ypd5fHZeNSe.n9bYg23v9rueuucnFzHOQ1fvsN.4nQe','2018-06-03','2018-06-03',1,1,1,1,NULL),
+(2,'3c01870f-cffa-4de9-aa5b-de900d5324c3','rojasldante@gmail.com','$2y$10$Gm32O1XdyGsu7Tc2lV/.EOSoV4S0x3ZOGWoq8xjdzeHOnDuEAbm8e','2018-09-30','2019-09-30',1,1,1,2,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
