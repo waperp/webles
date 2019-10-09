@@ -1,7 +1,8 @@
 @extends('layouts.app')
-@include('layouts.header')
+
 
 @section('content')
+@include('layouts.header')
 <!-- Bnner Section -->
 <section class="banner-section">
     <div class="banner-carousel owl-carousel owl-theme">

@@ -87,9 +87,8 @@ class secusrController extends Controller
         ->where('secusr.secusricode', \Auth::user()->secusricode)->first();
         $huremp = huremp::join('secusr', 'huremp.hurempicode', 'secusr.hurempicode')
         ->where('huremp.hurempicode', \Auth::user()->hurempicode)->first();
-       if($request->has('secusrtpass')){
-        $secusr->secusrtpass =  Hash::make($request->secusrtpass);
-
+       if($request->secusrtpass != null){
+            $secusr->secusrtpass =  Hash::make($request->secusrtpass);
        }
         $huremp->huremptfnam = $request->huremptfnam ;
         if($imageName != null){
