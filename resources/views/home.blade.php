@@ -169,8 +169,7 @@
         <!-- Sec Title -->
         <div class="section-title text-center">
             <h2>{{ $item->confrmttitl }}</h2>
-            {{-- <div class="text">The hospital plays a statewide role in rehabilitation services, which includes the
-                Acquired</div> --}}
+            <div class="text">{{$item->confrmtdesc  }}</div>
         </div>
         <div class="news-carousel owl-carousel owl-theme">
 
