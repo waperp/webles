@@ -12,7 +12,7 @@
                     @if ($child['children']->count() <=  0)
                     <li><a href="#menu-{{ Str::slug($child->confrmttitl) }}"><i class="{{ $child->confrmvsmai }}"></i> {{ $child->confrmttitl }}</a></li>
                     @else
-                        <li class="elementskit-dropdown-has"><a href="#"><i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
+                        <li class="elementskit-dropdown-has"><a href="#"><i class="{{ $child->confrmvsmai }}"></i> {{ $child->confrmttitl }}</a>
                             @if($child->confrmyadmf == 0)
                             <ul class="elementskit-dropdown elementskit-submenu-panel">
                             @foreach($child['children'] as $child2)
