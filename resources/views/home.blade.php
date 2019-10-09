@@ -159,15 +159,16 @@
     <!-- End Services Form Section -->
 <!-- News Section -->
 @php
-    $valores = App\confrm::nivel(6);
+    $quienesSomos = App\confrm::childrens(1);
 @endphp
-<section class="news-section" id="menu-{{ Str::slug($valores->confrmttitl) }}">
+@foreach ($quienesSomos as $item)
+<section class="news-section" id="menu-{{ Str::slug($item->confrmttitl) }}">
     <div class="pattern-layer-one" style="background-image:url(images/background/pattern-6.png)"></div>
     <div class="pattern-layer-two" style="background-image:url(images/background/pattern-7.png)"></div>
     <div class="container">
         <!-- Sec Title -->
         <div class="section-title text-center">
-            <h2>VALORES</h2>
+            <h2>{{ $item->confrmttitl }}</h2>
             {{-- <div class="text">The hospital plays a statewide role in rehabilitation services, which includes the
                 Acquired</div> --}}
         </div>
@@ -176,20 +177,20 @@
             <!-- News Block -->
            
 
-           @foreach (App\confrm::childrens(6) as $childrens)
+           @foreach ($item->sections as $childrens)
            <div class="news-block">
                 <div class="inner-box">
                     <div class="image">
                         <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        <div class="post-date"><strong>{{ $childrens->confrmscode }}</strong>dec</div>
+                        <div class="post-date"><strong>{{ $childrens->confrsscode }}</strong>dec</div>
                     </div>
                     <div class="lower-content">
                         <ul class="post-meta">
                             {{-- <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
                             <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> --}}
                         </ul>
-                        <h3><a href="#">{{ $childrens->confrmttitl }}</a></h3>
-                        <span>{{ $childrens->confrmtdesc }}</span>
+                        <h3><a href="#">{{ $childrens->confrsttitl }}</a></h3>
+                        <span>{{ $childrens->confrstdesc }}</span>
                     </div>
                 </div>
             </div>
@@ -197,6 +198,8 @@
         </div>
     </div>
 </section>
+@endforeach
+
 <!-- End News Section -->
 
 

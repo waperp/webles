@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\confrm;
+use App\confrs;
 
 class HomeController extends Controller
 {
@@ -25,9 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $items = confrm::tree(1);
+        // return confrm::where('confrmscode',6)->first()->sections;
         // return $items;
         // return Hash::make('123');
-        return view('home', compact('items'));
+        return view('home');
     }
 }
