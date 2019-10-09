@@ -29,9 +29,9 @@
                                         </div>
                                         <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
                                         <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                            <li><a  data-toggle="modal" data-target="#exampleModal">Perfil</a></li>
+                                            <li><a  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user-o"></i> Perfil</a></li>
                                             <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                                    Cerrar Sesión
+                                                   <i class="fa fa-sign-out"></i> Cerrar Sesión
                                                 </a>
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                                     style="display: none;">
