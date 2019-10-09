@@ -9811,8 +9811,14 @@ input:-webkit-autofill {
 
 .fa {
 	color: #1cba9f;
+
 }
 
 .main-header .elementskit-dropdown > li:hover > a >i {
-    color: #ffffff;
+	color: #ffffff;
+	
+}
+.main-header .elementskit-dropdown > li > a >i {
+ margin-right: 8px
+	
 }
