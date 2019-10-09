@@ -9809,3 +9809,10 @@ input:-webkit-autofill {
 	background-color: none !important;
   }
 
+.fa {
+	color: #1cba9f;
+}
+
+.main-header .elementskit-dropdown > li:hover > a >i {
+    color: #ffffff;
+}
