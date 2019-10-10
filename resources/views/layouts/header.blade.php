@@ -31,11 +31,11 @@
                     @auth
                     <div class="top-right-content float-left text-white mr-2">
                             <div class="user-movil">
-                                    <div class="image">
+                                    <div data-toggle="modal" data-target="#exampleModal" class="image">
                                             <img src="images/resource/author-1.jpg" alt=""> 
                                             
                                         </div>
-                                        <span class="float-left">Miguel Angel </span>
+                                        <span data-toggle="modal" data-target="#exampleModal" class="float-left">Miguel Angel </span>
                                         <form action="{{ route('logout') }}" method="POST" class="float-right">
                                                 @csrf
                                                 <button style="line-height: 15px;" title="Cerrar Sesión" class="theme-btn btn-style-four p-1">
