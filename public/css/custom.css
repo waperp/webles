@@ -1,15 +1,42 @@
+.user-movil {
+    display: none;
+}
+.user-normal {
+    display: block;
+}
+
 @media only screen and (max-width: 767px) {
     .main-header .header-top, .xs-mobile-hide {
-        display: block ;
+        display: block;
     }
     .header-top .top-right .nav-box, .header-top .top-right .cart-btn {
         display: none;
         float: none;
     }
-    .header-top .top-right > a{
+    .header-top .top-right>a {
         float: right !important;
     }
     .header-top.loggin {
+        display: block;
+    }
+    .user-movil {
+        display: block;
+    }
+    .user-normal {
         display: none;
     }
 }
+
+.user-movil  .image {
+	position: relative;
+    width: 25px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+    border-radius: 50%;
+    /* margin-left: -20px; */
+	border: 2px solid #ffffff;
+	margin-right: 5px;
+    /* z-index: 555; */
+}
+

@@ -19,7 +19,7 @@
                                 <div class="image">
                                     <img src="images/resource/author-1.jpg" alt=""> 
                                 </div>
-                                <span>Miguel Angel</span>
+                                <span>Miguel Angel </span>
                             </li>
                          <li><span class="icon flaticon-clock-1"></span>Mon-Fri (8am - 6pm)</li>
                             <li><a href="mailto:info@example.com"><span
@@ -30,7 +30,22 @@
                 <div class="top-right clearfix">
                     @auth
                     <div class="float-left text-white mr-2">
+                            <div class="user-movil">
+                                    <div class="image">
+                                            <img src="images/resource/author-1.jpg" alt=""> 
+                                            
+                                        </div>
+                                        <span class="float-left">Miguel Angel </span>
+                                        <form action="{{ route('logout') }}" method="POST" class="float-right">
+                                                @csrf
+                                                <button style="line-height: 15px;" title="Cerrar Sesión" class="theme-btn btn-style-four p-1">
+                                                    Cerrar Sesión
+                                                </button>
+                                                </form>
+                            </div>
                         <!-- start menu item list -->
+                        <div class="user-normal">
+
                         <div class="elementskit-menu-container elementskit-menu-offcanvas-elements">
                             <ul class="elementskit-navbar-nav nav-alignment-dynamic">
                                 <li class="elementskit-dropdown-has li-image p-0">
@@ -55,6 +70,7 @@
                             </ul>
                         </div>
                     </div>
+                    </div>
                     {{-- <div class="float-left">
                             <form action="{{ route('logout') }}" method="POST">
                     @csrf
@@ -65,7 +81,7 @@
 
                 @endauth
                 @guest
-                <a style="float:left; line-height: 15px;" href="/login" class="theme-btn btn-style-four">Login</a>
+                <a style="line-height: 15px;" href="/login" class="theme-btn btn-style-four float-left">Login</a>
                 @endguest
                 <!-- Cart Button -->
 
