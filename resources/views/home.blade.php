@@ -159,7 +159,7 @@
 @php
     $quienesSomos = App\confrm::childrens(1);
 @endphp
-@foreach ($quienesSomos as $item)
+{{-- @foreach ($quienesSomos as $item)
 <section class="news-section" id="menu-{{ Str::slug($item->confrmttitl) }}">
     <div class="pattern-layer-one" style="background-image:url(images/background/pattern-6.png)"></div>
     <div class="pattern-layer-two" style="background-image:url(images/background/pattern-7.png)"></div>
@@ -179,12 +179,12 @@
                 <div class="inner-box">
                     <div class="image">
                         <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        {{-- <div class="post-date"><strong>{{ $childrens->confrsscode }}</strong>dec</div> --}}
+                        {{-- <div class="post-date"><strong>{{ $childrens->confrsscode }}</strong>dec</div> -
                     </div>
                     <div class="lower-content">
                         <ul class="post-meta">
                             {{-- <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
-                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> --}}
+                            <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> 
                         </ul>
                         <h3><a href="#">{{ $childrens->confrsttitl }}</a></h3>
                         <span>{{ $childrens->confrstdesc }}</span>
@@ -195,8 +195,40 @@
         </div>
     </div>
 </section>
+@endforeach --}}
+
+
+@foreach ($quienesSomos as $item)
+<!-- Services Section -->
+<section class="services-section" id="menu-{{ Str::slug($item->confrmttitl) }}">
+    <div class="container">
+
+        <!-- Sec Title -->
+        <div class="section-title text-center">
+            <h2>{{ $item->confrmttitl }}</h2>
+            <p class="text">{{$item->confrmtdesc }}</p>
+        </div>
+
+        <div class="row">
+            @foreach ($item->sections as $childrens)
+            <!-- Featured Block -->
+            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
+                <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
+                    <div class="icon-box">
+                        <span class="icon icon-brifecase-hospital2"></span>
+                    </div>
+                    <h3><a href="#">{{ $childrens->confrsttitl }}</a></h3>
+                    <p>{{ $childrens->confrstdesc }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 @endforeach
 
+<!-- End Services Section -->
 <!-- End News Section -->
 
 
@@ -987,102 +1019,6 @@
 </section>
 <!-- End Emergency Section -->
 
-<!-- Services Section -->
-<section class="services-section">
-    <div class="container">
-
-        <!-- Sec Title -->
-        <div class="section-title text-center">
-            <h2>Quick Amenities in Medizco</h2>
-            <p class="text">The hospital plays a statewide role in rehabilitation services, which includes the
-                Acquired</p>
-        </div>
-
-        <div class="row">
-
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-brifecase-hospital2"></span>
-                    </div>
-                    <h3><a href="#">Intensive care</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                        blind texts.</p>
-                </div>
-            </div>
-
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-hospital-symbol"></span>
-                    </div>
-                    <h3><a href="#">Online Medicine</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                        blind texts.</p>
-                </div>
-            </div>
-
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-heart1"></span>
-                    </div>
-                    <h3><a href="#">Lab Tests</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                        blind texts.</p>
-                </div>
-            </div>
-
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-ambulance"></span>
-                    </div>
-                    <h3><a href="#">Ambulance Car</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                        blind texts.</p>
-                </div>
-            </div>
-
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-capsule"></span>
-                    </div>
-                    <h3><a href="#">Tabs and Pills</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                        blind texts.</p>
-                </div>
-            </div>
-
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-book"></span>
-                    </div>
-                    <h3><a href="#">Health Check</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                        blind texts.</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-<!-- End Services Section -->
 
 <!-- Gallery Section -->
 <section class="gallery-section">
