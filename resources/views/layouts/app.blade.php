@@ -75,6 +75,7 @@ BACTERIOLOGÍA">
     <link href="/css/style.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/responsive.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
 

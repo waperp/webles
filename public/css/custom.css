@@ -1,0 +1,12 @@
+@media only screen and (max-width: 767px) {
+    .main-header .header-top, .xs-mobile-hide {
+        display: block ;
+    }
+    .header-top .top-right .nav-box, .header-top .top-right .cart-btn {
+        display: none;
+        float: none;
+    }
+    .header-top .top-right > a{
+        float: right !important;
+    }
+}

@@ -5,18 +5,18 @@
             <div class="container ">
                 <div class="top-outer clearfix">
                     <!-- Top Left -->
-                    <ul class="top-left">
-                        {{-- <li>
+                    {{-- <ul class="top-left">
+                        <li>
                                 <div class="image">
                                     <img src="images/resource/author-1.jpg" alt=""> 
                                 </div>
                                 <span>Miguel Angel</span>
-                            </li> --}}
-                        {{-- <li><span class="icon flaticon-clock-1"></span>Mon-Fri (8am - 6pm)</li>
+                            </li>
+                         <li><span class="icon flaticon-clock-1"></span>Mon-Fri (8am - 6pm)</li>
                             <li><a href="mailto:info@example.com"><span
-                                        class="icon flaticon-letter"></span>info@example.com</a></li> --}}
+                                        class="icon flaticon-letter"></span>info@example.com</a></li>
                     </ul>
-    
+     --}}
                     <!-- Top Right -->
                     <div class="top-right clearfix">
                         @auth

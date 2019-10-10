@@ -3,7 +3,6 @@
     @if ($item['children']->count() <=  0)    
     <li><a>{{ $item->confrmttitl }}</a></li> 
     @else
-    
     <li class="elementskit-dropdown-has">
         <a href="#menu-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a>
         <ul class="elementskit-dropdown elementskit-submenu-panel">
@@ -20,8 +19,7 @@
                             @endforeach 
                             </ul>
                     @endif
-
-                        </li>
+                   </li>
                     @endif
                 @endif
             @endforeach
