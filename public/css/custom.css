@@ -4,7 +4,9 @@
 .user-normal {
     display: block;
 }
-
+.top-right-content{
+    width: auto;
+}
 @media only screen and (max-width: 767px) {
     .main-header .header-top, .xs-mobile-hide {
         display: block;
@@ -24,6 +26,9 @@
     }
     .user-normal {
         display: none;
+    }
+    .top-right-content{
+        width: 100%;
     }
 }
 

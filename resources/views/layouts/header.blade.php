@@ -29,7 +29,7 @@
                 <!-- Top Right -->
                 <div class="top-right clearfix">
                     @auth
-                    <div class="float-left text-white mr-2">
+                    <div class="top-right-content float-left text-white mr-2">
                             <div class="user-movil">
                                     <div class="image">
                                             <img src="images/resource/author-1.jpg" alt=""> 
