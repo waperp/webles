@@ -9,4 +9,7 @@
     .header-top .top-right > a{
         float: right !important;
     }
+    .header-top.loggin {
+        display: none;
+    }
 }
