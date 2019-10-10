@@ -74,9 +74,7 @@ class secusrController extends Controller
     public function update(Request $request)
     {
         // return $request->all();
-
         if ($request->hasFile('hurempvimgh')) {
-
             $imageName = Str::random(30) . '.' . $request->file('hurempvimgh')->getClientOriginalExtension();
             $request->file('hurempvimgh')->move(base_path() . '/public/images/', $imageName);
         } else {
@@ -84,21 +82,19 @@ class secusrController extends Controller
         }
         // return $imageName;
         $secusr = secusr::join('huremp', 'huremp.hurempicode', 'secusr.hurempicode')
-        ->where('secusr.secusricode', \Auth::user()->secusricode)->first();
+            ->where('secusr.secusricode', \Auth::user()->secusricode)->first();
         $huremp = huremp::join('secusr', 'huremp.hurempicode', 'secusr.hurempicode')
-        ->where('huremp.hurempicode', \Auth::user()->hurempicode)->first();
-       if($request->secusrtpass != null){
+            ->where('huremp.hurempicode', \Auth::user()->hurempicode)->first();
+        if ($request->secusrtpass != null) {
             $secusr->secusrtpass =  Hash::make($request->secusrtpass);
-       }
-        $huremp->huremptfnam = $request->huremptfnam ;
-        if($imageName != null){
+        }
+        $huremp->huremptfnam = $request->huremptfnam;
+        if ($imageName != null) {
             $huremp->hurempvimgh = $imageName;
-
         }
         $secusr->save();
         $huremp->save();
         return redirect('/');
-
     }
 
     /**

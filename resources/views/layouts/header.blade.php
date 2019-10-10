@@ -147,12 +147,13 @@
                                         ---------------------------------------- -->
     
                     </nav>
-                    <ul class="xs-menu-tools">
+                    {{-- <ul class="xs-menu-tools">
                         <li>
                             <a href="#modal-popup-2" class="navsearch-button xs-modal-popup"><i
                                     class="icon icon-search"></i></a>
                         </li>
-                    </ul>
+                    </ul> 
+                    --}}
                 </div>
             </div>
         </div>
