@@ -2,11 +2,11 @@
 <header class="elementskit-header main-header">
     @php
     if (Auth::check()){
-        $loggin = 'loggin';
+    $loggin = 'loggin';
 
     }
     else{
-        $loggin = '';
+    $loggin = '';
 
     }
     @endphp
@@ -30,46 +30,48 @@
                 <div class="top-right clearfix">
                     @auth
                     <div class="top-right-content float-left text-white mr-2">
-                            <div class="user-movil">
-                                    <div data-toggle="modal" data-target="#exampleModal" class="image">
-                                            <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt=""> 
-                                            
-                                        </div>
-                                        <span data-toggle="modal" data-target="#exampleModal" class="float-left">{{ Auth::user()->employee()->huremptfnam   }} </span>
-                                        <form action="{{ route('logout') }}" method="POST" class="float-right">
-                                                @csrf
-                                                <button style="line-height: 15px;" title="Cerrar Sesión" class="theme-btn btn-style-four p-1">
-                                                    Cerrar Sesión
-                                                </button>
-                                                </form>
+                        <div class="user-movil">
+                            <div data-toggle="modal" data-target="#exampleModal" class="image">
+                                <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
+
                             </div>
+                            <span data-toggle="modal" data-target="#exampleModal"
+                                class="float-left">{{ Auth::user()->employee()->huremptfnam}} </span>
+                            <form action="{{ route('logout') }}" method="POST" class="float-right">
+                                @csrf
+                                <button style="line-height: 15px;" title="Cerrar Sesión"
+                                    class="theme-btn btn-style-four p-1">
+                                    Cerrar Sesión
+                                </button>
+                            </form>
+                        </div>
                         <!-- start menu item list -->
                         <div class="user-normal">
 
-                        <div class="elementskit-menu-container elementskit-menu-offcanvas-elements">
-                            <ul class="elementskit-navbar-nav nav-alignment-dynamic">
-                                <li class="elementskit-dropdown-has li-image p-0">
-                                    <div class="image">
-                                        <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
-                                    </div>
-                                    <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
-                                    <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                        <li><a data-toggle="modal" data-target="#exampleModal"><i
-                                                    class="fa fa-user-o"></i> Perfil</a></li>
-                                        <li><a
-                                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                                <i class="fa fa-sign-out"></i> Cerrar Sesión
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <div class="elementskit-menu-container elementskit-menu-offcanvas-elements">
+                                <ul class="elementskit-navbar-nav nav-alignment-dynamic">
+                                    <li class="elementskit-dropdown-has li-image p-0">
+                                        <div class="image">
+                                            <img src="/images/{{ Auth::user()->employee()->hurempvimgh }}" alt="">
+                                        </div>
+                                        <span>{{ Auth::user()->employee()->huremptfnam   }}</span>
+                                        <ul class="elementskit-dropdown elementskit-submenu-panel">
+                                            <li><a data-toggle="modal" data-target="#exampleModal"><i
+                                                        class="fa fa-user-o"></i> Perfil</a></li>
+                                            <li><a
+                                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                    <i class="fa fa-sign-out"></i> Cerrar Sesión
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     {{-- <div class="float-left">
                             <form action="{{ route('logout') }}" method="POST">

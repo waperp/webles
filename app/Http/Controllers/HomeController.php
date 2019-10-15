@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // return confrm::where('confrmscode',6)->first()->sections;
+        // return confrm::treeAdmin();
         // return $items;
         // return Hash::make('123');
         return view('home');

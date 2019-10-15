@@ -10,25 +10,25 @@ class confrm extends Model
 
     public function parent()
     {
-
-        return $this->hasOne('App\confrm', 'confrmscode', 'confrmsfcod')->where('confrmbenbl', 1)->orderBy('confrmyorde', 'asc');
+        return $this->hasOne('App\confrm', 'confrmscode', 'confrmsfcod')->join('contyp','contypscode','contypscod0')->where('contypsnumt',2)->where('confrmbenbl', 1)->orderBy('confrmyorde', 'asc');
     }
-
     public function children()
     {
-
-        return $this->hasMany('App\confrm', 'confrmsfcod', 'confrmscode')->where('confrmbenbl', 1)->orderBy('confrmyorde', 'asc');
+        return $this->hasMany('App\confrm', 'confrmsfcod', 'confrmscode')->join('contyp','contypscode','contypscod0')->where('contypsnumt',2)->where('confrmbenbl', 1)->orderBy('confrmyorde', 'asc');
     }
 
     public static function tree()
     {
-
         return static::with(implode('.', array_fill(0, 4, 'children')))->where('confrmbenbl', 1)->where('confrmsfcod', '=', NULL)->where('confrmyadmf', 0)->orderBy('confrmyorde', 'asc')->get();
     }
     public static function treeAdmin()
     {
 
-        return static::with(implode('.', array_fill(0, 4, 'children')))->where('confrmbenbl', 1)->where('confrmsfcod', '=', NULL)->orderBy('confrmyorde', 'asc')->get();
+        return static::with(implode('.', array_fill(0, 4, 'children')))->join('contyp','contypscode','contypscod0')->where('contypsnumt',2)->where('confrmbenbl', 1)->where('confrmsfcod', '=', NULL)->orderBy('confrmyorde', 'asc')->get();
+    }
+    public function typeConfrm()
+    {
+        return $this->belongsTo('App\confrm','contypscode','contypscod0')->where('contypsnumt',2);
     }
     public static function nivel($confrmscode)
     {

@@ -75,6 +75,9 @@ BACTERIOLOGÍA">
     <link href="/css/style.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/responsive.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
@@ -88,6 +91,10 @@ BACTERIOLOGÍA">
         @yield('content')
         @auth
         @include('layouts.modal-perfil')
+        @if (Auth::user()->contypscode == 1)
+        @include('layouts.modal-quienes-somos')
+
+        @endif
         @endauth
     </div>
     <script src="/js/jquery.js"></script>
@@ -108,7 +115,17 @@ BACTERIOLOGÍA">
     <script src="/js/jquery.uploadPreview.js">
     </script>
     <script src="/js/jquery.validate.min.js"></script>
-    <script src="/js/index.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+	<script src="/js/dataTables.bootstrap4.min.js"></script>
+	<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>
+	<script src="/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
+	<script src="/js/buttons.colVis.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        const modal_quienes_somos = @json(App\confrm::nivel(11));
+        console.log(modal_quienes_somos)
+    </script>
+    <script src="/js/index.js?q={{ time() }}"></script>
+
     
 </body>
 
