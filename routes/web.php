@@ -19,4 +19,5 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos')->name('home');
 Route::resource('secusr', 'secusrController');
