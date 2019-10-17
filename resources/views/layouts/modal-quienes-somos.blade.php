@@ -1,6 +1,4 @@
-@php
-$quienesSomos = App\confrm::nivel(11);
-@endphp
+
 
 <div class="modal" id="modal-{{ Str::slug($quienesSomos->confrmttitl) }}" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">

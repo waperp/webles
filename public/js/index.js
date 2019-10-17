@@ -112,7 +112,7 @@ $(document).ready(function () {
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return "<a class='btn' OnClick='edit_quienes_somos(" + full.confrmscode + ");' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
+                    return "<a class='btn' OnClick='edit_quienes_somos(" + full.confrsscode + ");' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
                 }
             },
             {
@@ -120,7 +120,7 @@ $(document).ready(function () {
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return "<a  class='btn' OnClick='eliminar_quienes_somos(" + full.confrmscode + ");' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
+                    return "<a  class='btn' OnClick='eliminar_quienes_somos(" + full.confrsscode + ");' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
                 }
             }
         ],
@@ -173,3 +173,30 @@ function convertToSlug(Text)
         .replace(/ +/g,'-')
         ;
 }
+function edit_quienes_somos(confrmscode)
+{
+    $('#modal-edit-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
+}
+$("#form-edit-score").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrmscode = $('#edit-toufixicode-hidden').val();
+  
+    $.ajax({
+        url: 'editarScore',
+        type: 'post',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        data: {
+            toufixsscr2: toufixsscr2,
+            toufixsscr1: toufixsscr1,
+            toufixicode: toufixicode
+        },
+        success: function (data) {
+            $('#table-fixture').DataTable().ajax.reload();
+            $('#modal-gestionar-fixture').modal('show');
+            $('#modal-edit-score').modal('hide');
+        },
+    });
+});

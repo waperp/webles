@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+        @php
+        $quienesSomos = App\confrm::nivel(11);
+        @endphp
 <head>
     {{-- <meta charset="utf-8"> --}}
     {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
@@ -93,6 +95,7 @@ BACTERIOLOGÍA">
         @include('layouts.modal-perfil')
         @if (Auth::user()->contypscode == 1)
         @include('layouts.modal-quienes-somos')
+        @include('layouts.modal-edit-quienes-somos')
 
         @endif
         @endauth
