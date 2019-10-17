@@ -16,7 +16,7 @@ $quienesSomos = App\confrm::nivel(11);
                 <div class="table-responsive">
                     <table style="width: 100%" id="datatable-{{ Str::slug($quienesSomos->confrmttitl) }}"
                         class="table table-striped">
-                        <thead>
+                        <thead class="color_header">
                             <tr>
                                 <th >Nombre </th>
                                 <th >Descripcion</th>

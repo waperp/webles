@@ -69,3 +69,9 @@
     text-transform: none;
     font-weight: 400;
 }
+.table td{
+    padding: .25rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    vertical-align: middle;
+}

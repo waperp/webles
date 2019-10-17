@@ -112,7 +112,7 @@ $(document).ready(function () {
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return "<a class='btn' OnClick='edit_quienes_somos(" + full.confrmscode + ",0);' title='ELIMINAR'><i class='fa fa-pencil-square text-warning'></i></a>";
+                    return "<a class='btn' OnClick='edit_quienes_somos(" + full.confrmscode + ");' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
                 }
             },
             {
@@ -120,7 +120,7 @@ $(document).ready(function () {
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return "<a  class='btn' OnClick='edit_quienes_somos(" + full.confrmscode + ",0);' title='ELIMINAR'><i class='fa fa-times-circle text-danger'></i></a>";
+                    return "<a  class='btn' OnClick='eliminar_quienes_somos(" + full.confrmscode + ");' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
                 }
             }
         ],
