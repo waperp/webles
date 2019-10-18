@@ -10,6 +10,14 @@ $(document).ready(function () {
         label_selected: "Cambiar Foto", // Default: Cambiar Foto
         no_label: false // Default: false
     });
+    $.uploadPreview({
+        input_field: ".image-upload", // Default: .image-upload
+        preview_box: ".image-preview", // Default: .image-preview
+        label_field: ".image-label", // Default: .image-label
+        label_default: "Elija Una Foto", // Default: Choose File
+        label_selected: "Cambiar Foto", // Default: Cambiar Foto
+        no_label: false // Default: false
+    });
     $("#form-edit-perfil-user").validate({
         rules: {
             confirmSecusrtpass: {
@@ -176,27 +184,60 @@ function convertToSlug(Text)
 function edit_quienes_somos(confrmscode)
 {
     $('#modal-edit-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
+    $.ajax({
+        url: '/confrs/' + confrmscode,
+        type: 'get',
+        datatype: 'json',
+        success: function (data) {
+            debugger
+            // $('#select-admin-gestionar-grupo-securs').empty();
+            // $('#select-admin-gestionar-grupo-securs').append('<option value="' + data.plainficode + '">' + data.plainftnick + '</option>');
+            // $('#admin-gestionar-grupo-tougrpicode-hidden').val(data.tougrpicode);
+            // $('#admin-gestionar-grupo-touinfscode-hidden').val(data.touinfscode);
+            // $('#admin-gestionar-grupo-touinftname').val(data.touinftname);
+            // $('#datetimepicker-toufixdplay').data("DateTimePicker").date(data.toufixdplay)
+            $('#edit-confrsttitl').val(data.confrsttitl);
+            $('#edit-confrsscode').val(data.confrsscode);
+            $('#edit-confrstdesc').val(data.confrstdesc);
+            $("#edit-confrsvbigi").css("background-image", "url('images/" + data.confrsvbigi + "')");
+            $("#edit-confrsvbigi").css("background-size", "cover");
+            $("#edit-confrsvbigi").css("background-position", "center center");
+            // $('#modal-admin-gestionar-grupo-add').modal('hide');
+            // $('#modal-admin-gestionar-grupo').modal('show');
+        }
+    });
 }
-$("#form-edit-score").submit(function (e) {
+$("#form-edit-quienes-somos").submit(function (e) {
     var _token = $('input[name=_token]').val();
     e.preventDefault();
-    var confrmscode = $('#edit-toufixicode-hidden').val();
-  
+    var confrsttitl = $('#edit-confrsttitl').val();
+    var confrstdesc = $('#edit-confrstdesc').val();
+    var confrsscode = $('#edit-confrsscode').val();
+    var confrsvbigi = $('#edit-confrsvbigi').prop('files')[0];
+    var formData = new FormData();
+
+    formData.append("confrsttitl", confrsttitl);
+    formData.append("confrstdesc", confrstdesc);
+    formData.append("confrsscode", confrsscode);
+    formData.append("confrsvbigi", confrsvbigi);
+    formData.append('_method', 'patch');  
+
+debugger
+
     $.ajax({
-        url: 'editarScore',
-        type: 'post',
+        url: '/confrs/'+confrsscode,
+        type: 'POST',
         headers: {
             'X-CSRF-TOKEN': _token
         },
-        data: {
-            toufixsscr2: toufixsscr2,
-            toufixsscr1: toufixsscr1,
-            toufixicode: toufixicode
-        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
         success: function (data) {
-            $('#table-fixture').DataTable().ajax.reload();
-            $('#modal-gestionar-fixture').modal('show');
-            $('#modal-edit-score').modal('hide');
+            debugger
+            $('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-edit-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
         },
     });
 });

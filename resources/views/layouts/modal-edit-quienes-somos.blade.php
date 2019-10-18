@@ -21,33 +21,30 @@
                                         </div> --}}
                                 <!-- Contact Form -->
                                 <div class="contact-form">
-                                    <form id="form-edit-quienes-somos" method="post" enctype="multipart/form-data" action="{{ route('secusr.update', Auth::user()
-                                            ->secusricode) }}">
-                                        @method('PATCH')
+                                    <form id="form-edit-quienes-somos" method="post" enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" id="edit-perfil-image-src"
-                                            value="{{ \Auth::user()->employee()->hurempvimgh }}" />
                                         <div class="form-group">
                                             <div class="col-12">
-                                                <div id="edit-perfil-image-preview" class="mt-2 mb-2">
-                                                    <label for="edit-perfil-image-upload" id="edit-perfil-image-label">
+                                                <div class="image-preview mt-2 mb-2">
+                                                    <label for="confrsvbigi" class="image-label">
                                                         Tu Imagen
                                                     </label>
-                                                    <input id="edit-perfil-image-upload" name="hurempvimgh"
+                                                    <input class="image-upload" id="edit-confrsvbigi" name="confrsvbigi"
                                                         type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
 
                                         </div>
+                                        <input type="hidden" id="edit-confrsscode">
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" name="confrsttitl" placeholder="Titulo">
+                                            <input type="text" id="edit-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
 
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <input required type="text" name="confrstdesc" placeholder="Descripcion">
+                                            <input required type="text" id="edit-confrstdesc" name="confrstdesc" placeholder="Descripcion">
                                         </div>
 
                                         {{-- <div class="form-row">
@@ -89,7 +86,7 @@
                                                     </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
-                                                    id="xs_contact_submit" value="ACTUALIZAR"></div>
+                                                    id="" value="ACTUALIZAR"></div>
 
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"
