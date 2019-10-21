@@ -36,7 +36,28 @@ class confrsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        if ($request->hasFile('confrsvbigi')) {
+            $imageName = str_random(30) . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
+            $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+        } else {
+            $imageName = "noimage.png";
+        }
+        $confrs = new confrs;
+        $confrs->confrstdesc = $request->confrstdesc;
+        $confrs->confrsttitl = $request->confrsttitl;
+        $confrs->confrsyorde = 0;
+        $confrs->confrmscode = 6;
+        $confrs->confrmbenbl = 1;
+        $confrs->confrsvsmai = null;
+
+        
+
+        if ($imageName == null) { } else {
+            $confrs->confrsvbigi = $imageName;
+        }
+        $confrs->save();
+        return response()->json($confrs);
     }
 
     /**
@@ -95,8 +116,12 @@ class confrsController extends Controller
      * @param  \App\confrs  $confrs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(confrs $confrs)
+    public function destroy($confrsscode)
     {
-        //
+        $data =  confrs::where('confrsscode', $confrsscode)->first();
+    $data->confrsbenbl = 0;
+    $data->save();      
+    return response()->json(true);
+
     }
 }

@@ -81,8 +81,16 @@ $(document).ready(function () {
             titleAttr: 'Refrescar Datos',
             action: function (e, dt, node, config) {
                 dt.ajax.reload();
-            }
-        }, 'pageLength'],
+            },
+            
+        }, {
+            text: 'AGREGAR',
+            className: 'btn btn-action',
+            action: function (e, dt, node, config) {
+                $('#modal-new-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
+            },
+            titleAttr: 'AGREGAR'
+        },'pageLength'],
         "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             
         },
@@ -128,7 +136,7 @@ $(document).ready(function () {
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return "<a  class='btn' OnClick='eliminar_quienes_somos(" + full.confrsscode + ");' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
+                    return "<a  class='btn' OnClick='delete_quienes_somos(" + full.confrsscode + ");' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
                 }
             }
         ],
@@ -241,3 +249,54 @@ debugger
         },
     });
 });
+$("#form-new-quienes-somos").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrsttitl = $('#new-confrsttitl').val();
+    var confrstdesc = $('#new-confrstdesc').val();
+    var confrsscode = $('#new-confrsscode').val();
+    var confrsvbigi = $('#new-confrsvbigi').prop('files')[0];
+    var formData = new FormData();
+
+    formData.append("confrsttitl", confrsttitl);
+    formData.append("confrstdesc", confrstdesc);
+    formData.append("confrsscode", confrsscode);
+    formData.append("confrsvbigi", confrsvbigi);
+    // formData.append('_method', 'patch');  
+
+debugger
+
+    $.ajax({
+        url: '/confrs',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
+        success: function (data) {
+            debugger
+            $('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-new-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
+        },
+    });
+});
+
+function delete_quienes_somos(confrmscode)
+{
+    var _token = $('input[name=_token]').val();
+    $.ajax({
+        url: '/confrs/' + confrmscode,
+        type: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        datatype: 'json',
+        success: function (data) {
+            debugger
+            $('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+        }
+    });
+}

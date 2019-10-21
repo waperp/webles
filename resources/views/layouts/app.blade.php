@@ -96,6 +96,7 @@ BACTERIOLOGÍA">
         @if (Auth::user()->contypscode == 1)
         @include('layouts.modal-quienes-somos')
         @include('layouts.modal-edit-quienes-somos')
+        @include('layouts.modal-new-quienes-somos')
 
         @endif
         @endauth

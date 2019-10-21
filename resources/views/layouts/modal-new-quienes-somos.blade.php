@@ -1,9 +1,9 @@
-<div class="modal" id="modal-edit-{{ Str::slug($quienesSomos->confrmttitl) }}" tabindex="-1" role="dialog"
+<div class="modal" id="modal-new-{{ Str::slug($quienesSomos->confrmttitl) }}" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title font-weight-bold">Editar '{{ $quienesSomos->confrmttitl }}'</h5>
+                <h5 class="modal-title font-weight-bold">NUEVO '{{ $quienesSomos->confrmttitl }}'</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -21,30 +21,30 @@
                                         </div> --}}
                                 <!-- Contact Form -->
                                 <div class="contact-form">
-                                    <form id="form-edit-quienes-somos" method="post" enctype="multipart/form-data">
+                                    <form id="form-new-quienes-somos" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <div class="col-12">
                                                 <div class="image-preview mt-2 mb-2">
-                                                    <label for="confrsvbigib" class="image-label">
+                                                    <label for="confrsvbigi" class="image-label">
                                                         Tu Imagen
                                                     </label>
-                                                    <input class="image-upload" id="edit-confrsvbigi" name="confrsvbigi"
+                                                    <input class="image-upload" id="new-confrsvbigi" name="confrsvbigi"
                                                         type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
 
                                         </div>
-                                        <input type="hidden" id="edit-confrsscode">
+                                        <input type="hidden" id="new-confrsscode">
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="edit-confrsttitl" name="confrsttitl" placeholder="Titulo">
+                                            <input type="text" id="new-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
 
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <input required type="text" id="edit-confrstdesc" name="confrstdesc" placeholder="Descripcion">
+                                            <input required type="text" id="new-confrstdesc" name="confrstdesc" placeholder="Descripcion">
                                         </div>
 
                                         {{-- <div class="form-row">
@@ -86,7 +86,7 @@
                                                     </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
-                                                    id="" value="ACTUALIZAR"></div>
+                                                    id="" value="GUARDAR"></div>
 
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"
