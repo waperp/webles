@@ -82,7 +82,7 @@ class confrsController extends Controller
         $confrs->confrstdesc = $request->confrstdesc;
         $confrs->confrsttitl = $request->confrsttitl;
         if ($imageName == null) { } else {
-            $confrs->tougrpvimgg = $imageName;
+            $confrs->confrsvbigi = $imageName;
         }
         $confrs->save();
         return response()->json($confrs);
