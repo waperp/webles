@@ -36,7 +36,7 @@ class confrsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         if ($request->hasFile('confrsvbigi')) {
             $imageName = str_random(30) . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
             $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
@@ -48,11 +48,8 @@ class confrsController extends Controller
         $confrs->confrsttitl = $request->confrsttitl;
         $confrs->confrsyorde = 0;
         $confrs->confrmscode = 6;
-        $confrs->confrmbenbl = 1;
+        $confrs->confrsbenbl = 1;
         $confrs->confrsvsmai = null;
-
-        
-
         if ($imageName == null) { } else {
             $confrs->confrsvbigi = $imageName;
         }
@@ -119,9 +116,8 @@ class confrsController extends Controller
     public function destroy($confrsscode)
     {
         $data =  confrs::where('confrsscode', $confrsscode)->first();
-    $data->confrsbenbl = 0;
-    $data->save();      
-    return response()->json(true);
-
+        $data->confrsbenbl = 0;
+        $data->save();
+        return response()->json(true);
     }
 }

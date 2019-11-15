@@ -214,9 +214,10 @@
             <!-- Featured Block -->
             <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
+                    <div class="image-layer" style="background-image:url(images/{{ $childrens->confrsvbigi }})"></div>
                     <div class="icon-box">
-                        <span class="icon icon-brifecase-hospital2"></span>
+                        {{-- <span class="icon icon-brifecase-hospital2"></span> --}}
+                        <img src="/images/{{  $childrens->confrsvbigi }}" alt="">
                     </div>
                     <h3><a href="#">{{ $childrens->confrsttitl }}</a></h3>
                     <p>{{ $childrens->confrstdesc }}</p>

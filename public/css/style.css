@@ -9780,7 +9780,10 @@ background-color: #2baeaa;
     opacity: 0;
     z-index: 10;
 }
-
+.icon-box img {
+	width: 47px;
+	height: 47px;
+}
 .modal-header .close {
 	color: white !important;
     width: 33px;

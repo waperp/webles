@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    $("#edit-perfil-image-preview").css("background-image", "url('images/" + $('#edit-perfil-image-src').val() + "')");
-    $("#edit-perfil-image-preview").css("background-size", "cover");
-    $("#edit-perfil-image-preview").css("background-position", "center center");
+    
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
@@ -18,6 +16,8 @@ $(document).ready(function () {
         label_selected: "Cambiar Foto", // Default: Cambiar Foto
         no_label: false // Default: false
     });
+    
+   
     $("#form-edit-perfil-user").validate({
         rules: {
             confirmSecusrtpass: {
@@ -31,7 +31,9 @@ $(document).ready(function () {
 
         }
     });
-
+    $("#edit-perfil-image-preview").css("background-image", 'url(images/'+employee.hurempvimgh+')');
+    $("#edit-perfil-image-preview").css("background-size", "cover");
+    $("#edit-perfil-image-preview").css("background-position", "center center");
     $("#datatable-"+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable({
         colReorder: true,
         "ordering": false,
@@ -90,7 +92,7 @@ $(document).ready(function () {
                 $('#modal-new-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
             },
             titleAttr: 'AGREGAR'
-        },'pageLength'],
+        }],
         "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             
         },
@@ -207,9 +209,9 @@ function edit_quienes_somos(confrmscode)
             $('#edit-confrsttitl').val(data.confrsttitl);
             $('#edit-confrsscode').val(data.confrsscode);
             $('#edit-confrstdesc').val(data.confrstdesc);
-            $("#edit-confrsvbigi").css("background-image", "url('images/" + data.confrsvbigi + "')");
-            $("#edit-confrsvbigi").css("background-size", "cover");
-            $("#edit-confrsvbigi").css("background-position", "center center");
+            $("#edit-confrsvbigi").parent().css("background-image", "url('images/" + data.confrsvbigi + "')");
+            $("#edit-confrsvbigi").parent().css("background-size", "cover");
+            $("#edit-confrsvbigi").parent().css("background-position", "center center");
             // $('#modal-admin-gestionar-grupo-add').modal('hide');
             // $('#modal-admin-gestionar-grupo').modal('show');
         }
