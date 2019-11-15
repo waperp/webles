@@ -214,13 +214,13 @@
             <!-- Featured Block -->
             <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/{{ $childrens->confrsvbigi }})"></div>
+                    <div class="image-layer" style="background-image:url(images/{{ $childrens->confrsvbigi }});background-size:cover;background-position: center center "></div>
                     <div class="icon-box">
                         {{-- <span class="icon icon-brifecase-hospital2"></span> --}}
                         <img src="/images/{{  $childrens->confrsvbigi }}" alt="">
                     </div>
-                    <h3><a href="#">{{ $childrens->confrsttitl }}</a></h3>
-                    <p>{{ $childrens->confrstdesc }}</p>
+                    <h3 class="text-center"><a href="#">{{ $childrens->confrsttitl }}</a></h3>
+                    <p>{{Str::limit( $childrens->confrstdesc,30) }}</p>
                 </div>
             </div>
             @endforeach

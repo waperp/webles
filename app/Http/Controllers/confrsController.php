@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\confrm;
 use App\confrs;
 use Illuminate\Http\Request;
-
+use Image;
 class confrsController extends Controller
 {
     /**
@@ -38,8 +38,15 @@ class confrsController extends Controller
     {
 
         if ($request->hasFile('confrsvbigi')) {
-            $imageName = str_random(30) . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
-            $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+            $image = $request->file('confrsvbigi');
+            $img = Image::make($image);
+
+            $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
+            $img->resize(100, 100);
+            $img = $img->save($imageName);
+            // $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+
+       
         } else {
             $imageName = "noimage.png";
         }
@@ -91,8 +98,12 @@ class confrsController extends Controller
     {
 
         if ($request->hasFile('confrsvbigi')) {
-            $imageName = str_random(30) . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
-            $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+            $image = $request->file('confrsvbigi');
+            $img = Image::make($image);
+            $imageName =  time(). '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
+            $img->resize(350, 235);
+            $img = $img->save(base_path() . '/public/images/'.$imageName);
+
         } else {
             $imageName = null;
         }
