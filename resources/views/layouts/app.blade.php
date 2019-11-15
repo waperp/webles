@@ -126,7 +126,11 @@ BACTERIOLOGÍA">
 	<script src="/js/buttons.colVis.js" type="text/javascript"></script>
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
+        @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
+  
+@else
+        @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
 
