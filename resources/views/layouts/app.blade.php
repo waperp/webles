@@ -86,7 +86,7 @@ BACTERIOLOGÍA">
 
 </head>
 
-<body>
+<body onload="myFunction()">
     <div class="page-wrapper">
         <!-- Preloader -->
         <div class="preloader"></div>

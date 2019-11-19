@@ -3,7 +3,7 @@
 
 @section('content')
 @include('layouts.header')
-<section onload="myFunction()" class="text-center p-5">
+<section class="text-center p-5">
     <h4>NOTICIA DE ULTIMO MOMENTO</h4>
     <img width="100PX" src="/images/1573846135.jpg" alt="">
     <span>NOTICIAS DE ULTIMO MOMENTO</span>

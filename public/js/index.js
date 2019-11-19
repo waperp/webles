@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    myFunction();
+    // myFunction();
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
