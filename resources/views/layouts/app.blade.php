@@ -1,4 +1,4 @@
-<!doctype html>
+<html>
         @php
         $quienesSomos = App\confrm::nivel(11);
         @endphp
@@ -8,11 +8,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:url"           content="https://www.ademonline.com/noticia" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="WEB LESS" />
-    <meta property="og:description"   content="HOLA QUE TAL" />
-    <meta property="og:image"         content="https://www.ademonline.com/images/1573846135.jpg" />
+   
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -47,6 +43,11 @@ ANALISIS DE ORINA Y PARASITOLOGICO
 BACTERIOLOGÍA">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:url"           content="http://www.uandblog.com/Facebook-Share-Button-with-Control-Images-and-Text-of-Your-Website" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Facebook Share Button with Control Images and Text of Your Website" />
+	<meta property="og:description"   content="Sometimes we see that our Android device is run out of internal storage space automatically. If we store data, apps and other thinks on Sd card then also it happens. Why ? Because the Apps which are run on our device, build Cached Data on Internal Memory. If we don't delete them in time then.." />
+	<meta property="og:image"         content="http://www.uandblog.com/img/681457144793thumb.jpg" />
 
     <link
         href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
@@ -137,13 +138,7 @@ BACTERIOLOGÍA">
         @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
-    <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v5.0&appId=665910193938787&autoLogAppEvents=1"></script>
     @stack('scripts')
 
 </body>
