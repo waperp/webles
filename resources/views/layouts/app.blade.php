@@ -1,5 +1,4 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
         @php
         $quienesSomos = App\confrm::nivel(11);
         @endphp
@@ -9,7 +8,11 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta property="og:url"           content="https://www.ademonline.com/noticia" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="WEB LESS" />
+    <meta property="og:description"   content="HOLA QUE TAL" />
+    <meta property="og:image"         content="https://www.ademonline.com/images/1573846135.jpg" />
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -86,7 +89,7 @@ BACTERIOLOGÍA">
 
 </head>
 
-<body onload="myFunction()">
+<body>
     <div class="page-wrapper">
         <!-- Preloader -->
         <div class="preloader"></div>
@@ -134,7 +137,13 @@ BACTERIOLOGÍA">
         @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
-    
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
     @stack('scripts')
 
 </body>
