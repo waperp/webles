@@ -96,14 +96,12 @@ class confrsController extends Controller
      */
     public function update(Request $request,  $confrscode)
     {
-
         if ($request->hasFile('confrsvbigi')) {
             $image = $request->file('confrsvbigi');
             $img = Image::make($image);
             $imageName =  time(). '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
             $img->resize(350, 235);
             $img = $img->save(base_path() . '/public/images/'.$imageName);
-
         } else {
             $imageName = null;
         }

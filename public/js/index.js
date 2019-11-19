@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+    myFunction();
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
@@ -31,9 +31,12 @@ $(document).ready(function () {
 
         }
     });
-    $("#edit-perfil-image-preview").css("background-image", 'url(images/'+employee.hurempvimgh+')');
-    $("#edit-perfil-image-preview").css("background-size", "cover");
-    $("#edit-perfil-image-preview").css("background-position", "center center");
+    // if(employee != null){
+    //     $("#edit-perfil-image-preview").css("background-image", 'url(images/'+employee.hurempvimgh+')');
+    //     $("#edit-perfil-image-preview").css("background-size", "cover");
+    //     $("#edit-perfil-image-preview").css("background-position", "center center");
+    // }
+ 
     $("#datatable-"+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable({
         colReorder: true,
         "ordering": false,
@@ -182,7 +185,12 @@ $(document).ready(function () {
 
     
 });
-
+function myFunction() {
+    var x = document.URL;
+    var docs = document.getElementById("jinu");
+    debugger
+    document.getElementById("jinu").src = 'https://www.facebook.com/plugins/share_button.php?href='+x+'&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId=665910193938787';
+   }
 function convertToSlug(Text)
 {
     return Text

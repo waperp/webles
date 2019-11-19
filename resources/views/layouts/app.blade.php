@@ -123,7 +123,8 @@ BACTERIOLOGÍA">
 	<script src="/js/dataTables.bootstrap4.min.js"></script>
 	<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>
 	<script src="/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
-	<script src="/js/buttons.colVis.js" type="text/javascript"></script>
+    <script src="/js/buttons.colVis.js" type="text/javascript"></script>
+   
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
         @if (Auth::check())
@@ -133,8 +134,9 @@ BACTERIOLOGÍA">
         @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
-
     
+    @stack('scripts')
+
 </body>
 
 </html>

@@ -18,7 +18,11 @@ class HomeController extends Controller
     {
         // $this->middleware('auth');
     }
-
+    public function demo()
+    {
+        return view('demo');
+        
+    }
     /**
      * Show the application dashboard.
      *
