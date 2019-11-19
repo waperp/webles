@@ -3,8 +3,11 @@
 
 @section('content')
 @include('layouts.header')
-<div id="fb-root"></div>
-        <div class="fb-share-button" data-href="https://ademonline.com/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fademonline.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+{{-- <div id="fb-root"></div>
+<div class="fb-share-button" data-href="https://ademonline.com/" 
+data-layout="button" data-size="small"><a target="_blank" 
+href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fademonline.com%2F&amp;src=sdkpreparse" 
+class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
         
 <!-- Bnner Section -->
 <section class="banner-section">
