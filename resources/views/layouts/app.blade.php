@@ -43,11 +43,11 @@ ANALISIS DE ORINA Y PARASITOLOGICO
 BACTERIOLOGÍA">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:url"           content="http://www.uandblog.com/Facebook-Share-Button-with-Control-Images-and-Text-of-Your-Website" />
+    <meta property="og:url"           content="https://www.ademonline.com/" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Facebook Share Button with Control Images and Text of Your Website" />
 	<meta property="og:description"   content="Sometimes we see that our Android device is run out of internal storage space automatically. If we store data, apps and other thinks on Sd card then also it happens. Why ? Because the Apps which are run on our device, build Cached Data on Internal Memory. If we don't delete them in time then.." />
-	<meta property="og:image"         content="http://www.uandblog.com/img/681457144793thumb.jpg" />
+	<meta property="og:image"         content="https://www.ademonline.com/images/1573846135.jpg" />
 
     <link
         href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
