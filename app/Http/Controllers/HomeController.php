@@ -35,4 +35,10 @@ class HomeController extends Controller
         // return Hash::make('123');
         return view('home');
     }
+    public function selectSubform()
+    {
+        $data = \DB::select('select confrm.confrmscode, confrm.confrmttitl FROM confrm WHERE confrm.confrmsfcod= 1');
+        return response()->json($data);
+
+    }
 }

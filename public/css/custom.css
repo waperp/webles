@@ -7,6 +7,10 @@
 .top-right-content{
     width: auto;
 }
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 36px;
+}
 @media only screen and (max-width: 767px) {
     .main-header .header-top, .xs-mobile-hide {
         display: block;
@@ -116,7 +120,14 @@
     margin: auto;
     text-align: center;
 }
-
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 37px;
+    user-select: none;
+    -webkit-user-select: none;
+}
 .image-preview input {
     line-height: 150px;
     font-size: 150px;

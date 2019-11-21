@@ -105,7 +105,8 @@ $(document).ready(function () {
         ajax: {
             url: '/datatables/quienes_somos',
             data: function (d) {
-                
+                d.confrmscode = $('#select2-subform').val();
+                debugger
             }
         },
         columns: [
@@ -182,9 +183,41 @@ $(document).ready(function () {
     // if ()) {
     //     $('#xs_contact_submit').attr("disabled", false);	
     // }
+    $("<select id='select2-subform' class='form-control'></select>").appendTo('#datatable-quienes-somos_wrapper .dt-buttons');
+    // $('#select2-subform').select2();
+    $("#select2-subform").select2({
+        placeholder: "Filtrar",
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+}).on("change", function() {
+    $("#datatable-"+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+    console.log('change');
+  }); 
 
+function formatState(state) {
+    if (!state.id) {
+        return state.text;
+    }
+    return state.text;
     
-});
+}
 function myFunction() {
     var x = document.URL;
     var docs = document.getElementById("jinu");

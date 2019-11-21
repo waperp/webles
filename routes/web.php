@@ -23,3 +23,5 @@ Route::get('noticia', 'HomeController@demo')->name('demo');
 Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos')->name('home');
 Route::resource('secusr', 'secusrController');
 Route::resource('confrs', 'confrsController');
+Route::get('selectSubform', 'HomeController@selectSubform');
+

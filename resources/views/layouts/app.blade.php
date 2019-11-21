@@ -48,7 +48,6 @@ BACTERIOLOGÍA">
 	<meta property="og:title"         content="Facebook Share Button with Control Images and Text of Your Website" />
 	<meta property="og:description"   content="Sometimes we see that our Android device is run out of internal storage space automatically. If we store data, apps and other thinks on Sd card then also it happens. Why ? Because the Apps which are run on our device, build Cached Data on Internal Memory. If we don't delete them in time then.." />
 	<meta property="og:image"         content="https://www.ademonline.com/images/1573846135.jpg" />
-
     <link
         href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -78,12 +77,15 @@ BACTERIOLOGÍA">
     <link href="/css/jquery.fancybox.min.css" rel="stylesheet">
     <link href="/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
+    <link href="/css/select2.min.css" rel="stylesheet" />
+
     <link href="/css/style.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/responsive.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/select2-bootstrap4.min.css" rel="stylesheet">
-	<link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
     <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
@@ -128,7 +130,8 @@ BACTERIOLOGÍA">
 	<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>
 	<script src="/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
     <script src="/js/buttons.colVis.js" type="text/javascript"></script>
-   
+    <script src="/js/select2.min.js"></script>
+
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
         @if (Auth::check())
