@@ -54,7 +54,7 @@ class confrsController extends Controller
         $confrs->confrstdesc = $request->confrstdesc;
         $confrs->confrsttitl = $request->confrsttitl;
         $confrs->confrsyorde = 0;
-        $confrs->confrmscode = 6;
+        $confrs->confrmscode = $request->confrmscode;
         $confrs->confrsbenbl = 1;
         $confrs->confrsvsmai = null;
         if ($imageName == null) { } else {
@@ -108,6 +108,8 @@ class confrsController extends Controller
         $confrs = confrs::where('confrsscode', $request->confrsscode)->first();
         $confrs->confrstdesc = $request->confrstdesc;
         $confrs->confrsttitl = $request->confrsttitl;
+        $confrs->confrmscode = $request->confrmscode;
+
         if ($imageName == null) { } else {
             $confrs->confrsvbigi = $imageName;
         }

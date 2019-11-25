@@ -46,7 +46,10 @@
                                             <span class="icon flaticon-user-2"></span>
                                             <input required type="text" id="new-confrstdesc" name="confrstdesc" placeholder="Descripcion">
                                         </div>
-
+                                        <div class="form-group">
+                                            <span class="fa fa-folder"></span>
+                                            <select id="select2-new-subform" class="form-control w-100" ></select>
+                                        </div>
                                         {{-- <div class="form-row">
 
                                             <div class="form-group col-6">

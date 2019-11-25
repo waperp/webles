@@ -16,8 +16,8 @@ $(document).ready(function () {
         label_selected: "Cambiar Foto", // Default: Cambiar Foto
         no_label: false // Default: false
     });
-    
-   
+
+
     $("#form-edit-perfil-user").validate({
         rules: {
             confirmSecusrtpass: {
@@ -36,13 +36,13 @@ $(document).ready(function () {
     //     $("#edit-perfil-image-preview").css("background-size", "cover");
     //     $("#edit-perfil-image-preview").css("background-position", "center center");
     // }
- 
-    $("#datatable-"+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable({
+
+    $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable({
         colReorder: true,
         "ordering": false,
         "searching": false,
         responsive: true,
-        "paging": false,"lengthChange": false,
+        "paging": false, "lengthChange": false,
         "info": true,
         dom: "<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
             "<'row'<'col-sm-12'tr>>" +
@@ -87,26 +87,26 @@ $(document).ready(function () {
             action: function (e, dt, node, config) {
                 dt.ajax.reload();
             },
-            
+
         }, {
             text: 'AGREGAR',
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
-                $('#modal-new-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
+                $('#modal-new-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
             },
             titleAttr: 'AGREGAR'
         }],
         "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            
+
         },
         "createdRow": function (row, data, dataIndex) {
-           
+
         },
         ajax: {
             url: '/datatables/quienes_somos',
             data: function (d) {
                 d.confrmscode = $('#select2-subform').val();
-                debugger
+                
             }
         },
         columns: [
@@ -129,7 +129,7 @@ $(document).ready(function () {
                 render: function (data, type, full, meta) {
                     return full.confrstdesc
                 }
-            },  {
+            }, {
                 width: 30,
                 orderable: false,
                 sortable: false,
@@ -148,7 +148,7 @@ $(document).ready(function () {
         ],
     });
     $("#table-pociciones-dia").DataTable({
-        
+
         language: {
             // processing: "<img src='/images/db/loading.gif'>",
             processing: "Cargando",
@@ -177,7 +177,7 @@ $(document).ready(function () {
                 }
             }
         },
-        
+
     });
     console.log()
     // if ()) {
@@ -205,42 +205,84 @@ $(document).ready(function () {
             },
             cache: true
         }
+    }).on("change", function () {
+        $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+        console.log('change');
     });
-}).on("change", function() {
-    $("#datatable-"+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
-    console.log('change');
-  }); 
+    $("#select2-edit-subform").select2({
+        placeholder: "Filtrar",
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+        $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+    });
+    $("#select2-new-subform").select2({
+        placeholder: "Filtrar",
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+        $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+    });
+});
 
 function formatState(state) {
     if (!state.id) {
         return state.text;
     }
     return state.text;
-    
+
 }
 function myFunction() {
     var x = document.URL;
     var docs = document.getElementById("jinu");
-    debugger
-    document.getElementById("jinu").src = 'https://www.facebook.com/plugins/share_button.php?href='+x+'&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId=665910193938787';
-   }
-function convertToSlug(Text)
-{
+    document.getElementById("jinu").src = 'https://www.facebook.com/plugins/share_button.php?href=' + x + '&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId=665910193938787';
+}
+function convertToSlug(Text) {
     return Text
         .toLowerCase()
-        .replace(/[^\w ]+/g,'')
-        .replace(/ +/g,'-')
+        .replace(/[^\w ]+/g, '')
+        .replace(/ +/g, '-')
         ;
 }
-function edit_quienes_somos(confrmscode)
-{
-    $('#modal-edit-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
+function edit_quienes_somos(confrmscode) {
+    $('#modal-edit-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
     $.ajax({
         url: '/confrs/' + confrmscode,
         type: 'get',
         datatype: 'json',
         success: function (data) {
-            debugger
             // $('#select-admin-gestionar-grupo-securs').empty();
             // $('#select-admin-gestionar-grupo-securs').append('<option value="' + data.plainficode + '">' + data.plainftnick + '</option>');
             // $('#admin-gestionar-grupo-tougrpicode-hidden').val(data.tougrpicode);
@@ -264,19 +306,21 @@ $("#form-edit-quienes-somos").submit(function (e) {
     var confrsttitl = $('#edit-confrsttitl').val();
     var confrstdesc = $('#edit-confrstdesc').val();
     var confrsscode = $('#edit-confrsscode').val();
+    var confrmscode = $('#select2-edit-subform').val();
     var confrsvbigi = $('#edit-confrsvbigi').prop('files')[0];
     var formData = new FormData();
 
     formData.append("confrsttitl", confrsttitl);
     formData.append("confrstdesc", confrstdesc);
     formData.append("confrsscode", confrsscode);
+    formData.append("confrmscode", confrmscode);
     formData.append("confrsvbigi", confrsvbigi);
-    formData.append('_method', 'patch');  
+    formData.append('_method', 'patch');
 
-debugger
+    
 
     $.ajax({
-        url: '/confrs/'+confrsscode,
+        url: '/confrs/' + confrsscode,
         type: 'POST',
         headers: {
             'X-CSRF-TOKEN': _token
@@ -286,9 +330,9 @@ debugger
         processData: false,
         data: formData,
         success: function (data) {
-            debugger
-            $('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
-            $('#modal-edit-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
+            
+            $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-edit-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
         },
     });
 });
@@ -299,15 +343,18 @@ $("#form-new-quienes-somos").submit(function (e) {
     var confrstdesc = $('#new-confrstdesc').val();
     var confrsscode = $('#new-confrsscode').val();
     var confrsvbigi = $('#new-confrsvbigi').prop('files')[0];
+    var confrmscode = $('#select2-new-subform').val();
+
     var formData = new FormData();
 
     formData.append("confrsttitl", confrsttitl);
+    formData.append("confrmscode", confrmscode);
     formData.append("confrstdesc", confrstdesc);
     formData.append("confrsscode", confrsscode);
     formData.append("confrsvbigi", confrsvbigi);
     // formData.append('_method', 'patch');  
 
-debugger
+    
 
     $.ajax({
         url: '/confrs',
@@ -320,15 +367,14 @@ debugger
         processData: false,
         data: formData,
         success: function (data) {
-            debugger
-            $('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
-            $('#modal-new-'+convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
+            
+            $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-new-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
         },
     });
 });
 
-function delete_quienes_somos(confrmscode)
-{
+function delete_quienes_somos(confrmscode) {
     var _token = $('input[name=_token]').val();
     $.ajax({
         url: '/confrs/' + confrmscode,
@@ -338,8 +384,8 @@ function delete_quienes_somos(confrmscode)
         },
         datatype: 'json',
         success: function (data) {
-            debugger
-            $('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+            
+            $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
         }
     });
 }
