@@ -106,6 +106,13 @@ span.fa ~ span.select2.select2-container{
 	color: #ecf0f1;
 	background: none ;
 }
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 37px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+}
 .image-preview label {
     position: absolute;
     z-index: 5;
