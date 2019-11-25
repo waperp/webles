@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title font-weight-bold">NUEVO '{{ $quienesSomos->confrmttitl }}'</h5>
+                <h5 class="modal-title font-weight-bold">NUEVO '{{ Str::upper($quienesSomos->confrmttitl) }}'</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
