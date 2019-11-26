@@ -1,6 +1,7 @@
 <html>
         @php
         $quienesSomos = App\confrm::nivel(11);
+        $redesSociales = App\confrm::nivel(13);
         @endphp
 <head>
     {{-- <meta charset="utf-8"> --}}
@@ -103,7 +104,9 @@ BACTERIOLOGÍA">
         @include('layouts.modal-quienes-somos')
         @include('layouts.modal-edit-quienes-somos')
         @include('layouts.modal-new-quienes-somos')
-
+        @include('layouts.modal-redes-sociales')
+        @include('layouts.modal-edit-redes-sociales')
+        @include('layouts.modal-new-redes-sociales')
         @endif
         @endauth
     </div>
@@ -134,6 +137,7 @@ BACTERIOLOGÍA">
 
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
+        const modal_redes_sociales = @json($redesSociales);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
   
