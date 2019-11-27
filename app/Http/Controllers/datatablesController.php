@@ -16,4 +16,10 @@ class datatablesController extends Controller
         $data = confrm::select('confrs.*')->join('confrs','confrs.confrmscode','confrm.confrmscode')->where('confrs.confrmscode',$request->confrmscode)->where('confrs.confrsbenbl',1)->get();
         return Datatables::of($data)->make(true);
     }
+    public function datatablesRedesSociales(Request $request)
+    {
+        // $data = tougrp::join('plainf','plainf.plainficode', 'tougrp.plainficode')->where('tougrp.touinfscode', $request->touinfscode)->get();
+        $data = confrm::select('confrs.*')->join('confrs','confrs.confrmscode','confrm.confrmscode')->where('confrs.confrmscode',$request->confrmscode)->where('confrs.confrsbenbl',1)->get();
+        return Datatables::of($data)->make(true);
+    }
 }

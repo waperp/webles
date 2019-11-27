@@ -20,7 +20,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('noticia', 'HomeController@demo')->name('demo');
-Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos')->name('home');
+Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos');
+Route::get('datatables/redes_sociales', 'datatablesController@datatablesQuienesSomos');
 Route::resource('secusr', 'secusrController');
 Route::resource('confrs', 'confrsController');
 Route::get('selectSubform', 'HomeController@selectSubform');

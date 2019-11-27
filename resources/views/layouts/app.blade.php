@@ -86,7 +86,6 @@ BACTERIOLOGÍA">
     <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/select2-bootstrap4.min.css" rel="stylesheet">
     <link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
     <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}

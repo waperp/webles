@@ -35,9 +35,9 @@ class HomeController extends Controller
         // return Hash::make('123');
         return view('home');
     }
-    public function selectSubform()
+    public function selectSubform(Request $request)
     {
-        $data = \DB::select('select confrm.confrmscode, confrm.confrmttitl FROM confrm WHERE confrm.confrmsfcod= 1');
+        $data = \DB::select('select confrm.confrmscode, confrm.confrmttitl FROM confrm WHERE confrm.confrmsfcod=?', [$request->confrmsfcod]);
         return response()->json($data);
 
     }

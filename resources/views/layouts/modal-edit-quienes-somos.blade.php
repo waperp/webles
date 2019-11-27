@@ -49,7 +49,7 @@
                                         <div class="form-group">
                                                 <span class="fa fa-folder"></span>
 
-                                               <select id="select2-edit-subform" class="form-control w-100" ></select>
+                                               <select class="form-control select2-subform w-100" ></select>
                                         </div>
                                         {{-- <div class="form-row">
 

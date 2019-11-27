@@ -21,7 +21,7 @@
                                         </div> --}}
                                 <!-- Contact Form -->
                                 <div class="contact-form">
-                                    <form id="form-new-quienes-somos" method="post" enctype="multipart/form-data">
+                                    <form id="form-new-redes-sociales" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <div class="col-12">

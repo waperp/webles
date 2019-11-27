@@ -66,17 +66,19 @@ CREATE TABLE `confrs` (
   `confrsyorde` tinyint(1) NOT NULL,
   `confrsvsmai` text DEFAULT NULL,
   `confrsvbigi` text DEFAULT NULL,
+  `confrsdcrea` date DEFAULT NULL,
+  `confrsdpubl` date DEFAULT NULL,
   `confrsbenbl` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `confrs` */
 
-insert  into `confrs`(`confrsscode`,`confrmscode`,`secconnuuid`,`confrsttitl`,`confrstdesc`,`confrsyorde`,`confrsvsmai`,`confrsvbigi`,`confrsbenbl`) values 
-(1,6,'3e05460f-ab1a-4de9-aa5b-de811d5324c3','Mision','Ser un laboratorio reconocido por la sociedad...',0,NULL,'1574346320.png',1),
-(2,6,'2b03360f-ac1a-4de9-aa5b-de811d5324c3','Vision','Crecer a nivel Nacional e iInterna...',1,NULL,'1574346332.png',1),
-(3,6,'6e01830f-bbma-3de9-aa5b-de811d5324c3','Valores','Siempre tenemos como prioridad al paciente...',2,NULL,'1574347210.png',1),
-(4,7,'3a15560f-amma-4de9-aa5b-de811d5324c3','Historia','Un 1995 nacio el Laboratorio...',0,NULL,NULL,1),
-(5,7,'8f01830f-llma-3de9-aa5b-de811d5324c3','Directiva','Nuestra directiva esta compuesta por...',1,NULL,NULL,1);
+insert  into `confrs`(`confrsscode`,`confrmscode`,`secconnuuid`,`confrsttitl`,`confrstdesc`,`confrsyorde`,`confrsvsmai`,`confrsvbigi`,`confrsdcrea`,`confrsdpubl`,`confrsbenbl`) values 
+(1,6,'3e05460f-ab1a-4de9-aa5b-de811d5324c3','Mision','Ser un laboratorio reconocido por la sociedad...',0,NULL,'1574346320.png','2019-11-26','2019-11-26',1),
+(2,6,'2b03360f-ac1a-4de9-aa5b-de811d5324c3','Vision','Crecer a nivel Nacional e iInterna...',1,NULL,'1574346332.png','2019-11-26','2019-11-26',1),
+(3,6,'6e01830f-bbma-3de9-aa5b-de811d5324c3','Valores','Siempre tenemos como prioridad al paciente...',2,NULL,'1574347210.png','2019-11-26','2019-11-26',1),
+(4,7,'3a15560f-amma-4de9-aa5b-de811d5324c3','Historia','Un 1995 nacio el Laboratorio...',0,NULL,NULL,'2019-11-26','2019-11-26',1),
+(5,7,'8f01830f-llma-3de9-aa5b-de811d5324c3','Directiva','Nuestra directiva esta compuesta por...',1,NULL,NULL,'2019-11-26','2019-11-26',1);
 
 /*Table structure for table `contyp` */
 
