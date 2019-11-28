@@ -29,22 +29,25 @@
                                                     <label for="confrsvbigib" class="image-label">
                                                         Tu Imagen
                                                     </label>
-                                                    <input class="image-upload" id="edit-confrsvbigi" name="confrsvbigi"
+                                                    <input class="image-upload" id="edit-rd-confrsvbigi" name="confrsvbigi"
                                                         type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
 
                                         </div>
-                                        <input type="hidden" id="edit-confrsscode">
+                                        <input type="hidden" id="edit-rd-confrsscode">
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="edit-confrsttitl" name="confrsttitl" placeholder="Titulo">
+                                            <input type="text" id="edit-rd-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
-
+                                        <div class="form-group">
+                                            <span class="icon flaticon-send"></span>
+                                            
+                                        </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <input required type="text" id="edit-confrstdesc" name="confrstdesc" placeholder="Descripcion">
+                                            <input required type="text" id="edit-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion">
                                         </div>
                                         <div class="form-group">
                                                 <span class="fa fa-folder"></span>

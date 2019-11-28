@@ -1,5 +1,6 @@
 $(document).ready(function () {
     // myFunction();
+    $('#datetimepicker1').datetimepicker();
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
@@ -105,7 +106,7 @@ $(document).ready(function () {
         ajax: {
             url: '/datatables/quienes_somos',
             data: function (d) {
-                d.confrmscode = $('#select2-subform').val();
+                d.confrmscode = $('#select2-quienes-somos-subform').val();
                 
             }
         },
@@ -202,7 +203,7 @@ $(document).ready(function () {
             text: 'AGREGAR',
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
-                $('#modal-new-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('show');
+                $('#modal-new-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('show');
             },
             titleAttr: 'AGREGAR'
         }],
@@ -215,7 +216,7 @@ $(document).ready(function () {
         ajax: {
             url: '/datatables/redes_sociales',
             data: function (d) {
-                d.confrmscode = $('#select2-subform').val();
+                d.confrmscode = $('#select2-redes-sociales-subform').val();
                 
             }
         },
@@ -271,11 +272,11 @@ $(document).ready(function () {
         ],
     });
   
-    $("<select id='select2-subform' class='form-control'></select>").appendTo('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)+'_wrapper .dt-buttons');
+    $("<select id='select2-quienes-somos-subform' class='form-control'></select>").appendTo('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)+'_wrapper .dt-buttons');
     $("<select id='select2-redes-sociales-subform' class='form-control'></select>").appendTo('#datatable-'+convertToSlug(modal_redes_sociales.confrmttitl)+'_wrapper .dt-buttons');
 
     // $('#select2-subform').select2();
-    $("#select2-subform").select2({
+    $("#select2-quienes-somos-subform").select2({
         placeholder: "Filtrar",
         templateResult: formatState,
         minimumResultsForSearch: Infinity,
@@ -283,6 +284,11 @@ $(document).ready(function () {
             url: "/selectSubform/",
             dataType: 'json',
             delay: 250,
+            data: function (params) {
+                return {
+                    confrmsfcod:  1
+                };
+              },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -299,7 +305,7 @@ $(document).ready(function () {
         $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
     });
-    $("#select2-edit-subform").select2({
+    $("#select2-edit-quienes-somos-subform").select2({
         placeholder: "Filtrar",
         templateResult: formatState,
         minimumResultsForSearch: Infinity,
@@ -307,6 +313,11 @@ $(document).ready(function () {
             url: "/selectSubform/",
             dataType: 'json',
             delay: 250,
+            data: function (params) {
+                return {
+                    confrmsfcod:  1
+                };
+              },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -322,7 +333,7 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
     });
-    $("#select2-new-subform").select2({
+    $("#select2-new-quienes-somos-subform").select2({
         placeholder: "Filtrar",
         templateResult: formatState,
         minimumResultsForSearch: Infinity,
@@ -330,6 +341,11 @@ $(document).ready(function () {
             url: "/selectSubform/",
             dataType: 'json',
             delay: 250,
+            data: function (params) {
+                return {
+                    confrmsfcod:  1
+                };
+              },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {

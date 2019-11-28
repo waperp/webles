@@ -86,6 +86,7 @@ BACTERIOLOGÍA">
     <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/select2-bootstrap4.min.css" rel="stylesheet">
     <link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
@@ -110,6 +111,7 @@ BACTERIOLOGÍA">
         @endauth
     </div>
     <script src="/js/jquery.js"></script>
+    <script src="/js/moment.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -131,6 +133,7 @@ BACTERIOLOGÍA">
 	<script src="/js/dataTables.bootstrap4.min.js"></script>
 	<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>
 	<script src="/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
+	<script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script src="/js/buttons.colVis.js" type="text/javascript"></script>
     <script src="/js/select2.min.js"></script>
 

@@ -16,6 +16,30 @@ span.fa ~ span.select2.select2-container{
     width: 90% !important;
 }
 
+.fa-new-position{
+    left: none !important; 
+    position: inherit !important;
+    top: auto !important;
+    color: #000000 !important;
+    font-size: 18px !important;
+    line-height: 1em !important;
+}
+.input-group.date > input[type="text"]{
+    color: #ffffff !important;
+    line-height: 26px;
+    padding: 0px 15px 8px 35px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 2px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
 @media only screen and (max-width: 767px) {
     .main-header .header-top, .xs-mobile-hide {
         display: block;

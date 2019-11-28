@@ -29,26 +29,44 @@
                                                     <label for="confrsvbigi" class="image-label">
                                                         Tu Imagen
                                                     </label>
-                                                    <input class="image-upload" id="new-confrsvbigi" name="confrsvbigi"
+                                                    <input class="image-upload" id="new-rd-confrsvbigi" name="confrsvbigi"
                                                         type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
 
                                         </div>
-                                        <input type="hidden" id="new-confrsscode">
+                                        <input type="hidden" id="new-rd-confrsscode">
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="new-confrsttitl" name="confrsttitl" placeholder="Titulo">
+                                            <input type="text" id="new-rd-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
+                                        <div class="form-group">
+                                            <div class="input-group date" id="datetimepicker1"> 
+                                                    <span class="icon flaticon-send"></span>
 
+                                                <input class="form-control" id="date-toufixdplay" placeholder="Ingrese una fecha"
+                                                    type="text" />
+                                                <div class="input-group-addon input-group-append">
+                                                    <div class="input-group-text">
+                                                        <i class="glyphicon glyphicon-calendar fa fa-calendar fa-new-position"></i>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            {{-- <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div> --}}
+                                        </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <input required type="text" id="new-confrstdesc" name="confrstdesc" placeholder="Descripcion">
+                                            <input required type="text" id="new-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion">
                                         </div>
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
-                                            <select id="select2-new-subform" class="form-control w-100" ></select>
+                                            <select id="select2-new-redes-sociales-subform" class="form-control w-100" ></select>
                                         </div>
                                         {{-- <div class="form-row">
 
