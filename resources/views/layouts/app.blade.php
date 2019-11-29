@@ -135,7 +135,8 @@ BACTERIOLOGÍA">
 	<script src="/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
 	<script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script src="/js/buttons.colVis.js" type="text/javascript"></script>
-    <script src="/js/select2.min.js"></script>
+    <script src="/js/select2.min.js" type="text/javascript"></script>
+    <script src="/js/es.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));

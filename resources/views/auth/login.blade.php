@@ -93,7 +93,6 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <div class="col-12">
                                     <span class="fa fa-user-circle"></span>
                                     <input class="@error('secusrtmail') is-invalid @enderror" 
                                         value="{{ old('secusrtlogu') }}" id="secusrtmail" required autocomplete="email" autofocus type="text"
@@ -101,12 +100,10 @@
                                     @error('secusrtmail')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
-                                </div>
                                
                             </div>
 
                             <div class="form-group">
-                                <div class="col-12">
                                     <span class="fa fa-key"></span>
                                     <input class="@error('password') is-invalid @enderror" name="password" required
                                         autocomplete="current-password" type="password" placeholder="Tu contraseña" required="">
@@ -115,7 +112,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
-                                </div>
                             </div>
                             {{-- 								
 								<div class="form-group">

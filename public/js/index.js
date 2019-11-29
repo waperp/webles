@@ -1,6 +1,9 @@
 $(document).ready(function () {
     // myFunction();
-    $('#datetimepicker1').datetimepicker();
+    $('#datetimepicker1').datetimepicker({
+        locale: 'es',
+        format: 'DD-MM-YYYY'
+    });
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
@@ -361,9 +364,6 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
     });
-
-
-
     $("#select2-redes-sociales-subform").select2({
         placeholder: "Filtrar",
         templateResult: formatState,
@@ -490,7 +490,7 @@ $("#form-edit-quienes-somos").submit(function (e) {
     var confrsttitl = $('#edit-confrsttitl').val();
     var confrstdesc = $('#edit-confrstdesc').val();
     var confrsscode = $('#edit-confrsscode').val();
-    var confrmscode = $('#select2-edit-subform').val();
+    var confrmscode = $('#select2-edit-quienes-somos-subform').val();
     var confrsvbigi = $('#edit-confrsvbigi').prop('files')[0];
     var formData = new FormData();
 
@@ -527,7 +527,7 @@ $("#form-new-quienes-somos").submit(function (e) {
     var confrstdesc = $('#new-confrstdesc').val();
     var confrsscode = $('#new-confrsscode').val();
     var confrsvbigi = $('#new-confrsvbigi').prop('files')[0];
-    var confrmscode = $('#select2-new-subform').val();
+    var confrmscode = $('#select2-new-quienes-somos-subform').val();
 
     var formData = new FormData();
 

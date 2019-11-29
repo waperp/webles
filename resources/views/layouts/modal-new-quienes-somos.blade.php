@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
-                                            <select  class="form-control select2-subform w-100" ></select>
+                                            <select id="select2-new-quienes-somos-subform"class="form-control select2-subform w-100" ></select>
                                         </div>
                                         {{-- <div class="form-row">
 
