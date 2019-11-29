@@ -42,8 +42,17 @@
                                             <input type="text" id="edit-rd-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
                                         <div class="form-group">
-                                            <span class="icon flaticon-send"></span>
-                                            
+                                            <div class="input-group date  redes-sociales-datetime" id="datetimepicker2"> 
+                                                    <span class="icon flaticon-send"></span>
+
+                                                <input class="form-control" id="edit-rd-confrsdpubl" placeholder="Ingrese una fecha"
+                                                    type="text" />
+                                                <div class="input-group-addon input-group-append">
+                                                    <div class="input-group-text">
+                                                        <i class="glyphicon glyphicon-calendar fa fa-calendar fa-new-position"></i>
+                                                    </div>
+                                                </div>
+                                            </div> 
                                         </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
@@ -52,7 +61,7 @@
                                         <div class="form-group">
                                                 <span class="fa fa-folder"></span>
 
-                                               <select id="select2-edit-subform" class="form-control w-100" ></select>
+                                               <select id="select2-edit-redes-sociales-subform" class="form-control w-100" ></select>
                                         </div>
                                         {{-- <div class="form-row">
 

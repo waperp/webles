@@ -26,7 +26,7 @@
                                         <div class="form-group">
                                             <div class="col-12">
                                                 <div class="image-preview mt-2 mb-2">
-                                                    <label for="confrsvbigi" class="image-label">
+                                                    <label for="new-rd-confrsvbigi" class="image-label">
                                                         Tu Imagen
                                                     </label>
                                                     <input class="image-upload" id="new-rd-confrsvbigi" name="confrsvbigi"
@@ -42,10 +42,10 @@
                                             <input type="text" id="new-rd-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
                                         <div class="form-group">
-                                            <div class="input-group date" id="datetimepicker1"> 
+                                            <div class="input-group date redes-sociales-datetime" id="datetimepicker1"> 
                                                     <span class="icon flaticon-send"></span>
 
-                                                <input class="form-control" id="date-toufixdplay" placeholder="Ingrese una fecha"
+                                                <input class="form-control" id="new-rd-confrsdpubl" placeholder="Ingrese una fecha"
                                                     type="text" />
                                                 <div class="input-group-addon input-group-append">
                                                     <div class="input-group-text">
@@ -53,12 +53,6 @@
                                                     </div>
                                                 </div>
                                             </div> 
-                                            {{-- <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                            </div> --}}
                                         </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>

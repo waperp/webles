@@ -1,9 +1,10 @@
 $(document).ready(function () {
     // myFunction();
-    $('#datetimepicker1').datetimepicker({
+    $('.redes-sociales-datetime').datetimepicker({
         locale: 'es',
-        format: 'DD-MM-YYYY'
+        format: 'YYYY-MM-DD'
     });
+    
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
@@ -400,7 +401,11 @@ $(document).ready(function () {
         ajax: {
             url: "/selectSubform/",
             dataType: 'json',
-            delay: 250,
+            delay: 250, data: function (params) {
+                return {
+                    confrmsfcod:  3
+                };
+              },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -423,7 +428,11 @@ $(document).ready(function () {
         ajax: {
             url: "/selectSubform/",
             dataType: 'json',
-            delay: 250,
+            delay: 250, data: function (params) {
+                return {
+                    confrmsfcod:  3
+                };
+              },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -479,6 +488,31 @@ function edit_quienes_somos(confrmscode) {
             $("#edit-confrsvbigi").parent().css("background-image", "url('images/" + data.confrsvbigi + "')");
             $("#edit-confrsvbigi").parent().css("background-size", "cover");
             $("#edit-confrsvbigi").parent().css("background-position", "center center");
+            // $('#modal-admin-gestionar-grupo-add').modal('hide');
+            // $('#modal-admin-gestionar-grupo').modal('show');
+        }
+    });
+}
+function edit_redes_sociales(confrmscode) {
+    $('#modal-edit-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('show');
+    $.ajax({
+        url: '/confrs/' + confrmscode,
+        type: 'get',
+        datatype: 'json',
+        success: function (data) {
+            // $('#select-admin-gestionar-grupo-securs').empty();
+            // $('#select-admin-gestionar-grupo-securs').append('<option value="' + data.plainficode + '">' + data.plainftnick + '</option>');
+            // $('#admin-gestionar-grupo-tougrpicode-hidden').val(data.tougrpicode);
+            // $('#admin-gestionar-grupo-touinfscode-hidden').val(data.touinfscode);
+            // $('#admin-gestionar-grupo-touinftname').val(data.touinftname);
+            // $('#datetimepicker-toufixdplay').data("DateTimePicker").date(data.toufixdplay)
+            $('#edit-rd-confrsttitl').val(data.confrsttitl);
+            $('#edit-rd-confrsscode').val(data.confrsscode);
+            $('#edit-rd-confrstdesc').val(data.confrstdesc);
+            $('#edit-rd-confrsdpubl').val(data.confrsdpubl);
+            $("#edit-rd-confrsvbigi").parent().css("background-image", "url('images/" + data.confrsvbigi + "')");
+            $("#edit-rd-confrsvbigi").parent().css("background-size", "cover");
+            $("#edit-rd-confrsvbigi").parent().css("background-position", "center center");
             // $('#modal-admin-gestionar-grupo-add').modal('hide');
             // $('#modal-admin-gestionar-grupo').modal('show');
         }
@@ -573,3 +607,83 @@ function delete_quienes_somos(confrmscode) {
         }
     });
 }
+
+
+$("#form-new-redes-sociales").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrsttitl = $('#new-rd-confrsttitl').val();
+    var confrstdesc = $('#new-rd-confrstdesc').val();
+    var confrsscode = $('#new-rd-confrsscode').val();
+    var confrsdpubl = $('#new-rd-confrsdpubl').val();
+    var confrsvbigi = $('#new-rd-confrsvbigi').prop('files')[0];
+    var confrmscode = $('#select2-new-redes-sociales-subform').val();
+debugger
+    var formData = new FormData();
+
+    formData.append("confrsttitl", confrsttitl);
+    formData.append("confrmscode", confrmscode);
+    formData.append("confrstdesc", confrstdesc);
+    formData.append("confrsscode", confrsscode);
+    formData.append("confrsvbigi", confrsvbigi);
+    formData.append("confrsdpubl", confrsdpubl);
+    // formData.append('_method', 'patch');  
+
+    
+
+    $.ajax({
+        url: '/confrs',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
+        success: function (data) {
+            
+            $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-new-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
+        },
+    });
+});
+$("#form-edit-redes-sociales").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrsttitl = $('#edit-rd-confrsttitl').val();
+    var confrstdesc = $('#edit-rd-confrstdesc').val();
+    var confrsdpubl = $('#edit-rd-confrsdpubl').val();
+    var confrsscode = $('#edit-rd-confrsscode').val();
+    var confrsvbigi = $('#edit-rd-confrsvbigi').prop('files')[0];
+    var confrmscode = $('#select2-edit-redes-sociales-subform').val();
+
+    var formData = new FormData();
+
+    formData.append("confrsttitl", confrsttitl);
+    formData.append("confrstdesc", confrstdesc);
+    formData.append("confrsscode", confrsscode);
+    formData.append("confrmscode", confrmscode);
+    formData.append("confrsvbigi", confrsvbigi);
+    formData.append("confrsdpubl", confrsdpubl);
+    formData.append('_method', 'patch');
+
+    
+
+    $.ajax({
+        url: '/confrs/' + confrsscode,
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
+        success: function (data) {
+            
+            $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-edit-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('hide');
+        },
+    });
+});

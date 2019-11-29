@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\confrm;
 use App\confrs;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Image;
 class confrsController extends Controller
@@ -56,6 +57,11 @@ class confrsController extends Controller
         $confrs->confrsyorde = 0;
         $confrs->confrmscode = $request->confrmscode;
         $confrs->confrsbenbl = 1;
+        if($request->has('confrsdpubl')){
+            $confrs->confrsdpubl = $request->confrsdpubl;
+        }else{
+            $confrs->confrsdpubl = Carbon::now()->format('Y-m-d');
+        }
         $confrs->confrsvsmai = null;
         if ($imageName == null) { } else {
             $confrs->confrsvbigi = $imageName;
@@ -109,7 +115,9 @@ class confrsController extends Controller
         $confrs->confrstdesc = $request->confrstdesc;
         $confrs->confrsttitl = $request->confrsttitl;
         $confrs->confrmscode = $request->confrmscode;
-
+        if($request->has('confrsdpubl')){
+            $confrs->confrsdpubl = $request->confrsdpubl;
+        }
         if ($imageName == null) { } else {
             $confrs->confrsvbigi = $imageName;
         }
