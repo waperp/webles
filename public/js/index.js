@@ -687,3 +687,19 @@ $("#form-edit-redes-sociales").submit(function (e) {
         },
     });
 });
+
+function delete_redes_sociales(confrmscode) {
+    var _token = $('input[name=_token]').val();
+    $.ajax({
+        url: '/confrs/' + confrmscode,
+        type: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        datatype: 'json',
+        success: function (data) {
+            
+            $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
+        }
+    });
+}
