@@ -33,6 +33,7 @@ class HomeController extends Controller
         // return confrm::treeAdmin();
         // return $items;
         // return Hash::make('123');
+        // return confrm::nivel(12)->sections;
         return view('home');
     }
     public function selectSubform(Request $request)

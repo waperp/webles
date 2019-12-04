@@ -4,7 +4,6 @@ $(document).ready(function () {
         locale: 'es',
         format: 'YYYY-MM-DD'
     });
-    
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
@@ -21,8 +20,6 @@ $(document).ready(function () {
         label_selected: "Cambiar Foto", // Default: Cambiar Foto
         no_label: false // Default: false
     });
-
-
     $("#form-edit-perfil-user").validate({
         rules: {
             confirmSecusrtpass: {
@@ -607,8 +604,6 @@ function delete_quienes_somos(confrmscode) {
         }
     });
 }
-
-
 $("#form-new-redes-sociales").submit(function (e) {
     var _token = $('input[name=_token]').val();
     e.preventDefault();
@@ -687,7 +682,6 @@ $("#form-edit-redes-sociales").submit(function (e) {
         },
     });
 });
-
 function delete_redes_sociales(confrmscode) {
     var _token = $('input[name=_token]').val();
     $.ajax({
@@ -698,7 +692,6 @@ function delete_redes_sociales(confrmscode) {
         },
         datatype: 'json',
         success: function (data) {
-            
             $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
         }
     });

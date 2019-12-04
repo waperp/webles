@@ -2,6 +2,7 @@
         @php
         $quienesSomos = App\confrm::nivel(11);
         $redesSociales = App\confrm::nivel(13);
+        $ultimasNoticias = App\confrm::nivel(14);
         @endphp
 <head>
     {{-- <meta charset="utf-8"> --}}

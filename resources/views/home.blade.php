@@ -10,10 +10,12 @@ href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fademonline.com%
 class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
         
 <!-- Bnner Section -->
-<section class="banner-section">
+@php
+$ultimasNoticias = App\confrm::nivel(12);
+@endphp
+<section class="banner-section" id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}">
     <div class="banner-carousel owl-carousel owl-theme">
-
-        <!-- Slide Item -->
+        @if ($ultimasNoticias->sections->isEmpty())
         <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
             <div class="container xs-banner-container-parent">
                 <div class="clearfix">
@@ -31,10 +33,39 @@ class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
                         </div>
                     </div>
 
+                    <!-- Image -->
+
+                    <div class="image">
+                        <img src="images/main-slider/content-image-2.png" alt="" />
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+        @endif
+        @foreach ($ultimasNoticias->sections as $sections_ultimas_noticias)
+        <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
+            <div class="container xs-banner-container-parent">
+                <div class="clearfix">
+
+                    <!-- Content Column -->
+                    <div class="banner-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="title wow fadeInUp" data-wow-delay="250ms"></div>
+                        <h2 class="wow fadeInUp" data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</h2>
+                        <p class="text wow fadeInUp" data-wow-delay="750ms">{{ $sections_ultimas_noticias->confrstdesc }}</p>
+                        <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
+                            {{-- <a href="department.html" class="theme-btn btn-style-two"><i>Book Now</i> <span
+                                    class="arrow icon icon-arrow_right"></span></a> --}}
+                        </div>
+                    </div>
+
                     <!-- Image Column -->
 
                     <div class="image">
-                        <img src="images/main-slider/content-image.png" alt="" />
+                        <img src="images/{{ $sections_ultimas_noticias->confrsvbigi }}" alt="" />
                     </div>
 
 
@@ -42,8 +73,11 @@ class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
 
             </div>
         </div>
-
+        @endforeach
         <!-- Slide Item -->
+        
+
+        {{-- <!-- Slide Item -->
         <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
             <div class="container xs-banner-container-parent">
                 <div class="clearfix">
@@ -102,7 +136,7 @@ class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
                 </div>
 
             </div>
-        </div>
+        </div> --}}
 
     </div>
 </section>

@@ -41,7 +41,7 @@ class confrm extends Model
 
     public function sections()
     {
-        return $this->hasMany(confrs::class,'confrmscode','confrmscode');
+        return $this->hasMany(confrs::class,'confrmscode','confrmscode')->orderBy('confrsdpubl','DESC');
     }
     public static function section($confrmscode)
     {

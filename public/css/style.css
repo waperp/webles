@@ -1930,7 +1930,7 @@ background-color: #2baeaa;
 }
 .banner-carousel .image{
 	position: absolute;
-	right:-120px;
+	right:0;
 	bottom:0px;
 }
 

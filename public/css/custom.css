@@ -15,7 +15,13 @@ span.fa ~ span.select2.select2-container{
     margin-left: 35px;
     width: 90% !important;
 }
+@media only screen and (max-width: 1440px){
 
+    .banner-carousel .image img {
+        height: 660px;
+        width: 660px;
+    }
+}
 .fa-new-position{
     left: none !important; 
     position: inherit !important;
