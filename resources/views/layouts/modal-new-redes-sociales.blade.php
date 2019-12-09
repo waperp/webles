@@ -60,7 +60,7 @@
                                         </div>
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
-                                            <select id="select2-new-redes-sociales-subform" class="form-control w-100" ></select>
+                                            <select id="select2-new-redes-sociales-subform" required class="form-control w-100" ></select>
                                         </div>
                                         {{-- <div class="form-row">
 

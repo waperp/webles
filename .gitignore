@@ -13,3 +13,4 @@ yarn-error.log
 *.jpg
 *.png
 composer.lock
+*.jpeg
