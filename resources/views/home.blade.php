@@ -13,10 +13,10 @@ class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
 @php
 $ultimasNoticias = App\confrm::nivel(12);
 @endphp
-<section class="banner-section" id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}">
+<section class="banner-section">
     <div class="banner-carousel owl-carousel owl-theme">
         @if ($ultimasNoticias->sections->isEmpty())
-        <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
+        <div class="slide-item"  id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}" style="background-image: url(images/main-slider/1.jpg);">
             <div class="container xs-banner-container-parent">
                 <div class="clearfix">
 
@@ -47,7 +47,7 @@ $ultimasNoticias = App\confrm::nivel(12);
         </div>
         @endif
         @foreach ($ultimasNoticias->sections as $sections_ultimas_noticias)
-        <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
+        <div class="slide-item"  id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}" style="background-image: url(images/main-slider/1.jpg);">
             <div class="container xs-banner-container-parent">
                 <div class="clearfix">
 

@@ -279,6 +279,7 @@ $(document).ready(function () {
     // $('#select2-subform').select2();
     $("#select2-quienes-somos-subform").select2({
         placeholder: "Filtrar",
+        width: '200px',
         templateResult: formatState,
         minimumResultsForSearch: Infinity,
         ajax: {
@@ -364,6 +365,7 @@ $(document).ready(function () {
     });
     $("#select2-redes-sociales-subform").select2({
         placeholder: "Filtrar",
+        width: '200px',
         templateResult: formatState,
         minimumResultsForSearch: Infinity,
         ajax: {
