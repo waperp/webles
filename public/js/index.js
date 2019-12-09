@@ -640,8 +640,8 @@ debugger
         data: formData,
         success: function (data) {
             
-            $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
-            $('#modal-new-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
+            $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-new-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('hide');
         },
     });
 });

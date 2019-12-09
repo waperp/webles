@@ -75,7 +75,6 @@ $ultimasNoticias = App\confrm::nivel(12);
         </div>
         @endforeach
         <!-- Slide Item -->
-        
 
         {{-- <!-- Slide Item -->
         <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
