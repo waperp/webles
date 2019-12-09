@@ -44,8 +44,9 @@ class confrsController extends Controller
 
             $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
             $img->resize(100, 100);
-            $img = $img->save($imageName);
-            // $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+            $img = $img->save(base_path() . '/public/images/'.$imageName);
+
+            //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
 
        
         } else {
