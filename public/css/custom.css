@@ -184,3 +184,14 @@ span.fa ~ span.select2.select2-container{
     color:white;
     border: none;
 }
+.elementskit-navbar-nav li a {
+    height: auto;
+    text-transform: capitalize;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-decoration: none;
+}

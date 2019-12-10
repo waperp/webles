@@ -1,4 +1,30 @@
+function refreshPage(){
+    window.location.reload();
+} 
+function detectmob() { 
+    if( navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+    ){
+        $('ul.nav-alignment-dynamic li:not(.elementskit-dropdown-has) > a').click(function(){
+                // refreshPage();
+                $('.elementskit-menu-offcanvas-elements').removeClass('active');
+             });
+    //   $('ul.nav-alignment-dynamic a:not()').click(function(){
+    //     refreshPage();
+    // });
+     }
+    else {
+       return false;
+     }
+   }
+
 $(document).ready(function () {
+    detectmob()
     // myFunction();
     $('.redes-sociales-datetime').datetimepicker({
         locale: 'es',
