@@ -12,11 +12,8 @@ function detectmob() {
     ){
         $('ul.nav-alignment-dynamic li:not(.elementskit-dropdown-has) > a').click(function(){
                 // refreshPage();
-                $('.elementskit-menu-offcanvas-elements').removeClass('active');
-             });
-    //   $('ul.nav-alignment-dynamic a:not()').click(function(){
-    //     refreshPage();
-    // });
+            $('.elementskit-menu-offcanvas-elements').removeClass('active');
+        });
      }
     else {
        return false;
