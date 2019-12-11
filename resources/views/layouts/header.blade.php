@@ -157,7 +157,7 @@
                         <!-- start menu logo and close button (for mobile offcanvas menu) -->
                         <div class="elementskit-nav-identity-panel">
                             <h1 class="elementskit-site-title">
-                                <a href="#" class="elementskit-nav-logo">Megamenu</a>
+                                <a href="#" class="elementskit-nav-logo">Less Menu</a>
                             </h1>
                             <button class="elementskit-menu-close elementskit-menu-toggler" type="button"><i
                                     class="icon icon-cross"></i></button>

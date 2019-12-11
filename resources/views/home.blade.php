@@ -142,7 +142,7 @@ $ultimasNoticias = App\confrm::nivel(12);
 <!-- End Bnner Section -->
 
 
-<!-- Services Form Section -->
+{{-- <!-- Services Form Section -->
 <section class="services-form-section">
         <div class="image-layer" style="background-image:url(images/background/1.png)"></div>
         <div class="container ">
@@ -194,7 +194,7 @@ $ultimasNoticias = App\confrm::nivel(12);
         </div>
     </section>
     <!-- End Services Form Section -->
-<!-- News Section -->
+<!-- News Section --> --}}
 @php
     $quienesSomos = App\confrm::childrens(1);
 @endphp
