@@ -195,3 +195,11 @@ span.fa ~ span.select2.select2-container{
     align-items: center;
     text-decoration: none;
 }
+.admin-menu-color{
+    font-weight: 800 !important;
+    color: blue !important;
+}
+.main-header .elementskit-navbar-nav > li.elementskit-dropdown-has > a.admin-menu-color:before {
+    font-weight: 800 !important;
+    color: blue !important;
+}

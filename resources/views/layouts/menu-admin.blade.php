@@ -8,9 +8,24 @@
     @else
     <li class="elementskit-dropdown-has">
         @if ($item->contypscode == 0)
+            @if ($item->confrmyadmf == 1)
+            <a class="admin-menu-color" href="#menu-{{ Str::slug($item->confrmttitl) }}"> {{ $item->confrmttitl }}</a>
+
+            @elseif($item->confrmyadmf == 0)
             <a href="#menu-{{ Str::slug($item->confrmttitl) }}"> {{ $item->confrmttitl }}</a>
+
+            @endif
+
         @elseif($item->contypscode == 1)
+            @if ($item->confrmyadmf == 1)
+            <li><a class="admin-menu-color" data-toggle="modal" data-target="#modal-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a></li>
+
+            @elseif($item->confrmyadmf == 0)
+
             <li><a data-toggle="modal" data-target="#modal-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a></li>
+
+            @endif
+
         @endif
         <ul class="elementskit-dropdown elementskit-submenu-panel">
             @foreach($item['children'] as $child)
