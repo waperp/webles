@@ -1932,9 +1932,13 @@ background-color: #2baeaa;
 	position: absolute;
 	right:0;
 	bottom:0px;
+	height: 100%;
 }
 
+.banner-carousel .image img {
 
+	border-radius: 10%;
+}
 .banner-carousel .owl-dots{
 	display: none;
 }
