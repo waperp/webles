@@ -1938,6 +1938,7 @@ background-color: #2baeaa;
 .banner-carousel .image img {
 
 	border-radius: 10%;
+	box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.1);
 }
 .banner-carousel .owl-dots{
 	display: none;
