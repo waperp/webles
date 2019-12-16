@@ -302,3 +302,14 @@ span.fa~span.select2.select2-container {
         position: static;
     }
 }
+.banner-column a{
+	position: relative;
+	display: block;
+	font-size: 54px;
+	line-height: 1.2em;
+	color: #ffffff !important;
+	font-weight: 700;
+	text-decoration: underline !important;
+	cursor: pointer;
+	margin-bottom: 25px;
+}

@@ -1913,6 +1913,8 @@ background-color: #2baeaa;
 	line-height: 1.2em;
 	color: #ffffff;
 	font-weight: 700;
+	text-decoration: underline;
+	cursor: pointer;
 	margin-bottom: 25px;
 }
 
