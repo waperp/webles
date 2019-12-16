@@ -230,7 +230,7 @@ span.fa~span.select2.select2-container {
         /* height: 660px; */
         width: 500px;
         height: 100%;
-        border: 40px solid rgba(0, 0, 0, .05);
+        border: 40px solid rgba(0, 0, 0, 0);
         
     }
 }
@@ -240,7 +240,7 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         /* height: 660px; */
         width: 500px;
-        border: 40px solid rgba(0, 0, 0, .05);
+        border: 40px solid rgba(0, 0, 0, 0);
         height: 100%;
     }
 }
@@ -258,7 +258,7 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         height: 100%;
         width: 300px;
-        border: 40px solid rgba(0, 0, 0, .05);
+        border: 40px solid rgba(0, 0, 0, 0);
         
     }
 }
@@ -267,7 +267,7 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         margin-left: auto;
         margin-right: auto;
-        border: 40px solid rgba(0, 0, 0, .05);
+        border: 40px solid rgba(0, 0, 0, 0);
         
         width: auto;
         height: auto;
@@ -279,7 +279,7 @@ span.fa~span.select2.select2-container {
         margin-left: auto;
         
         margin-right: auto;
-        border: 10px solid rgba(0, 0, 0, .05);
+        border: 10px solid rgba(0, 0, 0, 0);
         width: auto;
         height: auto;
     }
@@ -293,9 +293,7 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         margin-left: auto;
         margin-right: auto;
-        
-        border: 10px solid rgba(0, 0, 0, .05);
-
+        border: 10px solid rgba(0, 0, 0, 0);
         width: auto;
         height: auto;
     }
