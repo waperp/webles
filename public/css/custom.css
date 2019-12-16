@@ -230,7 +230,8 @@ span.fa~span.select2.select2-container {
         /* height: 660px; */
         width: 500px;
         height: 100%;
-        border-radius: 10%;
+        border: 40px solid rgba(0, 0, 0, .05);
+        
     }
 }
 
@@ -239,26 +240,26 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         /* height: 660px; */
         width: 500px;
+        border: 40px solid rgba(0, 0, 0, .05);
         height: 100%;
     }
 }
 
 @media all and (min-width:801px) and (max-width: 959px) {
     /* put your css styles in here */
-    
 }
 
 @media all and (min-width:769px) and (max-width: 800px) {
     /* put your css styles in here */
-    
 }
 
 @media all and (min-width:569px) and (max-width: 768px) {
     /* put your css styles in here */
     .banner-carousel .image img {
         height: 100%;
-        width:300px;
-        border-radius: 10%;
+        width: 300px;
+        border: 40px solid rgba(0, 0, 0, .05);
+        
     }
 }
 
@@ -266,7 +267,8 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         margin-left: auto;
         margin-right: auto;
-        border-radius: 10%;
+        border: 40px solid rgba(0, 0, 0, .05);
+        
         width: auto;
         height: auto;
     }
@@ -275,15 +277,15 @@ span.fa~span.select2.select2-container {
 @media all and (min-width:321px) and (max-width: 480px) {
     .banner-carousel .image img {
         margin-left: auto;
-        border-radius: 10%;
+        
         margin-right: auto;
+        border: 10px solid rgba(0, 0, 0, .05);
         width: auto;
         height: auto;
     }
     .banner-carousel .image {
         height: auto;
         position: static;
-
     }
 }
 
@@ -291,14 +293,14 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         margin-left: auto;
         margin-right: auto;
-        border-radius: 10%;
+        
+        border: 10px solid rgba(0, 0, 0, .05);
+
         width: auto;
         height: auto;
     }
-    
     .banner-carousel .image {
         height: auto;
         position: static;
-
     }
 }
