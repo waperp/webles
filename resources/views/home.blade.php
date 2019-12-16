@@ -52,7 +52,7 @@ $ultimasNoticias = App\confrm::nivel(12);
                 <div class="clearfix">
 
                     <!-- Content Column -->
-                    <div class="banner-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="banner-column col-lg-6 col-md-6 col-sm-12">
                         <div class="title wow fadeInUp" data-wow-delay="250ms"></div>
                         <h2 class="wow fadeInUp" data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</h2>
                         <p class="text wow fadeInUp" data-wow-delay="750ms">{{ $sections_ultimas_noticias->confrstdesc }}</p>
