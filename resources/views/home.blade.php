@@ -54,7 +54,7 @@ $ultimasNoticias = App\confrm::nivel(12);
                     <!-- Content Column -->
                     <div class="banner-column col-lg-6 col-md-6 col-sm-12">
                         <div class="title wow fadeInUp" data-wow-delay="250ms"></div>
-                        <h2 class="wow fadeInUp" data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</h2>
+                        <a target="_blank" href="/noticias/{{ $sections_ultimas_noticias->confrsscode }}" class="wow fadeInUp" data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</a href="/noticias/">
                         <p class="text wow fadeInUp" data-wow-delay="750ms">{{ $sections_ultimas_noticias->confrstdesc }}</p>
                         <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
                             {{-- <a href="department.html" class="theme-btn btn-style-two"><i>Book Now</i> <span
