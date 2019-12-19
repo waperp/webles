@@ -1932,7 +1932,7 @@ background-color: #2baeaa;
 }
 .banner-carousel .image{
 	position: absolute;
-	right:0;
+	right:-120px;
 	bottom:0px;
 	height: 100%;
 }
