@@ -313,3 +313,9 @@ span.fa~span.select2.select2-container {
 	cursor: pointer;
 	margin-bottom: 25px;
 }
+
+.contact-form .form-group textarea{
+    color:white;
+    overflow: auto;
+    resize: vertical;
+}
