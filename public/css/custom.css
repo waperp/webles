@@ -338,3 +338,14 @@ border: none;
     overflow: auto;
     resize: vertical;
 }
+.owl-next > span {
+    position: absolute;
+    
+    left: 25%;
+    top: 25%;
+}.owl-prev > span {
+    position: absolute;
+    
+    left: 25%;
+    top: 25%;
+}
