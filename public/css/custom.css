@@ -321,12 +321,12 @@ border: none;
         position: static;
     }
 }
-.banner-column a{
+.banner-column >a{
 	position: relative;
 	display: block;
 	font-size: 54px;
 	line-height: 1.2em;
-	color: #ffffff !important;
+	color: #FFD700 !important;
 	font-weight: 700;
 	text-decoration: underline !important;
 	cursor: pointer;
