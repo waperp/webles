@@ -229,9 +229,15 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         /* height: 660px; */
         width: 500px;
+        border: none;
+        margin: 40px 0 40px 0;
+        height: 490px;
+    }
+    .banner-carousel .image{
+        position: absolute;
+        right:-120px;
+        bottom:0px;
         height: 100%;
-        border: 40px solid rgba(0, 0, 0, 0);
-        
     }
 }
 
@@ -240,7 +246,14 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         /* height: 660px; */
         width: 500px;
-        border: 40px solid rgba(0, 0, 0, 0);
+border: none;
+        margin: 40px 0 40px 0;
+        height: 550px;
+    }
+    .banner-carousel .image{
+        position: absolute;
+        right:0px;
+        bottom:0px;
         height: 100%;
     }
 }
@@ -256,10 +269,16 @@ span.fa~span.select2.select2-container {
 @media all and (min-width:569px) and (max-width: 768px) {
     /* put your css styles in here */
     .banner-carousel .image img {
+        height: 410px;
+        width: 100%;
+        margin: 40px 0 40px 0;
+        border: none;        
+    }
+    .banner-carousel .image{
+        position: absolute;
+        right:0px;
+        bottom:0px;
         height: 100%;
-        width: 300px;
-        border: 40px solid rgba(0, 0, 0, 0);
-        
     }
 }
 
@@ -279,7 +298,7 @@ span.fa~span.select2.select2-container {
         margin-left: auto;
         
         margin-right: auto;
-        border: 10px solid rgba(0, 0, 0, 0);
+        border: none;
         width: auto;
         height: auto;
     }
@@ -293,7 +312,7 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         margin-left: auto;
         margin-right: auto;
-        border: 10px solid rgba(0, 0, 0, 0);
+        border: none;
         width: auto;
         height: auto;
     }

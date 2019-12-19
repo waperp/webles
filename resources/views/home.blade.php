@@ -64,7 +64,7 @@ $ultimasNoticias = App\confrm::nivel(12);
 
                     <!-- Image Column -->
 
-                    <div class="image">
+                    <div class="image col-lg-6 col-md-6 col-sm-12">
                         <img src="images/{{ $sections_ultimas_noticias->confrsvbigi }}" alt="" />
                     </div>
 
