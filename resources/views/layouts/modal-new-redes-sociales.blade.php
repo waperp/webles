@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <input required type="text" id="new-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion">
+                                            <textarea required  id="new-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>

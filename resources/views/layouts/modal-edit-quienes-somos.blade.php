@@ -44,12 +44,13 @@
 
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <input required type="text" id="edit-confrstdesc" name="confrstdesc" placeholder="Descripcion">
+                                            
+                                            <textarea required id="edit-confrstdesc" name="confrstdesc" placeholder="Descripcion" cols="30" rows="10"></textarea>
                                         </div>
                                         <div class="form-group">
                                                 <span class="fa fa-folder"></span>
 
-                                               <select class="form-control select2-subform w-100" ></select>
+                                               <select id="select2-edit-quienes-somos-subform" class="form-control select2-subform w-100" ></select>
                                         </div>
                                         {{-- <div class="form-row">
 
