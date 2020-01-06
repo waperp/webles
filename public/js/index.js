@@ -688,8 +688,6 @@ $("#form-edit-redes-sociales").submit(function (e) {
     formData.append("confrsdpubl", confrsdpubl);
     formData.append('_method', 'patch');
 
-    
-
     $.ajax({
         url: '/confrs/' + confrsscode,
         type: 'POST',
