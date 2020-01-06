@@ -504,6 +504,9 @@ function edit_quienes_somos(confrmscode) {
             // $('#admin-gestionar-grupo-touinfscode-hidden').val(data.touinfscode);
             // $('#admin-gestionar-grupo-touinftname').val(data.touinftname);
             // $('#datetimepicker-toufixdplay').data("DateTimePicker").date(data.toufixdplay)
+            $('#select2-edit-quienes-somos-subform').append('<option value="' + data.confrmscode + '">' + data.confrmttitl + '</option>');
+            $("#select2-edit-quienes-somos-subform").val(data.confrmscode);
+$("#select2-edit-quienes-somos-subform").trigger('change');
             $('#edit-confrsttitl').val(data.confrsttitl);
             $('#edit-confrsscode').val(data.confrsscode);
             $('#edit-confrstdesc').val(data.confrstdesc);
@@ -523,7 +526,9 @@ function edit_redes_sociales(confrmscode) {
         datatype: 'json',
         success: function (data) {
             // $('#select-admin-gestionar-grupo-securs').empty();
-            // $('#select-admin-gestionar-grupo-securs').append('<option value="' + data.plainficode + '">' + data.plainftnick + '</option>');
+            $('#select2-edit-redes-sociales-subform').append('<option value="' + data.confrmscode + '">' + data.confrmttitl + '</option>');
+            $("#select2-edit-redes-sociales-subform").val(data.confrmscode);
+$("#select2-edit-redes-sociales-subform").trigger('change');
             // $('#admin-gestionar-grupo-tougrpicode-hidden').val(data.tougrpicode);
             // $('#admin-gestionar-grupo-touinfscode-hidden').val(data.touinfscode);
             // $('#admin-gestionar-grupo-touinftname').val(data.touinftname);
