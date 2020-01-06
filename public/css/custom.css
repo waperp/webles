@@ -321,7 +321,7 @@ border: none;
         position: static;
     }
 }
-.banner-column >a{
+.banner-column > a {
 	position: relative;
 	display: block;
 	font-size: 54px;
@@ -330,7 +330,8 @@ border: none;
 	font-weight: 700;
 	text-decoration: underline !important;
 	cursor: pointer;
-	margin-bottom: 25px;
+    margin-bottom: 25px;
+    overflow-wrap: break-word;
 }
 
 .contact-form .form-group textarea{

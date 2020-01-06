@@ -26,11 +26,10 @@
                                         <div class="form-group">
                                             <div class="col-12">
                                                 <div class="image-preview mt-2 mb-2">
-                                                    <label for="confrsvbigib" class="image-label">
+                                                    <label for="edit-rd-confrsvbigi" class="image-label">
                                                         Tu Imagen
                                                     </label>
-                                                    <input class="image-upload" id="edit-rd-confrsvbigi" name="confrsvbigi"
-                                                        type="file" />
+                                                    <input class="image-upload" id="edit-rd-confrsvbigi" type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>

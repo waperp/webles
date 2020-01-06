@@ -29,8 +29,7 @@
                                                     <label for="new-rd-confrsvbigi" class="image-label">
                                                         Tu Imagen
                                                     </label>
-                                                    <input class="image-upload" id="new-rd-confrsvbigi" name="confrsvbigi"
-                                                        type="file" />
+                                                    <input class="image-upload" id="new-rd-confrsvbigi" type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
