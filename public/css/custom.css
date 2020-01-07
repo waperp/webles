@@ -350,3 +350,19 @@ border: none;
     left: 25%;
     top: 25%;
 }
+
+.btn-style-two.other {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 30px;
+    color: #ffffff;
+    padding: 5px 50px;
+    font-weight: 700;
+    overflow: hidden;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    background-color: #223a66;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+}
