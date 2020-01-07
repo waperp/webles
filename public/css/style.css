@@ -1829,7 +1829,8 @@ background-color: #2baeaa;
 	display: block;
 	font-size:46px;
 	line-height: 1.2em;
-	color: #222222;
+	/* color: #222222; */
+	color: #FFD700 !important;
 	font-weight: 700;
 }
 
