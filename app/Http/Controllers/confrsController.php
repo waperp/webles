@@ -79,7 +79,7 @@ class confrsController extends Controller
      */
     public function show($confrsscode)
     {
-        $data =  confrs::where('confrsscode', $confrsscode)->first();
+        $data =  confrs::join('confrm','confrm.confrmscode','confrs.confrmscode')->where('confrsscode', $confrsscode)->first();
         return response()->json($data);
     }
 
@@ -103,6 +103,8 @@ class confrsController extends Controller
      */
     public function update(Request $request,  $confrscode)
     {
+        // return response()->json($request->hasFile('confrsvbigi'));
+
         if ($request->hasFile('confrsvbigi')) {
             $image = $request->file('confrsvbigi');
             $img = Image::make($image);
