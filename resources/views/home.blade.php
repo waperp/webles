@@ -57,7 +57,7 @@ $ultimasNoticias = App\confrm::nivel(12);
                         <a target="_blank" href="/noticias/{{ $sections_ultimas_noticias->confrsscode }}" class="wow fadeInUp" data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</a>
                         <p class="text wow fadeInUp" data-wow-delay="750ms">{{ Str::limit($sections_ultimas_noticias->confrstdesc,140) }}</p>
                         <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
-                            <a href="#" class="theme-btn btn-style-two"><i>Ver Más</i> <span
+                            <a href="/ultimas-noticias/{{ Str::slug($ultimasNoticias->confrmttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}" class="theme-btn btn-style-two"><i>Ver Más</i> <span
                                     class="arrow icon icon-arrow_right"></span></a>
                         </div>
                     </div>
@@ -261,7 +261,7 @@ $ultimasNoticias = App\confrm::nivel(12);
                     <h3 class="text-center"><a href="#">{{ $childrens->confrsttitl }}</a></h3>
                     <p class="text-center">{{Str::limit( $childrens->confrstdesc,30) }}</p>
                     <div class="link-box wow fadeInUp  text-center mt-2" data-wow-delay="1000ms">
-                        <a href="#" class="theme-btn btn-style-two other"><i>Ver Más</i> <span
+                        <a href="/quienes-somos/{{ Str::slug($item->confrmttitl) }}/{{ $childrens->secconnuuid }}" class="theme-btn btn-style-two other"><i>Ver Más</i> <span
                                 class="arrow icon icon-arrow_right"></span></a>
                     </div>
                 </div>

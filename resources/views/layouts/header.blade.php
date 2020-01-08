@@ -108,7 +108,7 @@
             <div class="xs-navbar clearfix">
 
                 <div class="logo-outer">
-                    <div class="logo"><a href="/"><img src="images/logo.png" alt="" title=""></a></div>
+                    <div class="logo"><a href="/"><img src="/images/logo.png" alt="" title=""></a></div>
                 </div>
 
                 <nav class="elementskit-navbar">
