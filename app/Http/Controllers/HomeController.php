@@ -18,9 +18,11 @@ class HomeController extends Controller
     {
         // $this->middleware('auth');
     }
-    public function demo()
+    public function demo($slug,$secconnuuid)
     {
-        return view('demo');
+        $data =  confrs::join('confrm','confrm.confrmscode','confrs.confrmscode')->where('confrs.secconnuuid', $secconnuuid)->first();
+
+        return view('demo', compact(['data']));
         
     }
     /**
