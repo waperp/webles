@@ -29,7 +29,7 @@
                 <div class="inner-column">
                     <h2>{{ $data->confrsttitl }}</h2>
                     <p>{{ $data->confrstdesc }}</p>
-                    {{-- <a href="department.html" class="theme-btn btn-style-two"><i>Book Now</i> <span class="arrow icon icon-chevron-right"></span></a> --}}
+                    <a href="/" class="theme-btn btn-style-two"><span class="arrow icon icon-chevron-left"></span> <i>Volver atrás</i> </a>
                 </div>
             </div>
             
