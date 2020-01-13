@@ -239,13 +239,13 @@ $ultimasNoticias = App\confrm::nivel(12);
 
 @foreach ($quienesSomos as $item)
 <!-- Services Section -->
-<section class="services-section" id="menu-{{ Str::slug($item->confrmttitl) }}">
+<section class="services-section" >
     <div class="container">
 
         <!-- Sec Title -->
         <div class="section-title text-center">
             <h2>{{ $item->confrmttitl }}</h2>
-            <p class="text">{{$item->confrmtdesc }}</p>
+            <p id="menu-{{ Str::slug($item->confrmttitl) }}" class="text">{{$item->confrmtdesc }}</p>
         </div>
 
         <div class="row">

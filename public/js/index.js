@@ -1,26 +1,45 @@
-function refreshPage(){
+function refreshPage() {
     window.location.reload();
-} 
-function detectmob() { 
-    if( navigator.userAgent.match(/Android/i)
-    || navigator.userAgent.match(/webOS/i)
-    || navigator.userAgent.match(/iPhone/i)
-    || navigator.userAgent.match(/iPad/i)
-    || navigator.userAgent.match(/iPod/i)
-    || navigator.userAgent.match(/BlackBerry/i)
-    || navigator.userAgent.match(/Windows Phone/i)
-    ){
-        $('ul.nav-alignment-dynamic li:not(.elementskit-dropdown-has) > a').click(function(){
-                // refreshPage();
+}
+function detectmob() {
+    if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+    ) {
+        $('ul.nav-alignment-dynamic li:not(.elementskit-dropdown-has) > a').click(function () {
+            // refreshPage();
             $('.elementskit-menu-offcanvas-elements').removeClass('active');
         });
-     }
+    }
     else {
-       return false;
-     }
-   }
+        return false;
+    }
+}
+
 
 $(document).ready(function () {
+    var $div = $('#descripcion-general');
+    $text = $div.text();
+    $chars = $text.length;
+    var $btn = $('.btn-vermas');
+    $div.html($text.substring(0, 300));
+    $('#descripcion-general-div').append('<a class="btn-vermas" style="color: #49c7ed;font-size:15px">Ver más</a>');
+    $(".btn-vermas").click(function () {
+        $(".btn-vermas").toggle("slow", function () {
+            $div.html($text.substring(0, $chars));
+            $btn.text('Ver menos');
+        });
+    });
+    // $(".btn-vermas").click(function () {
+    //     $(".btn-vermas").toggle("slow", function () {
+    //         $div.html($text.substring(0, 300));
+    //         $btn.text('Ver más');
+    //     });
+    // });
     detectmob()
     // myFunction();
     $('.redes-sociales-datetime').datetimepicker({
@@ -131,7 +150,7 @@ $(document).ready(function () {
             url: '/datatables/quienes_somos',
             data: function (d) {
                 d.confrmscode = $('#select2-quienes-somos-subform').val();
-                
+
             }
         },
         columns: [
@@ -241,7 +260,7 @@ $(document).ready(function () {
             url: '/datatables/redes_sociales',
             data: function (d) {
                 d.confrmscode = $('#select2-redes-sociales-subform').val();
-                
+
             }
         },
         columns: [
@@ -270,14 +289,14 @@ $(document).ready(function () {
                 render: function (data, type, full, meta) {
                     return full.confrsdpubl
                 }
-            },{
+            }, {
                 orderable: false,
                 sortable: true,
                 render: function (data, type, full, meta) {
                     return "<a class='btn' OnClick='link_redes_sociales(" + full.confrsscode + ");' title='EDITAR' ><i class='fa fa-facebook  ext-warning'></i></a>";
 
                 }
-            },{
+            }, {
                 width: 30,
                 orderable: false,
                 sortable: false,
@@ -295,9 +314,9 @@ $(document).ready(function () {
             }
         ],
     });
-  
-    $("<select id='select2-quienes-somos-subform' class='form-control'></select>").appendTo('#datatable-'+convertToSlug(modal_quienes_somos.confrmttitl)+'_wrapper .dt-buttons');
-    $("<select id='select2-redes-sociales-subform' class='form-control'></select>").appendTo('#datatable-'+convertToSlug(modal_redes_sociales.confrmttitl)+'_wrapper .dt-buttons');
+
+    $("<select id='select2-quienes-somos-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl) + '_wrapper .dt-buttons');
+    $("<select id='select2-redes-sociales-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl) + '_wrapper .dt-buttons');
 
     // $('#select2-subform').select2();
     $("#select2-quienes-somos-subform").select2({
@@ -311,9 +330,9 @@ $(document).ready(function () {
             delay: 250,
             data: function (params) {
                 return {
-                    confrmsfcod:  1
+                    confrmsfcod: 1
                 };
-              },
+            },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -340,9 +359,9 @@ $(document).ready(function () {
             delay: 250,
             data: function (params) {
                 return {
-                    confrmsfcod:  1
+                    confrmsfcod: 1
                 };
-              },
+            },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -368,9 +387,9 @@ $(document).ready(function () {
             delay: 250,
             data: function (params) {
                 return {
-                    confrmsfcod:  1
+                    confrmsfcod: 1
                 };
-              },
+            },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -397,9 +416,9 @@ $(document).ready(function () {
             delay: 250,
             data: function (params) {
                 return {
-                    confrmsfcod:  3
+                    confrmsfcod: 3
                 };
-              },
+            },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -425,9 +444,9 @@ $(document).ready(function () {
             dataType: 'json',
             delay: 250, data: function (params) {
                 return {
-                    confrmsfcod:  3
+                    confrmsfcod: 3
                 };
-              },
+            },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -452,9 +471,9 @@ $(document).ready(function () {
             dataType: 'json',
             delay: 250, data: function (params) {
                 return {
-                    confrmsfcod:  3
+                    confrmsfcod: 3
                 };
-              },
+            },
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
@@ -506,7 +525,7 @@ function edit_quienes_somos(confrmscode) {
             // $('#datetimepicker-toufixdplay').data("DateTimePicker").date(data.toufixdplay)
             $('#select2-edit-quienes-somos-subform').append('<option value="' + data.confrmscode + '">' + data.confrmttitl + '</option>');
             $("#select2-edit-quienes-somos-subform").val(data.confrmscode);
-$("#select2-edit-quienes-somos-subform").trigger('change');
+            $("#select2-edit-quienes-somos-subform").trigger('change');
             $('#edit-confrsttitl').val(data.confrsttitl);
             $('#edit-confrsscode').val(data.confrsscode);
             $('#edit-confrstdesc').val(data.confrstdesc);
@@ -528,7 +547,7 @@ function edit_redes_sociales(confrmscode) {
             // $('#select-admin-gestionar-grupo-securs').empty();
             $('#select2-edit-redes-sociales-subform').append('<option value="' + data.confrmscode + '">' + data.confrmttitl + '</option>');
             $("#select2-edit-redes-sociales-subform").val(data.confrmscode);
-$("#select2-edit-redes-sociales-subform").trigger('change');
+            $("#select2-edit-redes-sociales-subform").trigger('change');
             // $('#admin-gestionar-grupo-tougrpicode-hidden').val(data.tougrpicode);
             // $('#admin-gestionar-grupo-touinfscode-hidden').val(data.touinfscode);
             // $('#admin-gestionar-grupo-touinftname').val(data.touinftname);
@@ -562,7 +581,7 @@ $("#form-edit-quienes-somos").submit(function (e) {
     formData.append("confrsvbigi", confrsvbigi);
     formData.append('_method', 'patch');
 
-    
+
 
     $.ajax({
         url: '/confrs/' + confrsscode,
@@ -575,7 +594,7 @@ $("#form-edit-quienes-somos").submit(function (e) {
         processData: false,
         data: formData,
         success: function (data) {
-            
+
             $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
             $('#modal-edit-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
         },
@@ -599,7 +618,7 @@ $("#form-new-quienes-somos").submit(function (e) {
     formData.append("confrsvbigi", confrsvbigi);
     // formData.append('_method', 'patch');  
 
-    
+
 
     $.ajax({
         url: '/confrs',
@@ -612,7 +631,7 @@ $("#form-new-quienes-somos").submit(function (e) {
         processData: false,
         data: formData,
         success: function (data) {
-            
+
             $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
             $('#modal-new-' + convertToSlug(modal_quienes_somos.confrmttitl)).modal('hide');
         },
@@ -629,7 +648,7 @@ function delete_quienes_somos(confrmscode) {
         },
         datatype: 'json',
         success: function (data) {
-            
+
             $('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
         }
     });
@@ -643,7 +662,7 @@ $("#form-new-redes-sociales").submit(function (e) {
     var confrsdpubl = $('#new-rd-confrsdpubl').val();
     var confrsvbigi = $('#new-rd-confrsvbigi').prop('files')[0];
     var confrmscode = $('#select2-new-redes-sociales-subform').val();
-debugger
+    debugger
     var formData = new FormData();
 
     formData.append("confrsttitl", confrsttitl);
@@ -654,7 +673,7 @@ debugger
     formData.append("confrsdpubl", confrsdpubl);
     // formData.append('_method', 'patch');  
 
-    
+
 
     $.ajax({
         url: '/confrs',
@@ -667,7 +686,7 @@ debugger
         processData: false,
         data: formData,
         success: function (data) {
-            
+
             $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
             $('#modal-new-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('hide');
         },
@@ -704,7 +723,7 @@ $("#form-edit-redes-sociales").submit(function (e) {
         processData: false,
         data: formData,
         success: function (data) {
-            
+
             $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
             $('#modal-edit-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('hide');
         },
@@ -724,3 +743,4 @@ function delete_redes_sociales(confrmscode) {
         }
     });
 }
+

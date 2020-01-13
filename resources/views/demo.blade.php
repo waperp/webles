@@ -8,7 +8,6 @@
     <div class="pattern-layer-two" style="background-image:url(images/background/pattern-17.png)"></div>
     <div class="container">
         <div class="row">
-            
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
@@ -26,9 +25,9 @@
             
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-column">
+                <div class="inner-column pt-0">
                     <h2>{{ $data->confrsttitl }}</h2>
-                    <p>{{ $data->confrstdesc }}</p>
+                    <div id="descripcion-general-div"><p class="mb-1" id="descripcion-general">{{ $data->confrstdesc }}</p></div>
                     <a href="/" class="theme-btn btn-style-two"><span class="arrow icon icon-chevron-left"></span> <i>Volver atrás</i> </a>
                 </div>
             </div>
