@@ -1,3 +1,4 @@
+
 .user-movil {
     display: none;
 }
@@ -230,14 +231,16 @@ span.fa~span.select2.select2-container {
         /* height: 660px; */
         width: 500px;
         border: none;
-        margin: 40px 0 40px 0;
-        height: 490px;
-    }
-    .banner-carousel .image{
-        position: absolute;
-        right:-120px;
-        bottom:0px;
+        
         height: 100%;
+    }
+    .banner-carousel .image {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        top: 0;
+        height: 600px;
+        padding: 40px 0 40px 40px;
     }
 }
 
@@ -246,15 +249,17 @@ span.fa~span.select2.select2-container {
     .banner-carousel .image img {
         /* height: 660px; */
         width: 500px;
-border: none;
-        margin: 40px 0 40px 0;
-        height: 550px;
-    }
-    .banner-carousel .image{
-        position: absolute;
-        right:0px;
-        bottom:0px;
+        border: none;
+        
         height: 100%;
+    }
+    .banner-carousel .image {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        top: 0;
+        height: 600px;
+        padding: 40px 0 40px 40px;
     }
 }
 
@@ -271,14 +276,16 @@ border: none;
     .banner-carousel .image img {
         height: 410px;
         width: 100%;
-        margin: 40px 0 40px 0;
-        border: none;        
+        
+        border: none;
     }
-    .banner-carousel .image{
+    .banner-carousel .image {
         position: absolute;
-        right:0px;
-        bottom:0px;
-        height: 100%;
+        right: 0px;
+        bottom: 0px;
+        top: 0;
+        height: 600px;
+        padding: 40px 0 40px 40px;
     }
 }
 
@@ -287,7 +294,6 @@ border: none;
         margin-left: auto;
         margin-right: auto;
         border: 40px solid rgba(0, 0, 0, 0);
-        
         width: auto;
         height: auto;
     }
@@ -296,7 +302,6 @@ border: none;
 @media all and (min-width:321px) and (max-width: 480px) {
     .banner-carousel .image img {
         margin-left: auto;
-        
         margin-right: auto;
         border: none;
         width: auto;
@@ -321,32 +326,34 @@ border: none;
         position: static;
     }
 }
-.banner-column > a {
-	position: relative;
-	display: block;
-	font-size: 54px;
-	line-height: 1.2em;
-	color: #FFD700 !important;
-	font-weight: 700;
-	text-decoration: underline !important;
-	cursor: pointer;
+
+.banner-column>a {
+    position: relative;
+    display: block;
+    font-size: 54px;
+    line-height: 1.2em;
+    color: #FFD700 !important;
+    font-weight: 700;
+    text-decoration: underline !important;
+    cursor: pointer;
     margin-bottom: 25px;
     overflow-wrap: break-word;
 }
 
-.contact-form .form-group textarea{
-    color:white;
+.contact-form .form-group textarea {
+    color: white;
     overflow: auto;
     resize: vertical;
 }
-.owl-next > span {
+
+.owl-next>span {
     position: absolute;
-    
     left: 25%;
     top: 25%;
-}.owl-prev > span {
+}
+
+.owl-prev>span {
     position: absolute;
-    
     left: 25%;
     top: 25%;
 }
