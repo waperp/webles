@@ -10,6 +10,6 @@ class confrs extends Model
     protected $primaryKey = 'confrsscode';
     protected $table = 'confrs';
     public static function gallery(){
-        return static::orderBy('confrsscode','DESC')->get();
+        return static::orderBy('confrsscode','DESC')->take(6)->get();
     }
 }

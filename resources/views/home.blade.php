@@ -426,7 +426,7 @@ $gallery = App\confrm::nivel(15);
                                         <span class="icon icon-heart1"></span>
                                     </div>
                                     <h3><a href="doctor-detail.html">{{ $itemGallery->confrsttitl }}</a></h3>
-                                    <a class="plus" href="images/gallery/1.jpg" data-fancybox="gallery-1"
+                                    <a class="plus"  href="/quienes-somos/{{ Str::slug($gallery->confrmttitl) }}/{{ $itemGallery->secconnuuid }}" data-fancybox="gallery-1"
                                         data-caption=""><span class="flaticon-plus-symbol"></span></a>
                                 </div>
                             </div>
