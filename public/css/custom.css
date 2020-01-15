@@ -6,7 +6,9 @@
 .user-normal {
     display: block;
 }
-
+.banner-carousel .image img {
+    height: 100%;
+}
 .top-right-content {
     width: auto;
 }
@@ -239,7 +241,7 @@ span.fa~span.select2.select2-container {
         right: 0px;
         bottom: 0px;
         top: 0;
-        height: 600px;
+        height: 100%;
         padding: 40px 0 40px 40px;
     }
 }
@@ -258,7 +260,7 @@ span.fa~span.select2.select2-container {
         right: 0px;
         bottom: 0px;
         top: 0;
-        height: 600px;
+        height: 100%;
         padding: 40px 0 40px 40px;
     }
 }
@@ -284,7 +286,7 @@ span.fa~span.select2.select2-container {
         right: 0px;
         bottom: 0px;
         top: 0;
-        height: 600px;
+        height: 100%;
         padding: 40px 0 40px 40px;
     }
 }

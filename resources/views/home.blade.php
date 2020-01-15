@@ -8,15 +8,17 @@
 data-layout="button" data-size="small"><a target="_blank" 
 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fademonline.com%2F&amp;src=sdkpreparse" 
 class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
-        
+
 <!-- Bnner Section -->
 @php
 $ultimasNoticias = App\confrm::nivel(12);
+$gallery = App\confrm::nivel(12);
 @endphp
 <section class="banner-section">
     <div class="banner-carousel owl-carousel owl-theme">
         @if ($ultimasNoticias->sections->isEmpty())
-        <div class="slide-item"  id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}" style="background-image: url(images/main-slider/1.jpg);">
+        <div class="slide-item" id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}"
+            style="background-image: url(images/main-slider/1.jpg);">
             <div class="container xs-banner-container-parent">
                 <div class="clearfix">
 
@@ -47,28 +49,34 @@ $ultimasNoticias = App\confrm::nivel(12);
         </div>
         @endif
         @foreach ($ultimasNoticias->sections as $sections_ultimas_noticias)
-        <div class="slide-item"  id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}" style="background-image: url(images/main-slider/1.jpg);">
+        <div class="slide-item" id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}"
+            style="background-image: url(images/main-slider/1.jpg);">
             <div class="container xs-banner-container-parent">
-                <div class="clearfix">
-
-                    <!-- Content Column -->
-                    <div class="banner-column col-lg-6 col-md-6 col-sm-12">
-                        <div class="title wow fadeInUp" data-wow-delay="250ms"></div>
-                        <a target="_blank" href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}" class="wow fadeInUp" data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</a>
-                        <p class="text wow fadeInUp" data-wow-delay="750ms">{{ Str::limit($sections_ultimas_noticias->confrstdesc,140) }}</p>
-                        <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
-                            <a href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}" class="theme-btn btn-style-two"><i>Ver Más</i> <span
-                                    class="arrow icon icon-arrow_right"></span></a>
+                <div class="col-md-12">
+                    <div class="row">
+                        <!-- Content Column -->
+                        <div class="banner-column col-lg-6 col-md-6 col-sm-12">
+                            <div class="title wow fadeInUp" data-wow-delay="250ms"></div>
+                            <a target="_blank"
+                                href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}"
+                                class="wow fadeInUp"
+                                data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</a>
+                            <p class="text wow fadeInUp" data-wow-delay="750ms">
+                                {{ Str::limit($sections_ultimas_noticias->confrstdesc,140) }}</p>
+                            <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
+                                <a href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}"
+                                    class="theme-btn btn-style-two"><i>Ver Más</i> <span
+                                        class="arrow icon icon-arrow_right"></span></a>
+                            </div>
                         </div>
+
+                        <!-- Image Column -->
+
+                        <div class="image col-lg-6 col-md-6 col-sm-12">
+                            <img src="images/{{ $sections_ultimas_noticias->confrsvbigi }}" alt="" />
+                        </div>
+
                     </div>
-
-                    <!-- Image Column -->
-
-                    <div class="image col-lg-6 col-md-6 col-sm-12">
-                        <img src="images/{{ $sections_ultimas_noticias->confrsvbigi }}" alt="" />
-                    </div>
-
-
                 </div>
 
             </div>
@@ -196,50 +204,50 @@ $ultimasNoticias = App\confrm::nivel(12);
     <!-- End Services Form Section -->
 <!-- News Section --> --}}
 @php
-    $quienesSomos = App\confrm::childrens(1);
+$quienesSomos = App\confrm::childrens(1);
 @endphp
 {{-- @foreach ($quienesSomos as $item)
 <section class="news-section" id="menu-{{ Str::slug($item->confrmttitl) }}">
-    <div class="pattern-layer-one" style="background-image:url(images/background/pattern-6.png)"></div>
-    <div class="pattern-layer-two" style="background-image:url(images/background/pattern-7.png)"></div>
-    <div class="container">
-        <!-- Sec Title -->
-        <div class="section-title text-center">
-            <h2>{{ $item->confrmttitl }}</h2>
-            <div class="text">{{$item->confrmtdesc  }}</div>
-        </div>
-        <div class="news-carousel owl-carousel owl-theme">
+<div class="pattern-layer-one" style="background-image:url(images/background/pattern-6.png)"></div>
+<div class="pattern-layer-two" style="background-image:url(images/background/pattern-7.png)"></div>
+<div class="container">
+    <!-- Sec Title -->
+    <div class="section-title text-center">
+        <h2>{{ $item->confrmttitl }}</h2>
+        <div class="text">{{$item->confrmtdesc  }}</div>
+    </div>
+    <div class="news-carousel owl-carousel owl-theme">
 
-            <!-- News Block -->
-           
+        <!-- News Block -->
 
-           @foreach ($item->sections as $childrens)
-           <div class="news-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
-                        {{-- <div class="post-date"><strong>{{ $childrens->confrsscode }}</strong>dec</div> -
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            {{-- <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
+
+        @foreach ($item->sections as $childrens)
+        <div class="news-block">
+            <div class="inner-box">
+                <div class="image">
+                    <a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
+                    {{-- <div class="post-date"><strong>{{ $childrens->confrsscode }}</strong>dec</div> -
+            </div>
+            <div class="lower-content">
+                <ul class="post-meta">
+                    {{-- <li><a href="blog-detail.html"><span class="icon icon-user"></span>Oliver Liam</a></li>
                             <li><a href="blog-detail.html"><span class="icon icon-folders"></span>Surgical</a></li> 
                         </ul>
                         <h3><a href="#">{{ $childrens->confrsttitl }}</a></h3>
-                        <span>{{ $childrens->confrstdesc }}</span>
-                    </div>
-                </div>
+                    <span>{{ $childrens->confrstdesc }}</span>
             </div>
-           @endforeach
         </div>
     </div>
+    @endforeach
+</div>
+</div>
 </section>
 @endforeach --}}
 
 
 @foreach ($quienesSomos as $item)
 <!-- Services Section -->
-<section class="services-section" >
+<section class="services-section">
     <div class="container">
 
         <!-- Sec Title -->
@@ -253,7 +261,9 @@ $ultimasNoticias = App\confrm::nivel(12);
             <!-- Featured Block -->
             <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-layer" style="background-image:url(images/{{ $childrens->confrsvbigi }});background-size:cover;background-position: center center "></div>
+                    <div class="image-layer"
+                        style="background-image:url(images/{{ $childrens->confrsvbigi }});background-size:cover;background-position: center center ">
+                    </div>
                     <div class="icon-box">
                         {{-- <span class="icon icon-brifecase-hospital2"></span> --}}
                         <img src="/images/{{  $childrens->confrsvbigi }}" alt="">
@@ -261,7 +271,8 @@ $ultimasNoticias = App\confrm::nivel(12);
                     <h3 class="text-center"><a href="#">{{ $childrens->confrsttitl }}</a></h3>
                     <p class="text-center">{{Str::limit( $childrens->confrstdesc,30) }}</p>
                     <div class="link-box wow fadeInUp  text-center mt-2" data-wow-delay="1000ms">
-                        <a href="/quienes-somos/{{ Str::slug($item->confrmttitl) }}/{{ $childrens->secconnuuid }}" class="theme-btn btn-style-two other"><i>Ver Más</i> <span
+                        <a href="/quienes-somos/{{ Str::slug($item->confrmttitl) }}/{{ $childrens->secconnuuid }}"
+                            class="theme-btn btn-style-two other"><i>Ver Más</i> <span
                                 class="arrow icon icon-arrow_right"></span></a>
                     </div>
                 </div>
@@ -388,7 +399,55 @@ $ultimasNoticias = App\confrm::nivel(12);
         </div>
     </div>
 </section>
+@php
+$gallery_img = App\confrs::gallery();
+$gallery = App\confrm::nivel(15);
+@endphp
+<section class="gallery-section">
+    <div class="image-layer" style="background-image:url(images/background/4.jpg)"></div>
+    <div class="container">
+        <div class="title-box">
+            <h2 id="menu-{{ Str::slug($gallery->confrmttitl) }}">Galeria LES</h2>
+        </div>
 
+        <div class="row">
+
+            <!-- Project Block -->
+            @foreach ($gallery_img as $itemGallery)
+            <div class="project-block col-lg-4 col-md-6 col-sm-12">
+                <div class="inner-box">
+                    <div class="image">
+                        <img src="/images/{{ $itemGallery->confrsvbigi }}" alt="" />
+                        <!-- Overlay Box -->
+                        <div class="overlay-box">
+                            <div class="overlay-inner">
+                                <div class="overlay-content">
+                                    <div class="icon-box">
+                                        <span class="icon icon-heart1"></span>
+                                    </div>
+                                    <h3><a href="doctor-detail.html">{{ $itemGallery->confrsttitl }}</a></h3>
+                                    <a class="plus" href="images/gallery/1.jpg" data-fancybox="gallery-1"
+                                        data-caption=""><span class="flaticon-plus-symbol"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+
+        </div>
+
+        <!-- Button Box -->
+        <div class="button-box text-center">
+            <a href="gallery.html" class="theme-btn btn-style-three">ver Todo <span
+                    class="arrow icon-chevron-right"></span></a>
+        </div>
+
+    </div>
+</section>
 <!-- End Fullwidth Section -->
 
 <!-- Team Section -->
@@ -1065,163 +1124,7 @@ $ultimasNoticias = App\confrm::nivel(12);
 
 
 <!-- Gallery Section -->
-<section class="gallery-section">
-    <div class="image-layer" style="background-image:url(images/background/4.jpg)"></div>
-    <div class="container">
-        <div class="title-box">
-            <h2>Gallery of Medizco Center</h2>
-        </div>
 
-        <div class="row">
-
-            <!-- Project Block -->
-            <div class="project-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/gallery/1.jpg" alt="" />
-                        <!-- Overlay Box -->
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="overlay-content">
-                                    <div class="icon-box">
-                                        <span class="icon icon-heart1"></span>
-                                    </div>
-                                    <h3><a href="doctor-detail.html">Online Medicine</a></h3>
-                                    <a class="plus" href="images/gallery/1.jpg" data-fancybox="gallery-1"
-                                        data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Block -->
-            <div class="project-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/gallery/2.jpg" alt="" />
-                        <!-- Overlay Box -->
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="overlay-content">
-                                    <div class="icon-box">
-                                        <span class="icon icon-heart1"></span>
-                                    </div>
-                                    <h3><a href="doctor-detail.html">Online Medicine</a></h3>
-                                    <a class="plus" href="images/gallery/2.jpg" data-fancybox="gallery-1"
-                                        data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Block -->
-            <div class="project-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/gallery/3.jpg" alt="" />
-                        <!-- Overlay Box -->
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="overlay-content">
-                                    <div class="icon-box">
-                                        <span class="icon icon-heart1"></span>
-                                    </div>
-                                    <h3><a href="doctor-detail.html">Online Medicine</a></h3>
-                                    <a class="plus" href="images/gallery/3.jpg" data-fancybox="gallery-1"
-                                        data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Block -->
-            <div class="project-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/gallery/4.jpg" alt="" />
-                        <!-- Overlay Box -->
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="overlay-content">
-                                    <div class="icon-box">
-                                        <span class="icon icon-heart1"></span>
-                                    </div>
-                                    <h3><a href="doctor-detail.html">Online Medicine</a></h3>
-                                    <a class="plus" href="images/gallery/4.jpg" data-fancybox="gallery-1"
-                                        data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Block -->
-            <div class="project-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/gallery/5.jpg" alt="" />
-                        <!-- Overlay Box -->
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="overlay-content">
-                                    <div class="icon-box">
-                                        <span class="icon icon-heart1"></span>
-                                    </div>
-                                    <h3><a href="doctor-detail.html">Online Medicine</a></h3>
-                                    <a class="plus" href="images/gallery/5.jpg" data-fancybox="gallery-1"
-                                        data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Block -->
-            <div class="project-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/gallery/6.jpg" alt="" />
-                        <!-- Overlay Box -->
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="overlay-content">
-                                    <div class="icon-box">
-                                        <span class="icon icon-heart1"></span>
-                                    </div>
-                                    <h3><a href="doctor-detail.html">Online Medicine</a></h3>
-                                    <a class="plus" href="images/gallery/6.jpg" data-fancybox="gallery-1"
-                                        data-caption=""><span class="flaticon-plus-symbol"></span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Button Box -->
-        <div class="button-box text-center">
-            <a href="gallery.html" class="theme-btn btn-style-three">View All <span
-                    class="arrow icon-chevron-right"></span></a>
-        </div>
-
-    </div>
-</section>
 <!-- End Gallery Section -->
 
 <!-- Events Section -->

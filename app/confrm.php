@@ -47,4 +47,5 @@ class confrm extends Model
     {
         return static::where('confrmscode', $confrmscode)->orderBy('confrmscode','asc')->first();
     }
+    
 }
