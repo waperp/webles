@@ -22,7 +22,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('noticia', 'HomeController@demo')->name('demo');
 Route::get('redes-sociales/{slug}/{secconnuid}', 'HomeController@demo');
 Route::get('ultimas-noticias/{slug}/{secconnuid}', 'HomeController@demo');
-Route::get('gallery/{slug}/{secconnuid}', 'HomeController@demo');
+Route::get('galeria/{slug}/{secconnuid}', 'HomeController@demo');
 Route::get('quienes-somos/{slug}/{secconnuid}', 'HomeController@demo');
 Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos');
 Route::get('datatables/redes_sociales', 'datatablesController@datatablesQuienesSomos');
