@@ -1823,14 +1823,22 @@ background-color: #2baeaa;
 	z-index: 1;
 	margin-bottom:50px;
 }
-
+.elementskit-header{
+	width: 100%;
+    position: fixed !important;
+    top: 0;
+}
+.banner-section {
+    position: relative;
+    margin-top: 128px;
+}
 .section-title h2{
 	position: relative;
 	display: block;
 	font-size:46px;
 	line-height: 1.2em;
 	/* color: #222222; */
-	color: #FFD700 !important;
+	color:black !important;
 	font-weight: 700;
 }
 
