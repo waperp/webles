@@ -60,7 +60,9 @@ $gallery = App\confrm::nivel(12);
                             <a target="_blank"
                                 href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}"
                                 class="wow fadeInUp"
-                                data-wow-delay="500ms">{{ $sections_ultimas_noticias->confrsttitl }}</a>
+                                data-wow-delay="500ms">{{ Str::lower($sections_ultimas_noticias->confrsttitl )}}</a>
+                                {{-- <h2 class="wow fadeInUp" data-wow-delay="500ms">{{ Str::lower($sections_ultimas_noticias->confrsttitl) }}</h2> --}}
+
                             <p class="text wow fadeInUp" data-wow-delay="750ms">
                                 {{ Str::limit($sections_ultimas_noticias->confrstdesc,140) }}</p>
                             <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
@@ -425,7 +427,7 @@ $gallery = App\confrm::nivel(15);
                                     <div class="icon-box">
                                         <span class="icon icon-heart1"></span>
                                     </div>
-                                    <h3><a href="/galeria/{{ Str::slug($itemGallery->confrsttitl) }}/{{ $itemGallery->secconnuuid }}">{{ $itemGallery->confrsttitl }}</a></h3>
+                                    <h3><a target="_blank" href="/galeria/{{ Str::slug($itemGallery->confrsttitl) }}/{{ $itemGallery->secconnuuid }}">{{ $itemGallery->confrsttitl }}</a></h3>
                                     <a class="plus"  href="/images/{{ $itemGallery->confrsvbigi }}" data-fancybox="gallery-1" data-caption=""><span class="flaticon-plus-symbol"></span></a>
                                 </div>
                             </div>
