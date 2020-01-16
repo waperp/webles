@@ -290,7 +290,7 @@ $quienesSomos = App\confrm::childrens(1);
 
 
 <!-- Featured Section -->
-<section class="featured-section">
+{{-- <section class="featured-section">
     <div class="pattern-layer" style="background-image:url(images/background/pattern-1.png)"></div>
     <div class="container">
         <div class="row">
@@ -335,11 +335,11 @@ $quienesSomos = App\confrm::childrens(1);
 
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Featured Section -->
 
 <!-- Fullwidth Section -->
-<section class="container-fluid">
+{{-- <section class="container-fluid">
     <div class="pattern-layer" style="background-image:url(images/background/pattern-2.png)"></div>
     <div class="outer-section">
         <div class="clearfix">
@@ -400,7 +400,7 @@ $quienesSomos = App\confrm::childrens(1);
 
         </div>
     </div>
-</section>
+</section> --}}
 @php
 $gallery_img = App\confrs::gallery();
 $gallery = App\confrm::nivel(15);
@@ -452,7 +452,7 @@ $gallery = App\confrm::nivel(15);
 <!-- End Fullwidth Section -->
 
 <!-- Team Section -->
-<section class="team-section">
+{{-- <section class="team-section">
     <div class="team-pattern-layer" style="background-image:url(images/background/pattern-1.png)"></div>
     <div class="team-pattern-layer-two" style="background-image:url(images/background/pattern-5.png)"></div>
     <div class="container">
@@ -828,11 +828,11 @@ $gallery = App\confrm::nivel(15);
 
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Team Section -->
 
 <!-- Appointment Section -->
-<section class="appointment-section">
+{{-- <section class="appointment-section">
     <div class="pattern-layer" style="background-image:url(images/background/pattern-1.png)"></div>
     <div class="container">
         <div class="title-box">
@@ -1097,11 +1097,11 @@ $gallery = App\confrm::nivel(15);
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Appointment Section -->
 
 <!-- Emergency Section -->
-<section class="emergency-section" style="background-image:url(images/background/3.jpg)">
+{{-- <section class="emergency-section" style="background-image:url(images/background/3.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12">
@@ -1120,7 +1120,7 @@ $gallery = App\confrm::nivel(15);
         </div>
 
     </div>
-</section>
+</section> --}}
 <!-- End Emergency Section -->
 
 
@@ -1129,7 +1129,7 @@ $gallery = App\confrm::nivel(15);
 <!-- End Gallery Section -->
 
 <!-- Events Section -->
-<section class="events-section">
+{{-- <section class="events-section">
     <div class="pattern-layer-two" style="background-image:url(images/background/pattern-5.png)"></div>
     <div class="container">
         <!-- Title Box -->
@@ -1220,11 +1220,11 @@ $gallery = App\confrm::nivel(15);
         </div>
 
     </div>
-</section>
+</section> --}}
 <!-- End Events Section -->
 
 <!-- Testimonial Section -->
-<section class="testimonial-section">
+{{-- <section class="testimonial-section">
     <div class="container">
         <!-- Sec Title -->
         <div class="section-title text-center">
@@ -1284,13 +1284,13 @@ $gallery = App\confrm::nivel(15);
         </div>
 
     </div>
-</section>
+</section> --}}
 <!-- End Testimonial Section -->
 
 
 
 <!--Sponsors Section-->
-<section class="sponsors-section">
+{{-- <section class="sponsors-section">
     <div class="container">
 
         <div class="sponsors-outer">
@@ -1324,11 +1324,11 @@ $gallery = App\confrm::nivel(15);
         </div>
 
     </div>
-</section>
+</section> --}}
 <!--End Sponsors Section-->
 
 <!-- Fullwidth Section -->
-<section class="fullwidth-section-two">
+{{-- <section class="fullwidth-section-two">
     <div class="outer-container">
         <div class="clearfix">
 
@@ -1364,12 +1364,12 @@ $gallery = App\confrm::nivel(15);
 
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Fullwidth Section Section -->
 
 <!--Main Footer-->
 <footer class="main-footer" style="background-image:url(images/background/7.jpg)">
-
+{{-- 
     <div class="container">
 
         <!--Widgets Section-->
@@ -1434,7 +1434,7 @@ $gallery = App\confrm::nivel(15);
             </div>
         </div>
 
-    </div>
+    </div> --}}
 
     <!-- Footer Bottom -->
     <div class="footer-bottom">
@@ -1443,13 +1443,13 @@ $gallery = App\confrm::nivel(15);
 
                 <div class="pull-left">
                     <!-- Copyright -->
-                    <p class="copyright">&copy; 2019, Medizco Center. All Rights Reserved.</p>
+                    <p class="copyright">&copy; 2020, LES. Todo los derechos reservados.</p>
                 </div>
 
                 <div class="pull-right">
                     <ul class="social-box">
                         <li class="messanger"><a href="#"><span class="icon flaticon-messenger"></span>
-                                medizco.center</a></li>
+                                LES</a></li>
                         <li class="facebook"><a href="#" class="icon icon-facebook"></a></li>
                         <li class="linkedin"><a href="#" class="icon icon-linkedin"></a></li>
                         <li class="twitter"><a href="#" class="icon icon-twitter"></a></li>
