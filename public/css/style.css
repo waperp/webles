@@ -1831,7 +1831,12 @@ background-color: #2baeaa;
 .banner-section {
     position: relative;
     margin-top: 128px;
+}.booking-section {
+    position: relative;
+    padding: 100px 0px 120px;
+    margin: 128px;
 }
+
 .section-title h2{
 	position: relative;
 	display: block;
