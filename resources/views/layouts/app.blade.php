@@ -3,6 +3,7 @@
         $quienesSomos = App\confrm::nivel(11);
         $redesSociales = App\confrm::nivel(13);
         $ultimasNoticias = App\confrm::nivel(14);
+        $usuarios = App\confrm::nivel(16);
         @endphp
 <head>
     {{-- <meta charset="utf-8"> --}}
@@ -108,6 +109,10 @@ BACTERIOLOGÍA">
         @include('layouts.modal-redes-sociales')
         @include('layouts.modal-edit-redes-sociales')
         @include('layouts.modal-new-redes-sociales')
+        
+        @include('layouts.modal-user')
+        @include('layouts.modal-new-user')
+        @include('layouts.modal-edit-user')
         @endif
         @endauth
     </div>
