@@ -143,10 +143,12 @@ BACTERIOLOGÍA">
     <script src="/js/buttons.colVis.js" type="text/javascript"></script>
     <script src="/js/select2.min.js" type="text/javascript"></script>
     <script src="/js/es.js" type="text/javascript"></script>
+    <script src="/js/ellipsis.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
         const modal_redes_sociales = @json($redesSociales);
+        const modal_usuarios = @json($usuarios);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
   
