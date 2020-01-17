@@ -3635,6 +3635,7 @@ background-color: #2baeaa;
 .project-block .image img{
 	position:relative;
 	width:100%;
+	height: 300px;
 	display:block;
 }
 
