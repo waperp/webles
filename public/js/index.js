@@ -153,6 +153,10 @@ $(document).ready(function () {
 
             }
         },
+        columnDefs: [ {
+            targets: 1,
+            render: $.fn.dataTable.render.ellipsis( 37, true )
+          } ],
         columns: [
             // {
             //     className: 'padding-pos',
@@ -170,9 +174,8 @@ $(document).ready(function () {
             }, {
                 orderable: false,
                 sortable: true,
-                render: function (data, type, full, meta) {
-                    return full.confrstdesc
-                }
+                data: 'confrstdesc',
+              
             }, {
                 width: 30,
                 orderable: false,
