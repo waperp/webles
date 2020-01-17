@@ -17,7 +17,7 @@
                         <thead class="color_header">
                             <tr>
                                 <th >Nombre </th>
-                                <th >Usuario</th>
+                                {{-- <th >Usuario</th> --}}
                                 <th >Email</th>
                                 <th >Estado</th>
                                 <th ></th>
