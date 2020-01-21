@@ -81,6 +81,7 @@ BACTERIOLOGÍA">
     <link href="/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/sweetalert2.min.css">
 
     <link href="/css/style.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/responsive.css?q={{ time() }}" rel="stylesheet">
@@ -144,7 +145,7 @@ BACTERIOLOGÍA">
     <script src="/js/select2.min.js" type="text/javascript"></script>
     <script src="/js/es.js" type="text/javascript"></script>
     <script src="/js/ellipsis.js" type="text/javascript"></script>
-
+    <script src="/js/sweetalert2.min.js"></script>
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
         const modal_redes_sociales = @json($redesSociales);
