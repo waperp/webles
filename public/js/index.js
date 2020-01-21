@@ -75,6 +75,19 @@ $(document).ready(function () {
 
         }
     });
+    $("#form-new-user").validate({
+        rules: {
+            newUserConfirmSecusrtpass: {
+                equalTo: "#new-user-secusrtpass"
+            }
+        },
+        messages: {
+            newUserConfirmSecusrtpass: {
+                equalTo: "por favor ingrese la misma contraseña"
+            },
+
+        }
+    });
     // if(employee != null){
     //     $("#edit-perfil-image-preview").css("background-image", 'url(images/'+employee.hurempvimgh+')');
     //     $("#edit-perfil-image-preview").css("background-size", "cover");
@@ -380,7 +393,7 @@ $(document).ready(function () {
             text: 'AGREGAR',
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
-                $('#modal-new-' + convertToSlug(usuarios.confrmttitl)).modal('show');
+                $('#modal-new-' + convertToSlug(modal_usuarios.confrmttitl)).modal('show');
             },
             titleAttr: 'AGREGAR'
         }],
@@ -393,7 +406,7 @@ $(document).ready(function () {
         ajax: {
             url: '/datatables/usuarios',
             data: function (d) {
-                // d.confrmscode = $('#select2-redes-sociales-subform').val();
+                d.contypscode = $('#select2-user-subform').val();
 
             }
         },
@@ -416,6 +429,12 @@ $(document).ready(function () {
                 sortable: true,
                 render: function (data, type, full, meta) {
                     return full.secusrtmail
+                }
+            },  {
+                orderable: false,
+                sortable: true,
+                render: function (data, type, full, meta) {
+                    return full.contyptdesc
                 }
             },  {
                 orderable: false,
@@ -447,6 +466,7 @@ $(document).ready(function () {
     });
     $("<select id='select2-quienes-somos-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(modal_quienes_somos.confrmttitl) + '_wrapper .dt-buttons');
     $("<select id='select2-redes-sociales-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl) + '_wrapper .dt-buttons');
+    $("<select id='select2-user-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(modal_usuarios.confrmttitl) + '_wrapper .dt-buttons');
 
     // $('#select2-subform').select2();
     $("#select2-quienes-somos-subform").select2({
@@ -479,6 +499,7 @@ $(document).ready(function () {
         $("#datatable-" + convertToSlug(modal_quienes_somos.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
     });
+    
     $("#select2-edit-quienes-somos-subform").select2({
         placeholder: "Filtrar",
         templateResult: formatState,
@@ -618,6 +639,31 @@ $(document).ready(function () {
         }
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
+    });
+    $("#select2-user-subform").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectUserSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.contyptdesc,
+                            id: item.contypscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+        $("#datatable-"+convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
+        console.log('change');
     });
 });
 

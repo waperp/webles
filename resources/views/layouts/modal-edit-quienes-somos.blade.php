@@ -91,7 +91,7 @@
                                                     </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
-                                                    id="" value="ACTUALIZAR"></div>
+                                                   value="ACTUALIZAR"></div>
 
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"
@@ -109,11 +109,7 @@
                     </div>
                 </section>
             </div>
-            {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
-                    <input type="submit" class="theme-btn submit-btn" id="xs_contact_submit"
-                    value="Submit Now">
-                </div> --}}
+         
         </div>
     </div>
 </div>

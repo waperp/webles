@@ -45,4 +45,10 @@ class HomeController extends Controller
         return response()->json($data);
 
     }
+    public function selectUserSubform(Request $request)
+    {
+        $data = \DB::select('select * from contyp where contypsnumt = 1');
+        return response()->json($data);
+
+    }
 }

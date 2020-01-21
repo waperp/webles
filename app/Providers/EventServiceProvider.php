@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\UuidObserver;
 use App\confrs;
+use App\huremp;
+use App\secusr;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
@@ -25,6 +27,8 @@ class EventServiceProvider extends ServiceProvider
     public function registerUuidObservers()
     {
         confrs::observe(app(UuidObserver::class));
+        huremp::observe(app(UuidObserver::class));
+        secusr::observe(app(UuidObserver::class));
     }
     /**
      * Register any events for your application.
