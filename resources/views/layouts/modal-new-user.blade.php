@@ -16,91 +16,76 @@
                         <div class="form-column col-12">
                             <div class="inner-column  p-4">
                                 {{-- <div class="title-box">
-                                            <div class="title">Need emergency?</div>
-                                            <h3>Drop us a Line</h3>
-                                        </div> --}}
+                                        <div class="title">Need emergency?</div>
+                                        <h3>Drop us a Line</h3>
+                                    </div> --}}
                                 <!-- Contact Form -->
                                 <div class="contact-form">
-                                    <form id="form-new-redes-sociales" method="post" enctype="multipart/form-data">
+                                    <form id="form-new-user" method="post" enctype="multipart/form-data" action="{{ route('secusr.store') }}">
                                         @csrf
+                                        <input type="hidden" id="new-user-image-src" />
                                         <div class="form-group">
                                             <div class="col-12">
                                                 <div class="image-preview mt-2 mb-2">
-                                                    <label for="new-rd-confrsvbigi" class="image-label">
-                                                        Tu Imagen
+                                                    <label for="image-upload" class="image-label">
+                                                        Tu Foto
                                                     </label>
-                                                    <input class="image-upload" id="new-rd-confrsvbigi" type="file" />
+                                                    <input class="image-upload" id="new-user-hurempvimgh" name="hurempvimgh"
+                                                        type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
 
-                                        </div>
-                                        <input type="hidden" id="new-rd-confrsscode">
+                                    </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="new-rd-confrsttitl" name="confrsttitl" placeholder="Titulo">
+                                            <input type="text" 
+                                                name="secusrtmail" placeholder="Correo Electronico">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="input-group date redes-sociales-datetime" id="datetimepicker1"> 
-                                                    <span class="icon flaticon-send"></span>
 
-                                                <input class="form-control" id="new-rd-confrsdpubl" placeholder="Ingrese una fecha"
-                                                    type="text" />
-                                                <div class="input-group-addon input-group-append">
-                                                    <div class="input-group-text">
-                                                        <i class="glyphicon glyphicon-calendar fa fa-calendar fa-new-position"></i>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <textarea required  id="new-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
+                                            <input required type="text" name="huremptfnam"
+                                                placeholder="Tu Nombre">
                                         </div>
-                                        <div class="form-group">
-                                            <span class="fa fa-folder"></span>
-                                            <select id="select2-new-redes-sociales-subform" required class="form-control w-100" ></select>
-                                        </div>
-                                        {{-- <div class="form-row">
-
+                                        
+                                        <div class="form-row">
                                             <div class="form-group col-6">
                                                 <span class="fa fa-key"></span>
-                                                <input type="password" id="secusrtpass" name="secusrtpass"
+                                                <input type="password" id="new-user-secusrtpass" name="newUserSecusrtpass"
                                                     placeholder="Nueva Contraseña">
                                             </div>
                                             <div class="form-group col-6">
                                                 <span class="fa fa-key"></span>
-                                                <input type="password" id="confirmSecusrtpass" name="confirmSecusrtpass"
+                                                <input type="password" id="confirm-new-user-Secusrtpass" name="newUserConfirmSecusrtpass"
                                                     placeholder="Repetir Contraseña">
                                             </div>
-
-                                        </div>
-                                        <div class="form-group text-center">
+                                            
+                                    </div>
+                                    <div class="form-group text-center">
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="1" @if(Auth::user()->employee()->hurempbgend ==
-                                                1) checked @endif type="radio" id="customRadioInline1"
+                                                <input required value="1" type="radio" id="radio-new-user-hurempbgend"
                                                 name="hurempbgend"
                                                 class="custom-control-input">
                                                 <label class="custom-control-label  text-white"
-                                                    for="customRadioInline1">Masculino</label>
+                                                    for="radio-new-user-hurempbgend">Masculino</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="0" @if(Auth::user()->employee()->hurempbgend ==
-                                                0) checked @endif type="radio" id="customRadioInline2"
+                                                <input required value="0"  type="radio" id="radio-new-user-hurempbgend2"
                                                 name="hurempbgend"
                                                 class="custom-control-input">
                                                 <label class="custom-control-label text-white"
-                                                    for="customRadioInline2">Femenino</label>
+                                                    for="radio-new-user-hurempbgend2">Femenino</label>
                                             </div>
-                                        </div> --}}
+                                        </div>
                                         {{-- 
-                                                <div class="form-group ">
-                                                        <span class="fa fa-key"></span>
-                                                        <input type="email" name="secusrtpass-repeat" placeholder="Repetir Contraseña">
-                                                    </div> --}}
+                                            <div class="form-group ">
+                                                    <span class="fa fa-key"></span>
+                                                    <input type="email" name="secusrtpass-repeat" placeholder="Repetir Contraseña">
+                                                </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
-                                                    id="" value="GUARDAR"></div>
+                                                     value="ACTUALIZAR"></div>
 
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"
@@ -118,11 +103,6 @@
                     </div>
                 </section>
             </div>
-            {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
-                    <input type="submit" class="theme-btn submit-btn" id="xs_contact_submit"
-                    value="Submit Now">
-                </div> --}}
         </div>
     </div>
 </div>

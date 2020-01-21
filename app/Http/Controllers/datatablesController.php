@@ -26,7 +26,10 @@ class datatablesController extends Controller
     public function datatablesUsuarios(Request $request)
     {
         // $data = tougrp::join('plainf','plainf.plainficode', 'tougrp.plainficode')->where('tougrp.touinfscode', $request->touinfscode)->get();
-        $data = secusr::join('huremp','huremp.hurempicode','secusr.hurempicode')->get();
+        $data = secusr::join('huremp','huremp.hurempicode','secusr.hurempicode')
+        ->join('contyp','contyp.contypscode','secusr.contypscode')
+        ->where('contyp.contypsnumt',1)
+        ->where('secusr.contypscode', $request->contypscode)->get();
         return Datatables::of($data)->make(true);
     }
 }

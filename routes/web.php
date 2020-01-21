@@ -31,4 +31,5 @@ Route::get('datatables/usuarios', 'datatablesController@datatablesUsuarios');
 Route::resource('secusr', 'secusrController');
 Route::resource('confrs', 'confrsController');
 Route::get('selectSubform', 'HomeController@selectSubform');
+Route::get('selectUserSubform', 'HomeController@selectUserSubform');
 

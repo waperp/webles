@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\secusr;
 use App\huremp;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -39,7 +40,33 @@ class secusrController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request->all();
+        if ($request->hasFile('hurempvimgh')) {
+            $imageName = Str::random(30) . '.' . $request->file('hurempvimgh')->getClientOriginalExtension();
+            $request->file('hurempvimgh')->move(base_path() . '/public/images/', $imageName);
+        } else {
+            $imageName = "user-avatar.png";
+        }
+        $hurempnew = new huremp;
+        $hurempnew->huremptfnam = $request->huremptfnam;
+        $hurempnew->hurempbgend = 1;
+        $hurempnew->hurempddobh = Carbon::now()->format('Y-m-d');
+        $hurempnew->hurempidocn = 0;
+        $hurempnew->hurempvimgh = $imageName;
+        $hurempnew->huremptinco = 0;
+        $hurempnew->hurempbenbl = 1;
+        $usernew = new user;
+        $usernew->secusrtmail = $request->secusrtmail;
+        $usernew->secusrtpass =Hash::make($request->secusrtpass);
+        $usernew->secusrdregu = Carbon::now()->format('Y-m-d');
+        $usernew->secusrdvalu = Carbon::now()->format('Y-m-d');
+        $usernew->constascode = 1;
+        $usernew->contypscode = 1;
+        $usernew->secusrbenbl = 1;
+        $usernew->hurempicode = $hurempnew->hurempicode;
+        return $hurempnew->secconnuuid;
+        return redirect('/');
+
     }
 
     /**
