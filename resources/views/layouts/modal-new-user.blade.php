@@ -39,16 +39,20 @@
                                     </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" 
+                                            <input type="text" id="new-user-secusrtmail"
                                                 name="secusrtmail" placeholder="Correo Electronico">
                                         </div>
 
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <input required type="text" name="huremptfnam"
+                                            <input id="new-user-huremptfnam" required type="text" name="huremptfnam"
                                                 placeholder="Tu Nombre">
                                         </div>
-                                        
+                                        <div class="form-group">
+                                            <span class="fa fa-folder"></span>
+
+                                           <select id="select2-new-user-subform" name="contypscode" required class="form-control w-100" ></select>
+                                    </div>
                                         <div class="form-row">
                                             <div class="form-group col-6">
                                                 <span class="fa fa-key"></span>
@@ -57,7 +61,7 @@
                                             </div>
                                             <div class="form-group col-6">
                                                 <span class="fa fa-key"></span>
-                                                <input type="password" id="confirm-new-user-Secusrtpass" name="newUserConfirmSecusrtpass"
+                                                <input type="password" id="confirm-new-user-secusrtpass" name="newUserConfirmSecusrtpass"
                                                     placeholder="Repetir Contraseña">
                                             </div>
                                             
@@ -85,7 +89,7 @@
                                                 </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
-                                                     value="ACTUALIZAR"></div>
+                                                     value="AGREGAR"></div>
 
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"
