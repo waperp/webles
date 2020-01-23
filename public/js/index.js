@@ -393,14 +393,16 @@ $(document).ready(function () {
             text: 'AGREGAR',
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
-                $("#select2-edit-user-subform").val(0);
-                $("#select2-edit-user-subform").trigger('change');
-                $('#edit-user-huremptfnam').val(null);
-            $('#edit-user-secusrtmail').val(null);
-            $('#edit-user-secconnuuid').val(null);
-            $("#edit-user-hurempvimgh").val(null);
-            $('#confirm-edit-user-secusrtpass').val(null);
-            $('#edit-user-secusrtpass').val(null);
+                $("#select2-new-user-subform").val(0);
+                $("#select2-new-user-subform").trigger('change');
+                $('#new-user-huremptfnam').val(null);
+            $('#new-user-secusrtmail').val(null);
+            $('#new-user-secconnuuid').val(null);
+            $("#new-user-hurempvimgh").val(null);
+            $('#confirm-new-user-secusrtpass').val(null);
+            $('#new-user-secusrtpass').val(null);
+            $("#new-user-hurempvimgh").parent().css("background-image", "");
+
                 $('#modal-new-' + convertToSlug(modal_usuarios.confrmttitl)).modal('show');
                 
             },
