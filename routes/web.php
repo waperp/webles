@@ -27,6 +27,7 @@ Route::get('quienes-somos/{slug}/{secconnuid}', 'HomeController@demo');
 Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos');
 Route::get('datatables/redes_sociales', 'datatablesController@datatablesQuienesSomos');
 Route::get('datatables/usuarios', 'datatablesController@datatablesUsuarios');
+Route::patch('update_user', 'secusrController@update_user');
 
 Route::resource('secusr', 'secusrController');
 Route::resource('confrs', 'confrsController');

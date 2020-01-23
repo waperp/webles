@@ -102,9 +102,15 @@ try {
      * @param  \App\secusr  $secusr
      * @return \Illuminate\Http\Response
      */
-    public function show(secusr $secusr)
+    public function show($secusricode, Request $request)
     {
-        //
+        $data = secusr::select('secusr.*','huremp.hurempvimgh',
+        'huremp.huremptfnam','huremp.hurempbgend','contyp.contypscode','contyp.contyptdesc')
+        ->join('huremp','huremp.hurempicode','secusr.hurempicode')
+        ->join('contyp','contyp.contypscode','secusr.contypscode')
+        ->where('secusr.secusricode', $secusricode)->first();
+        return response()->json($data);
+
     }
 
     /**
@@ -150,15 +156,71 @@ try {
         $huremp->save();
         return redirect('/');
     }
+    public function update_user(Request $request)
+    {
+        try {
+    
+            if ($request->hasFile('hurempvimgh')) {
+                $imageName = Str::random(30) . '.' . $request->file('hurempvimgh')->getClientOriginalExtension();
+                $request->file('hurempvimgh')->move(base_path() . '/public/images/', $imageName);
+            } else {
+                $imageName = null;
+            }
+            $validateUser = secusr::where('secconnuuid',$request->secconnuuid)->first();
 
+            if($validateUser){
+                    $hurempnew = huremp::where('hurempicode',$validateUser->hurempicode)->first();
+                    $hurempnew->huremptfnam = $request->huremptfnam;
+                    $hurempnew->hurempbgend = $request->hurempbgend;
+                    if($imageName != null){
+                        $hurempnew->hurempvimgh = $imageName;
+                    }
+                    $hurempnew->save();
+                    if($request->has('secusrtpass')){
+                        $validateUser->secusrtpass =Hash::make($request->secusrtpass);
+
+                    }
+                    $validateUser->contypscode = $request->contypscode;
+                    $validateUser->save();
+                    DB::commit();
+                 
+               
+                // return redirect('/');
+                return response()->json(true);
+            }else{
+                return response()->json(false);
+        
+            }
+           
+        
+        
+            // return $usernew;
+        
+        
+        
+            // all good
+        } catch (\Exception $e) {
+           
+            DB::rollback();
+            return response()->json($e->getMessage());
+        
+            // something went wrong
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\secusr  $secusr
      * @return \Illuminate\Http\Response
      */
-    public function destroy(secusr $secusr)
+    public function destroy( $secusricode)
     {
-        //
+        $secusr = secusr::where('secusr.secusricode', $secusricode)->first();
+        $huremp = huremp::where('huremp.hurempicode', $secusr->hurempicode)->first();
+        $secusr->secusrbenbl= 0;
+        $huremp->hurempbenbl= 0;
+        $secusr->save();
+        $huremp->save();
+        return response()->json(true);
     }
 }
