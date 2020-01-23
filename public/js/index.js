@@ -393,7 +393,16 @@ $(document).ready(function () {
             text: 'AGREGAR',
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
+                $("#select2-edit-user-subform").val(0);
+                $("#select2-edit-user-subform").trigger('change');
+                $('#edit-user-huremptfnam').val(null);
+            $('#edit-user-secusrtmail').val(null);
+            $('#edit-user-secconnuuid').val(null);
+            $("#edit-user-hurempvimgh").val(null);
+            $('#confirm-edit-user-secusrtpass').val(null);
+            $('#edit-user-secusrtpass').val(null);
                 $('#modal-new-' + convertToSlug(modal_usuarios.confrmttitl)).modal('show');
+                
             },
             titleAttr: 'AGREGAR'
         }],
