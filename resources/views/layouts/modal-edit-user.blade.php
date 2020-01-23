@@ -90,7 +90,7 @@
                                                 </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
-                                                     value="AGREGAR"></div>
+                                                     value="ACTUALIZAR"></div>
 
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"

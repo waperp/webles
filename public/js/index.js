@@ -1068,6 +1068,7 @@ $("#form-new-user").submit(function (e) {
             $("#new-user-hurempvimgh").val(null);
             $('#confirm-new-user-secusrtpass').val(null);
             $('#new-user-secusrtpass').val(null);
+            $("#new-user-hurempvimgh").parent().css("background-image", "");
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -1128,6 +1129,7 @@ $("#form-edit-user").submit(function (e) {
             $("#edit-user-hurempvimgh").val(null);
             $('#confirm-edit-user-secusrtpass').val(null);
             $('#edit-user-secusrtpass').val(null);
+            $("#edit-user-hurempvimgh").parent().css("background-image", "");
 
             } else {
                 Swal.fire({
