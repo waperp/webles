@@ -23,6 +23,20 @@ class datatablesController extends Controller
         $data = confrm::select('confrs.*')->join('confrs','confrs.confrmscode','confrm.confrmscode')->where('confrs.confrmscode',$request->confrmscode)->where('confrs.confrsbenbl',1)->get();
         return Datatables::of($data)->make(true);
     }
+    public function datatablesGestionarMenu(Request $request)
+    {
+        // $data = tougrp::join('plainf','plainf.plainficode', 'tougrp.plainficode')->where('tougrp.touinfscode', $request->touinfscode)->get();
+        if($request->contypscode == 0){
+            $data = confrm::whereNull('confrmsfcod')->get();
+
+        }else if($request->contypscode == 1){
+            $data = confrm::whereNotNull('confrmsfcod')->get();
+
+        }else{
+            $data = [];
+        }
+        return Datatables::of($data)->make(true);
+    }
     public function datatablesUsuarios(Request $request)
     {
         // $data = tougrp::join('plainf','plainf.plainficode', 'tougrp.plainficode')->where('tougrp.touinfscode', $request->touinfscode)->get();

@@ -4,6 +4,7 @@
         $redesSociales = App\confrm::nivel(13);
         $ultimasNoticias = App\confrm::nivel(14);
         $usuarios = App\confrm::nivel(16);
+        $gestionarMenu = App\confrm::nivel(17);
         @endphp
 <head>
     {{-- <meta charset="utf-8"> --}}
@@ -110,6 +111,8 @@ BACTERIOLOGÍA">
         @include('layouts.modal-redes-sociales')
         @include('layouts.modal-edit-redes-sociales')
         @include('layouts.modal-new-redes-sociales')
+        @include('layouts.modal-new-menu-principal')
+        @include('layouts.modal-menu-principal')
         
         @include('layouts.modal-user')
         @include('layouts.modal-new-user')
@@ -145,11 +148,14 @@ BACTERIOLOGÍA">
     <script src="/js/select2.min.js" type="text/javascript"></script>
     <script src="/js/es.js" type="text/javascript"></script>
     <script src="/js/ellipsis.js" type="text/javascript"></script>
-    <script src="/js/sweetalert2.min.js"></script>
+    <script src="/js/sweetalert2.min.js" type="text/javascript"></script>
+    <script src="/js/datatables-index.js?q={{ time() }}" type="text/javascript"></script>
+
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
         const modal_redes_sociales = @json($redesSociales);
         const modal_usuarios = @json($usuarios);
+        const gestionar_menu = @json($gestionarMenu);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
   
