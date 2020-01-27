@@ -343,7 +343,9 @@ span.fa~span.select2.select2-container {
     text-transform: capitalize;
 
 }
-
+.banner-column .text {
+    font-size: 16px;
+}
 .contact-form .form-group textarea {
     color: white;
     overflow: auto;
