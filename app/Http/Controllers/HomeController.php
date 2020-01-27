@@ -51,4 +51,11 @@ class HomeController extends Controller
         return response()->json($data);
 
     }
+    public function selectGestionarMenuSubform(Request $request)
+    {
+        $data = \DB::select('select * from contyp where contypsnumt = 3');
+        return response()->json($data);
+
+
+    }
 }
