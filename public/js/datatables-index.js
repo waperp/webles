@@ -375,7 +375,7 @@ $(document).ready(function () {
         responsive: true,
         "paging": false, "lengthChange": false,
         "info": true,
-        dom: "<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
+        dom: "<'row'<'col-sm-12 col-md-6'B>>" +
             "<'row'<'col-sm-12'tr>>" +
             "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
         "pageLength": 25,
@@ -442,6 +442,7 @@ $(document).ready(function () {
             url: '/datatables/gestionarMenu',
             data: function (d) {
                 d.contypscode = $('#select2-gestionar-menu-subform').val();
+                d.contypscode1 = $('#select2-gestionar-menu-subform1').val();
             }
         },
         columns: [
@@ -491,5 +492,6 @@ $(document).ready(function () {
     $("<select id='select2-redes-sociales-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl) + '_wrapper .dt-buttons');
     $("<select id='select2-user-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(modal_usuarios.confrmttitl) + '_wrapper .dt-buttons');
     $("<select id='select2-gestionar-menu-subform' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(gestionar_menu.confrmttitl) + '_wrapper .dt-buttons');
+    $("<select id='select2-gestionar-menu-subform1' class='form-control'></select>").appendTo('#datatable-' + convertToSlug(gestionar_menu.confrmttitl) + '_wrapper .dt-buttons');
 
 });

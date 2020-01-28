@@ -58,4 +58,10 @@ class HomeController extends Controller
 
 
     }
+    public function selectGestionarMenuSubMenu(Request $request)
+    {
+        $data = confrm::whereNull('confrmsfcod')->get();
+        return response()->json($data);
+
+    }
 }

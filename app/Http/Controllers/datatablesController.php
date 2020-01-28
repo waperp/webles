@@ -25,12 +25,13 @@ class datatablesController extends Controller
     }
     public function datatablesGestionarMenu(Request $request)
     {
+        // return $request->all();
         // $data = tougrp::join('plainf','plainf.plainficode', 'tougrp.plainficode')->where('tougrp.touinfscode', $request->touinfscode)->get();
-        if($request->contypscode == 0){
+        if($request->contypscode == 0 && $request->contypscode1 == null){
             $data = confrm::whereNull('confrmsfcod')->get();
 
-        }else if($request->contypscode == 1){
-            $data = confrm::whereNotNull('confrmsfcod')->get();
+        }else if($request->contypscode == 1 && $request->contypscode1 != null){
+            $data = confrm::where('confrmsfcod',$request->contypscode1)->get();
 
         }else{
             $data = [];
