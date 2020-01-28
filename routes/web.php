@@ -35,4 +35,5 @@ Route::resource('confrs', 'confrsController');
 Route::get('selectSubform', 'HomeController@selectSubform');
 Route::get('selectUserSubform', 'HomeController@selectUserSubform');
 Route::get('selectGestionarMenuSubform', 'HomeController@selectGestionarMenuSubform');
+Route::get('selectGestionarMenuSubMenu', 'HomeController@selectGestionarMenuSubMenu');
 

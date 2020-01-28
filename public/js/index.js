@@ -304,6 +304,31 @@ $(document).ready(function () {
         $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
     });
+    $("#select2-gestionar-menu-subform1").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubMenu/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+        $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+        console.log('change');
+    })
     $("#select2-gestionar-menu-subform").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -326,9 +351,25 @@ $(document).ready(function () {
             cache: true
         }
     }).on("change", function () {
-        $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
+    }).on('select2:select', function (e) {
+        var data = e.params.data.id;
+        if(data == 0){
+            $('#select2-gestionar-menu-subform1').select2("enable", [false]);
+
+
+            $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+
+        }else if(data == 1){
+            $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+
+            $('#select2-gestionar-menu-subform1').select2("enable", [true]);
+
+        }
+        console.log(data);
     });
+    $('#select2-gestionar-menu-subform1').select2("enable", [false]);
+
 });
 
 function formatState(state) {
