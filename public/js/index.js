@@ -308,6 +308,8 @@ $(document).ready(function () {
         placeholder: "Filtrar",
         width: '200px',
         templateResult: formatState,
+        allowClear: true,
+
         minimumResultsForSearch: Infinity,
         ajax: {
             url: "/selectGestionarMenuSubMenu/",
@@ -333,6 +335,7 @@ $(document).ready(function () {
         placeholder: "Filtrar",
         width: '200px',
         templateResult: formatState,
+        allowClear: true,
         minimumResultsForSearch: Infinity,
         ajax: {
             url: "/selectGestionarMenuSubform/",
@@ -357,6 +360,7 @@ $(document).ready(function () {
         if(data == 0){
             $('#select2-gestionar-menu-subform1').select2("enable", [false]);
 
+            $('#select2-gestionar-menu-subform1').val(null).trigger('change');
 
             $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
 
