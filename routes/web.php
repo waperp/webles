@@ -32,6 +32,7 @@ Route::patch('update_user', 'secusrController@update_user');
 
 Route::resource('secusr', 'secusrController');
 Route::resource('confrs', 'confrsController');
+Route::resource('confrm', 'confrmController');
 Route::get('selectSubform', 'HomeController@selectSubform');
 Route::get('selectUserSubform', 'HomeController@selectUserSubform');
 Route::get('selectGestionarMenuSubform', 'HomeController@selectGestionarMenuSubform');

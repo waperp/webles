@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\confrm;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\UuidObserver;
 use App\confrs;
@@ -27,6 +28,7 @@ class EventServiceProvider extends ServiceProvider
     public function registerUuidObservers()
     {
         confrs::observe(app(UuidObserver::class));
+        confrm::observe(app(UuidObserver::class));
         huremp::observe(app(UuidObserver::class));
         secusr::observe(app(UuidObserver::class));
     }
