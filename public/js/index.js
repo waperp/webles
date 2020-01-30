@@ -359,7 +359,6 @@ $(document).ready(function () {
         var data = e.params.data.id;
         if(data == 0){
             $('#select2-gestionar-menu-subform1').select2("enable", [false]);
-
             $('#select2-gestionar-menu-subform1').val(null).trigger('change');
 
             $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
@@ -373,7 +372,29 @@ $(document).ready(function () {
         console.log(data);
     });
     $('#select2-gestionar-menu-subform1').select2("enable", [false]);
-
+    $("#select2-new-menu-principal-confrmvsmai").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.contyptdesc,
+                            id: item.contypscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
 });
 
 function formatState(state) {
@@ -674,6 +695,39 @@ function edit_user(secusricode) {
         }
     });
 }
+function edit_menu_principal(secusricode) {
+    debugger
+    $('#modal-edit-' + convertToSlug(modal_usuarios.confrmttitl)).modal('show');
+    $.ajax({
+        url: '/confrm/' + secusricode,
+        type: 'get',
+        datatype: 'json',
+        data:{
+
+        },
+        success: function (data) {
+            debugger
+            var $radios = $('input:radio[name=hurempbgend]');
+            $radios.filter('[value=' + data.hurempbgend + ']').prop('checked', true);
+            // $('#select-admin-gestionar-grupo-securs').empty();
+            // $('#select-admin-gestionar-grupo-securs').append('<option value="' + data.plainficode + '">' + data.plainftnick + '</option>');
+            // $('#admin-gestionar-grupo-tougrpicode-hidden').val(data.tougrpicode);
+            // $('#admin-gestionar-grupo-touinfscode-hidden').val(data.touinfscode);
+            // $('#admin-gestionar-grupo-touinftname').val(data.touinftname);
+            // $('#datetimepicker-toufixdplay').data("DateTimePicker").date(data.toufixdplay)
+            $('#select2-edit-user-subform').append('<option value="' + data.contypscode + '">' + data.contyptdesc + '</option>');
+            $("#select2-edit-user-subform").val(data.contypscode);
+            $("#select2-edit-user-subform").trigger('change');
+            $('#edit-user-huremptfnam').val(data.huremptfnam);
+            $('#edit-user-secusrtmail').val(data.secusrtmail);
+            $('#edit-user-secconnuuid').val(data.secconnuuid);
+            $("#edit-user-hurempvimgh").parent().css("background-image", "url('images/" + data.hurempvimgh + "')");
+            $("#edit-user-hurempvimgh").parent().css("background-size", "cover");
+            $("#edit-user-hurempvimgh").parent().css("background-position", "center center");
+            
+        }
+    });
+}
 $("#form-new-user").submit(function (e) {
     var _token = $('input[name=_token]').val();
     e.preventDefault();
@@ -789,6 +843,64 @@ $("#form-edit-user").submit(function (e) {
                     footer: 'Intente de nuevo por favor'
                 })
             }
+
+        },
+    });
+});
+
+
+$("#form-new-menu-principal").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrmttitl = $('#new-menu-principal-confrmttitl').val();
+    var confrmtdesc = $('#new-menu-principal-confrmtdesc').val();
+    var confrmvsmai = $('#select2-new-menu-principal-confrmvsmai').val();
+    var confrmyadmf = $("input[name='new-menu-principal-confrmyadmf']:checked").val();
+    var contypscod0 = $("input[name='new-menu-principal-contypscod0']:checked").val();
+    var formData = new FormData();
+
+    formData.append("confrmttitl", confrmttitl);
+    formData.append("confrmtdesc", confrmtdesc);
+    formData.append("confrmvsmai", confrmvsmai);
+    formData.append("confrmyadmf", confrmyadmf);
+    formData.append("contypscod0", contypscod0);
+    formData.append("contypscode", contypscode);
+    // formData.append('_method', 'patch');  
+debugger
+
+    debugger
+    $.ajax({
+        url: '/confrm',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
+        success: function (data) {
+            debugger
+            // if (data == true) {
+            //     $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+            //     $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
+            //     $("#select2-new-user-subform").val(0);
+            //     $("#select2-new-user-subform").trigger('change');
+            //     $('#new-user-huremptfnam').val(null);
+            //     $('#new-user-secusrtmail').val(null);
+            //     $('#new-user-secconnuuid').val(null);
+            //     $("#new-user-hurempvimgh").val(null);
+            //     $('#confirm-new-user-secusrtpass').val(null);
+            //     $('#new-user-secusrtpass').val(null);
+            //     $("#new-user-hurempvimgh").parent().css("background-image", "");
+            // } else {
+            //     Swal.fire({
+            //         icon: 'error',
+            //         title: 'Oops...',
+            //         text: 'EL correo ingresado ya existe!',
+            //         footer: 'Intente de nuevo por favor'
+            //     })
+            // }
 
         },
     });

@@ -21,30 +21,29 @@
                                         </div> --}}
                                 <!-- Contact Form -->
                                 <div class="contact-form">
-                                    <form id="form-new-redes-sociales" method="post" enctype="multipart/form-data">
+                                    <form id="form-new-menu-principal" method="post" enctype="multipart/form-data">
                                         @csrf
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <div class="col-12">
                                                 <div class="image-preview mt-2 mb-2">
-                                                    <label for="new-rd-confrsvbigi" class="image-label">
+                                                    <label for="new-menu-principal-confrsvbigi" class="image-label">
                                                         Tu Imagen
                                                     </label>
-                                                    <input class="image-upload" id="new-rd-confrsvbigi" type="file" />
+                                                    <input class="image-upload" id="new-menu-principal-confrsvbigi" type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
 
-                                        </div>
-                                        <input type="hidden" id="new-rd-confrsscode">
+                                        </div> --}}
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="new-rd-confrsttitl" name="confrsttitl" placeholder="Titulo">
+                                            <input type="text" id="new-menu-principal-confrmttitl" name="confrmttitl" placeholder="Titulo">
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <div class="input-group date redes-sociales-datetime" id="datetimepicker1"> 
                                                     <span class="icon flaticon-send"></span>
 
-                                                <input class="form-control" id="new-rd-confrsdpubl" placeholder="Ingrese una fecha"
+                                                <input class="form-control" id="new-menu-principal-confrsdpubl" placeholder="Ingrese una fecha"
                                                     type="text" />
                                                 <div class="input-group-addon input-group-append">
                                                     <div class="input-group-text">
@@ -52,47 +51,51 @@
                                                     </div>
                                                 </div>
                                             </div> 
+                                        </div> --}}
+                                        <div class="form-group">
+                                            <span class="fa fa-folder"></span>
+                                            <select id="select2-new-menu-principal-confrmvsmai" required class="form-control w-100" ></select>
+                                        </div>
+                                        
+                                        
+                                        
+                                        <div class="form-group text-center">
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input required value="1"  type="radio" id="contypscod0"
+                                                name="new-menu-principal-contypscod0"
+                                                class="custom-control-input">
+                                                <label class="custom-control-label  text-white"
+                                                    for="contypscod0">Tipo Scroll</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input required value="0" type="radio" id="contypscod02"
+                                                name="new-menu-principal-contypscod0"
+                                                class="custom-control-input">
+                                                <label class="custom-control-label text-white"
+                                                    for="contypscod02">Tipo Modal</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            {{-- <span class="fa fa-folder" style="top:0"><label style="font-size: 14px;margin-left: 15px;"  for="">Tipo</label></span> --}}
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input required value="1"  type="radio" id="confrmyadmf"
+                                                name="confrmyadmf"
+                                                class="custom-control-input">
+                                                <label class="custom-control-label  text-white"
+                                                    for="confrmyadmf">Admin</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input required value="0" type="radio" id="confrmyadmf2"
+                                                name="confrmyadmf"
+                                                class="custom-control-input">
+                                                <label class="custom-control-label text-white"
+                                                    for="confrmyadmf2">No admin</label>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <textarea required  id="new-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
+                                            <textarea required  id="new-menu-principal-confrmtdesc" name="confrmtdesc" placeholder="Descripcion"></textarea>
                                         </div>
-                                        <div class="form-group">
-                                            <span class="fa fa-folder"></span>
-                                            <select id="select2-new-redes-sociales-subform" required class="form-control w-100" ></select>
-                                        </div>
-                                        {{-- <div class="form-row">
-
-                                            <div class="form-group col-6">
-                                                <span class="fa fa-key"></span>
-                                                <input type="password" id="secusrtpass" name="secusrtpass"
-                                                    placeholder="Nueva Contraseña">
-                                            </div>
-                                            <div class="form-group col-6">
-                                                <span class="fa fa-key"></span>
-                                                <input type="password" id="confirmSecusrtpass" name="confirmSecusrtpass"
-                                                    placeholder="Repetir Contraseña">
-                                            </div>
-
-                                        </div>
-                                        <div class="form-group text-center">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="1" @if(Auth::user()->employee()->hurempbgend ==
-                                                1) checked @endif type="radio" id="customRadioInline1"
-                                                name="hurempbgend"
-                                                class="custom-control-input">
-                                                <label class="custom-control-label  text-white"
-                                                    for="customRadioInline1">Masculino</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="0" @if(Auth::user()->employee()->hurempbgend ==
-                                                0) checked @endif type="radio" id="customRadioInline2"
-                                                name="hurempbgend"
-                                                class="custom-control-input">
-                                                <label class="custom-control-label text-white"
-                                                    for="customRadioInline2">Femenino</label>
-                                            </div>
-                                        </div> --}}
                                         {{-- 
                                                 <div class="form-group ">
                                                         <span class="fa fa-key"></span>
