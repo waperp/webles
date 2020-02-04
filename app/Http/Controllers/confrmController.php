@@ -48,12 +48,13 @@ class confrmController extends Controller
             $confrm->confrmbenbl = 1;
             if($request->tipoMenu == 0){
                 $confrm->confrmsfcod = null;
-            }else if($request->tipoMenu == 0){
+            }else if($request->tipoMenu == 1){
                 $confrm->confrmsfcod = $request->confrmsfcod;
             }
             $confrm->confrmyadmf = $request->confrmyadmf;
             $confrm->contypscod0 = $request->contypscod0;
             $confrm->save();
+            DB::commit();
             return response()->json($confrm);
 
         } catch (\Exception $e) {

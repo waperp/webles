@@ -330,7 +330,7 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
-    })
+    });
     $("#select2-gestionar-menu-subform").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -372,29 +372,7 @@ $(document).ready(function () {
         console.log(data);
     });
     $('#select2-gestionar-menu-subform1').select2("enable", [false]);
-    $("#select2-new-menu-principal-type-menu").select2({
-        placeholder: "Filtrar",
-        width: '200px',
-        templateResult: formatState,
-        allowClear: true,
-        minimumResultsForSearch: Infinity,
-        ajax: {
-            url: "/selectGestionarMenuSubform/",
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.contyptdesc,
-                            id: item.contypscode
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    });
+    
     $("#select2-new-menu-principal-confrmvsmai").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -429,6 +407,64 @@ $(document).ready(function () {
     });
     $("#select2-new-menu-principal-confrmvsmai").val(null).trigger('change');
 
+
+    $("#select2-new-menu-principal-type-menu").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.contyptdesc,
+                            id: item.contypscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on('select2:select', function (e) {
+        var data = e.params.data.id;
+        if(data == 0){
+            $('#select2-new-menu-principal-confrmsfcod').select2("enable", [false]);
+            $('#select2-new-menu-principal-confrmsfcod').val(null).trigger('change');
+        }else if(data == 1){
+            $('#select2-new-menu-principal-confrmsfcod').select2("enable", [true]);
+        }
+    });
+    $("#select2-new-menu-principal-confrmsfcod").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubMenu/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+    $('#select2-new-menu-principal-confrmsfcod').select2("enable", [false]);
+    
 });
 function formatState1(state) {
     if (!state.id) {
@@ -904,6 +940,7 @@ $("#form-new-menu-principal").submit(function (e) {
     var confrmttitl = $('#new-menu-principal-confrmttitl').val();
     var confrmtdesc = $('#new-menu-principal-confrmtdesc').val();
     var confrmvsmai = $('#select2-new-menu-principal-confrmvsmai').val();
+    var confrmsfcod = $('#select2-new-menu-principal-confrmsfcod').val();
     var tipoMenu = $('#select2-new-menu-principal-type-menu').val();
     var confrmyadmf = $("input[name='new-menu-principal-confrmyadmf']:checked").val();
     var contypscod0 = $("input[name='new-menu-principal-contypscod0']:checked").val();
@@ -914,6 +951,7 @@ $("#form-new-menu-principal").submit(function (e) {
     formData.append("confrmvsmai", confrmvsmai);
     formData.append("confrmyadmf", confrmyadmf);
     formData.append("contypscod0", contypscod0);
+    formData.append("confrmsfcod", confrmsfcod);
     formData.append("tipoMenu", tipoMenu);
     // formData.append('_method', 'patch');  
 debugger
