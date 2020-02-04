@@ -149,6 +149,8 @@ BACTERIOLOGÍA">
     <script src="/js/es.js" type="text/javascript"></script>
     <script src="/js/ellipsis.js" type="text/javascript"></script>
     <script src="/js/sweetalert2.min.js" type="text/javascript"></script>
+    <script src="/js/js-yaml.min.js" type="text/javascript"></script>
+    <script src="/js/icons.js" type="text/javascript"></script>
     <script src="/js/datatables-index.js?q={{ time() }}" type="text/javascript"></script>
 
     <script type="text/javascript">

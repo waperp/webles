@@ -191,14 +191,6 @@ try {
                 return response()->json(false);
         
             }
-           
-        
-        
-            // return $usernew;
-        
-        
-        
-            // all good
         } catch (\Exception $e) {
            
             DB::rollback();
