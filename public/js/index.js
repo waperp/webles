@@ -34,7 +34,7 @@ $(document).ready(function () {
             $btn.text('Ver menos');
         });
     });
-    
+
     detectmob()
     $('.redes-sociales-datetime').datetimepicker({
         locale: 'es',
@@ -82,7 +82,7 @@ $(document).ready(function () {
 
         }
     });
-    
+
     $("#select2-quienes-somos-subform").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -330,7 +330,7 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
-    })
+    });
     $("#select2-gestionar-menu-subform").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -357,13 +357,13 @@ $(document).ready(function () {
         console.log('change');
     }).on('select2:select', function (e) {
         var data = e.params.data.id;
-        if(data == 0){
+        if (data == 0) {
             $('#select2-gestionar-menu-subform1').select2("enable", [false]);
             $('#select2-gestionar-menu-subform1').val(null).trigger('change');
 
             $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
 
-        }else if(data == 1){
+        } else if (data == 1) {
             $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
 
             $('#select2-gestionar-menu-subform1').select2("enable", [true]);
@@ -372,6 +372,42 @@ $(document).ready(function () {
         console.log(data);
     });
     $('#select2-gestionar-menu-subform1').select2("enable", [false]);
+
+    $("#select2-new-menu-principal-confrmvsmai").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState1,
+        templateSelection: formatState1_1,
+        maximumSelectionLength: 3,
+        escapeMarkup: function (text) { return text; },
+
+        allowClear: true,
+        data: DATA_ICONS,
+        maximumInputLength: 20,
+        minimumResultsForSearch: 10,// at least 20 results must be displayed
+
+        // ajax: {
+        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
+        //     delay: 250,
+        //     processResults: function (data) {
+
+        //         var parsedYaml = jsyaml.load(data);
+        //         return {
+        //             results: $.map(parsedYaml.icons, function (icon) {
+
+        //                 return {
+        //                     text: icon.id,
+        //                     id: icon.id
+        //                 }
+        //             })
+        //         };
+        //     },
+        //     cache: true
+        // }
+    });
+    $("#select2-new-menu-principal-confrmvsmai").val(null).trigger('change');
+
+
     $("#select2-new-menu-principal-type-menu").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -394,56 +430,56 @@ $(document).ready(function () {
             },
             cache: true
         }
+    }).on('select2:select', function (e) {
+        var data = e.params.data.id;
+        if (data == 0) {
+            $('#select2-new-menu-principal-confrmsfcod').select2("enable", [false]);
+            $('#select2-new-menu-principal-confrmsfcod').val(null).trigger('change');
+        } else if (data == 1) {
+            $('#select2-new-menu-principal-confrmsfcod').select2("enable", [true]);
+        }
     });
-    $("#select2-new-menu-principal-confrmvsmai").select2({
+    $("#select2-new-menu-principal-confrmsfcod").select2({
         placeholder: "Filtrar",
         width: '200px',
-        templateResult: formatState1,
-        templateSelection: formatState1_1,
-        maximumSelectionLength: 3,
-        escapeMarkup: function (text) { return text; },
-
+        templateResult: formatState,
         allowClear: true,
-        data: DATA_ICONS,
-        maximumInputLength: 20,
-        minimumResultsForSearch: 10 ,// at least 20 results must be displayed
 
-        // ajax: {
-        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
-        //     delay: 250,
-        //     processResults: function (data) {
-                
-        //         var parsedYaml = jsyaml.load(data);
-        //         return {
-        //             results: $.map(parsedYaml.icons, function (icon) {
-                        
-        //                 return {
-        //                     text: icon.id,
-        //                     id: icon.id
-        //                 }
-        //             })
-        //         };
-        //     },
-        //     cache: true
-        // }
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubMenu/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
     });
-    $("#select2-new-menu-principal-confrmvsmai").val(null).trigger('change');
+    $('#select2-new-menu-principal-confrmsfcod').select2("enable", [false]);
 
 });
 function formatState1(state) {
     if (!state.id) {
         return state.text;
     }
-    var $state = $('<span> <i style="color:black; margin-right:20px" class="fa fa-2x '+ state.id+'"></i> <strong> '+ state.text +'</strong></span>');
-    return $state ;
+    var $state = $('<span> <i style="color:black; margin-right:20px" class="fa fa-2x ' + state.id + '"></i> <strong> ' + state.text + '</strong></span>');
+    return $state;
 
 }
 function formatState1_1(state) {
     if (!state.id) {
         return state.text;
     }
-    var $state = $('<span> <i style="color:black; margin-right:20px;margin-left:20px" class="fa fa-2x '+ state.id+'"></i> <strong style="margin-left:40px"> '+ state.text +'</strong></span>');
-    return $state ;
+    var $state = $('<span> <i style="color:black; margin-right:20px;margin-left:20px" class="fa fa-2x ' + state.id + '"></i> <strong style="margin-left:40px"> ' + state.text + '</strong></span>');
+    return $state;
 
 }
 function formatState(state) {
@@ -751,7 +787,7 @@ function edit_menu_principal(secusricode) {
         url: '/confrm/' + secusricode,
         type: 'get',
         datatype: 'json',
-        data:{
+        data: {
 
         },
         success: function (data) {
@@ -773,7 +809,7 @@ function edit_menu_principal(secusricode) {
             $("#edit-user-hurempvimgh").parent().css("background-image", "url('images/" + data.hurempvimgh + "')");
             $("#edit-user-hurempvimgh").parent().css("background-size", "cover");
             $("#edit-user-hurempvimgh").parent().css("background-position", "center center");
-            
+
         }
     });
 }
@@ -904,6 +940,7 @@ $("#form-new-menu-principal").submit(function (e) {
     var confrmttitl = $('#new-menu-principal-confrmttitl').val();
     var confrmtdesc = $('#new-menu-principal-confrmtdesc').val();
     var confrmvsmai = $('#select2-new-menu-principal-confrmvsmai').val();
+    var confrmsfcod = $('#select2-new-menu-principal-confrmsfcod').val();
     var tipoMenu = $('#select2-new-menu-principal-type-menu').val();
     var confrmyadmf = $("input[name='new-menu-principal-confrmyadmf']:checked").val();
     var contypscod0 = $("input[name='new-menu-principal-contypscod0']:checked").val();
@@ -914,9 +951,10 @@ $("#form-new-menu-principal").submit(function (e) {
     formData.append("confrmvsmai", confrmvsmai);
     formData.append("confrmyadmf", confrmyadmf);
     formData.append("contypscod0", contypscod0);
+    formData.append("confrmsfcod", confrmsfcod);
     formData.append("tipoMenu", tipoMenu);
     // formData.append('_method', 'patch');  
-debugger
+    debugger
     $.ajax({
         url: '/confrm',
         type: 'POST',
@@ -928,9 +966,16 @@ debugger
         processData: false,
         data: formData,
         success: function (data) {
-                            $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
-                $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
-                $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
+             $('#new-menu-principal-confrmttitl').val(null);
+             $('#new-menu-principal-confrmtdesc').val(null);
+            $('#select2-new-menu-principal-confrmvsmai').val(null).trigger('change');
+            $('#select2-new-menu-principal-confrmsfcod').val(null).trigger('change');
+             $('#select2-new-menu-principal-type-menu').val(null).trigger('change');
+            $("input[name='new-menu-principal-confrmyadmf']").val(null);
+          $("input[name='new-menu-principal-contypscod0']").val(null);
+            $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
+            $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
 
             debugger
             // if (data == true) {

@@ -58,6 +58,10 @@
                                         </div> 
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
+                                            <select id="select2-new-menu-principal-confrmsfcod" required class="form-control w-100" ></select>
+                                        </div> 
+                                        <div class="form-group">
+                                            <span class="fa fa-folder"></span>
                                             <select id="select2-new-menu-principal-confrmvsmai" required class="form-control w-100" ></select>
                                         </div>                                    
                                         <div class="form-group text-center">
