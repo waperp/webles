@@ -37,7 +37,7 @@
                                         </div> --}}
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="new-menu-principal-confrmttitl" required name="confrmttitl" placeholder="Titulo">
+                                            <input type="text" id="new-menu-principal-confrmttitl" name="confrmttitl" placeholder="Titulo">
                                         </div>
                                         {{-- <div class="form-group">
                                             <div class="input-group date redes-sociales-datetime" id="datetimepicker1"> 
@@ -54,7 +54,7 @@
                                         </div> --}}
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
-                                            <select id="select2-new-menu-principal-type-menu" required class="form-control w-100" ></select>
+                                            <select id="select2-new-menu-principal-tipo" required class="form-control w-100" ></select>
                                         </div> 
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
@@ -66,28 +66,28 @@
                                                 name="new-menu-principal-contypscod0"
                                                 class="custom-control-input">
                                                 <label class="custom-control-label  text-white"
-                                                    for="contypscod0">Tipo Modal</label>
+                                                    for="contypscod0">Tipo Scroll</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input required value="0" type="radio" id="contypscod02"
                                                 name="new-menu-principal-contypscod0"
                                                 class="custom-control-input">
                                                 <label class="custom-control-label text-white"
-                                                    for="contypscod02">Tipo Scroll</label>
+                                                    for="contypscod02">Tipo Modal</label>
                                             </div>
                                         </div>
                                         <div class="form-group text-center">
                                             {{-- <span class="fa fa-folder" style="top:0"><label style="font-size: 14px;margin-left: 15px;"  for="">Tipo</label></span> --}}
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input required value="1"  type="radio" id="confrmyadmf"
-                                                name="new-menu-principal-confrmyadmf"
+                                                name="confrmyadmf"
                                                 class="custom-control-input">
                                                 <label class="custom-control-label  text-white"
                                                     for="confrmyadmf">Admin</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input required value="0" type="radio" id="confrmyadmf2"
-                                                name="new-menu-principal-confrmyadmf"
+                                                name="confrmyadmf"
                                                 class="custom-control-input">
                                                 <label class="custom-control-label text-white"
                                                     for="confrmyadmf2">No admin</label>

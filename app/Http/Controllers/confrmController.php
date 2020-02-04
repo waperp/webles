@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\confrm;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,31 @@ class confrmController extends Controller
      */
     public function store(Request $request)
     {
-        
+        DB::beginTransaction();
+        try {
+
+            // return response()->json($request->all());
+            $confrm = new confrm;
+            $confrm->confrmttitl = $request->confrmttitl;
+            $confrm->confrmtdesc = $request->confrmtdesc;
+            $confrm->confrmyorde = 0;
+            $confrm->confrmvsmai = "fa " . $request->confrmvsmai;
+            $confrm->confrmbenbl = 1;
+            if($request->tipoMenu == 0){
+                $confrm->confrmsfcod = null;
+            }else if($request->tipoMenu == 0){
+                $confrm->confrmsfcod = $request->confrmsfcod;
+            }
+            $confrm->confrmyadmf = $request->confrmyadmf;
+            $confrm->contypscod0 = $request->contypscod0;
+            $confrm->save();
+            return response()->json($confrm);
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json($e->getMessage());
+            // something went wrong
+        }
     }
 
     /**

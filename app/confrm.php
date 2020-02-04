@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class confrm extends Model
 {
     protected $table = 'confrm';
+    public $timestamps  = false;
+    protected $primaryKey = 'confrmscode';
 
     public function parent()
     {

@@ -442,8 +442,13 @@ $(document).ready(function () {
         ajax: {
             url: '/datatables/gestionarMenu',
             data: function (d) {
-                d.contypscode = $('#select2-gestionar-menu-subform').val();
+                if($('#select2-gestionar-menu-subform').val()){
+                    d.contypscode = $('#select2-gestionar-menu-subform').val();
+                }
+                if($('#select2-gestionar-menu-subform1').val()){
+
                 d.contypscode1 = $('#select2-gestionar-menu-subform1').val();
+                }
             }
         },
         columns: [

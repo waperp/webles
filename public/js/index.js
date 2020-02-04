@@ -372,7 +372,7 @@ $(document).ready(function () {
         console.log(data);
     });
     $('#select2-gestionar-menu-subform1').select2("enable", [false]);
-    $("#select2-new-menu-principal-confrmvsmai").select2({
+    $("#select2-new-menu-principal-type-menu").select2({
         placeholder: "Filtrar",
         width: '200px',
         templateResult: formatState,
@@ -395,8 +395,57 @@ $(document).ready(function () {
             cache: true
         }
     });
-});
+    $("#select2-new-menu-principal-confrmvsmai").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState1,
+        templateSelection: formatState1_1,
+        maximumSelectionLength: 3,
+        escapeMarkup: function (text) { return text; },
 
+        allowClear: true,
+        data: DATA_ICONS,
+        maximumInputLength: 20,
+        minimumResultsForSearch: 10 ,// at least 20 results must be displayed
+
+        // ajax: {
+        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
+        //     delay: 250,
+        //     processResults: function (data) {
+                
+        //         var parsedYaml = jsyaml.load(data);
+        //         return {
+        //             results: $.map(parsedYaml.icons, function (icon) {
+                        
+        //                 return {
+        //                     text: icon.id,
+        //                     id: icon.id
+        //                 }
+        //             })
+        //         };
+        //     },
+        //     cache: true
+        // }
+    });
+    $("#select2-new-menu-principal-confrmvsmai").val(null).trigger('change');
+
+});
+function formatState1(state) {
+    if (!state.id) {
+        return state.text;
+    }
+    var $state = $('<span> <i style="color:black; margin-right:20px" class="fa fa-2x '+ state.id+'"></i> <strong> '+ state.text +'</strong></span>');
+    return $state ;
+
+}
+function formatState1_1(state) {
+    if (!state.id) {
+        return state.text;
+    }
+    var $state = $('<span> <i style="color:black; margin-right:20px;margin-left:20px" class="fa fa-2x '+ state.id+'"></i> <strong style="margin-left:40px"> '+ state.text +'</strong></span>');
+    return $state ;
+
+}
 function formatState(state) {
     if (!state.id) {
         return state.text;
@@ -855,6 +904,7 @@ $("#form-new-menu-principal").submit(function (e) {
     var confrmttitl = $('#new-menu-principal-confrmttitl').val();
     var confrmtdesc = $('#new-menu-principal-confrmtdesc').val();
     var confrmvsmai = $('#select2-new-menu-principal-confrmvsmai').val();
+    var tipoMenu = $('#select2-new-menu-principal-type-menu').val();
     var confrmyadmf = $("input[name='new-menu-principal-confrmyadmf']:checked").val();
     var contypscod0 = $("input[name='new-menu-principal-contypscod0']:checked").val();
     var formData = new FormData();
@@ -864,11 +914,9 @@ $("#form-new-menu-principal").submit(function (e) {
     formData.append("confrmvsmai", confrmvsmai);
     formData.append("confrmyadmf", confrmyadmf);
     formData.append("contypscod0", contypscod0);
-    formData.append("contypscode", contypscode);
+    formData.append("tipoMenu", tipoMenu);
     // formData.append('_method', 'patch');  
 debugger
-
-    debugger
     $.ajax({
         url: '/confrm',
         type: 'POST',
@@ -880,6 +928,10 @@ debugger
         processData: false,
         data: formData,
         success: function (data) {
+                            $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+                $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
+                $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
+
             debugger
             // if (data == true) {
             //     $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
