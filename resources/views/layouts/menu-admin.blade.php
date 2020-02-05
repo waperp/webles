@@ -31,12 +31,13 @@
             @foreach($item['children'] as $child)
                 @if ($child['children']->count() <= 0) 
                     @if ($child->contypscode == 0)
-                    <li>
-                        <a href="#menu-{{Str::slug($child->confrmttitl) }}"> 
+                    <li style="@if ($loop->iteration == 2) border-bottom: 2px solid #1cb89d @endif">
+                        
+                        <a   href="#menu-{{Str::slug($child->confrmttitl) }}"> 
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                         </li>
                     @elseif($child->contypscode == 1)
-                    <li>
+                    <li style="@if ($loop->iteration == 2) border-bottom: 2px solid #1cb89d @endif">
                         <a data-toggle="modal" data-target="#modal-{{ Str::slug($child->confrmttitl) }}"> 
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                     </li>
