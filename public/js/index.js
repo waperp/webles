@@ -406,8 +406,6 @@ $(document).ready(function () {
         // }
     });
     $("#select2-new-menu-principal-confrmvsmai").val(null).trigger('change');
-
-
     $("#select2-new-menu-principal-type-menu").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -464,6 +462,101 @@ $(document).ready(function () {
         }
     });
     $('#select2-new-menu-principal-confrmsfcod').select2("enable", [false]);
+
+    // S
+
+
+    $("#select2-edit-menu-principal-confrmvsmai").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState1,
+        templateSelection: formatState1_1,
+        maximumSelectionLength: 3,
+        escapeMarkup: function (text) { return text; },
+
+        allowClear: true,
+        data: DATA_ICONS,
+        maximumInputLength: 20,
+        minimumResultsForSearch: 10,// at least 20 results must be displayed
+
+        // ajax: {
+        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
+        //     delay: 250,
+        //     processResults: function (data) {
+
+        //         var parsedYaml = jsyaml.load(data);
+        //         return {
+        //             results: $.map(parsedYaml.icons, function (icon) {
+
+        //                 return {
+        //                     text: icon.id,
+        //                     id: icon.id
+        //                 }
+        //             })
+        //         };
+        //     },
+        //     cache: true
+        // }
+    });
+    $("#select2-edit-menu-principal-confrmvsmai").val(null).trigger('change');
+    $("#select2-edit-menu-principal-type-menu").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.contyptdesc,
+                            id: item.contypscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on('select2:select', function (e) {
+        var data = e.params.data.id;
+        if (data == 0) {
+            $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [false]);
+            $('#select2-edit-menu-principal-confrmsfcod').val(null).trigger('change');
+        } else if (data == 1) {
+            $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [true]);
+        }
+    });
+    $("#select2-edit-menu-principal-confrmsfcod").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubMenu/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+    $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [false]);
+
+
 
 });
 function formatState1(state) {
@@ -966,13 +1059,13 @@ $("#form-new-menu-principal").submit(function (e) {
         processData: false,
         data: formData,
         success: function (data) {
-             $('#new-menu-principal-confrmttitl').val(null);
-             $('#new-menu-principal-confrmtdesc').val(null);
+            $('#new-menu-principal-confrmttitl').val(null);
+            $('#new-menu-principal-confrmtdesc').val(null);
             $('#select2-new-menu-principal-confrmvsmai').val(null).trigger('change');
             $('#select2-new-menu-principal-confrmsfcod').val(null).trigger('change');
-             $('#select2-new-menu-principal-type-menu').val(null).trigger('change');
+            $('#select2-new-menu-principal-type-menu').val(null).trigger('change');
             $("input[name='new-menu-principal-confrmyadmf']").val(null);
-          $("input[name='new-menu-principal-contypscod0']").val(null);
+            $("input[name='new-menu-principal-contypscod0']").val(null);
             $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
             $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
             $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
@@ -1002,3 +1095,96 @@ $("#form-new-menu-principal").submit(function (e) {
         },
     });
 });
+
+
+$("#form-edit-menu-principal").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrmttitl = $('#edit-menu-principal-confrmttitl').val();
+    var secconnuuid = $('#edit-menu-principal-secconnuuid').val();
+    var confrmtdesc = $('#edit-menu-principal-confrmtdesc').val();
+    var confrmvsmai = $('#select2-edit-menu-principal-confrmvsmai').val();
+    var confrmsfcod = $('#select2-edit-menu-principal-confrmsfcod').val();
+    var tipoMenu = $('#select2-edit-menu-principal-type-menu').val();
+    var confrmyadmf = $("input[name='edit-menu-principal-confrmyadmf']:checked").val();
+    var contypscod0 = $("input[name='edit-menu-principal-contypscod0']:checked").val();
+    var formData = new FormData();
+
+    formData.append("confrmttitl", confrmttitl);
+    formData.append("secconnuuid", secconnuuid);
+    formData.append("confrmtdesc", confrmtdesc);
+    formData.append("confrmvsmai", confrmvsmai);
+    formData.append("confrmyadmf", confrmyadmf);
+    formData.append("contypscod0", contypscod0);
+    formData.append("confrmsfcod", confrmsfcod);
+    formData.append("tipoMenu", tipoMenu);
+    formData.append('_method', 'patch');
+    debugger
+    $.ajax({
+        url: '/confrm/' + secconnuuid,
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
+        success: function (data) {
+            debugger
+            $('#edit-menu-principal-confrmttitl').val(null);
+            $('#edit-menu-principal-confrmtdesc').val(null);
+            $('#select2-edit-menu-principal-confrmvsmai').val(null).trigger('change');
+            $('#select2-edit-menu-principal-confrmsfcod').val(null).trigger('change');
+            $('#select2-edit-menu-principal-type-menu').val(null).trigger('change');
+            $("input[name='edit-menu-principal-confrmyadmf']").prop('checked', false);
+            $("input[name='edit-menu-principal-contypscod0']").prop('checked', false);
+            $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-edit-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
+            $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
+
+
+        },
+    });
+});
+function edit_gestionar_menu (confrmscode) {
+    debugger
+    $.ajax({
+        url: '/confrm/' + confrmscode,
+        type: 'get',
+        datatype: 'json',
+        success: function (data) {
+            debugger
+            var $confrmyadmf = $('input:radio[name=edit-menu-principal-confrmyadmf]');
+            $confrmyadmf.filter('[value=' + data.confrmyadmf + ']').prop('checked', true);
+
+            var $contypscod0 = $('input:radio[name=edit-menu-principal-contypscod0]');
+            $contypscod0.filter('[value=' + data.contypscod0 + ']').prop('checked', true);
+
+            $('#edit-menu-principal-confrmttitl').val(data.confrmttitl);
+            $('#edit-menu-principal-secconnuuid').val(data.secconnuuid);
+            $('#edit-menu-principal-confrmtdesc').val(data.confrmtdesc);
+            $('#select2-edit-menu-principal-confrmvsmai').append('<option value="'+data.confrmvsmai+'">'+data.confrmvsmai+'</option>');
+            
+            $('#select2-edit-menu-principal-confrmvsmai').val(data.confrmvsmai).trigger('change');
+            if (data.confrmsfcod == null) {
+                $('#select2-edit-menu-principal-type-menu').append('<option value="0">Primario</option>');
+                $('#select2-edit-menu-principal-type-menu').val(0).trigger('change');
+
+                $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [true]);
+            } else {
+                $('#select2-edit-menu-principal-type-menu').append('<option value="1">Secundario</option>');
+                $("#select2-edit-menu-principal-type-menu").val(data.confrmscode);
+                $('#select2-edit-menu-principal-type-menu').val(1).trigger('change');
+                $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [true]);
+                $('#select2-edit-menu-principal-confrmsfcod').append('<option value="'+data.confrmsfcod+'">'+data.confrmttitl+'</option>');
+                $('#select2-edit-menu-principal-confrmsfcod').val(data.confrmsfcod).trigger('change');
+            }
+            $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+            $('#modal-edit-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
+            $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
+
+
+        }
+    });
+}

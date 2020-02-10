@@ -425,15 +425,6 @@ $(document).ready(function () {
             text: 'AGREGAR',
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
-                // $("#select2-new-user-subform").val(0);
-                // $("#select2-new-user-subform").trigger('change');
-                // $('#new-user-huremptfnam').val(null);
-                // $('#new-user-secusrtmail').val(null);
-                // $('#new-user-secconnuuid').val(null);
-                // $("#new-user-hurempvimgh").val(null);
-                // $('#confirm-new-user-secusrtpass').val(null);
-                // $('#new-user-secusrtpass').val(null);
-                // $("#new-user-hurempvimgh").parent().css("background-image", "");
                 $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
                 $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
             },
