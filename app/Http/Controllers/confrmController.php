@@ -70,9 +70,10 @@ class confrmController extends Controller
      * @param  \App\confrm  $confrm
      * @return \Illuminate\Http\Response
      */
-    public function show(confrm $confrm)
+    public function show( $confrmscode)
     {
-        //
+        $confrm = confrm::where('confrmscode',$confrmscode)->first();
+        return response()->json($confrm);
     }
 
     /**
@@ -81,9 +82,11 @@ class confrmController extends Controller
      * @param  \App\confrm  $confrm
      * @return \Illuminate\Http\Response
      */
-    public function edit(confrm $confrm)
+    public function edit( $confrmscode)
     {
-        //
+        $confrm = confrm::where('confrmscode',$confrmscode)->first();
+        return response()->json($confrm);
+
     }
 
     /**
@@ -93,9 +96,34 @@ class confrmController extends Controller
      * @param  \App\confrm  $confrm
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, confrm $confrm)
+    public function update(Request $request, $secconnuuid)
     {
-        //
+        DB::beginTransaction();
+        try {
+        $confrm =  confrm::where('secconnuuid',$secconnuuid)->first();
+            
+            // return response()->json($request->all());
+            $confrm->confrmttitl = $request->confrmttitl;
+            $confrm->confrmtdesc = $request->confrmtdesc;
+            $confrm->confrmyorde = 0;
+            $confrm->confrmvsmai = "fa " . $request->confrmvsmai;
+            $confrm->confrmbenbl = 1;
+            if($request->tipoMenu == 0){
+                $confrm->confrmsfcod = null;
+            }else if($request->tipoMenu == 1){
+                $confrm->confrmsfcod = $request->confrmsfcod;
+            }
+            $confrm->confrmyadmf = $request->confrmyadmf;
+            $confrm->contypscod0 = $request->contypscod0;
+            $confrm->save();
+            DB::commit();
+            return response()->json($confrm);
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json($e->getMessage());
+            // something went wrong
+        }
     }
 
     /**

@@ -112,6 +112,7 @@ BACTERIOLOGÍA">
         @include('layouts.modal-edit-redes-sociales')
         @include('layouts.modal-new-redes-sociales')
         @include('layouts.modal-new-menu-principal')
+        @include('layouts.modal-edit-menu-principal')
         @include('layouts.modal-menu-principal')
         
         @include('layouts.modal-user')
