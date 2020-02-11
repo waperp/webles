@@ -448,7 +448,7 @@ $(document).ready(function () {
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return '<div class="team-meta"><figure class="team-meta__logo"><i class="' + full.confrmvsmai + '" ></i></figure><div class="team-meta__info"><h6 class="team-meta__name">' + full.confrmttitl + '</h6></div></div>'
+                    return '<div class="team-meta"><figure class="team-meta__logo"><i class="fa-2x ' + full.confrmvsmai + '" ></i></figure><div class="team-meta__info"><h6 class="team-meta__name">' + full.confrmttitl + '</h6></div></div>'
 
                 }
             }, {
