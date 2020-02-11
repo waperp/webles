@@ -25,48 +25,27 @@
                                         @csrf
                                         <input type="hidden" id="edit-menu-principal-secconnuuid" required>
 
-                                        {{-- <div class="form-group">
-                                            <div class="col-12">
-                                                <div class="image-preview mt-2 mb-2">
-                                                    <label for="edit-menu-principal-confrsvbigi" class="image-label">
-                                                        Tu Imagen
-                                                    </label>
-                                                    <input class="image-upload" id="edit-menu-principal-confrsvbigi" type="file" />
-                                                    <span id="file_error"></span>
-                                                </div>
-                                            </div>
-
-                                        </div> --}}
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
                                             <input type="text" id="edit-menu-principal-confrmttitl" required name="confrmttitl" placeholder="Titulo">
                                         </div>
-                                        {{-- <div class="form-group">
-                                            <div class="input-group date redes-sociales-datetime" id="datetimepicker1"> 
-                                                    <span class="icon flaticon-send"></span>
-
-                                                <input class="form-control" id="edit-menu-principal-confrsdpubl" placeholder="Ingrese una fecha"
-                                                    type="text" />
-                                                <div class="input-group-addon input-group-append">
-                                                    <div class="input-group-text">
-                                                        <i class="glyphicon glyphicon-calendar fa fa-calendar fa-edit-position"></i>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div> --}}
-                                        <div class="form-group">
+                                        <div class="form-group row">
+                                     
+                                        <div class="col-md-6">
                                             <span class="fa fa-folder"></span>
                                             <select id="select2-edit-menu-principal-type-menu" required class="form-control w-100" ></select>
                                         </div> 
-                                        <div class="form-group">
+                                        <div class="col-md-6">
                                             <span class="fa fa-folder"></span>
                                             <select id="select2-edit-menu-principal-confrmsfcod" required class="form-control w-100" ></select>
                                         </div> 
+                                    </div> 
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
                                             <select id="select2-edit-menu-principal-confrmvsmai" required class="form-control w-100" ></select>
-                                        </div>                                    
-                                        <div class="form-group">
+                                        </div>
+                                        <div class="form-group row">
+                                        <div class="col-md-6">
                                             <div class="card text-center">
                                                 <div class="card-header text-white">
                                                     Tipo de Menu
@@ -89,8 +68,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
+                                        <div class="col-md-6">
                                             <div class="card text-center">
                                                 <div class="card-header text-white">
                                                     Administración
@@ -109,6 +87,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                         </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
