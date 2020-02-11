@@ -277,7 +277,6 @@ $(document).ready(function () {
         }
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-        console.log('change');
     });
     $("#select2-edit-user-subform").select2({
         placeholder: "Filtrar",
@@ -302,7 +301,6 @@ $(document).ready(function () {
         }
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-        console.log('change');
     });
     $("#select2-gestionar-menu-subform1").select2({
         placeholder: "Filtrar",
@@ -329,7 +327,6 @@ $(document).ready(function () {
         }
     }).on("change", function () {
         $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
-        console.log('change');
     });
     $("#select2-gestionar-menu-subform").select2({
         placeholder: "Filtrar",
@@ -354,7 +351,6 @@ $(document).ready(function () {
             cache: true
         }
     }).on("change", function () {
-        console.log('change');
     }).on('select2:select', function (e) {
         var data = e.params.data.id;
         if (data == 0) {
@@ -372,10 +368,9 @@ $(document).ready(function () {
         console.log(data);
     });
     $('#select2-gestionar-menu-subform1').select2("enable", [false]);
-
     $("#select2-new-menu-principal-confrmvsmai").select2({
-        placeholder: "Filtrar",
-        width: '200px',
+        placeholder: "Filtrar Icono",
+        width: '100%',
         templateResult: formatState1,
         templateSelection: formatState1_1,
         maximumSelectionLength: 3,
@@ -407,8 +402,8 @@ $(document).ready(function () {
     });
     $("#select2-new-menu-principal-confrmvsmai").val(null).trigger('change');
     $("#select2-new-menu-principal-type-menu").select2({
-        placeholder: "Filtrar",
-        width: '200px',
+        placeholder: "Filtrar Tipo de Menu",
+        width: '100%',
         templateResult: formatState,
         allowClear: true,
         minimumResultsForSearch: Infinity,
@@ -438,8 +433,8 @@ $(document).ready(function () {
         }
     });
     $("#select2-new-menu-principal-confrmsfcod").select2({
-        placeholder: "Filtrar",
-        width: '200px',
+        placeholder: "Filtrar Sub Menu",
+        width: '100%',
         templateResult: formatState,
         allowClear: true,
 
@@ -468,7 +463,7 @@ $(document).ready(function () {
 
     $("#select2-edit-menu-principal-confrmvsmai").select2({
         placeholder: "Filtrar",
-        width: '200px',
+        width: '100%',
         templateResult: formatState1,
         templateSelection: formatState1_1,
         maximumSelectionLength: 3,
@@ -501,7 +496,7 @@ $(document).ready(function () {
     $("#select2-edit-menu-principal-confrmvsmai").val(null).trigger('change');
     $("#select2-edit-menu-principal-type-menu").select2({
         placeholder: "Filtrar",
-        width: '200px',
+        width: '100%',
         templateResult: formatState,
         allowClear: true,
         minimumResultsForSearch: Infinity,
@@ -532,7 +527,7 @@ $(document).ready(function () {
     });
     $("#select2-edit-menu-principal-confrmsfcod").select2({
         placeholder: "Filtrar",
-        width: '200px',
+        width: '100%',
         templateResult: formatState,
         allowClear: true,
 
@@ -563,7 +558,7 @@ function formatState1(state) {
     if (!state.id) {
         return state.text;
     }
-    var $state = $('<span> <i style="color:black; margin-right:20px" class="fa fa-2x ' + state.id + '"></i> <strong> ' + state.text + '</strong></span>');
+    var $state = $('<span> <i style="color:black; font-size: 1.2em;" class="fa fa-2x ' + state.id + '"></i> <strong> ' + state.text + '</strong></span>');
     return $state;
 
 }
@@ -571,7 +566,7 @@ function formatState1_1(state) {
     if (!state.id) {
         return state.text;
     }
-    var $state = $('<span> <i style="color:black; margin-right:20px;margin-left:20px" class="fa fa-2x ' + state.id + '"></i> <strong style="margin-left:40px"> ' + state.text + '</strong></span>');
+    var $state = $('<span> <i style="color:black;     font-size: 1.2em;" class="fa fa-2x ' + state.id + '"></i> <strong > ' + state.text + '</strong></span>');
     return $state;
 
 }
@@ -1180,9 +1175,10 @@ function edit_gestionar_menu (confrmscode) {
                 $('#select2-edit-menu-principal-confrmsfcod').append('<option value="'+data.confrmsfcod+'">'+data.confrmttitl+'</option>');
                 $('#select2-edit-menu-principal-confrmsfcod').val(data.confrmsfcod).trigger('change');
             }
-            $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
-            $('#modal-edit-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
+            // $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
             $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
+
+            $('#modal-edit-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
 
 
         }

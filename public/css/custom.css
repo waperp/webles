@@ -18,11 +18,53 @@
     line-height: 36px;
 }
 
-span.fa~span.select2.select2-container {
-    margin-left: 35px;
-    width: 90% !important;
+/* span.fa~span.select2.select2-container {
+    padding-left: 35px;
+} */
+.contact-page-section .form-column .inner-column{
+    width: 100%;
+}
+/* .select2-container--open .select2-dropdown {
+    left: 35px;
+    width: 415px !important;
+} */
+.form-group > .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid white;
+    border-radius: .25rem;
+    background-color: rgba(34,58,102,0.90);
+    background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
+}
+.form-group > .card > .card-header {
+    padding: 2px 1.25rem 2px 1.25rem;
+
+    margin-bottom: 0;
+    background-color:rgba(52, 58, 64, 0.3);
+    border-bottom: 1px solid white;
+
+}
+.form-group > .card > .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 2px 1.25rem 2px 1.25rem;
 }
 
+.form-group > .select2.fa {
+    position: absolute !important;
+    left: 0px !important;
+    top: 12px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1em;
+}
 @media only screen and (max-width: 1440px) {
     .banner-carousel .image img {
         /* height: 660px; */

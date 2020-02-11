@@ -9731,14 +9731,14 @@ background-color: #2baeaa;
 	color: #fff !important;
 }
 
-.form-group .fa {
+/* .form-group > .fa {
     position: absolute;
     left: 0px;
     top: 12px;
     color: #ffffff;
     font-size: 18px;
     line-height: 1em;
-}
+} */
 
 .modal-backdrop{z-index: 0;}
 .modal{background-color: rgba(0, 0, 0, 0.7);}

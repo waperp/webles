@@ -66,37 +66,48 @@
                                             <span class="fa fa-folder"></span>
                                             <select id="select2-edit-menu-principal-confrmvsmai" required class="form-control w-100" ></select>
                                         </div>                                    
-                                        <div class="form-group text-center">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="1"  type="radio" id="contypscod0"
-                                                name="edit-menu-principal-contypscod0"
-                                                class="custom-control-input">
-                                                <label class="custom-control-label  text-white"
-                                                    for="contypscod0">Tipo Modal</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="0" type="radio" id="contypscod02"
-                                                name="edit-menu-principal-contypscod0"
-                                                class="custom-control-input">
-                                                <label class="custom-control-label text-white"
-                                                    for="contypscod02">Tipo Scroll</label>
+                                        <div class="form-group">
+                                            <div class="card text-center">
+                                                <div class="card-header text-white">
+                                                    Tipo de Menu
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="1" type="radio" id="contypscod0"
+                                                            name="edit-menu-principal-contypscod0"
+                                                            class="custom-control-input" />
+                                                        <label class="custom-control-label  text-white"
+                                                            for="contypscod0">Modal</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="0" type="radio" id="contypscod02"
+                                                            name="edit-menu-principal-contypscod0"
+                                                            class="custom-control-input" />
+                                                        <label class="custom-control-label text-white"
+                                                            for="contypscod02">Scroll</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="form-group text-center">
-                                            {{-- <span class="fa fa-folder" style="top:0"><label style="font-size: 14px;margin-left: 15px;"  for="">Tipo</label></span> --}}
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="1"  type="radio" id="confrmyadmf"
-                                                name="edit-menu-principal-confrmyadmf"
-                                                class="custom-control-input">
-                                                <label class="custom-control-label  text-white"
-                                                    for="confrmyadmf">Admin</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="0" type="radio" id="confrmyadmf2"
-                                                name="edit-menu-principal-confrmyadmf"
-                                                class="custom-control-input">
-                                                <label class="custom-control-label text-white"
-                                                    for="confrmyadmf2">No admin</label>
+
+                                        <div class="form-group">
+                                            <div class="card text-center">
+                                                <div class="card-header text-white">
+                                                    Administración
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="1" type="radio" id="confrmyadmf"
+                                                            name="edit-menu-principal-confrmyadmf" class="custom-control-input">
+                                                        <label class="custom-control-label  text-white"
+                                                            for="confrmyadmf">Si</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="0" type="radio" id="confrmyadmf2"
+                                                            name="edit-menu-principal-confrmyadmf" class="custom-control-input">
+                                                        <label class="custom-control-label text-white" for="confrmyadmf2">No</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
