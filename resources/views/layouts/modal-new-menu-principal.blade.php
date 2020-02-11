@@ -25,22 +25,28 @@
                                                 name="confrmttitl" placeholder="Titulo">
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group row">
                                             {{-- <span class="fa fa-folder"></span> --}}
+                                            <div class="col-md-6">
                                             <select id="select2-new-menu-principal-type-menu" required
                                                 class="form-control w-100"></select>
-                                        </div>
-                                        <div class="form-group">
+                                            </div>
+                                       
                                             {{-- <span class="fa fa-folder"></span> --}}
+                                            <div class="col-md-6">
+
                                             <select id="select2-new-menu-principal-confrmsfcod" required
                                                 class="form-control w-100"></select>
+                                        </div>
+
                                         </div>
                                         <div class="form-group">
                                             <span class="select2 fa fa-folder "></span>
                                             <select id="select2-new-menu-principal-confrmvsmai" required
                                                 class="form-control w-100"></select>
                                         </div>
-                                        <div class="form-group">
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
                                             <div class="card text-center">
                                                 <div class="card-header text-white">
                                                     Tipo de Menu
@@ -64,7 +70,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="col-md-6">
                                             <div class="card text-center">
                                                 <div class="card-header text-white">
                                                     Administración
@@ -84,7 +90,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                    </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
                                             <textarea required id="new-menu-principal-confrmtdesc" name="confrmtdesc"

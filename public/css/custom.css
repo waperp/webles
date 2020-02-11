@@ -28,7 +28,7 @@
     left: 35px;
     width: 415px !important;
 } */
-.form-group > .card {
+.form-group  > div > .card {
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -43,7 +43,7 @@
     background-color: rgba(34,58,102,0.90);
     background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
 }
-.form-group > .card > .card-header {
+.form-group  > div > .card > .card-header {
     padding: 2px 1.25rem 2px 1.25rem;
 
     margin-bottom: 0;
@@ -51,7 +51,7 @@
     border-bottom: 1px solid white;
 
 }
-.form-group > .card > .card-body {
+.form-group > div > .card > .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 2px 1.25rem 2px 1.25rem;
