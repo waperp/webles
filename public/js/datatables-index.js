@@ -425,8 +425,8 @@ $(document).ready(function () {
             text: 'AGREGAR',
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
-                $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
                 $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
+                $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
             },
             titleAttr: 'AGREGAR'
         }],
