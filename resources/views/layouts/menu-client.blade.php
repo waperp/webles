@@ -14,6 +14,7 @@
                         <li class="elementskit-dropdown-has"><a href="#"><i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                             @if($child->confrmyadmf == 0)
                             <ul class="elementskit-dropdown elementskit-submenu-panel">
+
                             @foreach($child['children'] as $child2)
                             <li><a href="#menu-{{ Str::slug($child2->confrmttitl) }}"><i class="{{ $child2->confrmvsmai }}"></i>{{ $child2->confrmttitl }}</a></li>
                             @endforeach 

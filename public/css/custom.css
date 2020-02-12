@@ -65,6 +65,51 @@
     font-size: 18px;
     line-height: 1em;
 }
+
+/*SELECT2 CUSTOM CSS*/
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: rgba(34,58,102,0.90);
+    background-image: linear-gradient(to right, #1DB9A0 0%, #4d94c4 100%);
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: white;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #212529 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -4px;
+    position: absolute;
+    top: 50%;
+    width: 0;
+}
+.select2-selection--single .select2-selection__rendered {
+    color: #fff;
+    line-height: 36px;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: rgb(31, 184, 161);
+    color: white;
+}
+.select2-results__option[aria-selected] {
+    cursor: pointer;
+    color: black;
+}
+.select2-container--default.select2-container--disabled .select2-selection--single {
+    background-color: #eee;
+    background-image: none;
+    cursor: default;
+}
+.select2-container--disabled .select2-selection--single .select2-selection__placeholder {
+    color: #999;
+}
+/*END SELECT2 CUSTOM CSS*/
 @media only screen and (max-width: 1440px) {
     .banner-carousel .image img {
         /* height: 660px; */
