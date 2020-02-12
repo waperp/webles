@@ -442,6 +442,10 @@ $(document).ready(function () {
                 }
             }
         },
+        columnDefs: [{
+            targets: 1,
+            render: $.fn.dataTable.render.ellipsis(37, true)
+        }],
         columns: [
             {
                 className: 'widthtable',
@@ -454,9 +458,7 @@ $(document).ready(function () {
             }, {
                 orderable: false,
                 sortable: true,
-                render: function (data, type, full, meta) {
-                    return full.confrmtdesc;
-                }
+                data : 'confrmtdesc'
             },  {
                 orderable: false,
                 sortable: true,
