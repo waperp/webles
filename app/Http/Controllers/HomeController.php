@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\confrm;
 use App\confrs;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -41,19 +42,19 @@ class HomeController extends Controller
     }
     public function selectSubform(Request $request)
     {
-        $data = \DB::select('select confrm.confrmscode, confrm.confrmttitl FROM confrm WHERE confrm.confrmsfcod=?', [$request->confrmsfcod]);
+        $data = DB::select('select confrm.confrmscode, confrm.confrmttitl FROM confrm WHERE confrm.confrmsfcod=?', [$request->confrmsfcod]);
         return response()->json($data);
 
     }
     public function selectUserSubform(Request $request)
     {
-        $data = \DB::select('select * from contyp where contypsnumt = 1');
+        $data = DB::select('select * from contyp where contypsnumt = 1');
         return response()->json($data);
 
     }
     public function selectGestionarMenuSubform(Request $request)
     {
-        $data = \DB::select('select * from contyp where contypsnumt = 3');
+        $data = DB::select('select * from contyp where contypsnumt = 3');
         return response()->json($data);
 
 
@@ -61,6 +62,12 @@ class HomeController extends Controller
     public function selectGestionarMenuSubMenu(Request $request)
     {
         $data = confrm::whereNull('confrmsfcod')->get();
+        return response()->json($data);
+
+    }
+    public function listaServicio(Request $request)
+    {
+        $data = confrs::whereConfrmscode($request->confrmscode)->get();
         return response()->json($data);
 
     }
