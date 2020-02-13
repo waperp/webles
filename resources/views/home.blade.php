@@ -13,6 +13,7 @@ class="fb-xfbml-parse-ignore">Compartir</a></div> --}}
 @php
 $ultimasNoticias = App\confrm::nivel(12);
 $gallery = App\confrm::nivel(12);
+$services = App\confrs::childrens(2);
 @endphp
 <section class="banner-section">
     <div class="banner-carousel owl-carousel owl-theme">
@@ -151,37 +152,22 @@ $gallery = App\confrm::nivel(12);
 </section>
 <!-- End Bnner Section -->
 
-<section class="services-form-section">
+<section id="services-form-section" class="services-form-section">
     <div class="image-layer" style="background-image:url(images/background/1.png)"></div>
     <div class="container ">
         
         <!-- Services Form -->
-        <div class="services-form">
+        <div  class="services-form">
                 
             <!--Contact Form-->
                 <div class="row justify-content-between">
                 
                     <!--Form Group-->
-                    {{-- <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                        <div class="map-icon fas fa-map-marker-alt"></div>
-                        <div class="location-icon icon-target"></div>
-                        <select class="custom-select-box" id="ui-id-1" style="display: none;">
-                            <option>Select your area</option>
-                            <option>Area One</option>
-                            <option>Area Two</option>
-                            <option>Area Three</option>
-                            <option>Area Four</option>
-                        </select>
-                    </div> --}}
-                    
+                  
                     <!--Form Group-->
                     <div class="form-group col-4" >
-                        <select  class="form-control w-100" >
-                            <option>Select Service type</option>
-                            <option>Service One</option>
-                            <option>Service Two</option>
-                            <option>Service Three</option>
-                            <option>Service Four</option>
+                        <select id="select2-home-services"  class="form-control w-100" >
+                            
                         </select>
                     </div>
                     
@@ -189,7 +175,7 @@ $gallery = App\confrm::nivel(12);
                     <div class="form-group button-group col-4">
                         <div class="left-curves"></div>
                         <div class="right-curves"></div>
-                        <button class="theme-btn submit-btn" type="submit" name="submit-form">Get Your Service Now</button>
+                        <button class="theme-btn submit-btn" id="button-home-services"  type="button" >SERVICOS</button>
                     </div>
                 
                 </div>
@@ -205,82 +191,11 @@ $gallery = App\confrm::nivel(12);
         <!-- Sec Title -->
         <div class="section-title text-center">
             {{-- <h2>Quick Amenities in Medizco</h2> --}}
-            <p class="text">The hospital plays a statewide role in rehabilitation services, which includes the Acquired</p>
+            <p class="text" id="descripcion-home-services"></p>
         </div>
         
-        <div class="row">
+        <div class="row" id="lista-home-services">
             
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-brifecase-hospital2"></span>
-                    </div>
-                    <h3><a href="#">Intensive care</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                </div>
-            </div>
-            
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 300ms; animation-name: fadeInLeft;">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-hospital-symbol"></span>
-                    </div>
-                    <h3><a href="#">Online Medicine</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                </div>
-            </div>
-            
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeInLeft;">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-heart1"></span>
-                    </div>
-                    <h3><a href="#">Lab Tests</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                </div>
-            </div>
-            
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-ambulance"></span>
-                    </div>
-                    <h3><a href="#">Ambulance Car</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                </div>
-            </div>
-            
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 300ms; animation-name: fadeInLeft;">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-capsule"></span>
-                    </div>
-                    <h3><a href="#">Tabs and Pills</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                </div>
-            </div>
-            
-            <!-- Featured Block -->
-            <div class="featured-block style-two col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInLeft animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeInLeft;">
-                    <div class="image-layer" style="background-image:url(images/resource/feature-2.jpg)"></div>
-                    <div class="icon-box">
-                        <span class="icon icon-book"></span>
-                    </div>
-                    <h3><a href="#">Health Check</a></h3>
-                    <p>Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                </div>
-            </div>
             
         </div>
         

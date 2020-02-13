@@ -40,7 +40,7 @@ class confrm extends Model
     {
         return static::where('confrmsfcod', $confrmsfcod)->get();
     }
-
+   
     public function sections()
     {
         return $this->hasMany(confrs::class,'confrmscode','confrmscode')->orderBy('confrsdpubl','DESC');

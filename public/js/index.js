@@ -457,10 +457,7 @@ $(document).ready(function () {
         }
     });
     $('#select2-new-menu-principal-confrmsfcod').select2("enable", [false]);
-
     // S
-
-
     $("#select2-edit-menu-principal-confrmvsmai").select2({
         placeholder: "Filtrar",
         width: '100%',
@@ -551,6 +548,36 @@ $(document).ready(function () {
     });
     $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [false]);
 
+    $("#select2-home-services").select2({
+        placeholder: "Filtrar Servicios",
+        width: '100%',
+        templateResult: formatState,
+        allowClear: true,
+
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectSubform/",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    confrmsfcod: 2
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+    
 
 
 });
@@ -1020,8 +1047,6 @@ $("#form-edit-user").submit(function (e) {
         },
     });
 });
-
-
 $("#form-new-menu-principal").submit(function (e) {
     var _token = $('input[name=_token]').val();
     e.preventDefault();
@@ -1090,8 +1115,6 @@ $("#form-new-menu-principal").submit(function (e) {
         },
     });
 });
-
-
 $("#form-edit-menu-principal").submit(function (e) {
     var _token = $('input[name=_token]').val();
     e.preventDefault();
@@ -1183,4 +1206,60 @@ function edit_gestionar_menu (confrmscode) {
 
         }
     });
+}
+
+function menu_servicio_select(data){
+    $('#select2-home-services').append('<option value="'+data.confrmscode+'">'+data.confrmttitl+'</option>');
+            
+    $('#select2-home-services').val(data.confrmscode).trigger('change');
+    $('#button-home-services').html(data.confrmttitl);
+    $('#descripcion-home-services').text(data.confrmtdesc);
+    items_servicio(data.confrmscode);
+}
+
+function menu_servicio (confrmscode) {
+
+    $.ajax({
+        url: '/confrm/' + confrmscode,
+        type: 'get',
+        datatype: 'json',
+        success: function (data) {
+            menu_servicio_select(data);
+            
+        }
+    });
+}
+function items_servicio (confrmscode) {
+    $.ajax({
+        url: '/listaServicios/',
+        type: 'get',
+        datatype: 'json',
+        data:{
+             confrmscode:  confrmscode
+        },
+        success: function (data) {
+            lista_servicio_select(data);
+        }
+    });
+}
+function   lista_servicio_select(data){
+    var item = "";
+    $('#lista-home-services').empty();
+
+    data.forEach(servicesItem => {
+
+        item += '<div class="service-item-' +servicesItem.confrmscode +' featured-block style-two col-lg-4 col-md-6 col-sm-12">'+
+        '<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">'+
+            '<div class="image-layer" style="background-image:url(images/' +servicesItem.confrsvbigi +');background-size:cover;background-position: center center "></div>'+
+            '<div class="icon-box"><i class="' +servicesItem.confrsvsmai +'"></i></div>'+
+            '<h3 class="text-center"><a href="#">' +servicesItem.confrsttitl +'</a></h3>'+
+            '<p class="text-center">'+ servicesItem.confrstdesc.substring(0,20) +'</p>'+
+            '<div class="link-box wow fadeInUp  text-center mt-2" data-wow-delay="1000ms">'+
+                 '<a href="/servicio/' +convertToSlug(servicesItem.confrsttitl) +'/' +servicesItem.secconnuuid +'" class="theme-btn btn-style-two other"><i>Ver Más</i> <spanclass="arrow icon icon-arrow_right"></span></a></div> '+
+        '</div>'+
+    '</div>';
+    });
+    debugger
+
+    $('#lista-home-services').append(item);
 }

@@ -38,13 +38,13 @@
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                         </li>
                     @elseif($child->contypscode == 1)
-                    <li style="@if ($loop->iteration == 2) border-bottom: 1px solid #1cb89d @endif">
+                    <li >
                         <a data-toggle="modal" data-target="#modal-{{ Str::slug($child->confrmttitl) }}"> 
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                     </li>
                     @elseif($child->contypscode == 3)
-                    <li style="@if ($loop->iteration == 2) border-bottom: 1px solid #1cb89d @endif">
-                        <a onclick="menu_servicio({{ $child->confrmscode }})"> 
+                    <li >
+                        <a href="#services-form-section" onclick="menu_servicio({{ $child->confrmscode }})"> 
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                     </li>
                     @endif
