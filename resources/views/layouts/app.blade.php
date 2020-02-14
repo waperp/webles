@@ -5,6 +5,7 @@
         $ultimasNoticias = App\confrm::nivel(14);
         $usuarios = App\confrm::nivel(16);
         $gestionarMenu = App\confrm::nivel(17);
+        $gestionarServicios = App\confrm::nivel(18);
         @endphp
 <head>
     {{-- <meta charset="utf-8"> --}}
@@ -110,10 +111,13 @@ BACTERIOLOGÍA">
         @include('layouts.modal-new-quienes-somos')
         @include('layouts.modal-redes-sociales')
         @include('layouts.modal-edit-redes-sociales')
+        @include('layouts.modal-edit-servicios')
         @include('layouts.modal-new-redes-sociales')
         @include('layouts.modal-new-menu-principal')
+        @include('layouts.modal-new-servicios')
         @include('layouts.modal-edit-menu-principal')
         @include('layouts.modal-menu-principal')
+        @include('layouts.modal-servicios')
         
         @include('layouts.modal-user')
         @include('layouts.modal-new-user')
@@ -159,6 +163,7 @@ BACTERIOLOGÍA">
         const modal_redes_sociales = @json($redesSociales);
         const modal_usuarios = @json($usuarios);
         const gestionar_menu = @json($gestionarMenu);
+        const gestionar_servicios = @json($gestionarServicios);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
   

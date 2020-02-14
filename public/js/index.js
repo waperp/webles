@@ -40,6 +40,10 @@ $(document).ready(function () {
         locale: 'es',
         format: 'YYYY-MM-DD'
     });
+    $('.servicios-datetime').datetimepicker({
+        locale: 'es',
+        format: 'YYYY-MM-DD'
+    });
     $.uploadPreview({
         input_field: "#edit-perfil-image-upload", // Default: .image-upload
         preview_box: "#edit-perfil-image-preview", // Default: .image-preview
@@ -199,6 +203,90 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
+    });
+    $("#select2-servicios-subform").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectSubform/",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    confrmsfcod: 2
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+        $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
+        console.log('change');
+    });
+    $("#select2-new-servicios-subform").select2({
+        placeholder: "Filtrar",
+        width: '100%',
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectSubform/",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    confrmsfcod: 2
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+    $("#select2-edit-servicios").select2({
+        placeholder: "Filtrar",
+        width: '100%',
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectSubform/",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    confrmsfcod: 2
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
     });
     $("#select2-edit-redes-sociales-subform").select2({
         placeholder: "Filtrar",
@@ -1215,7 +1303,114 @@ function edit_gestionar_menu (confrmscode) {
         }
     });
 }
+$("#form-new-servicios").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrsttitl = $('#new-servicios-confrsttitl').val();
+    var confrstdesc = $('#new-servicios-confrstdesc').val();
+    var confrsscode = $('#new-servicios-confrsscode').val();
+    var confrsdpubl = $('#new-servicios-confrsdpubl').val();
+    var confrsvbigi = $('#new-servicios-confrsvbigi').prop('files')[0];
+    var confrmscode = $('#select2-new-servicios-subform').val();
+    debugger
+    var formData = new FormData();
 
+    formData.append("confrsttitl", confrsttitl);
+    formData.append("confrmscode", confrmscode);
+    formData.append("confrstdesc", confrstdesc);
+    formData.append("confrsscode", confrsscode);
+    formData.append("confrsvbigi", confrsvbigi);
+    formData.append("confrsdpubl", confrsdpubl);
+    // formData.append('_method', 'patch');  
+
+
+
+    $.ajax({
+        url: '/confrs',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
+        success: function (data) {
+
+            $('#datatable-' + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
+            
+            $('#modal-new-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('hide');
+            $('#modal-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('show');
+
+        },
+    });
+});
+$("#form-edit-servicios").submit(function (e) {
+    var _token = $('input[name=_token]').val();
+    e.preventDefault();
+    var confrsttitl = $('#edit-servicios-confrsttitl').val();
+    var confrstdesc = $('#edit-servicios-confrstdesc').val();
+    var confrsscode = $('#edit-servicios-confrsscode').val();
+    var confrsdpubl = $('#edit-servicios-confrsdpubl').val();
+    var confrsvbigi = $('#edit-servicios-confrsvbigi').prop('files')[0];
+    var confrmscode = $('#select2-edit-servicios-subform').val();
+    debugger
+    var formData = new FormData();
+
+    formData.append("confrsttitl", confrsttitl);
+    formData.append("confrmscode", confrmscode);
+    formData.append("confrstdesc", confrstdesc);
+    formData.append("confrsscode", confrsscode);
+    formData.append("confrsvbigi", confrsvbigi);
+    formData.append("confrsdpubl", confrsdpubl);
+    formData.append('_method', 'patch');  
+
+
+
+    $.ajax({
+        url: '/confrs',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        contentType: false, // The content type used when sending data to the server.
+        cache: false, // To unable request pages to be cached
+        processData: false,
+        data: formData,
+        success: function (data) {
+
+            $('#datatable-' + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
+            
+            $('#modal-edit-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('hide');
+            $('#modal-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('show');
+
+        },
+    });
+});
+function edit_gestionar_servicios(confrmscode) {
+    $.ajax({
+        url: '/confrs/' + confrmscode,
+        type: 'get',
+        datatype: 'json',
+        success: function (data) {
+            debugger
+            $('#select2-edit-servicios').append('<option value="' + data.confrmscode + '">' + data.confrmttitl + '</option>');
+            $("#select2-edit-servicios").val(data.confrmscode).trigger('change');
+            $('#edit-servicios-confrsttitl').val(data.confrsttitl);
+            $('#edit-servicios-confrsscode').val(data.confrsscode);
+            $('#edit-servicios-confrstdesc').val(data.confrstdesc);
+            $('#edit-servicios-confrsdpubl').val(data.confrsdpubl);
+            $("#edit-servicios-confrsvbigi").parent().css("background-image", "url('images/" + data.confrsvbigi + "')");
+            $("#edit-servicios-confrsvbigi").parent().css("background-size", "cover");
+            $("#edit-servicios-confrsvbigi").parent().css("background-position", "center center");
+    $('#modal-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('hide');
+
+    $('#modal-edit-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('show');
+
+            // $('#modal-admin-gestionar-grupo').modal('show');
+        }
+    });
+}
 function menu_servicio_select(data){
     $('#select2-home-services').append('<option value="'+data.confrmscode+'">'+data.confrmttitl+'</option>');
             
