@@ -42,7 +42,7 @@ class HomeController extends Controller
     }
     public function selectSubform(Request $request)
     {
-        $data = DB::select('select confrm.confrmscode, confrm.confrmttitl FROM confrm WHERE confrm.confrmsfcod=?', [$request->confrmsfcod]);
+        $data = DB::select('select * FROM confrm WHERE confrm.confrmsfcod=?', [$request->confrmsfcod]);
         return response()->json($data);
 
     }

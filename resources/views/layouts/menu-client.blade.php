@@ -11,10 +11,8 @@
                     @if ($child['children']->count() <=  0)
                     @if ($child->contypscode == 3)
                     <li><a href="#services-form-section" onclick="menu_servicio({{ $child->confrmscode }})"><i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a></li>
-                        
                     @else
                     <li><a href="#menu-{{ Str::slug($child->confrmttitl) }}"><i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a></li>
-
                     @endif
                     @else
                         <li class="elementskit-dropdown-has"><a href="#"><i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
