@@ -569,13 +569,21 @@ $(document).ready(function () {
                     results: $.map(data, function (item) {
                         return {
                             text: item.confrmttitl,
-                            id: item.confrmscode
+                            id: item.confrmscode,
+                            confrmtdesc: item.confrmtdesc,
                         }
                     })
                 };
             },
             cache: true
         }
+    }).on('select2:select', function (e) {
+        debugger
+        var confrmscode = e.params.data.id;
+        $('#button-home-services').html(e.params.data.text);
+    $('#descripcion-home-services').text(e.params.data.confrmtdesc);
+    items_servicio(confrmscode);
+        
     });
     
 
