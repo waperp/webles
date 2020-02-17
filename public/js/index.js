@@ -204,36 +204,7 @@ $(document).ready(function () {
         $("#datatable-" + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
         console.log('change');
     });
-    $("#select2-servicios-subform").select2({
-        placeholder: "Filtrar",
-        width: '200px',
-        templateResult: formatState,
-        minimumResultsForSearch: Infinity,
-        ajax: {
-            url: "/selectSubform/",
-            dataType: 'json',
-            delay: 250,
-            data: function (params) {
-                return {
-                    confrmsfcod: 2
-                };
-            },
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.confrmttitl,
-                            id: item.confrmscode
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    }).on("change", function () {
-        $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
-        console.log('change');
-    });
+    
     $("#select2-new-servicios-subform").select2({
         placeholder: "Filtrar",
         width: '100%',
@@ -669,11 +640,77 @@ $(document).ready(function () {
         debugger
         var confrmscode = e.params.data.id;
         $('#button-home-services').html(e.params.data.text);
-    $('#descripcion-home-services').text(e.params.data.confrmtdesc);
-    items_servicio(confrmscode);
+        $('#descripcion-home-services').text(e.params.data.confrmtdesc);
+        items_servicio(confrmscode);
         
     });
-    
+
+    $("#select2-servicios-subform").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.contyptdesc,
+                            id: item.contypscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+    }).on('select2:select', function (e) {
+        var data = e.params.data.id;
+        if (data == 0) {
+            $('#select2-servicios-subform1').select2("enable", [false]);
+            $('#select2-servicios-subform1').val(null).trigger('change');
+
+            $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
+
+        } else if (data == 1) {
+            $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
+
+            $('#select2-servicios-subform1').select2("enable", [true]);
+
+        }
+        console.log(data);
+    });
+
+    $("#select2-servicios-subform1").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectServiciosSubMenu/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+        $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+    });
+    $('#select2-servicios-subform1').select2("enable", [false]);
 
 
 });
