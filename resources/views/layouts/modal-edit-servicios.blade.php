@@ -36,6 +36,7 @@
 
                                         </div>
                                         <input type="hidden" id="edit-servicios-confrsscode">
+                                        <input type="hidden" id="edit-servicios-secconnuuid">
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
                                             <input type="text" id="edit-servicios-confrsttitl" name="confrsttitl" placeholder="Titulo">

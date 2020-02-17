@@ -1353,7 +1353,7 @@ $("#form-edit-servicios").submit(function (e) {
     var confrsscode = $('#edit-servicios-confrsscode').val();
     var confrsdpubl = $('#edit-servicios-confrsdpubl').val();
     var confrsvbigi = $('#edit-servicios-confrsvbigi').prop('files')[0];
-    var confrmscode = $('#select2-edit-servicios-subform').val();
+    var confrmscode = $('#select2-edit-servicios').val();
     debugger
     var formData = new FormData();
 
@@ -1368,7 +1368,7 @@ $("#form-edit-servicios").submit(function (e) {
 
 
     $.ajax({
-        url: '/confrs',
+        url: '/confrs/'+confrsscode,
         type: 'POST',
         headers: {
             'X-CSRF-TOKEN': _token
