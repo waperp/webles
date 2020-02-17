@@ -52,14 +52,14 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" id="contypscod0"
+                                                        <input required value="1" type="radio" 
                                                             name="edit-menu-principal-contypscod0"
                                                             class="custom-control-input" />
                                                         <label class="custom-control-label  text-white"
                                                             for="contypscod0">Modal</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" id="contypscod02"
+                                                        <input required value="0" type="radio" 
                                                             name="edit-menu-principal-contypscod0"
                                                             class="custom-control-input" />
                                                         <label class="custom-control-label text-white"
@@ -75,13 +75,13 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" id="confrmyadmf"
+                                                        <input required value="1" type="radio" 
                                                             name="edit-menu-principal-confrmyadmf" class="custom-control-input">
                                                         <label class="custom-control-label  text-white"
                                                             for="confrmyadmf">Si</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" id="confrmyadmf2"
+                                                        <input required value="0" type="radio" 
                                                             name="edit-menu-principal-confrmyadmf" class="custom-control-input">
                                                         <label class="custom-control-label text-white" for="confrmyadmf2">No</label>
                                                     </div>

@@ -65,6 +65,12 @@ class HomeController extends Controller
         return response()->json($data);
 
     }
+    public function selectServiciosSubMenu(Request $request)
+    {
+        $data = confrm::whereConfrmsfcod(2)->get();
+        return response()->json($data);
+
+    }
     public function listaServicio(Request $request)
     {
         $data = confrs::whereConfrmscode($request->confrmscode)->get();
