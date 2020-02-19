@@ -637,12 +637,10 @@ $(document).ready(function () {
             cache: true
         }
     }).on('select2:select', function (e) {
-        debugger
         var confrmscode = e.params.data.id;
         $('#button-home-services').html(e.params.data.text);
         $('#descripcion-home-services').text(e.params.data.confrmtdesc);
         items_servicio(confrmscode);
-        
     });
 
     $("#select2-servicios-subform").select2({
@@ -682,7 +680,6 @@ $(document).ready(function () {
             $('#select2-servicios-subform1').select2("enable", [true]);
 
         }
-        console.log(data);
     });
 
     $("#select2-servicios-subform1").select2({
@@ -708,7 +705,7 @@ $(document).ready(function () {
             cache: true
         }
     }).on("change", function () {
-        $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
+        $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
     });
     $('#select2-servicios-subform1').select2("enable", [false]);
 

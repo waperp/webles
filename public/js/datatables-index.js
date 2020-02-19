@@ -368,6 +368,7 @@ $(document).ready(function () {
             }
         ],
     });
+
     $("#datatable-" + convertToSlug(gestionar_menu.confrmttitl)).DataTable({
         colReorder: true,
         "ordering": false,
@@ -488,16 +489,16 @@ $(document).ready(function () {
         ],
     });
 
+   
 
-    $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable({
+ $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable({
         colReorder: true,
         "ordering": false,
         "searching": false,
         responsive: true,
         "paging": false, "lengthChange": false,
         "info": true,
-      
-            dom: "<'row'<'col-sm-12 col-md-6'B>>" +
+        dom: "<'row'<'col-sm-12 col-md-6'B>>" +
             "<'row'<'col-sm-12'tr>>" +
             "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
         "pageLength": 25,
@@ -533,10 +534,8 @@ $(document).ready(function () {
         },
         processing: true,
         serverSide: true,
-        columnDefs: [{
-            targets: 1,
-            render: $.fn.dataTable.render.ellipsis(37, true)
-        }],
+        "deferLoading": 1,
+
         buttons: [{
             className: 'btn-success',
             text: '<i class="fa fa-refresh text-white "></i>',
@@ -550,66 +549,69 @@ $(document).ready(function () {
             className: 'btn btn-action',
             action: function (e, dt, node, config) {
                 $('#modal-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('hide');
-
                 $('#modal-new-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('show');
             },
             titleAttr: 'AGREGAR'
         }],
-        "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-
-        },
-        "createdRow": function (row, data, dataIndex) {
-
-        },
         ajax: {
             url: '/datatables/servicios',
             data: function (d) {
-                d.confrmscode = $('#select2-servicios-subform').val();
+                if($('#select2-servicios-subform').val()){
+                    d.contypscode = $('#select2-servicios-subform').val();
+                }
+                if($('#select2-servicios-subform1').val()){
 
+                d.contypscode1 = $('#select2-servicios-subform1').val();
+                }
             }
         },
+        columnDefs: [{
+            targets: 1,
+            render: function ( full, type, row ) {
+                var value = row.confrsscode ?  row.confrstdesc : row.confrmtdesc;
+                debugger
+                return value.substr( 0, 30 );
+            }
+        }],
         columns: [
-            // {
-            //     className: 'padding-pos',
-            //     width: 20,
-            //     data: 'POS'
-            // }, 
             {
                 className: 'widthtable',
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return '<div class="team-meta"><figure class="team-meta__logo"><img src="/images/' + full.confrsvbigi + '" alt=""></figure><div class="team-meta__info"><h6 class="team-meta__name">' + full.confrsttitl + '</h6></div></div>'
+                    var value = full.confrsscode ?  full.confrsttitl : full.confrmttitl;
+                    return '<div class="team-meta"><figure class="team-meta__logo"><i class="fa-2x ' + full.confrmvsmai + '" ></i></figure><div class="team-meta__info"><h6 class="team-meta__name">' + value  + '</h6></div></div>'
 
                 }
             }, {
                 orderable: false,
                 sortable: true,
-                data: 'confrstdesc',
-                // render: function (data, type, full, meta) {
-                //     return data.length > 10 ?
-                //     data.substr( 0, 50 ) +'…' :
-                //     data;
-                // }
-            }, {
+                data : 'confrmtdesc',
+                
+            },  {
                 orderable: false,
                 sortable: true,
                 render: function (data, type, full, meta) {
-                    return full.confrsdpubl
-                }
-            }, {
-                orderable: false,
-                sortable: true,
-                render: function (data, type, full, meta) {
-                    return "<a class='btn' OnClick='link_gestionar_servicios(" + full.confrsscode + ");' title='EDITAR' ><i class='fa fa-facebook  ext-warning'></i></a>";
+                    var value = full.confrsbenbl ?  full.confrsbenbl : full.confrmbenbl;
 
+                    if (value == 1) {
+                        return '<span class="badge badge-success">Habilitado</span>';
+                    } else {
+                        return '<span class="badge badge-danger">No Habilitado</span>';
+                    }
                 }
             }, {
                 width: 30,
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return "<a class='btn' OnClick='edit_gestionar_servicios(" + full.confrsscode + ");' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
+                    if(full.confrsscode){
+                        return "<a class='btn' OnClick='edit_gestionar_servicios(" + full.confrmscode + ","+full.confrsscode+");' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
+
+                    }else{
+                    return "<a class='btn' OnClick='edit_gestionar_servicios(" + full.confrmscode + ",0);' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
+
+                    }
                 }
             },
             {
@@ -617,7 +619,13 @@ $(document).ready(function () {
                 orderable: false,
                 sortable: false,
                 render: function (data, type, full, meta) {
-                    return "<a  class='btn' OnClick='delete_gestionar_servicios(" + full.confrsscode + ");' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
+                    if(full.confrsscode){
+
+                    return "<a  class='btn' OnClick='delete_gestionar_servicios(" + full.confrmscode + ","+full.confrsscode+");' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
+                    }else{
+                        return "<a  class='btn' OnClick='delete_gestionar_servicios(" + full.confrmscode + ",0);' title='ELIMINAR' ><i class='fa fa-times-circle text-danger'></i></a>";
+
+                    }
                 }
             }
         ],
