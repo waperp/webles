@@ -708,6 +708,8 @@ $(document).ready(function () {
         $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
     });
     $('#select2-servicios-subform1').select2("enable", [false]);
+    $('.administracion').hide();
+
     $("#select2-new-servicios-tipo").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -736,11 +738,13 @@ $(document).ready(function () {
         if (data == 0) {
             $('#select2-new-servicios-confrmscode').select2("enable", [false]);
             $('#select2-new-servicios-confrmscode').val(null).trigger('change');
+            $('.administracion').show();
 
 
         } else if (data == 1) {
 
             $('#select2-new-servicios-confrmscode').select2("enable", [true]);
+            $('.administracion').hide();
 
         }
     });

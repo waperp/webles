@@ -74,7 +74,7 @@
                                     </div>
 
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row administracion">
                                         <div class="col-md-6">
                                             <div class="card text-center">
                                                 <div class="card-header text-white">
