@@ -36,11 +36,14 @@
 
                                         </div>
                                         <input type="hidden" id="new-servicios-confrsscode">
-                                        <div class="form-group">
+                                        <div class="col-12">
+                                            <div class="row">
+
+                                        <div class="form-group col-6">
                                             <span class="icon flaticon-send"></span>
                                             <input type="text" id="new-servicios-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group col-6">
                                             <div class="input-group date servicios-datetime" id="datetimepicker1"> 
                                                     <span class="icon flaticon-send"></span>
 
@@ -53,14 +56,78 @@
                                                 </div>
                                             </div> 
                                         </div>
+                                    </div>
+                                    
+                                    </div>
+                                    <div class="form-group row">
+                                        {{-- <span class="fa fa-folder"></span> --}}
+                                        <div class="col-md-6">
+                                        <select id="select2-new-servicios-tipo" required
+                                            class="form-control w-100"></select>
+                                        </div>
+                                   
+                                        {{-- <span class="fa fa-folder"></span> --}}
+                                        <div class="col-md-6">
+
+                                        <select id="select2-new-servicios-confrmscode" required
+                                            class="form-control w-100"></select>
+                                    </div>
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <div class="card text-center">
+                                                <div class="card-header text-white">
+                                                    Tipo de Menu
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="1" type="radio" 
+                                                            name="new-menu-principal-contypscod0"
+                                                            class="custom-control-input" />
+                                                        <label class="custom-control-label  text-white"
+                                                            for="contypscod0">Modal</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="0" type="radio" 
+                                                            name="new-menu-principal-contypscod0"
+                                                            class="custom-control-input" />
+                                                        <label class="custom-control-label text-white"
+                                                            for="contypscod02">Scroll</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card text-center">
+                                                <div class="card-header text-white">
+                                                    Administración
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="1" type="radio" 
+                                                            name="new-menu-principal-confrmyadmf" class="custom-control-input">
+                                                        <label class="custom-control-label  text-white"
+                                                            for="confrmyadmf">Si</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="0" type="radio" 
+                                                            name="new-menu-principal-confrmyadmf" class="custom-control-input">
+                                                        <label class="custom-control-label text-white" for="confrmyadmf2">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
                                             <textarea required  id="new-servicios-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <span class="fa fa-folder"></span>
                                             <select id="select2-new-servicios-subform" required class="form-control w-100" ></select>
-                                        </div>
+                                        </div> --}}
                                         {{-- <div class="form-row">
 
                                             <div class="form-group col-6">

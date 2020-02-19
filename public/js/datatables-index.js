@@ -488,9 +488,6 @@ $(document).ready(function () {
             }
         ],
     });
-
-   
-
  $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable({
         colReorder: true,
         "ordering": false,

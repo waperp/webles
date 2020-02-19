@@ -708,7 +708,67 @@ $(document).ready(function () {
         $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
     });
     $('#select2-servicios-subform1').select2("enable", [false]);
+    $("#select2-new-servicios-tipo").select2({
+        placeholder: "Filtrar",
+        width: '200px',
+        templateResult: formatState,
+        allowClear: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectGestionarMenuSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.contyptdesc,
+                            id: item.contypscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+    }).on('select2:select', function (e) {
+        var data = e.params.data.id;
+        if (data == 0) {
+            $('#select2-new-servicios-confrmscode').select2("enable", [false]);
+            $('#select2-new-servicios-confrmscode').val(null).trigger('change');
 
+
+        } else if (data == 1) {
+
+            $('#select2-new-servicios-confrmscode').select2("enable", [true]);
+
+        }
+    });
+    $("#select2-new-servicios-confrmscode").select2({
+        placeholder: "Filtrar",
+        width: '100%',
+        templateResult: formatState,
+        allowClear: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectServiciosSubMenu/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.confrmttitl,
+                            id: item.confrmscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+    });
+    $('#select2-new-servicios-confrmscode').select2("enable", [false]);
 
 });
 function formatState1(state) {
@@ -1345,7 +1405,8 @@ $("#form-new-servicios").submit(function (e) {
     var confrsscode = $('#new-servicios-confrsscode').val();
     var confrsdpubl = $('#new-servicios-confrsdpubl').val();
     var confrsvbigi = $('#new-servicios-confrsvbigi').prop('files')[0];
-    var confrmscode = $('#select2-new-servicios-subform').val();
+    var confrmscode = $('#select2-new-servicios-confrmscode').val();
+    var tipo = $('#select2-new-servicios-tipo').val();
     debugger
     var formData = new FormData();
 
@@ -1355,6 +1416,7 @@ $("#form-new-servicios").submit(function (e) {
     formData.append("confrsscode", confrsscode);
     formData.append("confrsvbigi", confrsvbigi);
     formData.append("confrsdpubl", confrsdpubl);
+    formData.append("tipo", tipo);
     // formData.append('_method', 'patch');  
 
 
@@ -1421,7 +1483,7 @@ $("#form-edit-servicios").submit(function (e) {
         },
     });
 });
-function edit_gestionar_servicios(confrmscode) {
+function edit_gestionar_servicios(confrmscode,confrsscode) {
     $.ajax({
         url: '/confrs/' + confrmscode,
         type: 'get',
