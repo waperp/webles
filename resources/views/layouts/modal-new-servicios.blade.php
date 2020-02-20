@@ -95,6 +95,13 @@
                                                         <label class="custom-control-label text-white"
                                                             for="new-servicios-contypscod01">Scroll</label>
                                                     </div>
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input required value="3" type="radio" id="new-servicios-contypscod02"
+                                                            name="new-servicios-contypscod0"
+                                                            class="custom-control-input" />
+                                                        <label class="custom-control-label text-white"
+                                                            for="new-servicios-contypscod02">Servicio</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
