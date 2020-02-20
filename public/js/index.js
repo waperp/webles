@@ -1588,7 +1588,7 @@ function edit_gestionar_servicios(confrmscode, confrsscode) {
         success: function (response) {
             debugger
             var data = response.servicio;
-            if (response.isService == true) {
+            if (response.isService == false) {
                 var $confrmyadmf = $('input:radio[name=edit-servicios-confrmyadmf]');
             $confrmyadmf.filter('[value=' + data.confrmyadmf + ']').prop('checked', true);
 
