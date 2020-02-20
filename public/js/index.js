@@ -798,13 +798,26 @@ $(document).ready(function () {
             cache: true
         }
     }).on("change", function () {
-    }).on('select2:select', function (e) {
-        var data = e.params.data.id;
+        debugger
+        var data = $("#select2-edit-servicios-tipo").val();
         if (data == 0) {
             $('#select2-edit-servicios-confrmscode').select2("enable", [false]);
             $('#select2-edit-servicios-confrmscode').val(null).trigger('change');
             $('.administracion').show();
 
+        } else if (data == 1) {
+
+            $('#select2-edit-servicios-confrmscode').select2("enable", [true]);
+            $('.administracion').hide();
+
+        }
+    }).on('select2:select', function (e) {
+        debugger
+        var data = e.params.data.id;
+        if (data == 0) {
+            $('#select2-edit-servicios-confrmscode').select2("enable", [false]);
+            $('#select2-edit-servicios-confrmscode').val(null).trigger('change');
+            $('.administracion').show();
 
         } else if (data == 1) {
 
