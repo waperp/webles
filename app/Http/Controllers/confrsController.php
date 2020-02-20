@@ -6,6 +6,7 @@ use App\confrm;
 use App\confrs;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Image;
 
 class confrsController extends Controller
@@ -38,72 +39,22 @@ class confrsController extends Controller
      */
     public function store(Request $request)
     {
+        DB::beginTransaction();
+        try {
+            if ($request->hasFile('confrsvbigi')) {
+                $image = $request->file('confrsvbigi');
+                $img = Image::make($image);
 
-        if ($request->hasFile('confrsvbigi')) {
-            $image = $request->file('confrsvbigi');
-            $img = Image::make($image);
+                $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
+                $img->resize(200, 200);
+                $img = $img->save(base_path() . '/public/images/' . $imageName);
 
-            $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
-            $img->resize(200, 200);
-            $img = $img->save(base_path() . '/public/images/' . $imageName);
-
-            //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
-
-
-        } else {
-            $imageName = "noimage.png";
-        }
-        $confrs = new confrs;
-        $confrs->confrstdesc = $request->confrstdesc;
-        $confrs->confrsttitl = $request->confrsttitl;
-        $confrs->confrsyorde = 0;
-        $confrs->confrmscode = $request->confrmscode;
-        $confrs->confrsbenbl = 1;
-        if ($request->has('confrsdpubl')) {
-            $confrs->confrsdpubl = $request->confrsdpubl;
-        } else {
-            $confrs->confrsdpubl = Carbon::now()->format('Y-m-d');
-        }
-        $confrs->confrsvsmai = null;
-        if ($imageName == null) {
-        } else {
-            $confrs->confrsvbigi = $imageName;
-        }
-        $confrs->save();
-        return response()->json($confrs);
-    }
-
-    public function storeServicios(Request $request)
-    {
-        if ($request->hasFile('confrsvbigi')) {
-            $image = $request->file('confrsvbigi');
-            $img = Image::make($image);
-
-            $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
-            $img->resize(200, 200);
-            $img = $img->save(base_path() . '/public/images/' . $imageName);
-
-            //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+                //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
 
 
-        } else {
-            $imageName = "noimage.png";
-        }
-        if ($request->tipo == 0) {
-            $confrm = new confrm;
-            $confrm->confrmtdesc = $request->confrstdesc;
-            $confrm->confrmttitl = $request->confrsttitl;
-            $confrm->confrmyorde = 0;
-            $confrm->confrmbenbl = 1;
-            $confrm->confrmsfcod = null;
-            $confrm->confrmvsmai = null;
-            if ($imageName == null) {
             } else {
-                $confrm->confrmvbigi = $imageName;
+                $imageName = "noimage.png";
             }
-            $confrm->save();
-            return response()->json($confrm);
-        } else if ($request->tipo == 1) {
             $confrs = new confrs;
             $confrs->confrstdesc = $request->confrstdesc;
             $confrs->confrsttitl = $request->confrsttitl;
@@ -122,6 +73,70 @@ class confrsController extends Controller
             }
             $confrs->save();
             return response()->json($confrs);
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json($e->getMessage());
+            // something went wrong
+        }
+    }
+
+    public function storeServicios(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            if ($request->hasFile('confrsvbigi')) {
+                $image = $request->file('confrsvbigi');
+                $img = Image::make($image);
+
+                $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
+                $img->resize(200, 200);
+                $img = $img->save(base_path() . '/public/images/' . $imageName);
+                //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+            } else {
+                $imageName = "noimage.png";
+            }
+            if ($request->tipo == 0) {
+                $confrm = new confrm;
+                $confrm->confrmtdesc = $request->confrstdesc;
+                $confrm->confrmttitl = $request->confrsttitl;
+                $confrm->confrmyorde = 0;
+                $confrm->confrmbenbl = 1;
+                $confrm->confrmsfcod = 2;
+                $confrm->confrmyadmf = $request->confrmyadmf;
+                $confrm->contypscod0 = $request->contypscod0;
+                if ($imageName == null) {
+                } else {
+                    $confrm->confrmvsmai = $imageName;
+                }
+                $confrm->save();
+                DB::commit();
+                return response()->json($confrm);
+            } else if ($request->tipo == 1) {
+                $confrs = new confrs;
+                $confrs->confrstdesc = $request->confrstdesc;
+                $confrs->confrsttitl = $request->confrsttitl;
+                $confrs->confrsyorde = 0;
+                $confrs->confrmscode = $request->confrmscode;
+                $confrs->confrsbenbl = 1;
+                if ($request->has('confrsdpubl')) {
+                    $confrs->confrsdpubl = $request->confrsdpubl;
+                } else {
+                    $confrs->confrsdpubl = Carbon::now()->format('Y-m-d');
+                }
+                $confrs->confrsvsmai = null;
+                if ($imageName == null) {
+                } else {
+                    $confrs->confrsvbigi = $imageName;
+                }
+                $confrs->save();
+                DB::commit();
+
+                return response()->json($confrs);
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json($e->getMessage());
+            // something went wrong
         }
     }
     /**
@@ -130,10 +145,17 @@ class confrsController extends Controller
      * @param  \App\confrs  $confrs
      * @return \Illuminate\Http\Response
      */
-    public function show($confrsscode)
+    public function show(Request $request, $confrmscode)
     {
-        $data =  confrs::join('confrm', 'confrm.confrmscode', 'confrs.confrmscode')->where('confrsscode', $confrsscode)->first();
-        return response()->json($data);
+        if ($request->confrsscode != null) {
+            $data =  confrm::join('confrs', 'confrm.confrmscode', 'confrs.confrmscode')
+                ->where('confrsscode', $request->confrsscode)->first();
+            return response()->json(['servicio' => $data, 'isService' => false,]);
+        } else {
+            $data =  confrm::where('confrmscode', $confrmscode)->first();
+            return response()->json(['servicio' => $data, 'isService' => true,]);
+        }
+
     }
 
     /**
@@ -181,7 +203,67 @@ class confrsController extends Controller
         $confrs->save();
         return response()->json($confrs);
     }
+    public function updateServicios(Request $request)
+    {
+        // return response()->json($request->all());
 
+        DB::beginTransaction();
+        try {
+            if ($request->hasFile('confrsvbigi')) {
+                $image = $request->file('confrsvbigi');
+                $img = Image::make($image);
+
+                $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
+                $img->resize(200, 200);
+                $img = $img->save(base_path() . '/public/images/' . $imageName);
+                //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
+            } else {
+                $imageName = "noimage.png";
+            }
+            if ($request->tipo == 0) {
+                $confrm = confrm::where('confrmscode', $request->confrmscode_id)->first();
+                $confrm->confrmtdesc = $request->confrstdesc;
+                $confrm->confrmttitl = $request->confrsttitl;
+                $confrm->confrmyorde = 0;
+                $confrm->confrmbenbl = 1;
+                $confrm->confrmsfcod = 2;
+                $confrm->confrmyadmf = $request->confrmyadmf;
+                $confrm->contypscod0 = $request->contypscod0;
+                if ($imageName == null) {
+                } else {
+                    $confrm->confrmvsmai = $imageName;
+                }
+                $confrm->save();
+                DB::commit();
+                return response()->json($confrm);
+            } else if ($request->tipo == 1) {
+                $confrs = confrs::where('confrsscode', $request->confrsscode)->first();
+                $confrs->confrstdesc = $request->confrstdesc;
+                $confrs->confrsttitl = $request->confrsttitl;
+                $confrs->confrsyorde = 0;
+                $confrs->confrmscode = $request->confrmscode;
+                $confrs->confrsbenbl = 1;
+                if ($request->has('confrsdpubl')) {
+                    $confrs->confrsdpubl = $request->confrsdpubl;
+                } else {
+                    $confrs->confrsdpubl = Carbon::now()->format('Y-m-d');
+                }
+                $confrs->confrsvsmai = null;
+                if ($imageName == null) {
+                } else {
+                    $confrs->confrsvbigi = $imageName;
+                }
+                $confrs->save();
+                DB::commit();
+
+                return response()->json($confrs);
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json($e->getMessage());
+            // something went wrong
+        }
+    }
 
     /**
      * Remove the specified resource from storage.

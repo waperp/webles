@@ -29,4 +29,6 @@ Route::get('selectGestionarMenuSubMenu', 'HomeController@selectGestionarMenuSubM
 Route::get('selectServiciosSubMenu', 'HomeController@selectServiciosSubMenu');
 Route::get('selectServicios', 'HomeController@selectServicios');
 Route::get('listaServicios', 'HomeController@listaServicio');
+Route::post('storeServicios', 'confrsController@storeServicios');
+Route::post('updateServicios', 'confrsController@updateServicios');
 

@@ -566,7 +566,6 @@ $(document).ready(function () {
             targets: 1,
             render: function ( full, type, row ) {
                 var value = row.confrsscode ?  row.confrstdesc : row.confrmtdesc;
-                debugger
                 return value.substr( 0, 30 );
             }
         }],
@@ -606,7 +605,7 @@ $(document).ready(function () {
                         return "<a class='btn' OnClick='edit_gestionar_servicios(" + full.confrmscode + ","+full.confrsscode+");' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
 
                     }else{
-                    return "<a class='btn' OnClick='edit_gestionar_servicios(" + full.confrmscode + ",0);' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
+                    return "<a class='btn' OnClick='edit_gestionar_servicios(" + full.confrmscode + ",null);' title='EDITAR' ><i class='fa fa-pencil-square text-warning'></i></a>";
 
                     }
                 }
