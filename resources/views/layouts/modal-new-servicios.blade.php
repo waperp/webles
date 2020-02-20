@@ -82,18 +82,18 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" 
-                                                            name="new-menu-principal-contypscod0"
+                                                        <input required value="1" type="radio" id="new-servicios-contypscod0"
+                                                            name="new-servicios-contypscod0"
                                                             class="custom-control-input" />
                                                         <label class="custom-control-label  text-white"
-                                                            for="contypscod0">Modal</label>
+                                                            for="new-servicios-contypscod0">Modal</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" 
-                                                            name="new-menu-principal-contypscod0"
+                                                        <input required value="0" type="radio" id="new-servicios-contypscod01"
+                                                            name="new-servicios-contypscod0"
                                                             class="custom-control-input" />
                                                         <label class="custom-control-label text-white"
-                                                            for="contypscod02">Scroll</label>
+                                                            for="new-servicios-contypscod01">Scroll</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -106,15 +106,15 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" 
-                                                            name="new-menu-principal-confrmyadmf" class="custom-control-input">
+                                                        <input required value="1" type="radio" id="new-servicios-confrmyadmf"
+                                                            name="new-servicios-confrmyadmf" class="custom-control-input">
                                                         <label class="custom-control-label  text-white"
-                                                            for="confrmyadmf">Si</label>
+                                                            for="new-servicios-confrmyadmf">Si</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" 
-                                                            name="new-menu-principal-confrmyadmf" class="custom-control-input">
-                                                        <label class="custom-control-label text-white" for="confrmyadmf2">No</label>
+                                                        <input required value="0" type="radio" id="new-servicios-confrmyadmf1"
+                                                            name="new-servicios-confrmyadmf" class="custom-control-input">
+                                                        <label class="custom-control-label text-white" for="new-servicios-confrmyadmf1">No</label>
                                                     </div>
                                                 </div>
                                             </div>
