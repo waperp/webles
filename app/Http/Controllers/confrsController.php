@@ -150,10 +150,10 @@ class confrsController extends Controller
         if ($request->confrsscode != null) {
             $data =  confrm::join('confrs', 'confrm.confrmscode', 'confrs.confrmscode')
                 ->where('confrsscode', $request->confrsscode)->first();
-            return response()->json(['servicio' => $data, 'isService' => false,]);
+            return response()->json(['servicio' => $data, 'isService' => true,]);
         } else {
             $data =  confrm::where('confrmscode', $confrmscode)->first();
-            return response()->json(['servicio' => $data, 'isService' => true,]);
+            return response()->json(['servicio' => $data, 'isService' => false,]);
         }
 
     }
