@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title font-weight-bold">EDIT '{{ Str::upper($gestionarServicios->confrmttitl) }}'</h5>
+                <h5 class="modal-title font-weight-bold">EDITAR '{{ Str::upper($gestionarServicios->confrmttitl) }}'</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -44,7 +44,7 @@
                                             <span class="icon flaticon-send"></span>
                                             <input type="text" id="edit-servicios-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-6 confrsdpubl">
                                             <div class="input-group date servicios-datetime" id="datetimepicker1"> 
                                                     <span class="icon flaticon-send"></span>
 
@@ -56,6 +56,10 @@
                                                     </div>
                                                 </div>
                                             </div> 
+                                        </div>
+                                        <div class="form-group col-6 confrmvsmai">
+                                            <select id="select2-edit-servicios-confrmvsmai" required
+                                                class="form-control w-100"></select>
                                         </div>
                                     </div>
                                     

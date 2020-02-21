@@ -733,21 +733,47 @@ $(document).ready(function () {
             cache: true
         }
     }).on("change", function () {
-    }).on('select2:select', function (e) {
-        var data = e.params.data.id;
+        var data = $("#select2-new-servicios-tipo").val();
         if (data == 0) {
             $('#select2-new-servicios-confrmscode').select2("enable", [false]);
             $('#select2-new-servicios-confrmscode').val(null).trigger('change');
             $('.administracion').show();
+            $('.confrsdpubl').hide();
+            $('.confrmvsmai').show();
+            
 
 
         } else if (data == 1) {
 
             $('#select2-new-servicios-confrmscode').select2("enable", [true]);
             $('.administracion').hide();
+            $('.confrsdpubl').show();
+            $('.confrmvsmai').hide();
+            
+
+        }
+    }).on('select2:select', function (e) {
+        var data = e.params.data.id;
+        if (data == 0) {
+            $('#select2-new-servicios-confrmscode').select2("enable", [false]);
+            $('#select2-new-servicios-confrmscode').val(null).trigger('change');
+            $('.administracion').show();
+            $('.confrsdpubl').hide();
+            $('.confrmvsmai').show();
+            
+
+
+        } else if (data == 1) {
+
+            $('#select2-new-servicios-confrmscode').select2("enable", [true]);
+            $('.administracion').hide();
+            $('.confrsdpubl').show();
+            $('.confrmvsmai').hide();
+            
 
         }
     });
+    $("#select2-new-servicios-tipo").trigger('change');
     $("#select2-new-servicios-confrmscode").select2({
         placeholder: "Filtrar",
         width: '100%',
@@ -798,31 +824,43 @@ $(document).ready(function () {
             cache: true
         }
     }).on("change", function () {
-        debugger
         var data = $("#select2-edit-servicios-tipo").val();
         if (data == 0) {
             $('#select2-edit-servicios-confrmscode').select2("enable", [false]);
             $('#select2-edit-servicios-confrmscode').val(null).trigger('change');
             $('.administracion').show();
+            $('.confrsdpubl').hide();
+            $('.confrmvsmai').show();
+            
+
 
         } else if (data == 1) {
 
             $('#select2-edit-servicios-confrmscode').select2("enable", [true]);
             $('.administracion').hide();
+            $('.confrsdpubl').show();
+            $('.confrmvsmai').hide();
+            
 
         }
     }).on('select2:select', function (e) {
-        debugger
         var data = e.params.data.id;
         if (data == 0) {
             $('#select2-edit-servicios-confrmscode').select2("enable", [false]);
             $('#select2-edit-servicios-confrmscode').val(null).trigger('change');
             $('.administracion').show();
+            $('.confrsdpubl').hide();
+            $('.confrmvsmai').show();
+            
+
 
         } else if (data == 1) {
 
             $('#select2-edit-servicios-confrmscode').select2("enable", [true]);
             $('.administracion').hide();
+            $('.confrsdpubl').show();
+            $('.confrmvsmai').hide();
+            
 
         }
     });
@@ -851,8 +889,74 @@ $(document).ready(function () {
     }).on("change", function () {
     });
     $('#select2-edit-servicios-confrmscode').select2("enable", [false]);
+    $("#select2-new-servicios-confrmvsmai").select2({
+        placeholder: "Filtrar Icono",
+        width: '100%',
+        templateResult: formatState1,
+        templateSelection: formatState1_1,
+        maximumSelectionLength: 3,
+        escapeMarkup: function (text) { return text; },
+
+        allowClear: true,
+        data: DATA_ICONS,
+        maximumInputLength: 20,
+        minimumResultsForSearch: 10,// at least 20 results must be displayed
+
+        // ajax: {
+        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
+        //     delay: 250,
+        //     processResults: function (data) {
+
+        //         var parsedYaml = jsyaml.load(data);
+        //         return {
+        //             results: $.map(parsedYaml.icons, function (icon) {
+
+        //                 return {
+        //                     text: icon.id,
+        //                     id: icon.id
+        //                 }
+        //             })
+        //         };
+        //     },
+        //     cache: true
+        // }
+    });
 
 
+    $("#select2-edit-servicios-confrmvsmai").select2({
+        placeholder: "Filtrar Icono",
+        width: '100%',
+        templateResult: formatState1,
+        templateSelection: formatState1_1,
+        maximumSelectionLength: 3,
+        escapeMarkup: function (text) { return text; },
+
+        allowClear: true,
+        data: DATA_ICONS,
+        maximumInputLength: 20,
+        minimumResultsForSearch: 10,// at least 20 results must be displayed
+
+        // ajax: {
+        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
+        //     delay: 250,
+        //     processResults: function (data) {
+
+        //         var parsedYaml = jsyaml.load(data);
+        //         return {
+        //             results: $.map(parsedYaml.icons, function (icon) {
+
+        //                 return {
+        //                     text: icon.id,
+        //                     id: icon.id
+        //                 }
+        //             })
+        //         };
+        //     },
+        //     cache: true
+        // }
+    });
+    $('.confrsdpubl').hide();
+            $('.confrmvsmai').hide();
 });
 function formatState1(state) {
     if (!state.id) {
@@ -1487,6 +1591,8 @@ $("#form-new-servicios").submit(function (e) {
     var confrstdesc = $('#new-servicios-confrstdesc').val();
     var confrsscode = $('#new-servicios-confrsscode').val();
     var confrsdpubl = $('#new-servicios-confrsdpubl').val();
+    var confrmvsmai = $('#select2-new-servicios-confrmvsmai').val();
+
     var confrsvbigi = $('#new-servicios-confrsvbigi').prop('files')[0];
     var confrmscode = $('#select2-new-servicios-confrmscode').val();
     var confrmyadmf = $("input[name='new-servicios-confrmyadmf']:checked").val();
@@ -1496,6 +1602,7 @@ $("#form-new-servicios").submit(function (e) {
     var formData = new FormData();
 
     formData.append("confrsttitl", confrsttitl);
+    formData.append("confrmvsmai", confrmvsmai);
     formData.append("confrmscode", confrmscode);
     formData.append("confrstdesc", confrstdesc);
     formData.append("confrsscode", confrsscode);
@@ -1534,6 +1641,8 @@ $("#form-edit-servicios").submit(function (e) {
     var confrmscode_id = $('#edit-servicios-confrmscode').val();
     var confrsdpubl = $('#edit-servicios-confrsdpubl').val();
     var confrsvbigi = $('#edit-servicios-confrsvbigi').prop('files')[0];
+    var confrmvsmai = $('#select2-new-servicios-confrmvsmai').val();
+
     
     var confrmscode = $('#select2-edit-servicios-confrmscode').val();
     var confrmyadmf = $("input[name='edit-servicios-confrmyadmf']:checked").val();
@@ -1544,6 +1653,7 @@ $("#form-edit-servicios").submit(function (e) {
 
     formData.append("confrsttitl", confrsttitl);
     formData.append("confrmscode_id", confrmscode_id);
+    formData.append("confrmvsmai", confrmvsmai);
     formData.append("confrmscode", confrmscode);
     formData.append("confrstdesc", confrstdesc);
     formData.append("confrsscode", confrsscode);
@@ -1594,6 +1704,8 @@ function edit_gestionar_servicios(confrmscode, confrsscode) {
 
             var $contypscod0 = $('input:radio[name=edit-servicios-contypscod0]');
             $contypscod0.filter('[value=' + data.contypscod0 + ']').prop('checked', true);
+            $('#select2-edit-servicios-confrmvsmai').append('<option value="' + data.confrmvsmai + '">' + data.confrmvsmai + '</option>');
+                $("#select2-edit-servicios-confrmvsmai").val(data.confrmvsmai).trigger('change');
                 $('#select2-edit-servicios-tipo').append('<option value="0">Principal</option>');
                 $("#select2-edit-servicios-tipo").val(0).trigger('change');
                 $('#edit-servicios-confrsttitl').val(data.confrmttitl);

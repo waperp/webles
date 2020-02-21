@@ -102,12 +102,10 @@ class confrsController extends Controller
                 $confrm->confrmyorde = 0;
                 $confrm->confrmbenbl = 1;
                 $confrm->confrmsfcod = 2;
-                $confrm->confrmyadmf = $request->confrmyadmf;
+                $confrm->confrmyadmf = "fa ".$request->confrmyadmf;
+                $confrm->confrmvsmai = $request->confrmvsmai;
                 $confrm->contypscod0 = $request->contypscod0;
-                if ($imageName == null) {
-                } else {
-                    $confrm->confrmvsmai = $imageName;
-                }
+                
                 $confrm->save();
                 DB::commit();
                 return response()->json($confrm);
@@ -226,13 +224,12 @@ class confrsController extends Controller
                 $confrm->confrmttitl = $request->confrsttitl;
                 $confrm->confrmyorde = 0;
                 $confrm->confrmbenbl = 1;
+                $confrm->confrmvsmai = "";
+                $confrm->confrmvsmai = "fa ". $request->confrmvsmai;
                 $confrm->confrmsfcod = 2;
                 $confrm->confrmyadmf = $request->confrmyadmf;
                 $confrm->contypscod0 = $request->contypscod0;
-                if ($imageName == null) {
-                } else {
-                    $confrm->confrmvsmai = $imageName;
-                }
+               
                 $confrm->save();
                 DB::commit();
                 return response()->json($confrm);
