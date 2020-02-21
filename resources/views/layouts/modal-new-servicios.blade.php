@@ -43,7 +43,7 @@
                                             <span class="icon flaticon-send"></span>
                                             <input type="text" id="new-servicios-confrsttitl" name="confrsttitl" placeholder="Titulo">
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-6 confrsdpubl">
                                             <div class="input-group date servicios-datetime" id="datetimepicker1"> 
                                                     <span class="icon flaticon-send"></span>
 
@@ -55,6 +55,10 @@
                                                     </div>
                                                 </div>
                                             </div> 
+                                        </div>
+                                        <div class="form-group col-6 confrmvsmai">
+                                            <select id="select2-new-servicios-confrmvsmai" required
+                                                class="form-control w-100"></select>
                                         </div>
                                     </div>
                                     
