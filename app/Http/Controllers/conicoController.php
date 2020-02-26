@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\conico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class conicoController extends Controller
 {
@@ -26,10 +27,20 @@ class conicoController extends Controller
     {
         //
     }
-    public function icons()
+    public function icons(Request $request)
     {
-        $data = conico::all();
+         
+        $data = [];
+        if ($request->has('q') AND $request->q != "") {
+            $search = $request->q;
+            $data = DB::table("conico")
+            ->whereRaw("MATCH(conicotdesc) AGAINST ('{$search}*' IN BOOLEAN MODE)")
+            ->get();
+        }else{
+            $data = conico::all();
+        }
         return response()->json($data);
+
 
     }
     /**

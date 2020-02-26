@@ -313,7 +313,7 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
     });
-    
+
 
     $("#select2-gestionar-menu-subform1").select2({
         placeholder: "Filtrar",
@@ -641,7 +641,6 @@ $(document).ready(function () {
         width: '200px',
         templateResult: formatState,
         allowClear: true,
-        minimumResultsForSearch: Infinity,
         ajax: {
             url: "/selectServiciosSubMenu/",
             dataType: 'json',
@@ -694,7 +693,7 @@ $(document).ready(function () {
             $('.administracion').show();
             $('.confrsdpubl').hide();
             $('.confrmvsmai').show();
-            
+
 
 
         } else if (data == 1) {
@@ -703,7 +702,7 @@ $(document).ready(function () {
             $('.administracion').hide();
             $('.confrsdpubl').show();
             $('.confrmvsmai').hide();
-            
+
 
         }
     }).on('select2:select', function (e) {
@@ -714,7 +713,7 @@ $(document).ready(function () {
             $('.administracion').show();
             $('.confrsdpubl').hide();
             $('.confrmvsmai').show();
-            
+
 
 
         } else if (data == 1) {
@@ -723,7 +722,7 @@ $(document).ready(function () {
             $('.administracion').hide();
             $('.confrsdpubl').show();
             $('.confrmvsmai').hide();
-            
+
 
         }
     });
@@ -785,7 +784,7 @@ $(document).ready(function () {
             $('.administracion').show();
             $('.confrsdpubl').hide();
             $('.confrmvsmai').show();
-            
+
 
 
         } else if (data == 1) {
@@ -794,7 +793,7 @@ $(document).ready(function () {
             $('.administracion').hide();
             $('.confrsdpubl').show();
             $('.confrmvsmai').hide();
-            
+
 
         }
     }).on('select2:select', function (e) {
@@ -805,7 +804,7 @@ $(document).ready(function () {
             $('.administracion').show();
             $('.confrsdpubl').hide();
             $('.confrmvsmai').show();
-            
+
 
 
         } else if (data == 1) {
@@ -814,7 +813,7 @@ $(document).ready(function () {
             $('.administracion').hide();
             $('.confrsdpubl').show();
             $('.confrmvsmai').hide();
-            
+
 
         }
     });
@@ -848,25 +847,32 @@ $(document).ready(function () {
         width: '100%',
         templateResult: formatState1,
         templateSelection: formatState1_1,
+        maximumSelectionLength: 3,
         escapeMarkup: function (text) { return text; },
-        ajax: {
-            url: "/icons",
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.conicotdesc,
-                            id: item.conicotdesc
-                        }
-                    })
-                };
-            },
-            cache: true
-        },
+
         allowClear: true,
-        
+        data: DATA_ICONS,
+        maximumInputLength: 20,
+        minimumResultsForSearch: 10,// at least 20 results must be displayed
+
+        // ajax: {
+        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
+        //     delay: 250,
+        //     processResults: function (data) {
+
+        //         var parsedYaml = jsyaml.load(data);
+        //         return {
+        //             results: $.map(parsedYaml.icons, function (icon) {
+
+        //                 return {
+        //                     text: icon.id,
+        //                     id: icon.id
+        //                 }
+        //             })
+        //         };
+        //     },
+        //     cache: true
+        // }
     });
 
 
@@ -875,28 +881,35 @@ $(document).ready(function () {
         width: '100%',
         templateResult: formatState1,
         templateSelection: formatState1_1,
+        maximumSelectionLength: 3,
         escapeMarkup: function (text) { return text; },
-        ajax: {
-            url: "/icons",
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.conicotdesc,
-                            id: item.conicotdesc
-                        }
-                    })
-                };
-            },
-            cache: true
-        },
+
         allowClear: true,
-        
+        data: DATA_ICONS,
+        maximumInputLength: 20,
+        minimumResultsForSearch: 10,// at least 20 results must be displayed
+
+        // ajax: {
+        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
+        //     delay: 250,
+        //     processResults: function (data) {
+
+        //         var parsedYaml = jsyaml.load(data);
+        //         return {
+        //             results: $.map(parsedYaml.icons, function (icon) {
+
+        //                 return {
+        //                     text: icon.id,
+        //                     id: icon.id
+        //                 }
+        //             })
+        //         };
+        //     },
+        //     cache: true
+        // }
     });
     $('.confrsdpubl').hide();
-            $('.confrmvsmai').hide();
+    $('.confrmvsmai').hide();
 });
 function formatState1(state) {
     if (!state.id) {
@@ -1421,7 +1434,7 @@ $("#form-edit-servicios").submit(function (e) {
     var confrsvbigi = $('#edit-servicios-confrsvbigi').prop('files')[0];
     var confrmvsmai = $('#select2-new-servicios-confrmvsmai').val();
 
-    
+
     var confrmscode = $('#select2-edit-servicios-confrmscode').val();
     var confrmyadmf = $("input[name='edit-servicios-confrmyadmf']:checked").val();
     var contypscod0 = $("input[name='edit-servicios-contypscod0']:checked").val();
@@ -1455,7 +1468,7 @@ $("#form-edit-servicios").submit(function (e) {
         processData: false,
         data: formData,
         success: function (data) {
-debugger
+            debugger
             $('#datatable-' + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
 
             $('#modal-edit-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('hide');
@@ -1478,11 +1491,11 @@ function edit_gestionar_servicios(confrmscode, confrsscode) {
             var data = response.servicio;
             if (response.isService == false) {
                 var $confrmyadmf = $('input:radio[name=edit-servicios-confrmyadmf]');
-            $confrmyadmf.filter('[value=' + data.confrmyadmf + ']').prop('checked', true);
+                $confrmyadmf.filter('[value=' + data.confrmyadmf + ']').prop('checked', true);
 
-            var $contypscod0 = $('input:radio[name=edit-servicios-contypscod0]');
-            $contypscod0.filter('[value=' + data.contypscod0 + ']').prop('checked', true);
-            $('#select2-edit-servicios-confrmvsmai').append('<option value="' + data.confrmvsmai + '">' + data.confrmvsmai + '</option>');
+                var $contypscod0 = $('input:radio[name=edit-servicios-contypscod0]');
+                $contypscod0.filter('[value=' + data.contypscod0 + ']').prop('checked', true);
+                $('#select2-edit-servicios-confrmvsmai').append('<option value="' + data.confrmvsmai + '">' + data.confrmvsmai + '</option>');
                 $("#select2-edit-servicios-confrmvsmai").val(data.confrmvsmai).trigger('change');
                 $('#select2-edit-servicios-tipo').append('<option value="0">Categoria</option>');
                 $("#select2-edit-servicios-tipo").val(0).trigger('change');
