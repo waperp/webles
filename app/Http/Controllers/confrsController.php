@@ -7,7 +7,7 @@ use App\confrs;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class confrsController extends Controller
 {
@@ -225,11 +225,10 @@ class confrsController extends Controller
                 $confrm->confrmyorde = 0;
                 $confrm->confrmbenbl = 1;
                 $confrm->confrmvsmai = "";
-                $confrm->confrmvsmai = "fa ". $request->confrmvsmai;
+                $confrm->confrmvsmai = "fa ".$request->confrmvsmai;
                 $confrm->confrmsfcod = 2;
                 $confrm->confrmyadmf = $request->confrmyadmf;
                 $confrm->contypscod0 = $request->contypscod0;
-               
                 $confrm->save();
                 DB::commit();
                 return response()->json($confrm);

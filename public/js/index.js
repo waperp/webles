@@ -337,9 +337,33 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
     });
+    $("#select2-new-user-subform").select2({
+        placeholder: "Filtrar",
+        width: '100%',
+        templateResult: formatState,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: "/selectUserSubform/",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.contyptdesc,
+                            id: item.contypscode
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("change", function () {
+        $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
+    });
     $("#select2-edit-user-subform").select2({
         placeholder: "Filtrar",
-        width: '200px',
+        width: '100%',
         templateResult: formatState,
         minimumResultsForSearch: Infinity,
         ajax: {
