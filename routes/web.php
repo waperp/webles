@@ -25,10 +25,12 @@ Route::resource('confrm', 'confrmController');
 Route::get('selectSubform', 'HomeController@selectSubform');
 Route::get('selectUserSubform', 'HomeController@selectUserSubform');
 Route::get('selectGestionarMenuSubform', 'HomeController@selectGestionarMenuSubform');
+Route::get('selectGestionarMenuSubformServicios', 'HomeController@selectGestionarMenuSubformServicios');
 Route::get('selectGestionarMenuSubMenu', 'HomeController@selectGestionarMenuSubMenu');
 Route::get('selectServiciosSubMenu', 'HomeController@selectServiciosSubMenu');
 Route::get('selectServicios', 'HomeController@selectServicios');
 Route::get('listaServicios', 'HomeController@listaServicio');
 Route::post('storeServicios', 'confrsController@storeServicios');
 Route::post('updateServicios', 'confrsController@updateServicios');
+Route::get('icons', 'conicoController@icons');
 

@@ -604,7 +604,7 @@ $(document).ready(function () {
         allowClear: true,
         minimumResultsForSearch: Infinity,
         ajax: {
-            url: "/selectGestionarMenuSubform/",
+            url: "/selectGestionarMenuSubformServicios",
             dataType: 'json',
             delay: 250,
             processResults: function (data) {
@@ -671,7 +671,7 @@ $(document).ready(function () {
         allowClear: true,
         minimumResultsForSearch: Infinity,
         ajax: {
-            url: "/selectGestionarMenuSubform/",
+            url: "/selectGestionarMenuSubformServicios/",
             dataType: 'json',
             delay: 250,
             processResults: function (data) {
@@ -762,7 +762,7 @@ $(document).ready(function () {
         allowClear: true,
         minimumResultsForSearch: Infinity,
         ajax: {
-            url: "/selectGestionarMenuSubform/",
+            url: "/selectGestionarMenuSubformServicios/",
             dataType: 'json',
             delay: 250,
             processResults: function (data) {
@@ -848,32 +848,25 @@ $(document).ready(function () {
         width: '100%',
         templateResult: formatState1,
         templateSelection: formatState1_1,
-        maximumSelectionLength: 3,
         escapeMarkup: function (text) { return text; },
-
+        ajax: {
+            url: "/icons",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.conicotdesc,
+                            id: item.conicotdesc
+                        }
+                    })
+                };
+            },
+            cache: true
+        },
         allowClear: true,
-        data: DATA_ICONS,
-        maximumInputLength: 20,
-        minimumResultsForSearch: 10,// at least 20 results must be displayed
-
-        // ajax: {
-        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
-        //     delay: 250,
-        //     processResults: function (data) {
-
-        //         var parsedYaml = jsyaml.load(data);
-        //         return {
-        //             results: $.map(parsedYaml.icons, function (icon) {
-
-        //                 return {
-        //                     text: icon.id,
-        //                     id: icon.id
-        //                 }
-        //             })
-        //         };
-        //     },
-        //     cache: true
-        // }
+        
     });
 
 
@@ -882,32 +875,25 @@ $(document).ready(function () {
         width: '100%',
         templateResult: formatState1,
         templateSelection: formatState1_1,
-        maximumSelectionLength: 3,
         escapeMarkup: function (text) { return text; },
-
+        ajax: {
+            url: "/icons",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.conicotdesc,
+                            id: item.conicotdesc
+                        }
+                    })
+                };
+            },
+            cache: true
+        },
         allowClear: true,
-        data: DATA_ICONS,
-        maximumInputLength: 20,
-        minimumResultsForSearch: 10,// at least 20 results must be displayed
-
-        // ajax: {
-        //     url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/fa-4/src/icons.yml",
-        //     delay: 250,
-        //     processResults: function (data) {
-
-        //         var parsedYaml = jsyaml.load(data);
-        //         return {
-        //             results: $.map(parsedYaml.icons, function (icon) {
-
-        //                 return {
-        //                     text: icon.id,
-        //                     id: icon.id
-        //                 }
-        //             })
-        //         };
-        //     },
-        //     cache: true
-        // }
+        
     });
     $('.confrsdpubl').hide();
             $('.confrmvsmai').hide();
@@ -1498,7 +1484,7 @@ function edit_gestionar_servicios(confrmscode, confrsscode) {
             $contypscod0.filter('[value=' + data.contypscod0 + ']').prop('checked', true);
             $('#select2-edit-servicios-confrmvsmai').append('<option value="' + data.confrmvsmai + '">' + data.confrmvsmai + '</option>');
                 $("#select2-edit-servicios-confrmvsmai").val(data.confrmvsmai).trigger('change');
-                $('#select2-edit-servicios-tipo').append('<option value="0">Principal</option>');
+                $('#select2-edit-servicios-tipo').append('<option value="0">Categoria</option>');
                 $("#select2-edit-servicios-tipo").val(0).trigger('change');
                 $('#edit-servicios-confrsttitl').val(data.confrmttitl);
                 $('#edit-servicios-confrmscode').val(data.confrmscode);
@@ -1508,7 +1494,7 @@ function edit_gestionar_servicios(confrmscode, confrsscode) {
                 $("#edit-servicios-confrsvbigi").parent().css("background-size", "cover");
                 $("#edit-servicios-confrsvbigi").parent().css("background-position", "center center");
             } else {
-                $('#select2-edit-servicios-tipo').append('<option value="1">Secundario</option>');
+                $('#select2-edit-servicios-tipo').append('<option value="1">Servicio</option>');
                 $("#select2-edit-servicios-tipo").val(1).trigger('change');
                 $('#select2-edit-servicios-confrmscode').append('<option value="' + data.confrmscode + '">' + data.confrmttitl + '</option>');
                 $("#select2-edit-servicios-confrmscode").val(data.confrmscode).trigger('change');

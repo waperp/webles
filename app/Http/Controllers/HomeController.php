@@ -56,8 +56,11 @@ class HomeController extends Controller
     {
         $data = DB::select('select * from contyp where contypsnumt = 3');
         return response()->json($data);
-
-
+    }
+    public function selectGestionarMenuSubformServicios(Request $request)
+    {
+        $data = DB::select('select * from contyp where contypsnumt = 4');
+        return response()->json($data);
     }
     public function selectGestionarMenuSubMenu(Request $request)
     {
