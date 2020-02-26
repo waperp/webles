@@ -122,6 +122,7 @@ $(document).ready(function () {
 
     $("#select2-edit-quienes-somos-subform").select2({
         placeholder: "Filtrar",
+        width:'100%',
         templateResult: formatState,
         minimumResultsForSearch: Infinity,
         ajax: {
@@ -151,6 +152,7 @@ $(document).ready(function () {
     $("#select2-new-quienes-somos-subform").select2({
         placeholder: "Filtrar",
         templateResult: formatState,
+        width:'100%',
         minimumResultsForSearch: Infinity,
         ajax: {
             url: "/selectSubform/",
@@ -263,8 +265,8 @@ $(document).ready(function () {
     });
     $("#select2-edit-redes-sociales-subform").select2({
         placeholder: "Filtrar",
+        width:'100%',
         templateResult: formatState,
-        minimumResultsForSearch: Infinity,
         ajax: {
             url: "/selectSubform/",
             dataType: 'json',
@@ -291,7 +293,7 @@ $(document).ready(function () {
     $("#select2-new-redes-sociales-subform").select2({
         placeholder: "Filtrar",
         templateResult: formatState,
-        minimumResultsForSearch: Infinity,
+        width:'100%',
         ajax: {
             url: "/selectSubform/",
             dataType: 'json',
