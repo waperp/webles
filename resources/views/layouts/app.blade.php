@@ -166,7 +166,6 @@ BACTERIOLOGÍA">
         const gestionar_servicios = @json($gestionarServicios);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
-  
 @else
         @endif
     </script>
