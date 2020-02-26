@@ -166,10 +166,14 @@ BACTERIOLOGÍA">
         const gestionar_servicios = @json($gestionarServicios);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
+  
 @else
         @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
+    <script src="/js/user/js_index_user.js?q={{ time() }}"></script>
+    <script src="/js/user/js_create_user.js?q={{ time() }}"></script>
+    <script src="/js/user/js_edit_user.js?q={{ time() }}"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v5.0&appId=665910193938787&autoLogAppEvents=1"></script>
     @stack('scripts')
 
