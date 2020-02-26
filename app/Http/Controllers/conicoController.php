@@ -31,13 +31,13 @@ class conicoController extends Controller
     {
          
         $data = [];
-        if ($request->has('q') AND $request->q != "") {
-            $search = $request->q;
+        if ($request->has('search') and $request->search != "") {
+            $search = $request->search;
             $data = DB::table("conico")
-            ->whereRaw("MATCH(conicotdesc) AGAINST ('{$search}*' IN BOOLEAN MODE)")
+            ->where('conicotdesc', 'LIKE', "%$search%")->take(5)
             ->get();
         }else{
-            $data = conico::all();
+            $data = conico::take(20)->get();
         }
         return response()->json($data);
 
