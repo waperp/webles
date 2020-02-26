@@ -313,78 +313,8 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
     });
-    $("#select2-user-subform").select2({
-        placeholder: "Filtrar",
-        width: '200px',
-        templateResult: formatState,
-        minimumResultsForSearch: Infinity,
-        ajax: {
-            url: "/selectUserSubform/",
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.contyptdesc,
-                            id: item.contypscode
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    }).on("change", function () {
-        $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-    });
-    $("#select2-new-user-subform").select2({
-        placeholder: "Filtrar",
-        width: '100%',
-        templateResult: formatState,
-        minimumResultsForSearch: Infinity,
-        ajax: {
-            url: "/selectUserSubform/",
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.contyptdesc,
-                            id: item.contypscode
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    }).on("change", function () {
-        $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-    });
-    $("#select2-edit-user-subform").select2({
-        placeholder: "Filtrar",
-        width: '100%',
-        templateResult: formatState,
-        minimumResultsForSearch: Infinity,
-        ajax: {
-            url: "/selectUserSubform/",
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.contyptdesc,
-                            id: item.contypscode
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    }).on("change", function () {
-        $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-    });
+    
+
     $("#select2-gestionar-menu-subform1").select2({
         placeholder: "Filtrar",
         width: '200px',
@@ -1250,52 +1180,7 @@ function delete_redes_sociales(confrmscode) {
         }
     });
 }
-function delete_user(secusricode) {
-    var _token = $('input[name=_token]').val();
-    $.ajax({
-        url: '/secusr/' + secusricode,
-        type: 'DELETE',
-        headers: {
-            'X-CSRF-TOKEN': _token
-        },
-        datatype: 'json',
-        success: function (data) {
-            $('#datatable-' + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-        }
-    });
-}
 
-function edit_user(secusricode) {
-    debugger
-    $('#modal-edit-' + convertToSlug(modal_usuarios.confrmttitl)).modal('show');
-    $.ajax({
-        url: '/secusr/' + secusricode,
-        type: 'get',
-        datatype: 'json',
-        success: function (data) {
-            debugger
-            var $radios = $('input:radio[name=hurempbgend]');
-            $radios.filter('[value=' + data.hurempbgend + ']').prop('checked', true);
-            // $('#select-admin-gestionar-grupo-securs').empty();
-            // $('#select-admin-gestionar-grupo-securs').append('<option value="' + data.plainficode + '">' + data.plainftnick + '</option>');
-            // $('#admin-gestionar-grupo-tougrpicode-hidden').val(data.tougrpicode);
-            // $('#admin-gestionar-grupo-touinfscode-hidden').val(data.touinfscode);
-            // $('#admin-gestionar-grupo-touinftname').val(data.touinftname);
-            // $('#datetimepicker-toufixdplay').data("DateTimePicker").date(data.toufixdplay)
-            $('#select2-edit-user-subform').append('<option value="' + data.contypscode + '">' + data.contyptdesc + '</option>');
-            $("#select2-edit-user-subform").val(data.contypscode);
-            $("#select2-edit-user-subform").trigger('change');
-            $('#edit-user-huremptfnam').val(data.huremptfnam);
-            $('#edit-user-secusrtmail').val(data.secusrtmail);
-            $('#edit-user-secconnuuid').val(data.secconnuuid);
-            $("#edit-user-hurempvimgh").parent().css("background-image", "url('images/" + data.hurempvimgh + "')");
-            $("#edit-user-hurempvimgh").parent().css("background-size", "cover");
-            $("#edit-user-hurempvimgh").parent().css("background-position", "center center");
-            // $('#modal-admin-gestionar-grupo-add').modal('hide');
-            // $('#modal-admin-gestionar-grupo').modal('show');
-        }
-    });
-}
 function edit_menu_principal(secusricode) {
     debugger
     $('#modal-edit-' + convertToSlug(modal_usuarios.confrmttitl)).modal('show');
@@ -1329,125 +1214,8 @@ function edit_menu_principal(secusricode) {
         }
     });
 }
-$("#form-new-user").submit(function (e) {
-    var _token = $('input[name=_token]').val();
-    e.preventDefault();
-    var huremptfnam = $('#new-user-huremptfnam').val();
-    var secusrtmail = $('#new-user-secusrtmail').val();
-    var secusrtpass = $('#confirm-new-user-secusrtpass').val();
-    var hurempvimgh = $('#new-user-hurempvimgh').prop('files')[0];
-    var contypscode = $('#select2-new-user-subform').val();
-    var hurempbgend = $("input[name='hurempbgend']:checked").val();
-    var formData = new FormData();
-
-    formData.append("huremptfnam", huremptfnam);
-    formData.append("secusrtmail", secusrtmail);
-    formData.append("secusrtpass", secusrtpass);
-    formData.append("hurempvimgh", hurempvimgh);
-    formData.append("hurempbgend", hurempbgend);
-    formData.append("contypscode", contypscode);
-    // formData.append('_method', 'patch');  
 
 
-    debugger
-    $.ajax({
-        url: '/secusr',
-        type: 'POST',
-        headers: {
-            'X-CSRF-TOKEN': _token
-        },
-        contentType: false, // The content type used when sending data to the server.
-        cache: false, // To unable request pages to be cached
-        processData: false,
-        data: formData,
-        success: function (data) {
-            debugger
-            if (data == true) {
-                $('#datatable-' + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-                $('#modal-new-' + convertToSlug(modal_usuarios.confrmttitl)).modal('hide');
-                $("#select2-new-user-subform").val(0);
-                $("#select2-new-user-subform").trigger('change');
-                $('#new-user-huremptfnam').val(null);
-                $('#new-user-secusrtmail').val(null);
-                $('#new-user-secconnuuid').val(null);
-                $("#new-user-hurempvimgh").val(null);
-                $('#confirm-new-user-secusrtpass').val(null);
-                $('#new-user-secusrtpass').val(null);
-                $("#new-user-hurempvimgh").parent().css("background-image", "");
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'EL correo ingresado ya existe!',
-                    footer: 'Intente de nuevo por favor'
-                })
-            }
-
-        },
-    });
-});
-
-$("#form-edit-user").submit(function (e) {
-    var _token = $('input[name=_token]').val();
-    e.preventDefault();
-    var huremptfnam = $('#edit-user-huremptfnam').val();
-    var secconnuuid = $('#edit-user-secconnuuid').val();
-    var secusrtmail = $('#edit-user-secusrtmail').val();
-    var secusrtpass = $('#confirm-edit-user-secusrtpass').val();
-    var hurempvimgh = $('#edit-user-hurempvimgh').prop('files')[0];
-    var contypscode = $('#select2-edit-user-subform').val();
-    var hurempbgend = $("input[name='hurempbgend']:checked").val();
-
-    var formData = new FormData();
-
-    formData.append("huremptfnam", huremptfnam);
-    formData.append("secconnuuid", secconnuuid);
-    formData.append("secusrtmail", secusrtmail);
-    formData.append("secusrtpass", secusrtpass);
-    formData.append("hurempvimgh", hurempvimgh);
-    formData.append("hurempbgend", hurempbgend);
-    formData.append("contypscode", contypscode);
-    formData.append('_method', 'patch');
-
-
-    debugger
-    $.ajax({
-        url: '/update_user',
-        type: 'POST',
-        headers: {
-            'X-CSRF-TOKEN': _token
-        },
-        contentType: false, // The content type used when sending data to the server.
-        cache: false, // To unable request pages to be cached
-        processData: false,
-        data: formData,
-        success: function (data) {
-            debugger
-            if (data == true) {
-                $('#datatable-' + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
-                $('#modal-edit-' + convertToSlug(modal_usuarios.confrmttitl)).modal('hide');
-                $("#select2-edit-user-subform").val(0);
-                $("#select2-edit-user-subform").trigger('change');
-                $('#edit-user-huremptfnam').val(null);
-                $('#edit-user-secusrtmail').val(null);
-                $('#edit-user-secconnuuid').val(null);
-                $("#edit-user-hurempvimgh").val(null);
-                $('#confirm-edit-user-secusrtpass').val(null);
-                $('#edit-user-secusrtpass').val(null);
-                $("#edit-user-hurempvimgh").parent().css("background-image", "");
-
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'EL correo ingresado ya existe!',
-                    footer: 'Intente de nuevo por favor'
-                })
-            }
-
-        },
-    });
-});
 $("#form-new-menu-principal").submit(function (e) {
     var _token = $('input[name=_token]').val();
     e.preventDefault();
