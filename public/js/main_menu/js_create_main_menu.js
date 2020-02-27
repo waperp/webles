@@ -106,7 +106,7 @@ $(document).ready(function () {
         formData.append("confrmsfcod", confrmsfcod);
         formData.append("tipoMenu", tipoMenu);
         // formData.append('_method', 'patch');  
-        debugger
+        
         $.ajax({
             url: '/confrm',
             type: 'POST',
@@ -129,7 +129,7 @@ $(document).ready(function () {
                 $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');
                 $('#modal-' + convertToSlug(gestionar_menu.confrmttitl)).modal('show');
     
-                debugger
+                
                 // if (data == true) {
                 //     $('#datatable-' + convertToSlug(gestionar_menu.confrmttitl)).DataTable().ajax.reload();
                 //     $('#modal-new-' + convertToSlug(gestionar_menu.confrmttitl)).modal('hide');

@@ -108,7 +108,7 @@ $(document).ready(function () {
         formData.append("confrmsfcod", confrmsfcod);
         formData.append("tipoMenu", tipoMenu);
         formData.append('_method', 'patch');
-        debugger
+        
         $.ajax({
             url: '/confrm/' + secconnuuid,
             type: 'POST',
@@ -120,7 +120,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (data) {
-                debugger
+                
                 $('#edit-menu-principal-confrmttitl').val(null);
                 $('#edit-menu-principal-confrmtdesc').val(null);
                 $('#select2-edit-menu-principal-confrmvsmai').val(null).trigger('change');

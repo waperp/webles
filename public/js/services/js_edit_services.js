@@ -128,7 +128,7 @@ $(document).ready(function () {
         var confrmyadmf = $("input[name='edit-servicios-confrmyadmf']:checked").val();
         var contypscod0 = $("input[name='edit-servicios-contypscod0']:checked").val();
         var tipo = $('#select2-edit-servicios-tipo').val();
-        debugger
+        
         var formData = new FormData();
 
         formData.append("confrsttitl", confrsttitl);
@@ -157,7 +157,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (data) {
-                debugger
+                
                 $('#datatable-' + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
 
                 $('#modal-edit-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('hide');

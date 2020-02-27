@@ -158,7 +158,7 @@ function convertToSlug(Text) {
         ;
 }
 function edit_menu_principal(secusricode) {
-    debugger
+    
     $('#modal-edit-' + convertToSlug(modal_usuarios.confrmttitl)).modal('show');
     $.ajax({
         url: '/confrm/' + secusricode,
@@ -168,7 +168,7 @@ function edit_menu_principal(secusricode) {
 
         },
         success: function (data) {
-            debugger
+            
             var $radios = $('input:radio[name=hurempbgend]');
             $radios.filter('[value=' + data.hurempbgend + ']').prop('checked', true);
             // $('#select-admin-gestionar-grupo-securs').empty();
@@ -241,7 +241,7 @@ function lista_servicio_select(data) {
             '</div>' +
             '</div>';
     });
-    debugger
+    
 
     $('#lista-home-services').append(item);
 }
