@@ -44,7 +44,7 @@ class confrmController extends Controller
             $confrm->confrmttitl = $request->confrmttitl;
             $confrm->confrmtdesc = $request->confrmtdesc;
             $confrm->confrmyorde = 0;
-            $confrm->confrmvsmai = "fa " . $request->confrmvsmai;
+            $confrm->confrmvsmai = $request->confrmvsmai;
             $confrm->confrmbenbl = 1;
             if($request->tipoMenu == 0){
                 $confrm->confrmsfcod = null;

@@ -174,6 +174,22 @@ BACTERIOLOGÍA">
     <script src="/js/user/js_index_user.js?q={{ time() }}"></script>
     <script src="/js/user/js_create_user.js?q={{ time() }}"></script>
     <script src="/js/user/js_edit_user.js?q={{ time() }}"></script>
+    
+    <script src="/js/services/js_index_services.js?q={{ time() }}"></script>
+    <script src="/js/services/js_create_services.js?q={{ time() }}"></script>
+    <script src="/js/services/js_edit_services.js?q={{ time() }}"></script>
+
+    <script src="/js/aboutus/js_index_aboutus.js?q={{ time() }}"></script>
+    <script src="/js/aboutus/js_create_aboutus.js?q={{ time() }}"></script>
+    <script src="/js/aboutus/js_edit_aboutus.js?q={{ time() }}"></script>
+
+    <script src="/js/social_networks/js_index_social_networks.js?q={{ time() }}"></script>
+    <script src="/js/social_networks/js_create_social_networks.js?q={{ time() }}"></script>
+    <script src="/js/social_networks/js_edit_social_networks.js?q={{ time() }}"></script>
+
+    <script src="/js/main_menu/js_index_main_menu.js?q={{ time() }}"></script>
+    <script src="/js/main_menu/js_create_main_menu.js?q={{ time() }}"></script>
+    <script src="/js/main_menu/js_edit_main_menu.js?q={{ time() }}"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v5.0&appId=665910193938787&autoLogAppEvents=1"></script>
     @stack('scripts')
 

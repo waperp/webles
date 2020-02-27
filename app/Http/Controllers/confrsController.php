@@ -1016,8 +1016,7 @@ class confrsController extends Controller
                 $confrm->confrmttitl = $request->confrsttitl;
                 $confrm->confrmyorde = 0;
                 $confrm->confrmbenbl = 1;
-                $confrm->confrmvsmai = "";
-                $confrm->confrmvsmai = "fa ".$request->confrmvsmai;
+                $confrm->confrmvsmai = $request->confrmvsmai;
                 $confrm->confrmsfcod = 2;
                 $confrm->confrmyadmf = $request->confrmyadmf;
                 $confrm->contypscod0 = $request->contypscod0;
