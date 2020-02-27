@@ -34,10 +34,10 @@ class conicoController extends Controller
         if ($request->has('search') and $request->search != "") {
             $search = $request->search;
             $data = DB::table("conico")
-            ->where('conicotdesc', 'LIKE', "%$search%")->take(5)
+            ->where('conicotdesc', 'LIKE', "%$search%")
             ->get();
         }else{
-            $data = conico::take(20)->get();
+            $data = conico::get();
         }
         return response()->json($data);
 
