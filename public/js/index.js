@@ -19,10 +19,9 @@ function detectmob() {
         return false;
     }
 }
-
-
 $(document).ready(function () {
     $(".modal").removeAttr("tabindex");
+    $('.modal').attr({'data-backdrop': 'static', 'data-keyboard': false})
 
     var $div = $('#descripcion-general');
     $text = $div.text();
@@ -36,9 +35,7 @@ $(document).ready(function () {
             $btn.text('Ver menos');
         });
     });
-
     detectmob()
-    
     $('.servicios-datetime').datetimepicker({
         locale: 'es',
         format: 'YYYY-MM-DD'
