@@ -51,7 +51,7 @@ class confrmController extends Controller
             }else if($request->tipoMenu == 1){
                 $confrm->confrmsfcod = $request->confrmsfcod;
             }
-            $confrm->confrmyadmf = $request->confrmyadmf;
+            $confrm->confrmyadmf = 0;
             $confrm->contypscod0 = $request->contypscod0;
             $confrm->save();
             DB::commit();

@@ -80,7 +80,7 @@
 
                                     </div>
                                     <div class="form-group row administracion">
-                                        <div class="col-md-8">
+                                        <div class="col-md-12">
                                             <div class="card text-center">
                                                 <div class="card-header text-white">
                                                     Tipo de Menu
@@ -111,7 +111,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        {{-- <div class="col-md-4">
                                             <div class="card text-center">
                                                 <div class="card-header text-white">
                                                     Administración
@@ -130,7 +130,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
