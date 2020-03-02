@@ -53,24 +53,17 @@ class datatablesController extends Controller
 
     public function datatablesServicios(Request $request)
     {
-        // return $request->all();
         $data = [];
-        // return response()->json($request->all());
-
-        // $data = tougrp::join('plainf','plainf.plainficode', 'tougrp.plainficode')->where('tougrp.touinfscode', $request->touinfscode)->get();
         if ($request->has('contypscode') && $request->has('contypscode1') == false) {
-            // return response()->json($request->all());
             if ($request->contypscode == 0) {
-
                 $data = confrm::whereConfrmsfcod(2)->get();
             } else {
                 $data = [];
             }
         } else if ($request->has('contypscode') && $request->has('contypscode1')) {
             if ($request->contypscode == 1) {
-                $data = confrm::select('confrm.*','confrs.*')->join('confrs', 'confrs.confrmscode', 'confrm.confrmscode')
-                ->where('confrs.confrmscode', $request->contypscode1)->where('confrs.confrsbenbl', 1)->get();
-
+                $data = confrm::select('confrm.*', 'confrs.*')->join('confrs', 'confrs.confrmscode', 'confrm.confrmscode')
+                    ->where('confrs.confrmscode', $request->contypscode1)->where('confrs.confrsbenbl', 1)->get();
             } else {
                 $data = [];
             }

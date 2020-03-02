@@ -38,10 +38,8 @@ trait AuthenticatesUsers
         if (method_exists($this, 'hasTooManyLoginAttempts') &&
             $this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
-
             return $this->sendLockoutResponse($request);
         }
-
         if ($this->attemptLogin($request)) {
             return $this->sendLoginResponse($request);
         }
@@ -91,7 +89,6 @@ trait AuthenticatesUsers
      */
     protected function credentials(Request $request)
     {
-       
         return $request->only($this->username(), 'password');
     }
 
@@ -122,7 +119,6 @@ trait AuthenticatesUsers
     {
         //
     }
-
     /**
      * Get the failed login response instance.
      *
@@ -137,7 +133,6 @@ trait AuthenticatesUsers
             $this->username() => [trans('auth.failed')],
         ]);
     }
-
     /**
      * Get the login username to be used by the controller.
      *

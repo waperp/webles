@@ -8,14 +8,13 @@
         $gestionarServicios = App\confrm::nivel(18);
         @endphp
 <head>
-    {{-- <meta charset="utf-8"> --}}
-    {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
+    <meta charset="utf-8"> --}}
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
    
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
@@ -78,12 +77,12 @@ BACTERIOLOGÍA">
     <link href="/css/flaticon.css" rel="stylesheet">
     <link href="/css/owl.css" rel="stylesheet">
     <link href="/css/animation.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link href="/css/magnific-popup.css" rel="stylesheet">
     <link href="/css/jquery.fancybox.min.css" rel="stylesheet">
     <link href="/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/sweetalert2.min.css">
+    <link href="/css/sweetalert2.min.css" rel="stylesheet">
 
     <link href="/css/style.css?q={{ time() }}" rel="stylesheet">
     <link href="/css/responsive.css?q={{ time() }}" rel="stylesheet">
@@ -141,8 +140,7 @@ BACTERIOLOGÍA">
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/appear.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/js/jquery.uploadPreview.js">
-    </script>
+    <script src="/js/jquery.uploadPreview.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery.dataTables.min.js"></script>
 	<script src="/js/dataTables.bootstrap4.min.js"></script>
@@ -166,8 +164,6 @@ BACTERIOLOGÍA">
         const gestionar_servicios = @json($gestionarServicios);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
-  
-@else
         @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
@@ -190,7 +186,7 @@ BACTERIOLOGÍA">
     <script src="/js/main_menu/js_index_main_menu.js?q={{ time() }}"></script>
     <script src="/js/main_menu/js_create_main_menu.js?q={{ time() }}"></script>
     <script src="/js/main_menu/js_edit_main_menu.js?q={{ time() }}"></script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v5.0&appId=665910193938787&autoLogAppEvents=1"></script>
+   {{--  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v5.0&appId=665910193938787&autoLogAppEvents=1"></script> --}}
     @stack('scripts')
 
 </body>

@@ -19,12 +19,10 @@ class HomeController extends Controller
     {
         // $this->middleware('auth');
     }
-    public function demo($slug,$secconnuuid)
+    public function demo($slug, $secconnuuid)
     {
-        $data =  confrs::join('confrm','confrm.confrmscode','confrs.confrmscode')->where('confrs.secconnuuid', $secconnuuid)->first();
-
+        $data =  confrs::join('confrm', 'confrm.confrmscode', 'confrs.confrmscode')->where('confrs.secconnuuid', $secconnuuid)->first();
         return view('demo', compact(['data']));
-        
     }
     /**
      * Show the application dashboard.
@@ -44,13 +42,11 @@ class HomeController extends Controller
     {
         $data = DB::select('select * FROM confrm WHERE confrm.confrmsfcod=?', [$request->confrmsfcod]);
         return response()->json($data);
-
     }
     public function selectUserSubform(Request $request)
     {
         $data = DB::select('select * from contyp where contypsnumt = 1');
         return response()->json($data);
-
     }
     public function selectGestionarMenuSubform(Request $request)
     {
@@ -66,18 +62,15 @@ class HomeController extends Controller
     {
         $data = confrm::whereNull('confrmsfcod')->get();
         return response()->json($data);
-
     }
     public function selectServiciosSubMenu(Request $request)
     {
         $data = confrm::whereConfrmsfcod(2)->get();
         return response()->json($data);
-
     }
     public function listaServicio(Request $request)
     {
         $data = confrs::whereConfrmscode($request->confrmscode)->get();
         return response()->json($data);
-
     }
 }

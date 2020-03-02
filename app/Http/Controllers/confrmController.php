@@ -125,7 +125,6 @@ class confrmController extends Controller
             // something went wrong
         }
     }
-
     /**
      * Remove the specified resource from storage.
      *

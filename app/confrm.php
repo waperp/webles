@@ -9,7 +9,6 @@ class confrm extends Model
     protected $table = 'confrm';
     public $timestamps  = false;
     protected $primaryKey = 'confrmscode';
-
     public function parent()
     {
         return $this->hasOne('App\confrm', 'confrmscode', 'confrmsfcod')->join('contyp','contypscode','contypscod0')->where('contypsnumt',2)->where('confrmbenbl', 1)->orderBy('confrmyorde', 'asc');
@@ -25,7 +24,6 @@ class confrm extends Model
     }
     public static function treeAdmin()
     {
-
         return static::with(implode('.', array_fill(0, 4, 'children')))->join('contyp','contypscode','contypscod0')->where('contypsnumt',2)->where('confrmbenbl', 1)->where('confrmsfcod', '=', NULL)->orderBy('confrmyorde', 'asc')->get();
     }
     public function typeConfrm()
@@ -40,7 +38,6 @@ class confrm extends Model
     {
         return static::where('confrmsfcod', $confrmsfcod)->get();
     }
-   
     public function sections()
     {
         return $this->hasMany(confrs::class,'confrmscode','confrmscode')->orderBy('confrsdpubl','DESC');
@@ -49,5 +46,4 @@ class confrm extends Model
     {
         return static::where('confrmscode', $confrmscode)->orderBy('confrmscode','asc')->first();
     }
-    
 }

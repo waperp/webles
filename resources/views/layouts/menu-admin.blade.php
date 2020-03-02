@@ -32,9 +32,8 @@
             
                 @if ($child['children']->count() <= 0) 
                     @if ($child->contypscode == 0)
-                    <li >
-                        
-                        <a   href="#menu-{{Str::slug($child->confrmttitl) }}"> 
+                    <li>
+                        <a href="#menu-{{Str::slug($child->confrmttitl) }}"> 
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                         </li>
                     @elseif($child->contypscode == 1)
@@ -43,7 +42,7 @@
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                     </li>
                     @elseif($child->contypscode == 3)
-                    <li >
+                    <li>
                         <a href="#services-form-section" onclick="menu_servicio({{ $child->confrmscode }})"> 
                             <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                     </li>

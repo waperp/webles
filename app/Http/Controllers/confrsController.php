@@ -103,9 +103,8 @@ class confrsController extends Controller
                 $confrm->confrmbenbl = 1;
                 $confrm->confrmsfcod = 2;
                 $confrm->confrmyadmf = 0;
-                $confrm->confrmvsmai ="fa ".$request->confrmvsmai;
+                $confrm->confrmvsmai = "fa ".$request->confrmvsmai;
                 $confrm->contypscod0 = $request->contypscod0;
-                
                 $confrm->save();
                 DB::commit();
                 return response()->json($confrm);
@@ -128,7 +127,6 @@ class confrsController extends Controller
                 }
                 $confrs->save();
                 DB::commit();
-
                 return response()->json($confrs);
             }
         } catch (\Exception $e) {

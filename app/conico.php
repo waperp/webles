@@ -9,5 +9,4 @@ class conico extends Model
     protected $table = 'conico';
     public $timestamps  = false;
     protected $primaryKey = 'conicosicid';
-    
 }

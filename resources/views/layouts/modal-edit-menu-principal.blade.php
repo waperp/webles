@@ -27,77 +27,80 @@
 
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="edit-menu-principal-confrmttitl" required name="confrmttitl" placeholder="Titulo">
+                                            <input type="text" id="edit-menu-principal-confrmttitl" required
+                                                name="confrmttitl" placeholder="Titulo">
                                         </div>
                                         <div class="form-group row">
-                                     
-                                        <div class="col-md-6">
-                                            <span class="fa fa-folder"></span>
-                                            <select id="select2-edit-menu-principal-type-menu" required class="form-control w-100" ></select>
-                                        </div> 
-                                        <div class="col-md-6">
-                                            <span class="fa fa-folder"></span>
-                                            <select id="select2-edit-menu-principal-confrmsfcod" required class="form-control w-100" ></select>
-                                        </div> 
-                                    </div> 
+
+                                            <div class="col-md-6">
+                                                <span class="fa fa-folder"></span>
+                                                <select id="select2-edit-menu-principal-type-menu" required
+                                                    class="form-control w-100"></select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span class="fa fa-folder"></span>
+                                                <select id="select2-edit-menu-principal-confrmsfcod" required
+                                                    class="form-control w-100"></select>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
-                                            <select id="select2-edit-menu-principal-confrmvsmai" required class="form-control w-100" ></select>
+                                            <select id="select2-edit-menu-principal-confrmvsmai" required
+                                                class="form-control w-100"></select>
                                         </div>
                                         <div class="form-group row">
-                                        <div class="col-md-6">
-                                            <div class="card text-center">
-                                                <div class="card-header text-white">
-                                                    Tipo de Menu
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" 
-                                                            name="edit-menu-principal-contypscod0"
-                                                            class="custom-control-input" />
-                                                        <label class="custom-control-label  text-white"
-                                                            for="contypscod0">Modal</label>
+                                            <div class="col-md-6">
+                                                <div class="card text-center">
+                                                    <div class="card-header text-white">
+                                                        Tipo de Menu
                                                     </div>
-                                                    <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" 
-                                                            name="edit-menu-principal-contypscod0"
-                                                            class="custom-control-input" />
-                                                        <label class="custom-control-label text-white"
-                                                            for="contypscod02">Scroll</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="card text-center">
-                                                <div class="card-header text-white">
-                                                    Administración
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" 
-                                                            name="edit-menu-principal-confrmyadmf" class="custom-control-input">
-                                                        <label class="custom-control-label  text-white"
-                                                            for="confrmyadmf">Si</label>
-                                                    </div>
-                                                    <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" 
-                                                            name="edit-menu-principal-confrmyadmf" class="custom-control-input">
-                                                        <label class="custom-control-label text-white" for="confrmyadmf2">No</label>
+                                                    <div class="card-body">
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input required value="1" type="radio"
+                                                                name="edit-menu-principal-contypscod0"
+                                                                class="custom-control-input" />
+                                                            <label class="custom-control-label  text-white"
+                                                                for="contypscod0">Modal</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input required value="0" type="radio"
+                                                                name="edit-menu-principal-contypscod0"
+                                                                class="custom-control-input" />
+                                                            <label class="custom-control-label text-white"
+                                                                for="contypscod02">Scroll</label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <div class="card text-center">
+                                                    <div class="card-header text-white">
+                                                        Administración
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input required value="1" type="radio"
+                                                                name="edit-menu-principal-confrmyadmf"
+                                                                class="custom-control-input">
+                                                            <label class="custom-control-label  text-white"
+                                                                for="confrmyadmf">Si</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input required value="0" type="radio"
+                                                                name="edit-menu-principal-confrmyadmf"
+                                                                class="custom-control-input">
+                                                            <label class="custom-control-label text-white"
+                                                                for="confrmyadmf2">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <textarea required  id="edit-menu-principal-confrmtdesc" name="confrmtdesc" placeholder="Descripcion"></textarea>
+                                            <textarea required id="edit-menu-principal-confrmtdesc" name="confrmtdesc"
+                                                placeholder="Descripcion"></textarea>
                                         </div>
-                                        {{-- 
-                                                <div class="form-group ">
-                                                        <span class="fa fa-key"></span>
-                                                        <input type="email" name="secusrtpass-repeat" placeholder="Repetir Contraseña">
-                                                    </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
                                                     value="ACTUALIZAR"></div>
@@ -105,16 +108,11 @@
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"
                                                     data-dismiss="modal">CANCELAR</button></div>
-
                                         </div>
-
                                     </form>
-
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
                 </section>
             </div>
