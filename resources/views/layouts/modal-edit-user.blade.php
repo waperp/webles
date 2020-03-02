@@ -11,17 +11,11 @@
             <div class="modal-body p-0">
                 <section class="contact-page-section p-0">
                     <div class="row">
-                        <!-- Info Column -->
-                        <!-- Form Column -->
                         <div class="form-column col-12">
                             <div class="inner-column  p-4">
-                                {{-- <div class="title-box">
-                                        <div class="title">Need emergency?</div>
-                                        <h3>Drop us a Line</h3>
-                                    </div> --}}
-                                <!-- Contact Form -->
                                 <div class="contact-form">
-                                <form id="form-edit-user" method="post" enctype="multipart/form-data" action="{{ route('secusr.store') }}">
+                                    <form id="form-edit-user" method="post" enctype="multipart/form-data"
+                                        action="{{ route('secusr.store') }}">
                                         @csrf
                                         <input type="hidden" id="edit-user-image-src" />
                                         <input type="hidden" id="edit-user-secconnuuid" />
@@ -31,13 +25,13 @@
                                                     <label for="image-upload" class="image-label">
                                                         Tu Foto
                                                     </label>
-                                                    <input class="image-upload" id="edit-user-hurempvimgh" name="hurempvimgh"
-                                                        type="file" />
+                                                    <input class="image-upload" id="edit-user-hurempvimgh"
+                                                        name="hurempvimgh" type="file" />
                                                     <span id="file_error"></span>
                                                 </div>
                                             </div>
 
-                                    </div>
+                                        </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
                                             <input readonly disabled type="text" id="edit-user-secusrtmail"
@@ -52,59 +46,48 @@
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
 
-                                           <select id="select2-edit-user-subform" name="contypscode" required class="form-control w-100" ></select>
-                                    </div>
+                                            <select id="select2-edit-user-subform" name="contypscode" required
+                                                class="form-control w-100"></select>
+                                        </div>
                                         <div class="form-row">
                                             <div class="form-group col-6">
                                                 <span class="fa fa-key"></span>
-                                                <input type="password" id="edit-user-secusrtpass" name="editUserSecusrtpass"
-                                                    placeholder="Nueva Contraseña">
+                                                <input type="password" id="edit-user-secusrtpass"
+                                                    name="editUserSecusrtpass" placeholder="Nueva Contraseña">
                                             </div>
                                             <div class="form-group col-6">
                                                 <span class="fa fa-key"></span>
-                                                <input type="password" id="confirm-edit-user-secusrtpass" name="editUserConfirmSecusrtpass"
-                                                    placeholder="Repetir Contraseña">
+                                                <input type="password" id="confirm-edit-user-secusrtpass"
+                                                    name="editUserConfirmSecusrtpass" placeholder="Repetir Contraseña">
                                             </div>
-                                            
-                                    </div>
-                                    <div class="form-group text-center">
+
+                                        </div>
+                                        <div class="form-group text-center">
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input required value="1" type="radio" id="radio-edit-user-hurempbgend"
-                                                name="hurempbgend"
-                                                class="custom-control-input">
+                                                    name="hurempbgend" class="custom-control-input">
                                                 <label class="custom-control-label  text-white"
                                                     for="radio-edit-user-hurempbgend">Masculino</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="0"  type="radio" id="radio-edit-user-hurempbgend2"
-                                                name="hurempbgend"
-                                                class="custom-control-input">
+                                                <input required value="0" type="radio" id="radio-edit-user-hurempbgend2"
+                                                    name="hurempbgend" class="custom-control-input">
                                                 <label class="custom-control-label text-white"
                                                     for="radio-edit-user-hurempbgend2">Femenino</label>
                                             </div>
                                         </div>
-                                        {{-- 
-                                            <div class="form-group ">
-                                                    <span class="fa fa-key"></span>
-                                                    <input type="email" name="secusrtpass-repeat" placeholder="Repetir Contraseña">
-                                                </div> --}}
                                         <div class="form-group row">
                                             <div class="col-6"><input type="submit" class="theme-btn submit-btn"
-                                                     value="ACTUALIZAR"></div>
+                                                    value="ACTUALIZAR"></div>
 
                                             <div class="col-6"><button type="button"
                                                     class="theme-btn submit-btn btn-danger text-center"
                                                     data-dismiss="modal">CANCELAR</button></div>
-
                                         </div>
-
                                     </form>
-
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
                 </section>
             </div>
