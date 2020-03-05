@@ -140,7 +140,7 @@ class confrsController extends Controller
      * @param  \App\confrs  $confrs
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $confrmscode)
+    public function showServicios(Request $request, $confrmscode)
     {
         if ($request->confrsscode != null) {
             $data =  confrm::join('confrs', 'confrm.confrmscode', 'confrs.confrmscode')
@@ -152,7 +152,13 @@ class confrsController extends Controller
         }
 
     }
+    public function show(Request $request, $confrmscode)
+    {
+      
+            $data =  confrm::where('confrmscode', $confrmscode)->first();
+            return response()->json(['servicio' => $data, 'isService' => false,]);
 
+    }
     /**
      * Show the form for editing the specified resource.
      *

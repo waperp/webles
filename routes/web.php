@@ -32,5 +32,6 @@ Route::get('selectServicios', 'HomeController@selectServicios');
 Route::get('listaServicios', 'HomeController@listaServicio');
 Route::post('storeServicios', 'confrsController@storeServicios');
 Route::post('updateServicios', 'confrsController@updateServicios');
+Route::get('showServicios', 'confrsController@showServicios');
 Route::get('icons', 'conicoController@icons');
 

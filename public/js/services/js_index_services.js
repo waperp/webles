@@ -208,7 +208,7 @@ $(document).ready(function () {
 });
 function edit_gestionar_servicios(confrmscode, confrsscode) {
     $.ajax({
-        url: '/confrs/' + confrmscode,
+        url: '/showServicios/' + confrmscode,
         type: 'get',
         datatype: 'json',
         data: {
