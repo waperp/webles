@@ -84,9 +84,9 @@ $services = App\confrs::childrens(2);
         @foreach ($ultimasNoticias->sections as $sections_ultimas_noticias)
         <div class="fnc-slide  @if ($loop->first) m--active-slide @endif">
             <div class="fnc-slide__inner" style="background-image: url(images/{{ $sections_ultimas_noticias->confrsvbigi }});">
-              <div class="fnc-slide__mask" style="background-image: url(images/{{ $sections_ultimas_noticias->confrsvbigi }});">
+              {{-- <div class="fnc-slide__mask" style="background-image: url(images/{{ $sections_ultimas_noticias->confrsvbigi }});">
                 <div class="fnc-slide__mask-inner"></div>
-              </div>
+              </div> --}}
               <div class="fnc-slide__content">
                 <h2 class="fnc-slide__heading" >
                   <div class="fnc-slide__heading-line">
