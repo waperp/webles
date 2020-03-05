@@ -167,13 +167,14 @@ $(document).ready(function () {
     });
 });
 
-function edit_redes_sociales(confrmscode) {
+function edit_redes_sociales(confrsscode) {
     $('#modal-edit-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('show');
     $.ajax({
-        url: '/confrs/' + confrmscode,
+        url: '/confrs/' + confrsscode,
         type: 'get',
         datatype: 'json',
         success: function (data) {
+
             // $('#select-admin-gestionar-grupo-securs').empty();
             $('#select2-edit-redes-sociales-subform').append('<option value="' + data.confrmscode + '">' + data.confrmttitl + '</option>');
             $("#select2-edit-redes-sociales-subform").val(data.confrmscode);

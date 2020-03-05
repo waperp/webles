@@ -29,6 +29,8 @@ $(document).ready(function () {
     });
     $("#form-edit-redes-sociales").submit(function (e) {
         var _token = $('input[name=_token]').val();
+        $('.submit-btn').attr("disabled", "true");
+
         e.preventDefault();
         var confrsttitl = $('#edit-rd-confrsttitl').val();
         var confrstdesc = $('#edit-rd-confrstdesc').val();
@@ -58,6 +60,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (data) {
+                $('.submit-btn').attr("disabled", "false");
     
                 $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
                 $('#modal-edit-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('hide');

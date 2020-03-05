@@ -152,11 +152,11 @@ class confrsController extends Controller
         }
 
     }
-    public function show(Request $request, $confrmscode)
+    public function show(Request $request, $confrsscode)
     {
       
         $data =  confrm::join('confrs', 'confrm.confrmscode', 'confrs.confrmscode')
-        ->where('confrs.confrmscode', $confrmscode)->first();
+        ->where('confrs.confrsscode', $confrsscode)->first();
             return response()->json($data);
 
     }

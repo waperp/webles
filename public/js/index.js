@@ -20,7 +20,7 @@ function detectmob() {
     }
 }
 $(document).ready(function () {
-  
+    var map;
     $("#immersive_slider").immersive_slider({
         container: ".main"
       });
