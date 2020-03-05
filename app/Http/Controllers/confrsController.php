@@ -46,7 +46,6 @@ class confrsController extends Controller
                 $img = Image::make($image);
 
                 $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
-                $img->resize(200, 200);
                 $img = $img->save(base_path() . '/public/images/' . $imageName);
 
                 //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
@@ -180,7 +179,7 @@ class confrsController extends Controller
             $image = $request->file('confrsvbigi');
             $img = Image::make($image);
             $imageName =  time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
-            $img->resize(350, 235);
+            // $img->resize(350, 235);
             $img = $img->save(base_path() . '/public/images/' . $imageName);
         } else {
             $imageName = null;
