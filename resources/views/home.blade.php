@@ -433,7 +433,7 @@ $gallery = App\confrm::nivel(15);
         <div class="slide" data-blurred="/images/slide1_blurred.jpg">
           <div class="content">
             <h2><a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></h2>
-            <div id="map"></div>
+            <div style="height: 150px" id="map"></div>
 
             </div>
           <div class="image">
