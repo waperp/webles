@@ -9,7 +9,7 @@
         @endphp
 <head>
     <meta charset="utf-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -28,23 +28,23 @@
     <meta name="description"
         content="LES, LABORATORIO ENDOGENETICA SANTA CRUZ, QUÍMICA SANGUINEA!, INMUNOLOGÍA Y SEROLOGÍA!, HORMONAS - PRUEBAS ESPECIALES!">
     <meta name="keywords" content="LAB. DE ANÁLISIS CLÍNICOS
-QUÍMICA SANGUINEA
-* Glucosa, Hemoglobina Glucosilada(HBA1C)
-* Urea, Creatinina, Acido Urico
-* Triglicéridos, Colesterol (HDL, LDL, VLDL)
-* Riesgo Cardiaco
-* Proteínas Totales y Fracciones
-* Perfil Hepático (TGO, TGP, GGT, Bilirrubinas)
-* Fosfatasa Alcalina, Amilasa, Lipasa
-* Perfil Cardíaco (CPK, CKMB, LDH)
-* Electrolítos (Sodio, Potasio, Cloro)
-* Calcio Total e Iónico, Magnesio, Fosforo
-INMUNOLOGÍA Y SEROLOGIA
-HORMONAS - PRUEBAS FUNCIONALES
-MARCADORES TUMORALES
-HEMATOLOGIA Y COAGULOGRAMA
-ANALISIS DE ORINA Y PARASITOLOGICO
-BACTERIOLOGÍA">
+        QUÍMICA SANGUINEA
+        * Glucosa, Hemoglobina Glucosilada(HBA1C)
+        * Urea, Creatinina, Acido Urico
+        * Triglicéridos, Colesterol (HDL, LDL, VLDL)
+        * Riesgo Cardiaco
+        * Proteínas Totales y Fracciones
+        * Perfil Hepático (TGO, TGP, GGT, Bilirrubinas)
+        * Fosfatasa Alcalina, Amilasa, Lipasa
+        * Perfil Cardíaco (CPK, CKMB, LDH)
+        * Electrolítos (Sodio, Potasio, Cloro)
+        * Calcio Total e Iónico, Magnesio, Fosforo
+        INMUNOLOGÍA Y SEROLOGIA
+        HORMONAS - PRUEBAS FUNCIONALES
+        MARCADORES TUMORALES
+        HEMATOLOGIA Y COAGULOGRAMA
+        ANALISIS DE ORINA Y PARASITOLOGICO
+        BACTERIOLOGÍA">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:url"           content="https://www.ademonline.com/" />
@@ -92,6 +92,9 @@ BACTERIOLOGÍA">
     <link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
+  <link href='/css/immersive-slider.css' rel='stylesheet' type='text/css'>
+  <link href='/css/fancy.css?q={{ time() }}' rel='stylesheet' type='text/css'>
+  
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
 
@@ -125,6 +128,7 @@ BACTERIOLOGÍA">
         @endauth
     </div>
     <script src="/js/jquery.js"></script>
+    
     <script src="/js/moment.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/jquery-ui.js"></script>
@@ -155,6 +159,8 @@ BACTERIOLOGÍA">
     <script src="/js/js-yaml.min.js" type="text/javascript"></script>
     <script src="/js/icons.js" type="text/javascript"></script>
     <script src="/js/datatables-index.js?q={{ time() }}" type="text/javascript"></script>
+    <script src="/js/jquery.immersive-slider.js" type="text/javascript"></script>
+    <script src="/js/fancy.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         const modal_quienes_somos = @json(App\confrm::nivel(11));
@@ -167,6 +173,18 @@ BACTERIOLOGÍA">
         @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
+    <script>
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+          });
+        }
+      </script>
+    <script 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqvbCfygRs0u5SPYcDkghxVLpbk0O7Inw&callback=initMap">
+</script>
     <script src="/js/user/js_index_user.js?q={{ time() }}"></script>
     <script src="/js/user/js_create_user.js?q={{ time() }}"></script>
     <script src="/js/user/js_edit_user.js?q={{ time() }}"></script>

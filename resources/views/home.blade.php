@@ -15,7 +15,7 @@ $ultimasNoticias = App\confrm::nivel(12);
 $gallery = App\confrm::nivel(12);
 $services = App\confrs::childrens(2);
 @endphp
-<section class="banner-section">
+{{-- <section class="banner-section">
     <div class="banner-carousel owl-carousel owl-theme">
         @if ($ultimasNoticias->sections->isEmpty())
         <div class="slide-item" id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}"
@@ -23,7 +23,6 @@ $services = App\confrs::childrens(2);
             <div class="container xs-banner-container-parent">
                 <div class="clearfix">
 
-                    <!-- Content Column -->
                     <div class="banner-column col-lg-6 col-md-12 col-sm-12">
                         <div class="title wow fadeInUp" data-wow-delay="250ms">Diagnosis</div>
                         <h2 class="wow fadeInUp" data-wow-delay="500ms">Personal care for your healthy living</h2>
@@ -35,17 +34,10 @@ $services = App\confrs::childrens(2);
                                     class="arrow icon icon-arrow_right"></span></a>
                         </div>
                     </div>
-
-                    <!-- Image -->
-
                     <div class="image">
                         <img src="images/main-slider/content-image-2.png" alt="" />
                     </div>
-
-
-
                 </div>
-
             </div>
         </div>
         @endif
@@ -62,7 +54,6 @@ $services = App\confrs::childrens(2);
                                 href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}"
                                 class="wow fadeInUp"
                                 data-wow-delay="500ms">{{ Str::lower($sections_ultimas_noticias->confrsttitl )}}</a>
-                                {{-- <h2 class="wow fadeInUp" data-wow-delay="500ms">{{ Str::lower($sections_ultimas_noticias->confrsttitl) }}</h2> --}}
 
                             <p class="text wow fadeInUp" data-wow-delay="750ms">
                                 {{ Str::limit($sections_ultimas_noticias->confrstdesc,140) }}</p>
@@ -78,78 +69,68 @@ $services = App\confrs::childrens(2);
                         <div class="image col-lg-6 col-md-6 col-sm-12">
                             <img src="images/{{ $sections_ultimas_noticias->confrsvbigi }}" alt="" />
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
         @endforeach
-        <!-- Slide Item -->
-
-        {{-- <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
-            <div class="container xs-banner-container-parent">
-                <div class="clearfix">
-
-                    <!-- Content Column -->
-                    <div class="banner-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="title wow fadeInUp" data-wow-delay="250ms">Diagnosis</div>
-                        <h2 class="wow fadeInUp" data-wow-delay="500ms">Personal care for your healthy living</h2>
-                        <p class="text wow fadeInUp" data-wow-delay="750ms">Small river named Duden flows by their
-                            place and supplies it with the necessary regelialia. It is a paradisematic country, in
-                            which roasted parts of sentences fly into your mouth.</p>
-                        <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
-                            <a href="department.html" class="theme-btn btn-style-two"><i>Book Now</i> <span
-                                    class="arrow icon icon-arrow_right"></span></a>
-                        </div>
-                    </div>
-
-                    <!-- Image -->
-
-                    <div class="image">
-                        <img src="images/main-slider/content-image-2.png" alt="" />
-                    </div>
-
-
-
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
-            <div class="container xs-banner-container-parent">
-                <div class="clearfix">
-
-                    <!-- Content Column -->
-                    <div class="banner-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="title wow fadeInUp" data-wow-delay="250ms">Diagnosis</div>
-                        <h2 class="wow fadeInUp" data-wow-delay="500ms">Personal care for your healthy living</h2>
-                        <p class="text wow fadeInUp" data-wow-delay="750ms">Small river named Duden flows by their
-                            place and supplies it with the necessary regelialia. It is a paradisematic country, in
-                            which roasted parts of sentences fly into your mouth.</p>
-                        <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
-                            <a href="department.html" class="theme-btn btn-style-two"><i>Book Now</i> <span
-                                    class="arrow icon icon-arrow_right"></span></a>
-                        </div>
-                    </div>
-
-                    <!-- Image Column -->
-
-                    <div class="image">
-                        <img src="images/main-slider/content-image-3.png" alt="" />
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div> --}}
-
     </div>
-</section>
+</section> --}}
+<div class="demo-cont" style="margin-top: 100px" id="menu-{{ Str::slug($ultimasNoticias->confrmttitl) }}">
+    <!-- slider start -->
+    <div class="fnc-slider example-slider">
+      <div class="fnc-slider__slides">
+        <!-- slide start -->
+        @foreach ($ultimasNoticias->sections as $sections_ultimas_noticias)
+        <div class="fnc-slide  @if ($loop->first) m--active-slide @endif">
+            <div class="fnc-slide__inner" style="background-image: url(images/{{ $sections_ultimas_noticias->confrsvbigi }});">
+              <div class="fnc-slide__mask" style="background-image: url(images/{{ $sections_ultimas_noticias->confrsvbigi }});">
+                <div class="fnc-slide__mask-inner"></div>
+              </div>
+              <div class="fnc-slide__content">
+                <h2 class="fnc-slide__heading" >
+                  <div class="fnc-slide__heading-line">
+                    <span class="font-weight-bold">{{ Str::upper($sections_ultimas_noticias->confrsttitl )}}</span>
+                  </div>
+                  {{-- <div class="fnc-slide__heading-line">
+                    <span>Widow</span>
+                  </div> --}}
+                </h2>
+                {{-- <a href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}" type="button" class="fnc-slide__action-btn">
+                  Ver más
+                  <span data-text="Ver más">Ver más</span>
+                </a> --}}
+                <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
+                    <a href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}"
+                        class="theme-btn btn-style-two pt-1 pb-1"><i>Ver Más</i> <span
+                            class="arrow icon icon-arrow_right"></span></a>
+                </div>
+              </div>
+              <nav class="fnc-nav">
+                <div class="fnc-nav__bgs">
+                  <div class="fnc-nav__bg  @if ($loop->first) m--active-nav-bg @endif "></div>
+                </div>
+                <div class="fnc-nav__controls ">
+                  <a href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}" class="fnc-nav__control p-2" >
+                    <strong>{{ Str::limit($sections_ultimas_noticias->confrstdesc,60) }}</strong>
+                    <span class="fnc-nav__control-progress"></span>
+                  </a>
+                 
+                </div>
+              </nav>
+            </div>
+          </div>
+         
+@endforeach
+        
+        <!-- slide end -->
+        
+      </div>
+      
+    </div>
+    <!-- slider end -->
+    
+  </div>
 <!-- End Bnner Section -->
 
 <section id="services-form-section" class="services-form-section">
@@ -445,6 +426,48 @@ $gallery = App\confrm::nivel(15);
 
     </div>
 </section>
+
+<div class="main">
+    <div class="page_container">
+      <div id="immersive_slider">
+        <div class="slide" data-blurred="/images/slide1_blurred.jpg">
+          <div class="content">
+            <h2><a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></h2>
+            <div id="map"></div>
+
+            </div>
+          <div class="image">
+            <a href="http://www.bucketlistly.com" target="_blank">
+              <img src="/images/slide1.jpg" alt="Slider 1">
+            </a>
+          </div>
+        </div>
+        <div class="slide" data-blurred="/images/slide2_blurred.jpg">
+          <div class="content">
+            <h2><a href="http://www.bucketlistly.com/apps" target="_blank">BucketListly Apps</a></h2>
+            <p>It’s never been easier to watch YouTube on the big screen
+            Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+          </div>
+          <div class="image">
+           <a href="http://www.bucketlistly.com/apps" target="_blank"> <img src="/images/slide2.jpg" alt="Slider 1"></a>
+          </div>
+        </div>
+        <div class="slide" data-blurred="/images/slide3_blurred.jpg">
+          <div class="content">
+            <h2><a href="http://www.thepetedesign.com" target="_blank">The Pete Design</a></h2>
+            <p>It’s never been easier to watch YouTube on the big screen
+            Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+          </div>
+          <div class="image">
+            <a href="http://www.thepetedesign.com" target="_blank"><img src="/images/slide3.jpg" alt="Slider 1"></a>
+          </div>
+        </div>
+        
+        <a href="#" class="is-prev">&laquo;</a>
+        <a href="#" class="is-next">&raquo;</a>
+      </div>
+    </div>
+    </div>
 <!-- End Fullwidth Section -->
 
 <!-- Team Section -->

@@ -20,6 +20,10 @@ function detectmob() {
     }
 }
 $(document).ready(function () {
+  
+    $("#immersive_slider").immersive_slider({
+        container: ".main"
+      });
     $(".modal").removeAttr("tabindex");
     $('.modal').attr({'data-backdrop': 'static', 'data-keyboard': false})
 
