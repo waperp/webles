@@ -198,6 +198,7 @@
     padding-right: 20px;
     font-size: 40px;
     color: #fff;
+text-shadow: 3px 5px 2px #000000;
     word-spacing: 10px;
   }
   .fnc-slide__heading-line:nth-child(2) {
