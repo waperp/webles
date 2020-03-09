@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\confrm;
+use JD\Cloudder\Facades\Cloudder;
+
 use App\confrs;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -188,6 +190,8 @@ class confrsController extends Controller
             $imageName =  time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
             // $img->resize(350, 235);
             $img = $img->save(base_path() . '/public/images/' . $imageName);
+            // $image_name = $request->file('confrsvbigi')->getRealPath();;
+            //     Cloudder::upload($image_name, null);
         } else {
             $imageName = null;
         }

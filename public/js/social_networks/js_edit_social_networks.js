@@ -29,7 +29,7 @@ $(document).ready(function () {
     });
     $("#form-edit-redes-sociales").submit(function (e) {
         var _token = $('input[name=_token]').val();
-        $('.submit-btn').attr("disabled", "true");
+        $('.submit-btn').attr("enable", "false");
 
         e.preventDefault();
         var confrsttitl = $('#edit-rd-confrsttitl').val();
@@ -60,8 +60,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (data) {
-                $('.submit-btn').attr("disabled", "false");
-    
+                $('.submit-btn').attr("enable", "false");
                 $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
                 $('#modal-edit-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('hide');
             },
