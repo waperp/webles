@@ -102,7 +102,7 @@ $services = App\confrs::childrens(2);
                 </a> --}}
                 <div class="link-box wow fadeInUp" data-wow-delay="1000ms">
                     <a href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}"
-                        class="theme-btn btn-style-two pt-1 pb-1"><i>Ver Más</i> <span
+                        class="theme-btn btn-style-three pt-1 pb-1"><i>Ver Más</i> <span
                             class="arrow icon icon-arrow_right"></span></a>
                 </div>
               </div>
