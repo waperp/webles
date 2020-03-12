@@ -10,7 +10,7 @@ class confrs extends Model
     protected $primaryKey = 'confrsscode';
     protected $table = 'confrs';
     public static function gallery(){
-        return static::orderBy('confrsscode','DESC')->whereNotIn('confrsmcode',[8,9])->take(6)->get();
+        return static::orderBy('confrsscode','DESC')->whereNotIn('confrmscode',[8,9])->take(6)->get();
     }
     public static function gallery_sucursales(){
         return static::join('concoo','concoo.confrsscode','confrs.confrsscode')->where('confrs.confrmscode',19)->get();
