@@ -233,7 +233,7 @@ function lista_servicio_select(data) {
     data.forEach(servicesItem => {
 
         item += '<div class="service-item-' + servicesItem.confrmscode + ' featured-block style-two col-lg-4 col-md-6 col-sm-12">' +
-            '<div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms">' +
+            '<div class="inner-box wow fadeInLeft visible" data-wow-delay="0ms" data-wow-duration="1500ms">' +
             '<div class="image-layer" style="background-image:url(images/' + servicesItem.confrsvbigi + ');background-size:cover;background-position: center center "></div>' +
             '<div class="icon-box"><img class="' + servicesItem.confrsvbigi + '"/></div>' +
             '<h3 class="text-center"><a href="#">' + servicesItem.confrsttitl + '</a></h3>' +
