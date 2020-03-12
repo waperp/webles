@@ -30,7 +30,7 @@ Class Definitions
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  vertical-align: top;
+  vertical-align: middle;
   display: table-cell;
   padding: 0 0 0 10px;
 }
@@ -82,7 +82,7 @@ Class Definitions
   color: white;
   text-align: left;
   line-height: 160%;
-  vertical-align: middle;
+  vertical-align: top;
   display: table-cell;
 }
 
