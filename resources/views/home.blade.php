@@ -324,7 +324,7 @@ $gestionarContactos = App\confrm::nivel(19);
           <div class="slide" data-blurred="/images/slide1_blurred.jpg">
             <div class="content">
             <h2>{{$gestionarSucursalesobj->confrsttitl}}</h2>
-            <div style="height: 200px" id="map-{{$gestionarSucursalesobj->concooscode}}"></div>
+            <div style="height: 350px" id="map-{{$gestionarSucursalesobj->concooscode}}"></div>
   
               </div>
             <div class="image">
