@@ -60,7 +60,8 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (data) {
-    
+                $('.reset-input').val(null);
+                $('#select2-new-redes-sociales-subform').val(null).trigger('change');
                 $('#datatable-' + convertToSlug(modal_redes_sociales.confrmttitl)).DataTable().ajax.reload();
                 $('#modal-new-' + convertToSlug(modal_redes_sociales.confrmttitl)).modal('hide');
             },

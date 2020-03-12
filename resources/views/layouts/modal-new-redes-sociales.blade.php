@@ -38,13 +38,13 @@
                                         <input type="hidden" id="new-rd-confrsscode">
                                         <div class="form-group">
                                             <span class="icon flaticon-send"></span>
-                                            <input type="text" id="new-rd-confrsttitl" name="confrsttitl" placeholder="Titulo">
+                                            <input type="text" id="new-rd-confrsttitl" class="reset-input" name="confrsttitl" placeholder="Titulo">
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group date redes-sociales-datetime" id="datetimepicker1"> 
                                                     <span class="icon flaticon-send"></span>
 
-                                                <input class="form-control" id="new-rd-confrsdpubl" placeholder="Ingrese una fecha"
+                                                <input class="form-control reset-input" id="new-rd-confrsdpubl" placeholder="Ingrese una fecha"
                                                     type="text" />
                                                 <div class="input-group-addon input-group-append">
                                                     <div class="input-group-text">
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <textarea required  id="new-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
+                                            <textarea required class="reset-input" id="new-rd-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <span class="fa fa-folder"></span>
