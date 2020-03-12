@@ -20,10 +20,11 @@ function detectmob() {
     }
 }
 $(document).ready(function () {
-    var map;
+    // get_contactos_sucursales()
     $("#immersive_slider").immersive_slider({
         container: ".main"
       });
+    
     $(".modal").removeAttr("tabindex");
     $('.modal').attr({'data-backdrop': 'static', 'data-keyboard': false})
 
@@ -245,4 +246,41 @@ function lista_servicio_select(data) {
     
 
     $('#lista-home-services').append(item);
+}
+function lista_contactos_sucursales(data){
+    var item = "";
+
+    data.forEach(data => {
+
+        item += 
+        '<div class="slide" data-blurred="/images/slide1_blurred.jpg">'+
+        '<div class="content">'+
+        '<h2>'+data.confrsttitl+'</h2>'+
+        '<p>'+data.confrstdesc+'</p>'+
+        '<div style="height: 200px" id="map-'+data.concooscode+'"></div>'+
+        '</div>'+
+        '<div class="image">'+
+        '   <a  target="_blank">'+
+        '     <img src="/images/'+data.confrsvbigi+'" >'+
+        '   </a>'+
+        ' </div>'+
+        '</div>';
+        
+    });
+    
+
+    $('#immersive_slider').append(item);
+    $("#immersive_slider").immersive_slider({
+        container: ".main"
+      });
+}
+function get_contactos_sucursales() {
+    $.ajax({
+        url: '/listaSucursales/',
+        type: 'get',
+        datatype: 'json',
+        success: function (data) {
+            lista_contactos_sucursales(data);
+        }
+    });
 }

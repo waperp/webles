@@ -73,4 +73,9 @@ class HomeController extends Controller
         $data = confrs::whereConfrmscode($request->confrmscode)->get();
         return response()->json($data);
     }
+    public function listaSucursales(Request $request)
+    {
+        $data = confrs::gallery_sucursales();
+        return response()->json($data);
+    }
 }

@@ -1,7 +1,11 @@
 @foreach(App\confrm::tree() as $item)
 
     @if ($item['children']->count() <=  0)    
-    <li><a>{{ $item->confrmttitl }}</a></li> 
+        @if ($item->confrmscode == 0)
+        <li><a href="/">{{ $item->confrmttitl }}</a></li> 
+        @else
+        <li><a>{{ $item->confrmttitl }}</a></li> 
+        @endif
     @else
     <li class="elementskit-dropdown-has">
         <a href="#menu-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a>

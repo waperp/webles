@@ -1,19 +1,22 @@
 <html>
-        @php
-        $quienesSomos = App\confrm::nivel(11);
-        $redesSociales = App\confrm::nivel(13);
-        $ultimasNoticias = App\confrm::nivel(14);
-        $usuarios = App\confrm::nivel(16);
-        $gestionarMenu = App\confrm::nivel(17);
-        $gestionarServicios = App\confrm::nivel(18);
-        @endphp
+@php
+$quienesSomos = App\confrm::nivel(11);
+$redesSociales = App\confrm::nivel(13);
+$ultimasNoticias = App\confrm::nivel(14);
+$usuarios = App\confrm::nivel(16);
+$gestionarMenu = App\confrm::nivel(17);
+$gestionarServicios = App\confrm::nivel(18);
+$gestionarContactos = App\confrm::nivel(20);
+$gestionarSucursales = App\confrs::gallery_sucursales();
+@endphp
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-   
+
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
@@ -47,11 +50,12 @@
         BACTERIOLOGÍA">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:url"           content="https://www.ademonline.com/" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="Facebook Share Button with Control Images and Text of Your Website" />
-	<meta property="og:description"   content="Sometimes we see that our Android device is run out of internal storage space automatically. If we store data, apps and other thinks on Sd card then also it happens. Why ? Because the Apps which are run on our device, build Cached Data on Internal Memory. If we don't delete them in time then.." />
-	<meta property="og:image"         content="https://www.ademonline.com/images/1573846135.jpg" />
+    <meta property="og:url" content="https://www.ademonline.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Facebook Share Button with Control Images and Text of Your Website" />
+    <meta property="og:description"
+        content="Sometimes we see that our Android device is run out of internal storage space automatically. If we store data, apps and other thinks on Sd card then also it happens. Why ? Because the Apps which are run on our device, build Cached Data on Internal Memory. If we don't delete them in time then.." />
+    <meta property="og:image" content="https://www.ademonline.com/images/1573846135.jpg" />
     <link
         href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -92,9 +96,9 @@
     <link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
-  <link href='/css/immersive-slider.css' rel='stylesheet' type='text/css'>
-  <link href='/css/fancy.css?q={{ time() }}' rel='stylesheet' type='text/css'>
-  
+    <link href='/css/immersive-slider.css' rel='stylesheet' type='text/css'>
+    <link href='/css/fancy.css?q={{ time() }}' rel='stylesheet' type='text/css'>
+
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
 
@@ -120,7 +124,10 @@
         @include('layouts.modal-edit-menu-principal')
         @include('layouts.modal-menu-principal')
         @include('layouts.modal-servicios')
-        
+        @include('layouts.modal-contactos')
+        @include('layouts.modal-new-contactos')
+        @include('layouts.modal-edit-contactos')
+
         @include('layouts.modal-user')
         @include('layouts.modal-new-user')
         @include('layouts.modal-edit-user')
@@ -128,7 +135,7 @@
         @endauth
     </div>
     <script src="/js/jquery.js"></script>
-    
+
     <script src="/js/moment.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/jquery-ui.js"></script>
@@ -147,10 +154,10 @@
     <script src="/js/jquery.uploadPreview.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery.dataTables.min.js"></script>
-	<script src="/js/dataTables.bootstrap4.min.js"></script>
-	<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>
-	<script src="/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
-	<script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script src="/js/buttons.colVis.js" type="text/javascript"></script>
     <script src="/js/select2.min.js" type="text/javascript"></script>
     <script src="/js/es.js" type="text/javascript"></script>
@@ -168,27 +175,37 @@
         const modal_usuarios = @json($usuarios);
         const gestionar_menu = @json($gestionarMenu);
         const gestionar_servicios = @json($gestionarServicios);
+        const gestionar_contactos = @json($gestionarContactos);
+        const gestionar_sucursales = @json($gestionarSucursales);
         @if (Auth::check())
         const employee = @json(\Auth::user()->employee());
         @endif
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
     <script>
-        var map;
         function initMap() {
-          map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+            gestionar_sucursales.forEach(data => {
+                var maps = new google.maps.Map(document.getElementById('map-'+data.concooscode), {
+                    center: {lat:parseFloat(data.concooslati), lng: parseFloat(data.concooslegt)},
+                    zoom: 12
+                });
+                var marker1 = new google.maps.Marker({
+                position: {lat: parseFloat(data.concooslati), lng: parseFloat(data.concooslegt)},
+                draggable: false
+                });
+                marker1.setMap(maps);
+                maps = null;
+                marker1 = null;
           });
         }
-      </script>
-    <script 
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqvbCfygRs0u5SPYcDkghxVLpbk0O7Inw&callback=initMap">
-</script>
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqvbCfygRs0u5SPYcDkghxVLpbk0O7Inw&callback=initMap">
+    </script>
     <script src="/js/user/js_index_user.js?q={{ time() }}"></script>
     <script src="/js/user/js_create_user.js?q={{ time() }}"></script>
     <script src="/js/user/js_edit_user.js?q={{ time() }}"></script>
-    
+
     <script src="/js/services/js_index_services.js?q={{ time() }}"></script>
     <script src="/js/services/js_create_services.js?q={{ time() }}"></script>
     <script src="/js/services/js_edit_services.js?q={{ time() }}"></script>
@@ -197,6 +214,11 @@
     <script src="/js/aboutus/js_create_aboutus.js?q={{ time() }}"></script>
     <script src="/js/aboutus/js_edit_aboutus.js?q={{ time() }}"></script>
 
+
+    <script src="/js/contacts/js_index_contacts.js?q={{ time() }}"></script>
+    <script src="/js/contacts/js_create_contacts.js?q={{ time() }}"></script>
+    <script src="/js/contacts/js_edit_contacts.js?q={{ time() }}"></script>
+
     <script src="/js/social_networks/js_index_social_networks.js?q={{ time() }}"></script>
     <script src="/js/social_networks/js_create_social_networks.js?q={{ time() }}"></script>
     <script src="/js/social_networks/js_edit_social_networks.js?q={{ time() }}"></script>
@@ -204,7 +226,7 @@
     <script src="/js/main_menu/js_index_main_menu.js?q={{ time() }}"></script>
     <script src="/js/main_menu/js_create_main_menu.js?q={{ time() }}"></script>
     <script src="/js/main_menu/js_edit_main_menu.js?q={{ time() }}"></script>
-   {{--  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v5.0&appId=665910193938787&autoLogAppEvents=1"></script> --}}
+    {{--  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v5.0&appId=665910193938787&autoLogAppEvents=1"></script> --}}
     @stack('scripts')
 
 </body>

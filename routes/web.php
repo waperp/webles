@@ -13,6 +13,7 @@ Route::get('galeria/{slug}/{secconnuid}', 'HomeController@demo');
 Route::get('servicio/{slug}/{secconnuid}', 'HomeController@demo');
 Route::get('quienes-somos/{slug}/{secconnuid}', 'HomeController@demo');
 Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos');
+Route::get('datatables/contactos', 'datatablesController@datatablesQuienesSomos');
 Route::get('datatables/redes_sociales', 'datatablesController@datatablesQuienesSomos');
 Route::get('datatables/servicios', 'datatablesController@datatablesServicios');
 Route::get('datatables/usuarios', 'datatablesController@datatablesUsuarios');
@@ -34,4 +35,5 @@ Route::post('storeServicios', 'confrsController@storeServicios');
 Route::post('updateServicios', 'confrsController@updateServicios');
 Route::get('showServicios', 'confrsController@showServicios');
 Route::get('icons', 'conicoController@icons');
+Route::get('listaSucursales', 'HomeController@listaSucursales');
 

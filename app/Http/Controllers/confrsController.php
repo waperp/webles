@@ -73,6 +73,7 @@ class confrsController extends Controller
                 $confrs->confrsvbigi = $imageName;
             }
             $confrs->save();
+            DB::commit();
             return response()->json($confrs);
         } catch (\Exception $e) {
             DB::rollback();

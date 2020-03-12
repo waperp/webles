@@ -1,16 +1,19 @@
 @foreach(App\confrm::treeAdmin() as $item)
     @if ($item['children']->count() <= 0)
-        @if ($item->contypscode == 0)
-            <li><a href="#menu-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a></li>
-        @elseif($item->contypscode == 1)
-            <li><a data-toggle="modal" data-target="#modal-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a></li>
+        @if ($item->confrmscode == 0)
+            <li><a href="/">{{ $item->confrmttitl }}</a></li>
+        @else
+            @if ($item->contypscode == 0)
+                <li><a href="#menu-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a></li>
+            @elseif($item->contypscode == 1)
+                <li><a data-toggle="modal" data-target="#modal-{{ Str::slug($item->confrmttitl) }}">{{ $item->confrmttitl }}</a></li>
+            @endif
         @endif
     @else
     <li class="elementskit-dropdown-has">
         @if ($item->contypscode == 0)
             @if ($item->confrmyadmf == 1)
             <a class="admin-menu-color" href="#menu-{{ Str::slug($item->confrmttitl) }}"> {{ $item->confrmttitl }}</a>
-
             @elseif($item->confrmyadmf == 0)
             <a href="#menu-{{ Str::slug($item->confrmttitl) }}"> {{ $item->confrmttitl }}</a>
 
