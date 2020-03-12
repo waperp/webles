@@ -361,9 +361,6 @@ $gestionarContactos = App\confrm::nivel(19);
                         <li class="messanger"><a href="#"><span class="icon flaticon-messenger"></span>
                                 LES</a></li>
                         <li class="facebook"><a href="#" class="icon icon-facebook"></a></li>
-                        <li class="linkedin"><a href="#" class="icon icon-linkedin"></a></li>
-                        <li class="twitter"><a href="#" class="icon icon-twitter"></a></li>
-                        <li class="youtube"><a href="#" class="icon icon-youtube"></a></li>
                     </ul>
                 </div>
 
