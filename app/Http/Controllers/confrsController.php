@@ -41,6 +41,8 @@ class confrsController extends Controller
      */
     public function store(Request $request)
     {
+     
+        
         DB::beginTransaction();
         try {
             if ($request->hasFile('confrsvbigi')) {
@@ -63,17 +65,18 @@ class confrsController extends Controller
             $confrs->confrmscode = $request->confrmscode;
             $confrs->confrsbenbl = 1;
             if ($request->has('confrsdpubl')) {
-                $confrs->confrsdpubl = $request->confrsdpubl;
+                $confrs->confrsdpubl = Carbon::parse($request->confrsdpubl)->format('Y-m-d');
             } else {
                 $confrs->confrsdpubl = Carbon::now()->format('Y-m-d');
             }
+            
             $confrs->confrsvsmai = null;
             if ($imageName == null) {
             } else {
                 $confrs->confrsvbigi = $imageName;
             }
             $confrs->save();
-            DB::commit();
+            // DB::commit();
             return response()->json($confrs);
         } catch (\Exception $e) {
             DB::rollback();

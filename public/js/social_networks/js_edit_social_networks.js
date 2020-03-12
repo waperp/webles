@@ -38,7 +38,7 @@ $(document).ready(function () {
         var confrsscode = $('#edit-rd-confrsscode').val();
         var confrsvbigi = $('#edit-rd-confrsvbigi').prop('files')[0];
         var confrmscode = $('#select2-edit-redes-sociales-subform').val();
-    
+    debugger
         var formData = new FormData();
     
         formData.append("confrsttitl", confrsttitl);
