@@ -30,7 +30,7 @@ Class Definitions
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  vertical-align: middle;
+  vertical-align: top;
   display: table-cell;
   padding: 0 0 0 10px;
 }
