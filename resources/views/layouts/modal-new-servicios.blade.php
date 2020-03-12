@@ -57,7 +57,7 @@
                                             </div> 
                                         </div>
                                         <div class="form-group col-6 pr-0 confrmvsmai">
-                                            <select id="select2-new-servicios-confrmvsmai" required
+                                            <select id="select2-new-servicios-confrmvsmai" 
                                                 class="form-control w-100"></select>
                                         </div>
                                     </div>
@@ -66,14 +66,14 @@
                                     <div class="form-group row">
                                         {{-- <span class="fa fa-folder"></span> --}}
                                         <div class="col-md-6">
-                                        <select id="select2-new-servicios-tipo" required
+                                        <select id="select2-new-servicios-tipo"
                                             class="form-control w-100"></select>
                                         </div>
                                    
                                         {{-- <span class="fa fa-folder"></span> --}}
                                         <div class="col-md-6">
 
-                                        <select id="select2-new-servicios-confrmscode" required
+                                        <select id="select2-new-servicios-confrmscode"
                                             class="form-control w-100"></select>
                                     </div>
 
@@ -123,7 +123,7 @@
                                                             for="new-servicios-confrmyadmf">Si</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" id="new-servicios-confrmyadmf1"
+                                                        <input value="0" type="radio" id="new-servicios-confrmyadmf1"
                                                             name="new-servicios-confrmyadmf" class="custom-control-input">
                                                         <label class="custom-control-label text-white" for="new-servicios-confrmyadmf1">No</label>
                                                     </div>
@@ -133,11 +133,11 @@
                                     </div>
                                         <div class="form-group">
                                             <span class="icon flaticon-user-2"></span>
-                                            <textarea required  id="new-servicios-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
+                                            <textarea  id="new-servicios-confrstdesc" name="confrstdesc" placeholder="Descripcion"></textarea>
                                         </div>
                                         {{-- <div class="form-group">
                                             <span class="fa fa-folder"></span>
-                                            <select id="select2-new-servicios-subform" required class="form-control w-100" ></select>
+                                            <select id="select2-new-servicios-subform" class="form-control w-100" ></select>
                                         </div> --}}
                                         {{-- <div class="form-row">
 
@@ -155,7 +155,7 @@
                                         </div>
                                         <div class="form-group text-center">
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="1" @if(Auth::user()->employee()->hurempbgend ==
+                                                <input value="1" @if(Auth::user()->employee()->hurempbgend ==
                                                 1) checked @endif type="radio" id="customRadioInline1"
                                                 name="hurempbgend"
                                                 class="custom-control-input">
@@ -163,7 +163,7 @@
                                                     for="customRadioInline1">Masculino</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input required value="0" @if(Auth::user()->employee()->hurempbgend ==
+                                                <input value="0" @if(Auth::user()->employee()->hurempbgend ==
                                                 0) checked @endif type="radio" id="customRadioInline2"
                                                 name="hurempbgend"
                                                 class="custom-control-input">
