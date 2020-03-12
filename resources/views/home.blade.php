@@ -269,6 +269,7 @@ $quienesSomos = App\confrm::childrens(1);
 $gallery_img = App\confrs::gallery();
 $gallery = App\confrm::nivel(15);
 $gestionarSucursales_home = App\confrs::gallery_sucursales();
+$gestionarContactos = App\confrm::nivel(19);
 
 @endphp
 <section class="gallery-section">
@@ -316,7 +317,7 @@ $gestionarSucursales_home = App\confrs::gallery_sucursales();
     </div>
 </section>
 
-<div class="main" >
+<div class="main" id="menu-{{ Str::slug($gestionarContactos->confrmttitl) }}">
     <div class="page_container">
       <div id="immersive_slider" >
           @foreach ($gestionarSucursales_home as $gestionarSucursalesobj)

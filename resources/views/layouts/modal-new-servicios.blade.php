@@ -86,21 +86,21 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" id="new-servicios-contypscod0"
+                                                        <input  value="1" type="radio" id="new-servicios-contypscod0"
                                                             name="new-servicios-contypscod0"
                                                             class="custom-control-input" />
                                                         <label class="custom-control-label  text-white"
                                                             for="new-servicios-contypscod0">Modal</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="0" type="radio" id="new-servicios-contypscod01"
+                                                        <input  value="0" type="radio" id="new-servicios-contypscod01"
                                                             name="new-servicios-contypscod0"
                                                             class="custom-control-input" />
                                                         <label class="custom-control-label text-white"
                                                             for="new-servicios-contypscod01">Scroll</label>
                                                     </div>
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="3" type="radio" id="new-servicios-contypscod02"
+                                                        <input  value="3" type="radio" id="new-servicios-contypscod02"
                                                             name="new-servicios-contypscod0"
                                                             class="custom-control-input" />
                                                         <label class="custom-control-label text-white"
@@ -117,7 +117,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input required value="1" type="radio" id="new-servicios-confrmyadmf"
+                                                        <input  value="1" type="radio" id="new-servicios-confrmyadmf"
                                                             name="new-servicios-confrmyadmf" class="custom-control-input">
                                                         <label class="custom-control-label  text-white"
                                                             for="new-servicios-confrmyadmf">Si</label>
