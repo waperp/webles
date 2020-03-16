@@ -431,6 +431,21 @@
         height: auto;
         position: static;
     }
+    .fnc-nav__control {
+        height: 60px;
+        font-size: 12px;
+       
+    border-radius: 100px;
+    text-align: center;
+    }   
+    .fnc-nav {
+        bottom: unset;
+       top: 70%;
+        width: 100%;
+    }
+    .fnc-slide__heading-line {
+        font-size: 25px;
+    }
     .immersive_slider .is-slide .image img {
         max-width: 100%;
         display: block;
@@ -496,6 +511,9 @@
     .fnc-nav__control {
         height: 60px;
         font-size: 12px;
+       
+    border-radius: 100px;
+    text-align: center;
     }   
     .fnc-nav {
        

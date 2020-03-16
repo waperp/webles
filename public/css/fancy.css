@@ -7,7 +7,7 @@
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
-    height: 100vh-100px;
+    height: calc(100vh-100px);
   }
   .fnc-slider *, .fnc-slider *:before, .fnc-slider *:after {
     box-sizing: border-box;
