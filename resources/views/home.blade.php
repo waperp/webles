@@ -323,8 +323,8 @@ $gestionarContactos = App\confrm::nivel(19);
           @foreach ($gestionarSucursales_home as $gestionarSucursalesobj)
           <div class="slide" data-blurred="/images/slide1_blurred.jpg">
             <div class="content">
-            <h2>{{$gestionarSucursalesobj->confrsttitl}}</h2>
-            <div style="height: 350px" id="map-{{$gestionarSucursalesobj->concooscode}}"></div>
+            <h2 class="text-center">{{$gestionarSucursalesobj->confrsttitl}}</h2>
+            <div class="google-maps-slide"  id="map-{{$gestionarSucursalesobj->concooscode}}"></div>
   
               </div>
             <div class="image">

@@ -95,9 +95,9 @@ $gestionarSucursales = App\confrs::gallery_sucursales();
     <link href="/css/select2-bootstrap4.min.css" rel="stylesheet">
     <link href="/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
-    <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
     <link href='/css/immersive-slider.css?q={{ time() }}' rel='stylesheet' type='text/css'>
     <link href='/css/fancy.css?q={{ time() }}' rel='stylesheet' type='text/css'>
+    <link href="/css/custom.css?q={{ time() }}" rel="stylesheet">
 
     {{-- <script src="https://use.fontawesome.com/a9c4c94471.js"></script> --}}
     {{-- <link href="css/fontawesome.min.css" rel="stylesheet"> --}}
