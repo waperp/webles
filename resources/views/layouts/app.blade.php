@@ -183,6 +183,29 @@ $gestionarSucursales = App\confrs::gallery_sucursales();
     </script>
     <script src="/js/index.js?q={{ time() }}"></script>
     <script>
+        $(function () {
+    //setup ajax error handling
+    $.ajaxSetup({
+        error: function (jqXHR, textStatus, errorThrown) {
+            debugger
+            if (jqXHR.status == 401) {
+                
+                Swal.fire({
+                    icon: 'error',
+                    title: jqXHR.responseJSON,
+                }).then((result) => {
+                    window.location.href = "/login";
+                  })
+            }
+            if (jqXHR.status == 500) {
+                Swal.fire({
+                    icon: 'error',
+                    title: "Lo sentimos, algo salió mal. Inténtalo de nuevo.",
+                });
+            }
+        }
+    });
+});
         function initMap() {
             gestionar_sucursales.forEach(data => {
                 var maps = new google.maps.Map(document.getElementById('map-'+data.concooscode), {
