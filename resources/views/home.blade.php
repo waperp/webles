@@ -112,7 +112,8 @@ $services = App\confrs::childrens(2);
                 </div>
                 <div class="fnc-nav__controls ">
                   <a href="/ultimas-noticias/{{ Str::slug($sections_ultimas_noticias->confrsttitl) }}/{{ $sections_ultimas_noticias->secconnuuid }}" class="fnc-nav__control p-2" >
-                    <strong>{{ Str::limit($sections_ultimas_noticias->confrstdesc,60) }}</strong>
+                    
+                    <strong>{{ Str::limit($sections_ultimas_noticias->confrstdesc,80) }} <img src="images/icono-ver-mas_0.png" style="height: 100%; vertical-align: middle" alt=""></strong>
                     <span class="fnc-nav__control-progress"></span>
                   </a>
                  
