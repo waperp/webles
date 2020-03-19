@@ -21,7 +21,7 @@
                                     </div> --}}
                                 <!-- Contact Form -->
                                 <div class="contact-form">
-                                    <form id="form-new-user" method="post" enctype="multipart/form-data" action="{{ route('secusr.store') }}">
+                                    <form id="form-new-user" method="post" enctype="multipart/form-data" >
                                         @csrf
                                         <input type="hidden" id="new-user-image-src" />
                                         <div class="form-group">

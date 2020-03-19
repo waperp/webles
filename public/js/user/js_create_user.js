@@ -23,7 +23,7 @@ $(document).ready(function () {
     }).on("change", function () {
         $("#datatable-" + convertToSlug(modal_usuarios.confrmttitl)).DataTable().ajax.reload();
     });
-    $("#form-new-user").submit(function (e) {s
+    $("#form-new-user").submit(function (e) {
         var _token = $('input[name=_token]').val();
         e.preventDefault();
         var huremptfnam = $('#new-user-huremptfnam').val();
