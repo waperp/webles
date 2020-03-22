@@ -215,7 +215,7 @@ function edit_gestionar_menu(confrmscode) {
                 $('#select2-edit-menu-principal-type-menu').append('<option value="0">Primario</option>');
                 $('#select2-edit-menu-principal-type-menu').val(0).trigger('change');
 
-                $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [true]);
+                $('#select2-edit-menu-principal-confrmsfcod').select2("enable", [false]);
             } else {
                 $('#select2-edit-menu-principal-type-menu').append('<option value="1">Secundario</option>');
                 $("#select2-edit-menu-principal-type-menu").val(data.confrmscode);
