@@ -75,7 +75,11 @@ class confrmController extends Controller
         $confrm = confrm::where('confrmscode',$confrmscode)->first();
         return response()->json($confrm);
     }
-
+    public function showconfrm( $confrmscode)
+    {
+        $confrm = confrm::where('confrmscode',$confrmscode)->first();
+        return response()->json($confrm);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -101,7 +105,7 @@ class confrmController extends Controller
         DB::beginTransaction();
         try {
         $confrm =  confrm::where('secconnuuid',$secconnuuid)->first();
-            
+
             // return response()->json($request->all());
             $confrm->confrmttitl = $request->confrmttitl;
             $confrm->confrmtdesc = $request->confrmtdesc;

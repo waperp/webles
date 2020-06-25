@@ -24,6 +24,9 @@ Route::patch('update_user', 'secusrController@update_user')->middleware('auth');
 Route::resource('secusr', 'secusrController')->middleware('auth');
 Route::resource('confrs', 'confrsController')->middleware('auth');
 Route::resource('confrm', 'confrmController')->middleware('auth');
+
+Route::get('confrmService/{confrmscode}', 'confrmController@showconfrm');
+
 Route::get('selectSubform', 'HomeController@selectSubform');
 Route::get('selectUserSubform', 'HomeController@selectUserSubform');
 Route::get('selectGestionarMenuSubform', 'HomeController@selectGestionarMenuSubform');
