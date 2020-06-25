@@ -6,12 +6,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('noticia', 'HomeController@demo')->name('demo')->middleware('auth');
-Route::get('redes-sociales/{slug}/{secconnuid}', 'HomeController@demo')->middleware('auth');
-Route::get('ultimas-noticias/{slug}/{secconnuid}', 'HomeController@demo')->middleware('auth');
-Route::get('galeria/{slug}/{secconnuid}', 'HomeController@demo')->middleware('auth');
-Route::get('servicio/{slug}/{secconnuid}', 'HomeController@demo')->middleware('auth');
-Route::get('quienes-somos/{slug}/{secconnuid}', 'HomeController@demo')->middleware('auth');
+Route::get('noticia', 'HomeController@demo')->name('demo');
+Route::get('redes-sociales/{slug}/{secconnuid}', 'HomeController@demo');
+Route::get('ultimas-noticias/{slug}/{secconnuid}', 'HomeController@demo');
+Route::get('galeria/{slug}/{secconnuid}', 'HomeController@demo');
+Route::get('servicio/{slug}/{secconnuid}', 'HomeController@demo');
+Route::get('quienes-somos/{slug}/{secconnuid}', 'HomeController@demo');
+
 Route::get('datatables/quienes_somos', 'datatablesController@datatablesQuienesSomos')->middleware('auth');
 Route::get('datatables/contactos', 'datatablesController@datatablesQuienesSomos')->middleware('auth');
 Route::get('datatables/redes_sociales', 'datatablesController@datatablesQuienesSomos')->middleware('auth');
@@ -30,10 +31,10 @@ Route::get('selectGestionarMenuSubformServicios', 'HomeController@selectGestiona
 Route::get('selectGestionarMenuSubMenu', 'HomeController@selectGestionarMenuSubMenu');
 Route::get('selectServiciosSubMenu', 'HomeController@selectServiciosSubMenu');
 Route::get('selectServicios', 'HomeController@selectServicios');
-Route::get('listaServicios', 'HomeController@listaServicio')->middleware('auth');
+Route::get('listaServicios', 'HomeController@listaServicio');
 Route::post('storeServicios', 'confrsController@storeServicios')->middleware('auth');
 Route::post('updateServicios', 'confrsController@updateServicios')->middleware('auth');
-Route::get('showServicios/{servicio}', 'confrsController@showServicios')->middleware('auth');
-Route::get('icons', 'conicoController@icons')->middleware('auth');
-Route::get('listaSucursales', 'HomeController@listaSucursales')->middleware('auth');
+Route::get('showServicios/{servicio}', 'confrsController@showServicios');
+Route::get('icons', 'conicoController@icons');
+Route::get('listaSucursales', 'HomeController@listaSucursales');
 
