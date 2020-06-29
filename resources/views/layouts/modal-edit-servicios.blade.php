@@ -96,7 +96,7 @@
                                                                 for="edit-servicios-contypscod01">Scroll</label>
                                                         </div>
                                                         <div class="custom-control custom-radio custom-control-inline">
-                                                            <input required value="3" type="radio"
+                                                            <input  value="3" type="radio"
                                                                 id="edit-servicios-contypscod02"
                                                                 name="edit-servicios-contypscod0"
                                                                 class="custom-control-input" />
