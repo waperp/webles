@@ -56,7 +56,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-6 pr-0 confrmvsmai">
-                                                    <select id="select2-edit-servicios-confrmvsmai" required
+                                                    <select id="select2-edit-servicios-confrmvsmai" 
                                                         class="form-control w-100"></select>
                                                 </div>
                                             </div>
