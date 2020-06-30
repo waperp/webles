@@ -230,7 +230,7 @@ class confrsController extends Controller
 
                 //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
             } else {
-                $imageName = "noimage.png";
+                $imageName = null;
             }
             if ($request->tipo == 0) {
                 $confrm = confrm::where('confrmscode', $request->confrmscode_id)->first();
