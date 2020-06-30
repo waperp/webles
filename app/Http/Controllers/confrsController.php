@@ -226,6 +226,8 @@ class confrsController extends Controller
                 $imageName = time() . '.' . $request->file('confrsvbigi')->getClientOriginalExtension();
                 $img->resize(200, 200);
                 $img = $img->save(base_path() . '/public/images/' . $imageName);
+        // return response()->json($request->all());
+
                 //  $request->file('confrsvbigi')->move(base_path() . '/public/images/', $imageName);
             } else {
                 $imageName = "noimage.png";

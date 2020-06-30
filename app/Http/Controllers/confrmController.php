@@ -135,8 +135,23 @@ class confrmController extends Controller
      * @param  \App\confrm  $confrm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(confrm $confrm)
-    {
-        //
+    public function destroy( Request $request, $confrm)
+    { 
+        DB::beginTransaction();
+        try {
+        $confrm =  confrm::where('confrmscode',$confrm)->first();
+
+          
+            $confrm->confrmbenbl = 0;
+            $confrm->save();
+            DB::commit();
+            return response()->json($confrm);
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json($e->getMessage());
+            // something went wrong
+        }
+        
     }
 }

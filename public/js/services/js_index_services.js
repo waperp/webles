@@ -87,7 +87,12 @@ $(document).ready(function () {
                 sortable: false,
                 render: function (data, type, full, meta) {
                     var value = full.confrsscode ? full.confrsttitl : full.confrmttitl;
-                    return '<div class="team-meta"><figure class="team-meta__logo"><i class="fa-2x ' + full.confrmvsmai + '" ></i></figure><div class="team-meta__info"><h6 class="team-meta__name">' + value + '</h6></div></div>'
+
+                    if ($('#select2-servicios-subform').val() == 0) {
+                        return '<div class="team-meta"><figure class="team-meta__logo"><i class="fa-2x ' + full.confrmvsmai + '" ></i></figure><div class="team-meta__info"><h6 class="team-meta__name">' + value + '</h6></div></div>'
+                    } else {
+                        return '<div class="team-meta"><figure class="team-meta__logo"><img style="width: 30;height: 30;" class="rounded-circle" src="/images/' + full.confrsvbigi + '" ></figure><div class="team-meta__info"><h6 class="team-meta__name">' + value + '</h6></div></div>'
+                    }
 
                 }
             }, {
@@ -206,6 +211,20 @@ $(document).ready(function () {
     $('#select2-servicios-subform1').select2("enable", [false]);
 
 });
+function delete_gestionar_servicios(confrmscode) {
+    var _token = $('input[name=_token]').val();
+    $.ajax({
+        url: '/confrm/' + confrmscode,
+        type: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': _token
+        },
+        datatype: 'json',
+        success: function (data) {
+            $("#datatable-" + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
+        }
+    });
+}
 function edit_gestionar_servicios(confrmscode, confrsscode) {
     $.ajax({
         url: '/showServicios/' + confrmscode,
@@ -220,11 +239,11 @@ function edit_gestionar_servicios(confrmscode, confrsscode) {
             var data = response.servicio;
             if (response.isService == false) {
                 var $confrmyadmf = $('input:radio[name=edit-servicios-confrmyadmf]');
-            $confrmyadmf.filter('[value=' + data.confrmyadmf + ']').prop('checked', true);
+                $confrmyadmf.filter('[value=' + data.confrmyadmf + ']').prop('checked', true);
 
-            var $contypscod0 = $('input:radio[name=edit-servicios-contypscod0]');
-            $contypscod0.filter('[value=' + data.contypscod0 + ']').prop('checked', true);
-            $('#select2-edit-servicios-confrmvsmai').append('<option value="' + data.confrmvsmai + '">' + data.confrmvsmai + '</option>');
+                var $contypscod0 = $('input:radio[name=edit-servicios-contypscod0]');
+                $contypscod0.filter('[value=' + data.contypscod0 + ']').prop('checked', true);
+                $('#select2-edit-servicios-confrmvsmai').append('<option value="' + data.confrmvsmai + '">' + data.confrmvsmai + '</option>');
                 $("#select2-edit-servicios-confrmvsmai").val(data.confrmvsmai).trigger('change');
                 $('#select2-edit-servicios-tipo').append('<option value="0">Categoria</option>');
                 $("#select2-edit-servicios-tipo").val(0).trigger('change');

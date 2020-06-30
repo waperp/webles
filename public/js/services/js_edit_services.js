@@ -103,8 +103,8 @@ $(document).ready(function () {
                 return {
                     results: $.map(data, function (item) {
                         return {
-                            text: 'fa '+item.conicotdesc,
-                            id: 'fa '+item.conicotdesc
+                            text: 'fa ' + item.conicotdesc,
+                            id: 'fa ' + item.conicotdesc
                         }
                     })
                 };
@@ -128,9 +128,9 @@ $(document).ready(function () {
         var confrmyadmf = $("input[name='edit-servicios-confrmyadmf']:checked").val();
         var contypscod0 = $("input[name='edit-servicios-contypscod0']:checked").val();
         var tipo = $('#select2-edit-servicios-tipo').val();
-        
-        var formData = new FormData();
 
+        var formData = new FormData();
+        debugger
         formData.append("confrsttitl", confrsttitl);
         formData.append("confrmscode_id", confrmscode_id);
         formData.append("confrmvsmai", confrmvsmai);
@@ -157,7 +157,7 @@ $(document).ready(function () {
             processData: false,
             data: formData,
             success: function (data) {
-                
+
                 $('#datatable-' + convertToSlug(gestionar_servicios.confrmttitl)).DataTable().ajax.reload();
 
                 $('#modal-edit-' + convertToSlug(gestionar_servicios.confrmttitl)).modal('hide');
