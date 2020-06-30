@@ -211,11 +211,16 @@ $(document).ready(function () {
     $('#select2-servicios-subform1').select2("enable", [false]);
 
 });
-function delete_gestionar_servicios(confrmscode) {
+function delete_gestionar_servicios(confrmscode, confrsscode) {
+
     var _token = $('input[name=_token]').val();
     $.ajax({
         url: '/confrm/' + confrmscode,
         type: 'DELETE',
+        data: {
+            confrmscode: confrmscode,
+            confrsscode: confrsscode,
+        },
         headers: {
             'X-CSRF-TOKEN': _token
         },

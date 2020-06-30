@@ -63,7 +63,7 @@ class datatablesController extends Controller
         } else if ($request->has('contypscode') && $request->has('contypscode1')) {
             if ($request->contypscode == 1) {
                 $data = confrm::select('confrm.*', 'confrs.*')->join('confrs', 'confrs.confrmscode', 'confrm.confrmscode')
-                    ->where('confrs.confrmscode', $request->contypscode1)->where('confrs.confrsbenbl', 1)->get();
+                    ->where('confrs.confrmscode', $request->contypscode1)->get();
             } else {
                 $data = [];
             }

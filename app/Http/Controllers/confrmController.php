@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\confrm;
+use App\confrs;
 use Illuminate\Http\Request;
 
 class confrmController extends Controller
@@ -139,13 +140,21 @@ class confrmController extends Controller
     { 
         DB::beginTransaction();
         try {
-        $confrm =  confrm::where('confrmscode',$confrm)->first();
-
-          
-            $confrm->confrmbenbl = 0;
-            $confrm->save();
-            DB::commit();
-            return response()->json($confrm);
+            if($request->confrsscode == 0){
+                $confrm =  confrm::where('confrmscode',$request->confrmscode)->first();
+                    
+                $confrm->confrmbenbl = 0;
+                $confrm->save();
+                DB::commit();
+                return response()->json(true);
+            }else{
+                $confrs =  confrs::where('confrsscode',$request->confrsscode)->first();
+                    
+                $confrs->confrsbenbl = 0;
+                $confrs->save();
+                DB::commit();
+                return response()->json(true);
+            }
 
         } catch (\Exception $e) {
             DB::rollback();
