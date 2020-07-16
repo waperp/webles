@@ -81,6 +81,9 @@ $(document).ready(function () {
 
                     return value.substr(0, 30);
                 }
+                else {
+                    return "";
+                }
             }
         }],
         columns: [
