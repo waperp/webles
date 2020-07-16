@@ -623,8 +623,9 @@
     font-family: 'Lato', sans-serif;
 }
 .highligth_menu{
-    background: greenyellow;
+    background:#558DCA;
 }
 .highligth_icon{
     font-size: 20;
+    color:white
 }
