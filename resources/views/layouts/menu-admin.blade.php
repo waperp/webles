@@ -37,17 +37,17 @@
                     @if ($child->contypscode == 0)
                     <li class="@if ($child->confrmbhigh == 1) highligth_menu @endif">
                         <a href="#menu-{{Str::slug($child->confrmttitl) }}" >
-                            <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
+                            <i class="class="@if ($child->confrmbhigh == 1) highligth_icon @endif {{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                         </li>
                     @elseif($child->contypscode == 1)
                     <li class="@if ($child->confrmbhigh == 1)  highligth_menu @endif" style="@if ($loop->iteration == 2) border-bottom: 1px solid #1cb89d @endif">
                         <a data-toggle="modal" data-target="#modal-{{ Str::slug($child->confrmttitl) }}">
-                            <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
+                            <i class="class="@if ($child->confrmbhigh == 1) highligth_icon @endif {{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                     </li>
                     @elseif($child->contypscode == 3)
                     <li class="@if ($child->confrmbhigh == 1) highligth_menu @endif">
                         <a href="#services-form-section" onclick="menu_servicio({{ $child->confrmscode }})">
-                            <i class="{{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
+                            <i class="@if ($child->confrmbhigh == 1) highligth_icon @endif {{ $child->confrmvsmai }}"></i>{{ $child->confrmttitl }}</a>
                     </li>
                     @endif
                 @else
