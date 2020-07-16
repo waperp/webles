@@ -42,7 +42,7 @@
 
 **********************************************/
 
-/*** 
+/***
 
 ====================================================================
 	Reset
@@ -58,7 +58,7 @@
 	font-size: 100%;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Global Settings
@@ -67,7 +67,7 @@
  ***/
 
 body {
-	
+
 	font-size:14px;
 	color:#787878;
 	line-height:24px;
@@ -102,7 +102,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 textarea{
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 button{
@@ -147,7 +147,7 @@ a:focus{
 ul,li{
 	list-style:none;
 	padding:0px;
-	margin:0px;	
+	margin:0px;
 }
 
 .theme-btn{
@@ -511,12 +511,12 @@ ul,li{
 	float: left;
 }
 
-.preloader{ 
-	position:fixed; 
-	left:0px; 
-	top:0px; 
-	width:100%; 
-	height:100%; 
+.preloader{
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
 	z-index:99999999999;
 	background-color:#ffffff;
 	background-position:center center;
@@ -528,7 +528,7 @@ ul,li{
 img{
 	display:inline-block;
 	max-width:100%;
-	height:auto;	
+	height:auto;
 }
 
 .dropdown-toggle::after{
@@ -597,10 +597,10 @@ img{
 @keyframes ripple {
     70% {box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);}
     100% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);}
-} 
+}
 
 
-/*** 
+/***
 
 ====================================================================
 	Scroll To Top style
@@ -628,14 +628,14 @@ img{
 	-moz-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
-	transition:all 300ms ease;		
+	transition:all 300ms ease;
 }
 
 .scroll-to-top:hover{
 	background:#1cb99e;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Header style
@@ -752,7 +752,7 @@ img{
 }
 
 .header-top .top-right .cart-btn:hover .total-cart{
-	
+
 }
 
 .header-top .top-right .nav-box{
@@ -766,7 +766,7 @@ img{
 
 /*=== Header Upper ===*/
 @media only screen and (max-width: 1023px) {
-    
+
 
 }
 .main-header .header-upper .logo-outer:before{
@@ -924,7 +924,7 @@ background-color: #2baeaa;
 }
 
 .main-menu .navbar-collapse{
-	padding:0px;	
+	padding:0px;
 }
 
 .main-menu .navigation{
@@ -1048,7 +1048,7 @@ background-color: #2baeaa;
 
 .main-menu .navigation > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li{
@@ -1104,7 +1104,7 @@ background-color: #2baeaa;
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li.dropdown:hover > a:after{
@@ -1131,7 +1131,7 @@ background-color: #2baeaa;
 
 .main-menu .navigation > li > ul > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li > ul > li{
@@ -1141,7 +1141,7 @@ background-color: #2baeaa;
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > ul > li > a{
@@ -1179,11 +1179,11 @@ background-color: #2baeaa;
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li > ul > li.dropdown:hover > a:after{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .main-menu .navigation > li.dropdown:hover > ul{
@@ -1211,7 +1211,7 @@ background-color: #2baeaa;
 	-moz-transition:all 300ms ease;
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 300ms ease;
-	-o-transition:all 300ms ease;	
+	-o-transition:all 300ms ease;
 }
 
 .main-menu .navbar-collapse > ul li.dropdown .dropdown-btn{
@@ -1442,19 +1442,19 @@ background-color: #2baeaa;
 	left: auto !important;
 	right: 0;
 	padding:0px;
-	width:280px;	
+	width:280px;
 	border-radius:0px;
 	transform: none !important;
 	border-top:3px solid #1cb99e;
 }
 
 .main-header .search-panel .form-container{
-	padding:25px 20px;	
+	padding:25px 20px;
 }
 
 .main-header .search-panel .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .main-header .search-panel input[type="text"],
@@ -1468,12 +1468,12 @@ background-color: #2baeaa;
 	height:40px;
 	font-size:14px;
 	border:1px solid #e0e0e0;
-	background:#ffffff;	
+	background:#ffffff;
 }
 
 .main-header .search-panel input:focus,
 .main-header .search-panel select:focus{
-	border-color:#1cb99e;	
+	border-color:#1cb99e;
 }
 
 .main-header .search-panel .search-btn{
@@ -1554,7 +1554,7 @@ background-color: #2baeaa;
 	margin-left:20px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Hidden Sidebar style
@@ -1583,7 +1583,7 @@ background-color: #2baeaa;
 }
 
 .hidden-bar .mCSB_inside > .mCSB_container{
-	margin-right:0px;	
+	margin-right:0px;
 }
 
 .hidden-bar.right-align {
@@ -1591,7 +1591,7 @@ background-color: #2baeaa;
 }
 
 .hidden-bar.right-align.visible-sidebar{
-	right:0px;	
+	right:0px;
 }
 
 .hidden-bar .hidden-bar-closer {
@@ -1652,7 +1652,7 @@ background-color: #2baeaa;
 
 .sidebar-info-contents .content-inner .logo img{
 	display:inline-block;
-	max-width:100%;	
+	max-width:100%;
 }
 
 .sidebar-info-contents .content-inner .content-box{
@@ -1718,7 +1718,7 @@ background-color: #2baeaa;
 	background-color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Sticky Header
@@ -1810,7 +1810,7 @@ background-color: #2baeaa;
 }
 
 
-/*** 
+/***
 
 ====================================================================
 		Section Title
@@ -1871,7 +1871,7 @@ background-color: #2baeaa;
 	margin:0 auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 		Banner Section
@@ -1999,14 +1999,14 @@ background-color: #2baeaa;
     transition: all 300ms ease;
 }
 
-.banner-carousel .owl-prev:hover, 
+.banner-carousel .owl-prev:hover,
 .banner-carousel .owl-next:hover{
 	background-color: #ffffff;
 	border-color:#ffffff;
 	color: #558dca;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section
@@ -2041,7 +2041,7 @@ background-color: #2baeaa;
 	background-color:rgba(28,184,157,0.80);
 }
 
-/*** 
+/***
 
 ====================================================================
 	Quote Form
@@ -2291,7 +2291,7 @@ background-color: #2baeaa;
 	top:6px;
 	font-size:0px;
 	text-indent:0px;
-	color:#333333;	
+	color:#333333;
 }
 
 .form-group .ui-button .ui-icon:before{
@@ -2320,7 +2320,7 @@ background-color: #2baeaa;
 }
 
 .ui-menu .ui-menu-item:last-child{
-	border:none;	
+	border:none;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active{
@@ -2340,14 +2340,14 @@ background-color: #2baeaa;
 	background-color:#ffaa00;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Featured Section
 ====================================================================
 
  ***/
- 
+
 .featured-section{
 	position:relative;
 	padding:100px 0px 70px;
@@ -2470,14 +2470,14 @@ background-color: #2baeaa;
 	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fullwidth Section
 ====================================================================
 
  ***/
- 
+
 .container-fluid{
 	position:relative;
 	padding:100px 0px 90px;
@@ -2703,7 +2703,7 @@ background-color: #2baeaa;
 	font-family: 'Exo', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Team Section
@@ -3066,7 +3066,7 @@ background-color: #2baeaa;
 	height:12px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Appointment Section
@@ -3343,7 +3343,7 @@ background-color: #2baeaa;
 	margin:0px 7px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Calender Form
@@ -3451,7 +3451,7 @@ background-color: #2baeaa;
 	text-transform: capitalize;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Emergency Section
@@ -3542,7 +3542,7 @@ background-color: #2baeaa;
 	border-color:#1cba9f;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section
@@ -3555,7 +3555,7 @@ background-color: #2baeaa;
 	padding:90px 0px 100px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Gallery Section
@@ -3809,7 +3809,7 @@ background-color: #2baeaa;
 	color:#1cba9f;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Events Section
@@ -4116,7 +4116,7 @@ background-color: #2baeaa;
 	color:#1cba9f;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Testimonial Section
@@ -4143,7 +4143,7 @@ background-color: #2baeaa;
 
 .testimonial-section.style-two .testimonial-block .inner-box{
 	background-color:#ffffff;
-	
+
 }
 
 .testimonial-section.style-two .pattern-layer{
@@ -4279,7 +4279,7 @@ background-color: #2baeaa;
 	bottom:0px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Section
@@ -4514,7 +4514,7 @@ background-color: #2baeaa;
 	z-index:1;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Sponsors Section
@@ -4570,7 +4570,7 @@ background-color: #2baeaa;
 	opacity:0.4;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fullwidth Section
@@ -4698,7 +4698,7 @@ background-color: #2baeaa;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 }
- 
+
 .fullwidth-section-two .right-column .inner-column{
 	position:relative;
 	padding:113px 15px 107px 100px;
@@ -4803,7 +4803,7 @@ background-color: #2baeaa;
 	background-color:rgba(241,58,102,0.75);
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Footer
@@ -4992,7 +4992,7 @@ background-color: #2baeaa;
 	margin-left:80px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Banner Section Two
@@ -5132,7 +5132,7 @@ background-color: #2baeaa;
     text-align: right;
 }
 
-.banner-section-two .owl-prev, 
+.banner-section-two .owl-prev,
 .banner-section-two .owl-next{
 	position: relative;
 	display: inline-block;
@@ -5155,7 +5155,7 @@ background-color: #2baeaa;
 	border-left:2px solid #1cba9f;
 }
 
-.banner-section-two .owl-prev:hover, 
+.banner-section-two .owl-prev:hover,
 .banner-section-two .owl-next:hover{
 	color: #323232;
 }
@@ -5208,7 +5208,7 @@ background-color: #2baeaa;
 	font-family: 'Exo', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Quote Section
@@ -5349,7 +5349,7 @@ background-color: #2baeaa;
 	text-align:right;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Booking Section
@@ -5622,7 +5622,7 @@ background-color: #2baeaa;
 	margin-top:10px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section Two
@@ -5711,7 +5711,7 @@ background-color: #2baeaa;
 	font-size:16px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Video Section Two
@@ -5822,8 +5822,8 @@ background-color: #2baeaa;
     -ms-box-shadow: 0 5px 10px 0 rgba(255,255,255, .6);
     -o-box-shadow: 0 5px 10px 0 rgba(255,255,255, .6);
     box-shadow: 0 5px 10px 0 rgba(255,255,255, .6);
-    -webkit-transform-origin:center; 
-    transform-origin:center; 
+    -webkit-transform-origin:center;
+    transform-origin:center;
 }
 
 .video-section .play-button .ripple-2,
@@ -5972,7 +5972,7 @@ background-color: #2baeaa;
 	bottom:0px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Banner Section Two
@@ -6192,13 +6192,13 @@ background-color: #2baeaa;
 	border-bottom:1px solid #ffffff;
 }
 
-.banner-section-three .banner-carousel .owl-prev:hover, 
+.banner-section-three .banner-carousel .owl-prev:hover,
 .banner-section-three .banner-carousel .owl-next:hover{
 	background:none;
 	color: #558dca;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section Three
@@ -6375,7 +6375,7 @@ background-color: #2baeaa;
 	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Care Section
@@ -6457,7 +6457,7 @@ background-color: #2baeaa;
 	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Treatment Section
@@ -7578,7 +7578,7 @@ background-color: #2baeaa;
 	background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #558DCA 100%);
 }
 
-/*** 
+/***
 
 ====================================================================
 	Achievement Section
@@ -7634,7 +7634,7 @@ background-color: #2baeaa;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
     transition: all 300ms ease;
-	
+
 }
 
 .achievement-section .clients-column .inner-column .column .image img:hover{
@@ -7685,7 +7685,7 @@ background-color: #2baeaa;
 	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Doctors Page Section
@@ -7733,7 +7733,7 @@ background-color: #2baeaa;
 	display:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Pricing Section
@@ -7913,7 +7913,7 @@ background-color: #2baeaa;
 	background-color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Experiance Section
@@ -8334,7 +8334,7 @@ background-color: #2baeaa;
 	position:relative;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Page Section
@@ -8893,7 +8893,7 @@ background-color: #2baeaa;
 .contact-form input.error,
 .contact-form select.error,
 .contact-form textarea.error{
-	border-color:#ff0000 !important;	
+	border-color:#ff0000 !important;
 }
 
 .contact-form label.error{
@@ -8904,10 +8904,10 @@ background-color: #2baeaa;
 	text-transform:uppercase;
 	font-size:12px;
 	color:#ff0000;
-	font-weight:500;	
+	font-weight:500;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Map Section Style
@@ -8935,10 +8935,10 @@ background-color: #2baeaa;
 }
 
 .map-section .google-map{
-	height:790px;	
+	height:790px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Department Page Section
@@ -8969,7 +8969,7 @@ background-color: #2baeaa;
 
 .days-blocks{
 	position:relative;
-	
+
 }
 
 .days-blocks .days-inner{
@@ -9301,8 +9301,8 @@ background-color: #2baeaa;
 	text-transform:capitalize;
     background:none;
     white-space: nowrap
-    
-	
+
+
 }
 
 @media (min-width: 992px){
@@ -9316,7 +9316,7 @@ background-color: #2baeaa;
 
 
 
-/*** 
+/***
 
 ====================================================================
 	Branch Tabs Style
@@ -9388,7 +9388,7 @@ background-color: #2baeaa;
 .department-page-section .our-branches .dropdown-menu{
 	top:100%;
 	left:0px;
-	width:100%;	
+	width:100%;
 	border-radius:0px;
 	margin-top:10px;
 	background-color:#ffffff;
@@ -9424,7 +9424,7 @@ background-color: #2baeaa;
 }
 
 .department-page-section .our-branches .dropdown-menu > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .department-page-section .our-branches .dropdown-menu > li:hover{
@@ -9443,7 +9443,7 @@ background-color: #2baeaa;
 }
 
 .department-page-section .network-tabs .tabs-content .tab.active-tab{
-	display:block;	
+	display:block;
 }
 
 .close-side-widget{
@@ -9852,11 +9852,11 @@ input:-webkit-autofill {
 
 .main-header .elementskit-dropdown > li:hover > a >i {
 	color: #ffffff;
-	
+
 }
 .main-header .elementskit-dropdown > li > a >i {
  margin-right: 8px
-	
+
 }
 
 
