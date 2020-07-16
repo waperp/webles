@@ -9299,7 +9299,9 @@ background-color: #2baeaa;
 	font-size:14px;
 	font-weight:500;
 	text-transform:capitalize;
-	background:none;
+    background:none;
+    white-space: nowrap
+    
 	
 }
 
