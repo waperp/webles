@@ -77,7 +77,10 @@ $(document).ready(function () {
             targets: 1,
             render: function (full, type, row) {
                 var value = row.confrsscode ? row.confrstdesc : row.confrmtdesc;
-                return value.substr(0, 30);
+                if (value) {
+
+                    return value.substr(0, 30);
+                }
             }
         }],
         columns: [
